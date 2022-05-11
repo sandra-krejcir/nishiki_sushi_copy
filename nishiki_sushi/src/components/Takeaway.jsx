@@ -17,10 +17,7 @@ function Takeaway() {
 
       <div>
         <IoIosSearch />
-        <input
-          type="text"
-          placeholder="Søg efter sushi eller ingredienser"
-        ></input>
+        <input type="text" placeholder="Søg efter sushi eller ingredienser"></input>
       </div>
 
       <div className="kategorier_container">
@@ -59,23 +56,20 @@ function Takeaway() {
           <p>-</p>
         </div>
         <div className="add_to_basket">
-          <BsBasket3Fill style={{ color: "green" }} />
+          <BsBasket3Fill c />
           <p>+</p>
         </div>
       </div>
 
       <div className="chosen_kategorie_container">
-        <button>
+        <button className="secondaryBtn">
           {" "}
           <MdOutlineKeyboardBackspace />
           Kategorier
         </button>
         <div>
           <IoIosSearch />
-          <input
-            type="text"
-            placeholder="Søg efter sushi eller ingredienser"
-          ></input>
+          <input type="text" placeholder="Søg efter sushi eller ingredienser"></input>
         </div>
         <h2>Name of Kategorie </h2>
 

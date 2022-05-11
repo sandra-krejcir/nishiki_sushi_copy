@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.scss";
 /* import { useState } from "react"; */
 import Takeaway from "./components/Takeaway";
 import Kurv from "./components/Kurv";
