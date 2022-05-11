@@ -5,8 +5,9 @@ import Kurv from "./Kurv";
 import Oplysninger from "./oplysninger";
 import Betaling from "./Betaling";
 import Bekræftelse from "./Bekræftelse";
+import LandingPage from "./components/LandingPage";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <Takeaway />
@@ -14,8 +15,7 @@ function App() {
       <Oplysninger />
       <Betaling />
       <Bekræftelse />
+      <LandingPage />
     </div>
   );
 }
-
-export default App;
