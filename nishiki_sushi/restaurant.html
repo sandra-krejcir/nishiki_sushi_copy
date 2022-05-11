@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nishiki Sushi | Restaurant</title>
+  </head>
+  <body>
+    <!-- this is the header w. hero image and logo-tag -->
+    <header>
+      <img src="" alt="" />
+      <div>
+        <img src="" alt="" />
+        <p></p>
+      </div>
+    </header>
+
+    <main>
+      <!-- This is the intro section -->
+      <section>
+        <h1>Hos Nishiki Sushi</h1>
+        <div>
+          <p>Besøg os i hjertet af Frederikssund. Vi sætter en ære i altid at tilbyde friske råvarer og lækre specialiteter i top kvalitet til gode priser.</p>
+          <p>Prøv vores populære ad libitum menu fra kun 199kr eller bestil ala carte fra vores mange sushi varianter, lækre forreter eller sticks.</p>
+        </div>
+        <div>
+          <button>Ad Libitum</button>
+          <button>Book Bord</button>
+        </div>
+      </section>
+
+      <!-- This is the section with opening hours -->
+      <section>
+        <div>
+          <p>Besøg restauranten</p>
+          <h3>Åbningstider</h3>
+        </div>
+        <div><!-- This is a seperation line --></div>
+        <div>
+          <div>
+            <p>Mandag - Torsdag</p>
+            <p>15:00 - 22:00</p>
+          </div>
+          <div>
+            <p>Fredag - Søndag</p>
+            <p>13:00 - 22:00</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- this is the ad libitum section -->
+      <section>
+        <!-- General information Square-->
+        <div>
+          <h2>Ad libitum</h2>
+          <p>Betal et engangsbeløb og smag sushi og sticks fra hele vores ala carte menu.</p>
+          <p>Du kan bestille så meget du ønsker, og maden serveres altid frisklavet.</p>
+          <p>Da vi prøver at bekæmpe madspild, skal der betales 10 kr. pr stk. hvis der efterlades mere end 4 stk.</p>
+        </div>
+        <!-- prices Square -->
+        <div>
+          <!-- frokost -->
+          <div>
+            <p>Frokost <span>13-16</span></p>
+            <div>
+              <p>Mandag - Søndag</p>
+              <p>199 kr.</p>
+            </div>
+          </div>
+          <!-- Aften -->
+          <div>
+            <div>
+              <p>Aften <span>16-22</span></p>
+              <div>
+                <p>Mandag - Torsdag</p>
+                <p>229 kr.</p>
+              </div>
+              <div>
+                <p>Fredag - Søndag</p>
+                <p>249 kr.</p>
+              </div>
+            </div>
+          </div>
+          <!-- kids -->
+          <div>
+            <p>Børn under 10 år spiser til halv pris</p>
+            <p>Børn under 3 år spiser gratis</p>
+          </div>
+        </div>
+        <img src="" alt="" />
+      </section>
+
+      <!-- this is the book table section // all the form stuff probably needs to be translated from JS to REACT-->
+      <section>
+        <h2>Book Bord</h2>
+        <section>
+          <div><!--insert the 4 svg icons here--></div>
+          <div><!--dividing line--></div>
+          <div>
+            <!--SVG ICON-->
+            <div>
+              <p>Jernbanegade 9D,</p>
+              <p>3600 Frederikssund</p>
+            </div>
+          </div>
+          <div><!--dividing line--></div>
+          <!-- this part is what changes between steps -->
+          <!-- Page 1 -->
+          <h4>Hvor mange bliver I?</h4>
+          <label for="guest-count">
+            <select name="guest-count" id="guest-count">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            Gæster
+          </label>
+          <button>Fortsæt</button>
+          <!-- Page 2 -->
+          <h4>Hvilken dato?</h4>
+          <button>Fortsæt</button>
+          <!-- Page 3 -->
+          <h4>Hvilket tidspunkt?</h4>
+          <form action="">
+            <input type="radio" id="1500" name="time" value="1500" /> <label for="1500">15:00</label><br />
+            <input type="radio" id="1530" name="time" value="1530" /> <label for="1530">15:30</label><br />
+            <input type="radio" id="1600" name="time" value="1600" /> <label for="1600">16:00</label><br />
+            <input type="radio" id="1630" name="time" value="1630" /> <label for="1630">16:30</label><br />
+            <input type="radio" id="1700" name="time" value="1700" /> <label for="1700">17:00</label><br />
+            <input type="radio" id="1730" name="time" value="1730" /> <label for="1730">17:30</label><br />
+            <input type="radio" id="1800" name="time" value="1800" /> <label for="1800">18:00</label><br />
+            <input type="radio" id="1830" name="time" value="1830" /> <label for="1830">18:30</label><br />
+            <input type="radio" id="1900" name="time" value="1900" /> <label for="1900">19:00</label><br />
+            <input type="radio" id="1930" name="time" value="1930" /> <label for="1930">19:30</label><br />
+            <input type="radio" id="2000" name="time" value="2000" /> <label for="2000">20:00</label><br />
+            <input type="radio" id="2030" name="time" value="2030" /> <label for="2030">20:30</label><br />
+            <input type="radio" id="2100" name="time" value="2100" /> <label for="2100">21:00</label><br />
+          </form>
+          <button>Fortsæt</button>
+          <!-- Page 4 -->
+          <h4>Bekræft din booking</h4>
+          <p>Booking af bord til <span>2</span> gæster <span>torsdag d. 11. november</span> kl. <span>15:00</span></p>
+          <form action="">
+            <label for="">
+              Navn<br />
+              <input type="text" placeholder="Jens Jensen" /> </label
+            ><br />
+            <label for="">
+              Mobil nummer <br />
+              <input type="tel" placeholder="12 34 56 78" /> </label
+            ><br />
+            <label for="">
+              Kommentarer <br />
+              <textarea name="" id="" cols="30" rows="4"></textarea>
+            </label>
+          </form>
+          <button>Fortsæt</button>
+          <!-- Page 5 -->
+          <h4>Tak for din booking</h4>
+          <p>Vi har sendt en sms-kvittering til tlf.nr.: <span>12345678</span></p>
+          <p>Booking af bord til <span>2</span> gæster <span>torsdag d. 11. november</span> kl. <span>15:00</span> under navnet <span>Jens Jensen</span></p>
+          <p>Kommentarer:</p>
+          <p>Det er min fødselsdag, sæt flag på bordet.</p>
+          <p>Foretag endnu en booking</p>
+        </section>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+</html>
