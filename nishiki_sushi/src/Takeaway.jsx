@@ -25,7 +25,7 @@ function Takeaway() {
 
       <div className="kategorier_container">
         <h2>Kategorier</h2>
-        {/* <template> */}
+
         <div
           className="blue_box"
           style={{
@@ -36,12 +36,11 @@ function Takeaway() {
         ></div>
         <img src="" alt="food_img" />
         <h3>Food Name</h3>
-        {/*  </template> */}
       </div>
 
       <div className="result_container">
         <h2>Results for </h2>
-        {/* <template> */}
+
         <span>0</span>
         <div
           className="blue_box"
@@ -63,7 +62,6 @@ function Takeaway() {
           <BsBasket3Fill style={{ color: "green" }} />
           <p>+</p>
         </div>
-        {/*  </template> */}
       </div>
 
       <div className="chosen_kategorie_container">
@@ -80,7 +78,7 @@ function Takeaway() {
           ></input>
         </div>
         <h2>Name of Kategorie </h2>
-        {/* <template> */}
+
         <span>0</span>
         <div
           className="blue_box"
@@ -102,7 +100,6 @@ function Takeaway() {
           <BsBasket3Fill style={{ color: "green" }} />
           <p>+</p>
         </div>
-        {/*  </template> */}
       </div>
     </>
   );
