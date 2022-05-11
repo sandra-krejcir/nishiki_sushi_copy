@@ -8,7 +8,9 @@ function Takeaway() {
   return (
     <>
       <div>
-        <h1>Take Away</h1>
+        <h1>
+          <b>Take</b>Away
+        </h1>
       </div>
       <div>
         <p>Sorter Pris</p>
@@ -23,14 +25,7 @@ function Takeaway() {
       <div className="kategorier_container">
         <h2>Kategorier</h2>
 
-        <div
-          className="blue_box"
-          style={{
-            backgroundColor: "#30404F",
-            width: "200px",
-            height: "120px",
-          }}
-        ></div>
+        <div className="blue_box"></div>
         <img src="" alt="food_img" />
         <h3>Food Name</h3>
       </div>
