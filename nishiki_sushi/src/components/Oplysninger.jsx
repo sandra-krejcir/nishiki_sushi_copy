@@ -55,7 +55,7 @@ function Oplysninger() {
             type="tel"
             id="oplysninger_mobil"
             name="oplysninger_mobil"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}"
             placeholder="00 00 00 00"
             required
           />
