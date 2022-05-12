@@ -2,43 +2,48 @@ export default function RestaurantPage() {
   return (
     <>
       <header>
-        <img src="" alt="" />
+        <div className="hero-container">
+          <img className="hero-image" src="../img/restaurant_header-image.webp" alt="image of Nishiki Sushis interior in Frederikssund" />
+        </div>
         <div>
           <img src="" alt="" />
           <p></p>
         </div>
       </header>
       <main>
-        <section>
-          <h1>Hos Nishiki Sushi</h1>
-          <div>
-            <p>Besøg os i hjertet af Frederikssund. Vi sætter en ære i altid at tilbyde friske råvarer og lækre specialiteter i top kvalitet til gode priser.</p>
-            <p>Prøv vores populære ad libitum menu fra kun 199kr eller bestil ala carte fra vores mange sushi varianter, lækre forreter eller sticks.</p>
-          </div>
-          <div>
-            <button>Ad Libitum</button>
-            <button>Book Bord</button>
-          </div>
-        </section>
-
-        <section>
-          <div>
-            <p>Besøg restauranten</p>
-            <h3>Åbningstider</h3>
-          </div>
-
-          <div>
+        <div id="restaurant-grid-intro">
+          <section id="restaurant-intro-section">
+            <h1>Hos Nishiki Sushi</h1>
             <div>
-              <p>Mandag - Torsdag</p>
-              <p>15:00 - 22:00</p>
+              <p>Besøg os i hjertet af Frederikssund. Vi sætter en ære i altid at tilbyde friske råvarer og lækre specialiteter i top kvalitet til gode priser.</p>
+              <p>Prøv vores populære ad libitum menu fra kun 199kr eller bestil ala carte fra vores mange sushi varianter, lækre forreter eller sticks.</p>
             </div>
-            <div>
-              <p>Fredag - Søndag</p>
-              <p>13:00 - 22:00</p>
+            <div className="restaurant-flex-buttons">
+              <button className="primaryBtn">Ad Libitum</button>
+              <button className="secondaryBtn">Book Bord</button>
             </div>
-          </div>
-        </section>
+          </section>
 
+          <section id="restaurant-openinghours-section">
+            <div class="restaurant-times-flex">
+              <p className="caps">Besøg restauranten</p>
+              <h3>Åbningstider</h3>
+            </div>
+
+            <div className="seperating-line"></div>
+
+            <div class="restaurant-times-flex">
+              <div className="flex-horisontal">
+                <p>Mandag - Torsdag</p>
+                <p>15:00 - 22:00</p>
+              </div>
+              <div className="flex-horisontal">
+                <p>Fredag - Søndag</p>
+                <p>13:00 - 22:00</p>
+              </div>
+            </div>
+          </section>
+        </div>
         <section>
           <div>
             <h2>Ad libitum</h2>

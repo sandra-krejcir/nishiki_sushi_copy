@@ -1,6 +1,7 @@
-$layout-breakpoint-mobile: 499px;
-$layout-breakpoint-tablet: 1224px;
-$layout-breakpoint-desktop: 1920px;
+$layout-breakpoint-mobile-end: 799px;
+$layout-breakpoint-tablet-start: 800px;
+$layout-breakpoint-tablet-end: 1224px;
+$layout-breakpoint-desktop-start: 1225px;
 
 // These are margins for 1 side - add it to both left and right or only 1 side when it's assymetric design
 $marginHorisontalMobile: 18px;

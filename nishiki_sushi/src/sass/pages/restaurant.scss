@@ -1,1 +1,132 @@
-@use "../base";
+@use "../base/margins";
+@use "../base/colors";
+
+.hero-container {
+  overflow: hidden;
+  height: 230px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image {
+  width: 100%;
+}
+
+#restaurant-intro-section {
+  width: calc(100% - margins.$marginHorisontalMobile - margins.$marginHorisontalMobile);
+  margin-left: margins.$marginHorisontalMobile;
+  margin-right: margins.$marginHorisontalMobile;
+}
+
+#restaurant-openinghours-section {
+  background: colors.$lightBlue;
+  color: white;
+  width: calc(100% - margins.$marginHorisontalMobile);
+  margin-left: margins.$marginHorisontalMobile;
+  margin-top: 100px;
+  padding: 2rem 0;
+  h3 {
+    color: white;
+  }
+  > * {
+    padding-left: margins.$marginHorisontalMobile;
+    padding-right: calc(margins.$marginHorisontalMobile + margins.$marginHorisontalMobile);
+  }
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
+.restaurant-times-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.seperating-line {
+  height: 1px;
+  width: calc(100% - margins.$marginHorisontalMobile - margins.$marginHorisontalMobile - margins.$marginHorisontalMobile);
+  background: white;
+  margin: 1.5rem calc(margins.$marginHorisontalMobile + margins.$marginHorisontalMobile) 1.5rem margins.$marginHorisontalMobile;
+}
+
+.restaurant-flex-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: fit-content;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.flex-horisontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+// ----------------- tablet styling
+@media (min-width: margins.$layout-breakpoint-tablet-start) and (max-width: margins.$layout-breakpoint-tablet-end) {
+  .hero-container {
+    height: 245px;
+  }
+
+  .hero-image {
+    width: calc(100% - margins.$marginHorisontalTablet - margins.$marginHorisontalTablet);
+  }
+
+  #restaurant-grid-intro {
+    display: grid;
+    grid-template-columns: 4fr 1fr 3fr;
+    gap: 20px;
+    align-items: flex-start;
+    width: calc(100% - margins.$marginHorisontalTablet);
+  }
+
+  #restaurant-intro-section {
+    margin-left: margins.$marginHorisontalTablet;
+  }
+
+  #restaurant-openinghours-section {
+    grid-column: 3;
+    margin-top: 0;
+  }
+
+  .restaurant-flex-buttons {
+    flex-direction: row;
+  }
+}
+
+// ----------------- desktop styling
+@media (min-width: margins.$layout-breakpoint-desktop-start) {
+  .hero-container {
+    height: 294px;
+  }
+  .hero-image {
+    width: calc(100% - margins.$marginHorisontalDesktop - margins.$marginHorisontalDesktop);
+  }
+  #restaurant-grid-intro {
+    display: grid;
+    grid-template-columns: 6fr 2fr 4fr;
+    gap: 20px;
+    align-items: flex-start;
+    width: calc(100% - margins.$marginHorisontalDesktop);
+  }
+
+  #restaurant-intro-section {
+    margin-left: margins.$marginHorisontalDesktop;
+  }
+
+  #restaurant-openinghours-section {
+    grid-column: 3;
+    margin-top: 0;
+    margin-right: margins.$marginHorisontalDesktop;
+  }
+
+  .restaurant-flex-buttons {
+    flex-direction: row;
+  }
+}
