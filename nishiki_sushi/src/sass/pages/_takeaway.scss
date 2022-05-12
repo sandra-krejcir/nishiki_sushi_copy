@@ -3,6 +3,10 @@
 @use "../base/effects";
 @use "../base/buttons";
 
+.takeaway_container {
+  margin: margins.$marginHorisontalMobile;
+}
+
 .takeaway_headline {
   display: flex;
   justify-content: space-between;
