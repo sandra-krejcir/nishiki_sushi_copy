@@ -3,6 +3,10 @@
 @use "../base/effects";
 @use "../base/buttons";
 
+.takeaway_headline {
+  display: flex;
+  justify-content: space-between;
+}
 .takeaway_headline h1 {
   font-size: 2rem;
   margin-bottom: margins.$marginUnderElementMobile;
@@ -10,8 +14,7 @@
 
 .kategorier_container h2,
 h3 {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.2rem;
 }
 
 .sorter_pris {
@@ -45,14 +48,20 @@ h3 {
 .kategorier {
   background-color: colors.$darkBlue;
   height: 120px;
-  width: 170px;
+  width: 180px;
   display: grid;
   justify-content: center;
 }
 
 .kategorier img {
   position: absolute;
+  height: 120px;
+  width: 180px;
+  opacity: 0.5;
+  z-index: 0;
 }
 .kategorier h3 {
+  position: relative;
   color: colors.$off-white;
+  align-self: center;
 }

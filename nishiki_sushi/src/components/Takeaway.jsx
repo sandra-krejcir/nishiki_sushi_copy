@@ -11,10 +11,10 @@ function Takeaway() {
         <h1>
           <b>Take</b>Away
         </h1>
-      </div>
-      <div className="sorter_pris hidden">
-        <p>Sorter Pris</p>
-        <TiArrowUnsorted className="hw20_icon" />
+        <div className="sorter_pris">
+          <p>Sorter Pris</p>
+          <TiArrowUnsorted className="hw20_icon" />
+        </div>
       </div>
 
       <div className="search_container">
@@ -29,8 +29,10 @@ function Takeaway() {
         <h2>Kategorier</h2>
 
         <div className="kategorier">
-          <div className="blue_box1"></div>
-          <img src="" alt="food_img" />
+          <img
+            src="https://www.nishikisushi.dk/media/31wn4jmh/m%C3%A5ned-tilbud-1.jpg"
+            alt="food_img"
+          />
           <h3>Food Name</h3>
         </div>
       </div>
