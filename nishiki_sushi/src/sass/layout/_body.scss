@@ -1,0 +1,7 @@
+@use "../base/colors";
+@use "../base/margins";
+
+body {
+  background-color: colors.$off-white;
+  margin: margins.$marginHorisontalMobile;
+}

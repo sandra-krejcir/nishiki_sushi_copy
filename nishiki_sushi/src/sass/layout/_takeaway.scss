@@ -1,0 +1,58 @@
+@use "../base/colors";
+@use "../base/margins";
+@use "../base/effects";
+@use "../base/buttons";
+
+.takeaway_headline h1 {
+  font-size: 2rem;
+  margin-bottom: margins.$marginUnderElementMobile;
+}
+
+.kategorier_container h2,
+h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.sorter_pris {
+  display: flex;
+  align-items: center;
+  color: colors.$darkBlue;
+  cursor: pointer;
+}
+
+.sorter_pris p {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.search_container {
+  display: flex;
+  padding: 5px;
+  align-items: center;
+  box-shadow: effects.$boxShadowInset;
+  margin-bottom: margins.$marginUnderElementMobile;
+}
+.search_container input {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  width: 100%;
+}
+
+.search_container input:focus {
+  outline: none;
+}
+
+.kategorier {
+  background-color: colors.$darkBlue;
+  height: 120px;
+  width: 170px;
+  display: grid;
+  justify-content: center;
+}
+
+.kategorier img {
+  position: absolute;
+}
+.kategorier h3 {
+  color: colors.$off-white;
+}

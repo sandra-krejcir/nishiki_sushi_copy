@@ -1,8 +1,18 @@
 @use "sass/base";
+@use "sass/layout";
 // @use "sass/pages";
 /*To use variables you can say document.$variablename eg. base.header-font-flurish*/
 
 * {
   margin: 0;
   box-sizing: border-box;
+}
+
+.hidden {
+  display: none;
+}
+
+.hw20_icon {
+  height: 20px;
+  width: 20px;
 }

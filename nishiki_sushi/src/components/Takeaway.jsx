@@ -7,27 +7,32 @@ import { MdOutlineKeyboardBackspace } from "react-icons/md";
 function Takeaway() {
   return (
     <>
-      <div>
+      <div className="takeaway_headline">
         <h1>
           <b>Take</b>Away
         </h1>
       </div>
-      <div>
+      <div className="sorter_pris hidden">
         <p>Sorter Pris</p>
-        <TiArrowUnsorted />
+        <TiArrowUnsorted className="hw20_icon" />
       </div>
 
-      <div>
-        <IoIosSearch />
-        <input type="text" placeholder="Søg efter sushi eller ingredienser"></input>
+      <div className="search_container">
+        <IoIosSearch className="hw20_icon" />
+        <input
+          type="text"
+          placeholder="Søg efter sushi eller ingredienser"
+        ></input>
       </div>
 
       <div className="kategorier_container">
         <h2>Kategorier</h2>
 
-        <div className="blue_box"></div>
-        <img src="" alt="food_img" />
-        <h3>Food Name</h3>
+        <div className="kategorier">
+          <div className="blue_box1"></div>
+          <img src="" alt="food_img" />
+          <h3>Food Name</h3>
+        </div>
       </div>
 
       <div className="result_container">
@@ -64,7 +69,10 @@ function Takeaway() {
         </button>
         <div>
           <IoIosSearch />
-          <input type="text" placeholder="Søg efter sushi eller ingredienser"></input>
+          <input
+            type="text"
+            placeholder="Søg efter sushi eller ingredienser"
+          ></input>
         </div>
         <h2>Name of Kategorie </h2>
 
