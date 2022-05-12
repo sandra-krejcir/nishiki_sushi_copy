@@ -7,61 +7,68 @@ import { IoMdArrowDropup, IoMdArrowDropdown } from "react-icons/io";
 function Kurv() {
   return (
     <>
-      <div>
-        <h1>Kurv</h1>
-        <div>
-          <p>Ingen Levering</p>
-          <FaTruck />
-        </div>
-      </div>
-
-      <div>
-        <button>
-          <MdOutlineKeyboardBackspace />
-          Tilføj mere
-        </button>
-        <p>
-          Afhenting <MdRestaurant />
-        </p>
-      </div>
-
-      <div>
-        <div>
-          <div>
-            <AiOutlineMinusSquare />
-            <span>0</span>
-            <AiOutlinePlusSquare />
+      <div className="kurv_container">
+        <div className="kurv_top">
+          <h1>Kurv</h1>
+          <div className="ingen_lavering_container">
+            <p>Ingen Levering</p>
+            <FaTruck className="hw20_icon" />
           </div>
-          <p>Name of Item</p>
-          <span>000</span>
         </div>
-        <p>
-          Se Indhold <IoMdArrowDropdown />
-        </p>
-        <p>
-          Gem Indhold <IoMdArrowDropup />
-        </p>
-        <p>Food Info</p>
+        <div className="button_and_afhentling_container">
+          <button className="secondaryBtn">
+            <MdOutlineKeyboardBackspace className="hw20_icon" />
+            Tilføj mere
+          </button>
+          <p>
+            Afhenting <MdRestaurant className="hw20_icon" />
+          </p>
+        </div>
+        <div className="inner_kurv_container">
+          <div>
+            <div className="kurv_item_top">
+              <div className="kurv_remove_add">
+                <AiOutlineMinusSquare className="hw30_icon" />
+                <span>0</span>
+                <AiOutlinePlusSquare className="hw30_icon" />
+              </div>
+              <p>Name of Item</p>
+              <span>000</span>
+            </div>
+            <div className="show_hide_indhold_container">
+              <div className="show_hide_indhold">
+                <p>
+                  Se Indhold <IoMdArrowDropdown className="hw20_icon" />
+                </p>
+                <p>
+                  Gem Indhold <IoMdArrowDropup className="hw20_icon" />
+                </p>
+              </div>
+            </div>
+            <div className="kurv_item_info">
+              <p>Food Info relgjnerog oerh oehr opehropuehrt prp oeu</p>
+            </div>
+          </div>
+          <div className="kvitering_container">
+            <div>
+              <p>Subtotal</p>
+              <span>000</span>
+            </div>
+            <div>
+              <p>10% Rabat</p>
+              <span>-000</span>
+            </div>
+            <div className="line_kurv"></div>
+            <div>
+              <p>Total:</p>
+              <span>000</span>
+            </div>
+          </div>
+          <div className="button_container_center">
+            <button className="primaryBtn">Angiv Oplysninger</button>
+          </div>
+        </div>
       </div>
-
-      <div>
-        <div>
-          <p>Subtotal</p>
-          <span>000</span>
-        </div>
-        <div>
-          <p>10% Rabat</p>
-          <span>-000</span>
-        </div>
-        <div
-          style={{ backgroundColor: "black", width: "80%", height: "1px" }}
-        ></div>
-        <div>
-          <p>Total:</p>
-          <span>000</span>
-        </div>
-      </div>
-      <button>Angiv Oplysninger</button>
     </>
   );
 }
