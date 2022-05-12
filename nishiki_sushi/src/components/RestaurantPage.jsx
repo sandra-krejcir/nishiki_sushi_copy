@@ -44,33 +44,35 @@ export default function RestaurantPage() {
             </div>
           </section>
         </div>
-        <section>
-          <div>
+        <section id="adlibitum-section">
+          <div id="adlibitum-intro">
             <h2>Ad libitum</h2>
-            <p>Betal et engangsbeløb og smag sushi og sticks fra hele vores ala carte menu.</p>
-            <p>Du kan bestille så meget du ønsker, og maden serveres altid frisklavet.</p>
-            <p>Da vi prøver at bekæmpe madspild, skal der betales 10 kr. pr stk. hvis der efterlades mere end 4 stk.</p>
-          </div>
-          <div>
             <div>
-              <p>
+              <p>Betal et engangsbeløb og smag sushi og sticks fra hele vores ala carte menu.</p>
+              <p>Du kan bestille så meget du ønsker, og maden serveres altid frisklavet.</p>
+              <p>Da vi prøver at bekæmpe madspild, skal der betales 10 kr. pr stk. hvis der efterlades mere end 4 stk.</p>
+            </div>
+          </div>
+          <div id="adlibitum-prices">
+            <div>
+              <p class="Large-caps-tag">
                 Frokost <span>13-16</span>
               </p>
-              <div>
+              <div className="flex-horisontal">
                 <p>Mandag - Søndag</p>
                 <p>199 kr.</p>
               </div>
             </div>
             <div>
               <div>
-                <p>
+                <p class="Large-caps-tag">
                   Aften <span>16-22</span>
                 </p>
-                <div>
+                <div className="flex-horisontal">
                   <p>Mandag - Torsdag</p>
                   <p>229 kr.</p>
                 </div>
-                <div>
+                <div className="flex-horisontal">
                   <p>Fredag - Søndag</p>
                   <p>249 kr.</p>
                 </div>
@@ -81,7 +83,9 @@ export default function RestaurantPage() {
               <p>Børn under 3 år spiser gratis</p>
             </div>
           </div>
-          <img src="" alt="" />
+          <div id="adlibitum-img-container">
+            <img id="adlibitum-img" src="../img/adlibitum-img.webp" alt="" />
+          </div>
         </section>
       </main>
     </>

@@ -68,6 +68,60 @@
   justify-content: space-between;
 }
 
+#adlibitum-section {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  > div {
+    width: calc(100% - margins.$marginHorisontalMobile);
+    margin-right: margins.$marginHorisontalMobile;
+    padding: 2rem 0;
+  }
+}
+
+#adlibitum-intro {
+  background: colors.$cream;
+  > * {
+    padding-right: margins.$marginHorisontalMobile;
+    padding-left: calc(margins.$marginHorisontalMobile + margins.$marginHorisontalMobile);
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+#adlibitum-prices {
+  background: colors.$lightWood;
+  background-size: cover;
+  background-position: center;
+  > * {
+    padding-right: margins.$marginHorisontalMobile;
+    padding-left: calc(margins.$marginHorisontalMobile + margins.$marginHorisontalMobile);
+  }
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  span {
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 0.5rem;
+  }
+  color: colors.$darkBrown;
+}
+
+#adlibitum-img-container {
+  height: 120px;
+  overflow: hidden;
+  padding-top: 0 !important;
+}
+
+#adlibitum-img {
+  width: 100%;
+}
+
 // ----------------- tablet styling
 @media (min-width: margins.$layout-breakpoint-tablet-start) and (max-width: margins.$layout-breakpoint-tablet-end) {
   .hero-container {
@@ -97,6 +151,22 @@
 
   .restaurant-flex-buttons {
     flex-direction: row;
+  }
+
+  #adlibitum-section {
+    display: grid;
+    grid-template-columns: 3fr 3fr 2fr;
+    gap: 20px;
+    width: calc(100% - margins.$marginHorisontalTablet);
+    margin-left: margins.$marginHorisontalTablet;
+    > div {
+      width: 100% !important;
+    }
+  }
+  #adlibitum-img-container {
+    height: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 }
 
