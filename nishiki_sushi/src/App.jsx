@@ -7,10 +7,12 @@ import Oplysninger from "./components/Oplysninger";
 import Betaling from "./components/Betaling";
 import Bekræftelse from "./components/Bekræftelse";
 import LandingPage from "./components/LandingPage";
+import RestaurantPage from "./components/RestaurantPage";
 
 export default function App() {
   return (
     <div className="App">
+      <RestaurantPage />
       <Takeaway />
       <Kurv />
       <Oplysninger />
