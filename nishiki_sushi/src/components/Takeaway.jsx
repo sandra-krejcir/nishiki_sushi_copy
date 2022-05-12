@@ -61,37 +61,38 @@ function Takeaway() {
         </div>
         <div className="chosen_kategorie_container">
           <button className="secondaryBtn">
-            <MdOutlineKeyboardBackspace />
-            Kategorier
+            <MdOutlineKeyboardBackspace className="hw20_icon" />
+            <p>Kategorier</p>
           </button>
-          <div>
-            <IoIosSearch />
+          <div className="search_container">
+            <IoIosSearch className="hw20_icon" />
             <input
               type="text"
               placeholder="Søg efter sushi eller ingredienser"
             ></input>
           </div>
           <h2>Name of Kategorie </h2>
-          <span>0</span>
-          <div
-            className="blue_box"
-            style={{
-              backgroundColor: "#30404F",
-              width: "300px",
-              height: "130px",
-            }}
-          ></div>
-          <img src="" alt="food_img" />
-          <h3>Food Name</h3>
-          <p>Food info</p>
-          <p>Pris:</p>
-          <div className="remove_from_basket">
-            <BsBasket3Fill />
-            <p>-</p>
-          </div>
-          <div className="add_to_basket">
-            <BsBasket3Fill style={{ color: "green" }} />
-            <p>+</p>
+          <div className="item">
+            <div className="in_basket_number_container">
+              <p className="in_basket_number">0</p>
+            </div>
+
+            <img
+              src="https://images-global.nhst.tech/image/bUpscFAvOWZnVnVIQ283TlAyeFI0WFMwZ0RiVjRucGhyek52d0pCdUJ3OD0=/nhst/binary/66e1fa282d12f429459b8b83628bb8b4?image_version=640"
+              alt="food_img"
+            />
+            <h4>Food Name</h4>
+            <p>Food info orfo wiufh owi eufh owei jfjf rjk f jkf jrffhoewifh</p>
+            <p>Pris:</p>
+
+            <div className="basket_icons">
+              <div className="remove_from_basket">
+                <BsBasket3Fill className="hw40_icon" />
+              </div>
+              <div className="add_to_basket">
+                <BsBasket3Fill className="hw40_icon" />
+              </div>
+            </div>
           </div>
         </div>
       </div>

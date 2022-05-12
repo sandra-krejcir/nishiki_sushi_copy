@@ -10,11 +10,13 @@ button {
   padding: 10px 40px;
   color: white;
   border: 0px;
-  background: url("../img/texture-compressed.webp"), url("../img/texture-compressed.webp"), colors.$darkGreen;
+  background: url("../img/texture-compressed.webp"),
+    url("../img/texture-compressed.webp"), colors.$darkGreen;
 }
 
 .primaryBtn:hover {
-  background: url("../img/texture-compressed.webp"), url("../img/texture-compressed.webp"), colors.$lightGreen;
+  background: url("../img/texture-compressed.webp"),
+    url("../img/texture-compressed.webp"), colors.$lightGreen;
 }
 
 .secondaryBtn {
@@ -22,6 +24,7 @@ button {
   color: colors.$darkBlue;
   border: 2px solid colors.$darkBlue;
   background: none;
+  font-weight: bold;
 }
 
 .secondaryBtn:hover {

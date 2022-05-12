@@ -124,3 +124,14 @@ h3 {
 .add_to_basket .hw40_icon {
   color: colors.$lightGreen;
 }
+
+//CHOSEN
+
+.takeaway_container button {
+  display: flex;
+  align-items: center;
+  margin-bottom: margins.$marginUnderElementMobile;
+}
+.takeaway_container button p {
+  margin-left: 5px;
+}
