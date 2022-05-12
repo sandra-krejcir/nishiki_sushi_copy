@@ -7,14 +7,18 @@
   display: flex;
   justify-content: space-between;
 }
-.takeaway_headline h1 {
+.takeaway_container h1 {
   font-size: 2rem;
   margin-bottom: margins.$marginUnderElementMobile;
 }
 
-.kategorier_container h2,
+.takeaway_container h2,
 h3 {
   font-size: 1.2rem;
+}
+
+.takeaway_container h4 {
+  font-weight: bold;
 }
 
 .sorter_pris {
@@ -39,10 +43,15 @@ h3 {
   border: none;
   background-color: rgba(0, 0, 0, 0);
   width: 100%;
+  margin-left: 5px;
 }
 
 .search_container input:focus {
   outline: none;
+}
+
+.kategorier_container {
+  margin-bottom: margins.$marginUnderElementMobile;
 }
 
 .kategorier {
@@ -58,10 +67,60 @@ h3 {
   height: 120px;
   width: 180px;
   opacity: 0.5;
-  z-index: 0;
 }
 .kategorier h3 {
   position: relative;
   color: colors.$off-white;
   align-self: center;
+}
+
+/* RESULTS */
+.result_container {
+  display: grid;
+  justify-content: center;
+  margin-bottom: margins.$marginUnderElementMobile;
+}
+
+.in_basket_number_container {
+  display: flex;
+  justify-content: end;
+}
+
+.in_basket_number {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: colors.$lightBrown;
+  color: colors.$darkBrown;
+  font-weight: bold;
+  width: 30px !important;
+  height: 30px;
+  border-radius: 50px;
+  margin-bottom: -10px;
+  margin-right: -10px;
+}
+
+.item img {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+}
+
+.item p {
+  width: 75%;
+}
+
+.basket_icons {
+  display: flex;
+  justify-content: end;
+  margin-top: -40px;
+}
+
+.remove_from_basket .hw40_icon {
+  color: colors.$darkBlue;
+  margin-right: 20px;
+}
+.add_to_basket .hw40_icon {
+  color: colors.$lightGreen;
 }
