@@ -9,7 +9,10 @@ export default function LandingPage() {
               Nye <b>Tilbud</b>
             </h2>
             <div className="offer">
-              <img src="" alt="Image of a new sushi/ menu offer."></img>
+              <img
+                src="../img/offer1.webp"
+                alt="Image of a new sushi/ menu offer."
+              ></img>
               <p>
                 Den nye sprøde dobbelte tempura maki-rulle med avocado- og
                 agurkeskiver og sojaglaseret spicy tun tekka maki er en perfekt
@@ -17,7 +20,10 @@ export default function LandingPage() {
               </p>
             </div>
             <div className="offer">
-              <img src="" alt="Image of a new sushi/ menu offer."></img>
+              <img
+                src="../img/offer2.webp"
+                alt="Image of a new sushi/ menu offer."
+              ></img>
               <p>
                 Prøv vores friske, forårsinspirerede maki-rulle - blanding af
                 laks og torskefisk med agurker og forårsløg, pakket ind i stegt
@@ -25,10 +31,14 @@ export default function LandingPage() {
               </p>
             </div>
           </div>
-          <div className="newOffers_buttons">
-            <a href="">Ordre nu</a>
-            <a href="">Book bord</a>
-          </div>
+        </div>
+        <div className="newOffers_buttons">
+          <a href="">
+            <button className="primaryBtn">Bestil nu</button>
+          </a>
+          <a href="">
+            <button className="secondaryBtn">Book bord</button>
+          </a>
         </div>
       </section>
     </>

@@ -1,0 +1,56 @@
+@use "colors";
+@use "buttons";
+@use "margins";
+
+.catering_event_section {
+  background-color: colors.$cream;
+}
+
+.events_catering {
+  display: flex;
+  flex-direction: column;
+}
+
+.catering_title {
+  margin-left: margins.$marginHorisontalMobile + 77px;
+  max-width: 45vw;
+  align-self: center;
+}
+
+.event_container {
+  margin-left: margins.$marginHorisontalMobile;
+  margin-right: margins.$marginHorisontalMobile;
+  display: flex;
+  flex-direction: row;
+  column-gap: 21px;
+}
+
+.event_container > div {
+  margin-top: 19px;
+}
+
+.event_container > img {
+  width: 185vw;
+  height: 61.5vw;
+  background-color: colors.$darkBlue;
+  position: relative;
+  top: -17vw;
+}
+
+.catering_container {
+  margin-left: margins.$marginHorisontalMobile + 27px;
+  margin-right: margins.$marginHorisontalMobile;
+  display: flex;
+  flex-direction: row-reverse;
+  column-gap: 15px;
+}
+
+.catering_container > img {
+  width: 185vw;
+  height: 77vw;
+  background-color: colors.$darkBlue;
+}
+
+.catering_container > p {
+  margin-top: 5px;
+}

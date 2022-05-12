@@ -11,11 +11,11 @@ import LandingPage from "./components/LandingPage";
 export default function App() {
   return (
     <div className="App">
-      <Takeaway />
+      {/*   <Takeaway />
       <Kurv />
       <Oplysninger />
       <Betaling />
-      <Bekræftelse />
+      <Bekræftelse /> */}
       <LandingPage />
     </div>
   );

@@ -1,0 +1,57 @@
+@use "colors";
+@use "buttons";
+@use "margins";
+
+.visitUs_section {
+  margin-left: margins.$marginHorisontalMobile;
+  margin-bottom: 80px;
+}
+.visitUs_title {
+  margin-left: 55px;
+}
+
+.times_container {
+  margin-left: 27px;
+  background-color: colors.$darkBlue;
+}
+
+.times {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  color: colors.$cream;
+  margin-top: 28px;
+  margin-left: 28px;
+  margin-bottom: 28px;
+}
+
+.times > h3 {
+  color: colors.$cream;
+}
+
+.time_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.line {
+  width: 92%;
+  height: 0;
+  border: 1px solid colors.$cream;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.openingTimes_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.openingTimes_button {
+  align-self: center;
+  width: fit-content;
+  margin-top: 40px;
+  margin-left: 27px;
+}

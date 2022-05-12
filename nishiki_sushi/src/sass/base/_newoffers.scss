@@ -1,0 +1,74 @@
+@use "colors";
+@use "buttons";
+@use "margins";
+
+.thumbnail_images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.thumbnail_images > a {
+  text-decoration: none;
+  text-decoration-line: none;
+}
+
+.thumbnail_img {
+  display: flex;
+  flex-direction: column;
+}
+
+.thumbnail_images > a > h4 {
+  max-width: min-content;
+  text-align: center;
+  align-self: center;
+  color: colors.$off-white;
+}
+
+.restaurant_title {
+  position: relative;
+  bottom: 20vw;
+}
+
+.takeaway_title {
+  position: relative;
+  bottom: 15vw;
+}
+
+.newOffers_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 80px;
+  margin-top: 50px;
+  background-color: colors.$cream;
+}
+
+.row_flex {
+  display: flex;
+  flex-direction: row;
+  margin-left: margins.$marginHorisontalMobile;
+  margin-right: margins.$marginHorisontalMobile;
+}
+
+.side_ornament {
+  width: 10px;
+}
+
+.offer {
+  max-width: 240px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.offer > p {
+  margin-top: 7px;
+}
+
+.newOffers_buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  margin-bottom: 50px;
+}
