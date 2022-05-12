@@ -1,8 +1,5 @@
 @use "sass/base";
-// @use "sass/pages";
-/*To use variables you can say document.$variablename eg. base.header-font-flurish*/
-
-* {
+@use "sass/pages" /*To use variables you can say document.$variablename eg. base.header-font-flurish*/ * {
   margin: 0;
   box-sizing: border-box;
 }
