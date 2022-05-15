@@ -1,13 +1,13 @@
 export default function VisitUsSection() {
   return (
-    <div className="visitUs_section">
-      <h2 className="visitUs_title">
-        Besøg <b>Os</b>
-      </h2>
-      <div className="openingTimes_container">
-        <section className="times_container">
-          <div className="row_flex">
-            <div className="side_picture"></div>
+    <section className="side_row">
+      <div className="side_picture"></div>
+      <section className="visitUs_section">
+        <h2 className="visitUs_title">
+          Besøg <b>Os</b>
+        </h2>
+        <div className="openingTimes_container">
+          <section className="times_container">
             <div className="times">
               <h3>Åbningtider</h3>
               <div className="line"></div>
@@ -40,14 +40,14 @@ export default function VisitUsSection() {
                 <p>13:00 - 22:00</p>
               </div>
             </div>
+          </section>
+          <div className="openingTimes_button">
+            <a href="">
+              <button className="secondaryBtn">Book bord</button>
+            </a>
           </div>
-        </section>
-        <div className="openingTimes_button">
-          <a href="">
-            <button className="secondaryBtn">Book bord</button>
-          </a>
         </div>
-      </div>
-    </div>
+      </section>
+    </section>
   );
 }

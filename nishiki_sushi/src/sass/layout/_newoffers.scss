@@ -13,9 +13,23 @@
   text-decoration-line: none;
 }
 
+.restaurant_thumbnail {
+  background-image: url("../img/landingimg1.webp");
+  background-position: center left;
+  background-size: 70vw 120vw;
+}
+
+.takeaway_thumbnail {
+  background-image: url("../img/landingimg2.webp");
+  background-position: center;
+  background-size: 60vw 100vw;
+}
+
 .thumbnail_img {
   display: flex;
   flex-direction: column;
+  width: 48vw;
+  height: 100vw;
 }
 
 .thumbnail_images > a > h4 {
@@ -27,12 +41,12 @@
 
 .restaurant_title {
   position: relative;
-  bottom: 20vw;
+  top: 78%;
 }
 
 .takeaway_title {
   position: relative;
-  bottom: 15vw;
+  top: 85%;
 }
 
 .newOffers_section {
@@ -40,7 +54,6 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 80px;
-  margin-top: 50px;
   background-color: colors.$cream;
 }
 
@@ -55,10 +68,26 @@
   width: 10px;
 }
 
+.disappearing_offer {
+  display: none;
+}
+
 .offer {
   max-width: 240px;
   margin-top: 10px;
   margin-bottom: 50px;
+}
+
+.first_offer {
+  background-image: url("../img/offer1.webp");
+  width: 230px;
+  height: 215px;
+}
+
+.second_offer {
+  background-image: url("../img/offer2.webp");
+  width: 230px;
+  height: 215px;
 }
 
 .offer > p {
@@ -71,4 +100,52 @@
   align-items: center;
   row-gap: 10px;
   margin-bottom: 50px;
+}
+
+@media only screen and (min-width: 1099px) {
+  .offers_container {
+    display: flex;
+    flex-direction: row;
+    column-gap: 100px;
+  }
+
+  .disappearing_offer {
+    display: block;
+  }
+
+  .offer {
+    max-width: 388px;
+    margin-top: 70px;
+    margin-bottom: 50px;
+  }
+
+  .third_offer {
+    background-image: url("../img/disapper_offer_desktop.webp");
+    width: 388px;
+    height: 349px;
+    background-size: cover;
+  }
+
+  .first_offer {
+    background-image: url("../img/offer1_desktop.webp");
+    width: 388px;
+    height: 349px;
+    background-size: cover;
+  }
+
+  .second_offer {
+    background-image: url("../img/offer2_desktop.webp");
+    width: 388px;
+    height: 349px;
+    background-size: cover;
+  }
+
+  .newOffers_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 80px;
+    margin-left: margins.$marginHorisontalDesktop;
+    margin-right: margins.$marginHorisontalDesktop;
+  }
 }

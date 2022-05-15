@@ -21,14 +21,16 @@ export default function CateringAndEventsSection() {
           </div>
         </div>
         <div className="catering_container">
-          <img
-            src="../img/visit2.webp"
-            alt="Image for the catering option."
-          ></img>
           <p>
             Lad os hjælpe med at gøre din festlige lejlighed speciel med vores
             catering service. Vi leverer frisklavet sushi til din fest,
             konference, reception, eller hvad du lige har brug for.
+          </p>
+          <p className="disappear_para">
+            Vi hjælper dig med at vurdere hvilke mængder og varianter passer til
+            dit og dine gæsters behov, og hjælper med at sætte maden op i et
+            lækkert display så det er klar til at blive nydt når gæsterne
+            ankommer.
           </p>
         </div>
       </section>

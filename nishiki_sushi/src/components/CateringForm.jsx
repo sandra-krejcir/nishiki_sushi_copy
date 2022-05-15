@@ -1,6 +1,7 @@
 export default function CateringForm() {
   return (
-    <>
+    <div className="side_flex side_column">
+      <div className="catering_img"></div>
       <section className="catering_form">
         <div>
           <h3>Få et tilbud</h3>
@@ -11,35 +12,49 @@ export default function CateringForm() {
             på en samlet pris så hurtigt som muligt.
           </p>
           <form className="cateringForm_container">
-            <label htmlFor="enquiryName" className="form_input">
+            <label
+              htmlFor="enquiryName"
+              className="form_input enquiryName column_formFlex"
+            >
               NAVN
+              <input
+                type="text"
+                id="enquiryName"
+                name="enquiryName"
+                placeholder="John Doe"
+              ></input>
             </label>
-            <input
-              type="text"
-              id="enquiryName"
-              name="enquiryName"
-              placeholder="John Doe"
-            ></input>
-            <label htmlFor="enquiryEmailAddress" className="form_input">
+            <label
+              htmlFor="enquiryEmailAddress"
+              className="form_input enquiryEmailAddress column_formFlex"
+            >
               EMAIL ADRESSE
+              <input
+                type="email"
+                id="enquiryEmailAddress"
+                name="enquiryEmailAddress"
+                placeholder="Johndoe@mail.com"
+              ></input>
             </label>
-            <input
-              type="email"
-              id="enquiryEmailAddress"
-              name="enquiryEmailAddress"
-              placeholder="Johndoe@mail.com"
-            ></input>
-            <label htmlFor="enquiryFestType" className="form_input">
+
+            <label
+              htmlFor="enquiryFestType"
+              className="form_input enquiryFestType column_formFlex"
+            >
               FEST TYPE
+              <select type="text" id="enquiryFestType" name="enquiryFestType">
+                <option value="In-restaurant event">In-restaurant event</option>
+                <option value="Offsite catering">Offsite catering</option>
+              </select>
             </label>
-            <select type="text" id="enquiryFestType" name="enquiryFestType">
-              <option value="In-restaurant event">In-restaurant event</option>
-              <option value="Offsite catering">Offsite catering</option>
-            </select>
-            <label htmlFor="enquiryComment" className="formTextarea_input">
+            <label
+              htmlFor="enquiryComment"
+              className="formTextarea_input enquiryComment column_formFlex"
+            >
               EVENT BESKRIVELSE
+              <textarea id="enquiryComment" name="enquiryComment"></textarea>
             </label>
-            <textarea id="enquiryComment" name="enquiryComment"></textarea>
+
             <div className="enquirySubmit_button">
               <a href="">
                 <button type="submit" className="primaryBtn">
@@ -50,6 +65,6 @@ export default function CateringForm() {
           </form>
         </div>
       </section>
-    </>
+    </div>
   );
 }
