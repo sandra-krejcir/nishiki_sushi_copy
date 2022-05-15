@@ -1,3 +1,5 @@
+import BookBord from "./BookBord";
+
 export default function RestaurantPage() {
   return (
     <>
@@ -30,7 +32,7 @@ export default function RestaurantPage() {
               <h3>Åbningstider</h3>
             </div>
 
-            <div className="seperating-line"></div>
+            <div className="seperating-line-opening"></div>
 
             <div class="restaurant-times-flex">
               <div className="flex-horisontal">
@@ -46,7 +48,10 @@ export default function RestaurantPage() {
         </div>
         <section id="adlibitum-section">
           <div id="adlibitum-intro">
-            <h2>Ad libitum</h2>
+            <h2>
+              <span class="hideOnMobile">Sushi </span>
+              <b>Ad libitum</b>
+            </h2>
             <div>
               <p>Betal et engangsbeløb og smag sushi og sticks fra hele vores ala carte menu.</p>
               <p>Du kan bestille så meget du ønsker, og maden serveres altid frisklavet.</p>
@@ -83,10 +88,20 @@ export default function RestaurantPage() {
               <p>Børn under 3 år spiser gratis</p>
             </div>
           </div>
-          <div id="adlibitum-img-container">
-            <img id="adlibitum-img" src="../img/adlibitum-img.webp" alt="" />
+          <div id="adlibitum-img-container"></div>
+          <div id="adlibitum-line-container">
+            <div class="adlibitum-line"></div>
+            <div class="adlibitum-line"></div>
           </div>
         </section>
+        <section>
+          <div id="bookbord-img-container"></div>
+          <div id="bookbord-line-container">
+            <div className="adlibitum-line"></div>
+            <div className="adlibitum-line"></div>
+          </div>
+        </section>
+        <BookBord />
       </main>
     </>
   );

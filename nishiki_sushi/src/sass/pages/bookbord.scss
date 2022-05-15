@@ -1,0 +1,35 @@
+@use "../base/margins";
+@use "../base/colors";
+
+#app-container {
+  background: colors.$lightWood;
+  padding: 2rem margins.$marginHorisontalMobile;
+}
+
+.book-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  background: red;
+}
+
+#book-icon-flex {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.seperating-line-book {
+  width: 100%;
+  height: 1px;
+  background: colors.$darkBrown;
+  margin: 1rem 0;
+}
+
+.flex-book-adress {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-left: 1.5rem;
+}

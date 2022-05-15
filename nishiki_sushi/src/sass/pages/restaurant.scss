@@ -46,7 +46,7 @@
   gap: 0.5rem;
 }
 
-.seperating-line {
+.seperating-line-opening {
   height: 1px;
   width: calc(100% - margins.$marginHorisontalMobile - margins.$marginHorisontalMobile - margins.$marginHorisontalMobile);
   background: white;
@@ -116,10 +116,20 @@
   height: 120px;
   overflow: hidden;
   padding-top: 0 !important;
+  background: url(./img/adlibitum-img.webp);
+  background-position: center;
+  background-size: cover;
 }
 
 #adlibitum-img {
   width: 100%;
+}
+
+// ----------------- mobile styling
+@media (max-width: margins.$layout-breakpoint-mobile-end) {
+  .hideOnMobile {
+    display: none;
+  }
 }
 
 // ----------------- tablet styling
@@ -168,6 +178,20 @@
     padding: 0 !important;
     margin: 0 !important;
   }
+
+  #adlibitum-line-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - margins.$marginHorisontalTablet);
+  }
+
+  .adlibitum-line {
+    background-color: colors.$lightBrown;
+    position: relative;
+    width: 0.5rem;
+    height: 10rem;
+  }
 }
 
 // ----------------- desktop styling
@@ -198,5 +222,21 @@
 
   .restaurant-flex-buttons {
     flex-direction: row;
+  }
+
+  #adlibitum-section {
+    display: grid;
+    grid-template-columns: 4fr 4fr 5fr;
+    gap: 20px;
+    width: calc(100% - margins.$marginHorisontalDesktop);
+    margin-left: margins.$marginHorisontalDesktop;
+    > div {
+      width: 100% !important;
+    }
+  }
+  #adlibitum-img-container {
+    height: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 }
