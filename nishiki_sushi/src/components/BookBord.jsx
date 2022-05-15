@@ -1,3 +1,9 @@
+import BookStep1 from "./BookStep1";
+import BookStep2 from "./BookStep2";
+import BookStep3 from "./BookStep3";
+import BookStep4 from "./BookStep4";
+import BookStep5 from "./BookStep5";
+
 export default function BookBord() {
   return (
     <section id="book-app">
@@ -21,6 +27,7 @@ export default function BookBord() {
           </p>
         </div>
         <div className="seperating-line-book"></div>
+        <BookStep1 />
       </div>
     </section>
   );

@@ -94,14 +94,14 @@ export default function RestaurantPage() {
             <div class="adlibitum-line"></div>
           </div>
         </section>
-        <section>
+        <section id="table-booking-section">
           <div id="bookbord-img-container"></div>
           <div id="bookbord-line-container">
             <div className="adlibitum-line"></div>
             <div className="adlibitum-line"></div>
           </div>
+          <BookBord />
         </section>
-        <BookBord />
       </main>
     </>
   );
