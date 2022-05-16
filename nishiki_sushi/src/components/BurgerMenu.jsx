@@ -16,6 +16,17 @@ export default function BurgerMenu() {
         <li>
           <NavLink to="/kurv">Kurv</NavLink>
         </li>
+        <ul>
+          <li>
+            <NavLink to="/Oplysninger">Oplysninger</NavLink>
+          </li>
+          <li>
+            <NavLink to="/Betaling">Betaling</NavLink>
+          </li>
+          <li>
+            <NavLink to="/Bekraeftelse">Bekræftelse</NavLink>
+          </li>
+        </ul>
       </ul>
     </nav>
   );
