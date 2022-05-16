@@ -103,10 +103,37 @@
 }
 
 @media only screen and (min-width: 1099px) {
+  .thumbnail_images {
+    display: flex;
+    flex-direction: row;
+    margin-left: margins.$marginHorisontalDesktop;
+    margin-right: margins.$marginHorisontalDesktop;
+    justify-content: space-between;
+  }
+
+  .thumbnail_img {
+    display: flex;
+    flex-direction: column;
+    width: 44vw;
+    height: 55vw;
+  }
+
+  .restaurant_thumbnail {
+    background-image: url("../img/landingimg1.webp");
+    background-position: center left;
+    background-size: 50vw 91vw;
+  }
+
+  .takeaway_thumbnail {
+    background-image: url("../img/landingimg2.webp");
+    background-position: center;
+    background-size: 50vw 80vw;
+  }
+
   .offers_container {
     display: flex;
     flex-direction: row;
-    column-gap: 100px;
+    column-gap: 150px;
   }
 
   .disappearing_offer {
@@ -147,5 +174,10 @@
     margin-bottom: 80px;
     margin-left: margins.$marginHorisontalDesktop;
     margin-right: margins.$marginHorisontalDesktop;
+  }
+
+  .newOffers_buttons {
+    flex-direction: row;
+    column-gap: 30px;
   }
 }
