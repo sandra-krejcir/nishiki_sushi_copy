@@ -6,6 +6,9 @@
 .takeaway_container {
   margin: margins.$marginHorisontalMobile;
 }
+/* .takeaway_container p {
+  margin-bottom: unset;
+} */
 
 .takeaway_headline {
   display: flex;
@@ -35,6 +38,7 @@ h3 {
 .sorter_pris p {
   font-weight: bold;
   text-decoration: underline;
+  margin-bottom: unset;
 }
 .search_container {
   display: flex;

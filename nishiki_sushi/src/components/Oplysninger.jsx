@@ -12,16 +12,16 @@ function Oplysninger() {
           <div className="oplysninger_top">
             <h1>Oplysninger</h1>
             <div className="ingen_lavering_container">
-              <p>Ingen Levering</p>
+              <p className="remove_1rem">Ingen Levering</p>
               <FaTruck className="hw20_icon" />
             </div>
           </div>
           <div className="button_and_afhentling_container">
             <button className="secondaryBtn">
               <MdOutlineKeyboardBackspace className="hw20_icon" />
-              Tilføj mere
+              Kurv
             </button>
-            <p>
+            <p className="remove_1rem">
               Afhenting <MdRestaurant className="hw20_icon" />
             </p>
           </div>

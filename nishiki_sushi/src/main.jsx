@@ -11,6 +11,7 @@ import {
   Oplysninger,
   Betaling,
   Bekraeftelse,
+  RestaurantPage,
 } from "./components";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -20,6 +21,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/takeaway" element={<Takeaway />} />
+        <Route path="/restaurant" element={<RestaurantPage />} />
         <Route path="/kurv" element={<Kurv />} />
         <Route path="/oplysninger" element={<Oplysninger />} />
         <Route path="/betaling" element={<Betaling />} />

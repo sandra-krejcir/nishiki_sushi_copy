@@ -6,3 +6,4 @@ export { default as Kurv } from "./Kurv";
 export { default as Oplysninger } from "./Oplysninger";
 export { default as Betaling } from "./Betaling";
 export { default as Bekraeftelse } from "./Bekraeftelse";
+export { default as RestaurantPage } from "./RestaurantPage";

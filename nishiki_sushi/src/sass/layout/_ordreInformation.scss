@@ -1,0 +1,46 @@
+@use "../base/colors";
+@use "../base/margins";
+@use "../base/effects";
+@use "../base/buttons";
+
+.order_information_item_container {
+  display: grid;
+  grid-template-columns: 0.5fr 3fr 1fr;
+  align-items: center;
+  margin-top: margins.$marginUnderElementMobile;
+}
+
+.order_information_item_container p {
+  font-weight: bold;
+}
+
+.order_information_item_container span {
+  place-self: end;
+}
+
+.order_information {
+  display: grid;
+  grid-template-columns: 0.5fr 3fr 1fr;
+  align-items: center;
+}
+
+.order_information p {
+  grid-column: 2;
+  margin-bottom: margins.$marginUnderElementMobile;
+}
+
+.kvitering_container {
+  margin-top: margins.$marginUnderElementMobile;
+}
+.kvitering_container > * {
+  display: flex;
+  justify-content: space-between;
+}
+
+.line_kurv {
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  margin-top: margins.$marginUnderElementMobile;
+  margin-bottom: margins.$marginUnderElementMobile;
+}

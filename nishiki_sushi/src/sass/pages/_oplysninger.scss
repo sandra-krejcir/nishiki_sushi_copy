@@ -7,10 +7,14 @@
   margin: margins.$marginHorisontalMobile;
 }
 
-.oplysninger_headline {
+.oplysninger_container label {
+  margin-top: 10px;
+}
+
+/* .oplysninger_headline {
   display: flex;
   justify-content: space-between;
-}
+} */
 .oplysninger_container h1 {
   font-size: 2rem;
   margin-bottom: margins.$marginUnderElementMobile;
@@ -28,7 +32,7 @@ h3 {
 }
 
 .oplysninger_form_container {
-  background-color: colors.$lightBrown;
+  background: colors.$lightWood;
   margin: -18px;
   padding: 18px;
   margin-top: margins.$marginUnderElementMobile;

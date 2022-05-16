@@ -48,7 +48,7 @@ function Takeaway() {
             />
             <h4>Food Name</h4>
             <p>Food info ærguaobgro oirae opaiuhr opuerh opeuarhol</p>
-            <p>Pris:</p>
+            <p className="remove_1rem">Pris:</p>
             <div className="basket_icons">
               <div className="remove_from_basket">
                 <BsBasket3Fill className="hw40_icon" />
@@ -62,7 +62,7 @@ function Takeaway() {
         <div className="chosen_kategorie_container">
           <button className="secondaryBtn">
             <MdOutlineKeyboardBackspace className="hw20_icon" />
-            <p>Kategorier</p>
+            Kategorier
           </button>
           <div className="search_container">
             <IoIosSearch className="hw20_icon" />
@@ -83,7 +83,7 @@ function Takeaway() {
             />
             <h4>Food Name</h4>
             <p>Food info orfo wiufh owi eufh owei jfjf rjk f jkf jrffhoewifh</p>
-            <p>Pris:</p>
+            <p className="remove_1rem">Pris:</p>
 
             <div className="basket_icons">
               <div className="remove_from_basket">
