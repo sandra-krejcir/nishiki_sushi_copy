@@ -1,0 +1,90 @@
+@use "../base/margins";
+@use "../base/colors";
+
+#app-container {
+  background: colors.$lightWood;
+  padding: 2rem margins.$marginHorisontalMobile;
+}
+
+#table-booking-section {
+  margin-top: 100px;
+}
+
+.book-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  background: red;
+}
+
+#book-icon-flex {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.seperating-line-book {
+  width: 100%;
+  height: 1px;
+  background: colors.$darkBrown;
+  margin: 1rem 0;
+}
+
+.flex-book-adress {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+// ----------------- mobile styling
+@media (max-width: margins.$layout-breakpoint-mobile-end) {
+  #book-app {
+    margin: margins.$marginHorisontalMobile;
+  }
+}
+
+// ----------------- tablet styling
+@media (min-width: margins.$layout-breakpoint-tablet-start) and (max-width: margins.$layout-breakpoint-tablet-end) {
+  #bookbord-img-container {
+    width: 100%;
+    margin-top: 3.8rem;
+    background: url(./img/adlibitum-img.webp);
+    background-position: center;
+    background-size: cover;
+  }
+
+  #bookbord-line-container {
+    position: absolute;
+  }
+
+  #table-booking-section {
+    width: calc(100% - margins.$marginHorisontalTablet);
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 5.5fr 3fr;
+  }
+}
+
+// ----------------- desktop styling
+@media (min-width: margins.$layout-breakpoint-desktop-start) {
+  #bookbord-img-container {
+    width: 100%;
+    margin-top: 3.8rem;
+    background: url(./img/adlibitum-img.webp);
+    background-position: center;
+    background-size: cover;
+  }
+
+  #bookbord-line-container {
+    position: absolute;
+  }
+
+  #table-booking-section {
+    width: calc(100% - margins.$marginHorisontalDesktop);
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 9fr 4fr;
+  }
+}

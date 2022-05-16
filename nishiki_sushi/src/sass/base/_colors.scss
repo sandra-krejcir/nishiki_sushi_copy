@@ -18,3 +18,10 @@ $blueGradient: linear-gradient(
   rgba(48, 64, 79, 1) 0%,
   rgba(75, 98, 121, 1) 100%
 );
+
+$lightWood: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.5)
+  ),
+  url(../img/wood-bg.webp);
