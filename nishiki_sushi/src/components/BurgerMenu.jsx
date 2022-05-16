@@ -1,18 +1,20 @@
+import { NavLink } from "react-router-dom";
+
 export default function BurgerMenu() {
   return (
     <nav>
       <ul>
         <li>
-          <a href="">Forside</a>
+          <NavLink to="/">Forside</NavLink>
         </li>
         <li>
-          <a href="">Restaurant</a>
+          <NavLink to="/restaurant">Restaurant</NavLink>
         </li>
         <li>
-          <a href="">TakeAway</a>
+          <NavLink to="/takeaway">TakeAway</NavLink>
         </li>
         <li>
-          <a href="">Kurv</a>
+          <NavLink to="/kurv">Kurv</NavLink>
         </li>
       </ul>
     </nav>

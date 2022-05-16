@@ -1,10 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
-/* import './index.css' */
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./style.scss";
+import { BurgerMenu, Footer, Home, Takeaway, Kurv } from "./components";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <BurgerMenu />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/takeaway" element={<Takeaway />} />
+        <Route path="/kurv" element={<Kurv />} />
+      </Routes>
+      {/*    <Footer /> */}
+    </Router>
+    ,
   </React.StrictMode>
 );
