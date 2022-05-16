@@ -28,7 +28,7 @@ export default function BookBord() {
         </div>
         <div className="seperating-line-book"></div>
         <div id="booking-step">
-          <BookStep1 />
+          <BookStep5 />
         </div>
       </div>
     </section>
