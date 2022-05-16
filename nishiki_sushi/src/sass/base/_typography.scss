@@ -27,4 +27,11 @@ h3 {
   font-size: 1.5rem;
 }
 
+label {
+  color: colors.$darkBrown;
+  text-transform: uppercase;
+}
 
+::placeholder {
+  color: colors.$lightBrown;
+}

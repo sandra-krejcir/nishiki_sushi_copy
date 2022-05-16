@@ -1,0 +1,132 @@
+@use "../base/colors";
+@use "../base/margins";
+@use "../base/effects";
+@use "../base/buttons";
+
+.kurv_container {
+  margin: margins.$marginHorisontalMobile;
+}
+
+.kurv_headline {
+  display: flex;
+  justify-content: space-between;
+}
+.kurv_container h1 {
+  font-size: 2rem;
+  margin-bottom: margins.$marginUnderElementMobile;
+  font-weight: bold;
+}
+
+.kurv_container h2,
+h3 {
+  font-size: 1.2rem;
+}
+
+.kurv_top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ingen_lavering_container {
+  display: flex;
+  align-items: center;
+  color: grey;
+}
+
+.ingen_lavering_container .hw20_icon {
+  margin-left: 8px;
+}
+
+.button_and_afhentling_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button_and_afhentling_container button {
+  display: flex;
+  align-items: center;
+  margin-bottom: margins.$marginUnderElementMobile;
+}
+
+.button_and_afhentling_container button p {
+  margin-left: 5px;
+}
+
+.button_and_afhentling_container p {
+  color: colors.$darkBlue;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.inner_kurv_container {
+  background-color: colors.$cream;
+  margin: -18px;
+  padding: 18px;
+  margin-top: margins.$marginUnderElementMobile;
+  margin-bottom: margins.$marginUnderElementMobile;
+}
+
+.kurv_item_top {
+  display: grid;
+  grid-template-columns: 1.4fr 3fr 1fr;
+  align-items: center;
+}
+
+.kurv_item_top span {
+  justify-self: end;
+}
+
+.kurv_remove_add {
+  display: flex;
+  align-items: center;
+}
+
+.kurv_remove_add span {
+  font-weight: bold;
+  margin: 5px;
+}
+
+.kurv_item_top p {
+  font-weight: bold;
+}
+
+.show_hide_indhold_container,
+.kurv_item_info {
+  display: grid;
+  grid-template-columns: 1.4fr 3fr 1fr;
+}
+.show_hide_indhold,
+.kurv_item_info p {
+  grid-column: 2;
+}
+
+.show_hide_indhold p {
+  color: colors.$darkGreen;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.kvitering_container {
+  margin-top: margins.$marginUnderElementMobile;
+}
+.kvitering_container > * {
+  display: flex;
+  justify-content: space-between;
+}
+
+.line_kurv {
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  margin-top: margins.$marginUnderElementMobile;
+  margin-bottom: margins.$marginUnderElementMobile;
+}
+
+.button_container_center {
+  display: flex;
+  justify-content: center;
+  margin-top: margins.$marginUnderElementMobile;
+  margin-bottom: margins.$marginUnderElementMobile;
+}

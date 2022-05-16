@@ -1,0 +1,50 @@
+@use "../base/colors";
+@use "../base/margins";
+@use "../base/effects";
+@use "../base/buttons";
+
+.oplysninger_container {
+  margin: margins.$marginHorisontalMobile;
+}
+
+.oplysninger_headline {
+  display: flex;
+  justify-content: space-between;
+}
+.oplysninger_container h1 {
+  font-size: 2rem;
+  margin-bottom: margins.$marginUnderElementMobile;
+  font-weight: bold;
+}
+
+.oplysninger_container h2,
+h3 {
+  font-size: 1.2rem;
+}
+
+.oplysninger_top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.oplysninger_form_container {
+  background-color: colors.$lightBrown;
+  margin: -18px;
+  padding: 18px;
+  margin-top: margins.$marginUnderElementMobile;
+  margin-bottom: margins.$marginUnderElementMobile;
+}
+
+.oplysninger_form_container p {
+  color: colors.$darkBrown;
+  margin-top: margins.$marginUnderElementMobile;
+  margin-bottom: margins.$marginUnderElementMobile;
+}
+
+.oplysninger_form_container input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  box-shadow: effects.$boxShadowInset;
+  margin-bottom: 10px;
+}
