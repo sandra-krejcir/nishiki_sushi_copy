@@ -12,7 +12,7 @@ export default function RestaurantPage() {
           <p></p>
         </div>
       </header>
-      <main>
+      <main id="restaurant-page-main">
         <div id="restaurant-grid-intro">
           <section id="restaurant-intro-section">
             <h1>Hos Nishiki Sushi</h1>

@@ -3,7 +3,7 @@
 
 #app-container {
   background: colors.$lightWood;
-  padding: 2rem margins.$marginHorisontalMobile;
+  padding: 2rem margins.$marginHorisontalMobile 2.5rem margins.$marginHorisontalMobile;
 }
 
 #table-booking-section {
@@ -36,6 +36,20 @@
   align-items: center;
   gap: 1.5rem;
   margin-left: 1.5rem;
+}
+
+#booking-step {
+  h4 {
+    margin: 1.5rem 0 1rem 0;
+  }
+  button {
+    margin-top: 1.5rem;
+  }
+}
+
+#guest-count {
+  margin-right: 1rem;
+  padding: 5px 15px;
 }
 
 // ----------------- mobile styling

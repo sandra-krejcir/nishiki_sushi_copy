@@ -1,6 +1,6 @@
 export default function BookStep1() {
   return (
-    <div>
+    <>
       <h4>Hvor mange bliver I?</h4>
       <label for="guest-count">
         <select name="guest-count" id="guest-count">
@@ -19,7 +19,8 @@ export default function BookStep1() {
         </select>
         Gæster
       </label>
+      <br />
       <button class="secondaryBtn">Fortsæt</button>
-    </div>
+    </>
   );
 }

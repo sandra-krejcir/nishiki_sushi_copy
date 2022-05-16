@@ -1,6 +1,10 @@
 @use "../base/margins";
 @use "../base/colors";
 
+#restaurant-page-main p {
+  margin-bottom: 0 !important;
+}
+
 .hero-container {
   overflow: hidden;
   height: 230px;
