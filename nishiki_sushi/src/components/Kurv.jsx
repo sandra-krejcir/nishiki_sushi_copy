@@ -11,7 +11,7 @@ function Kurv() {
         <div className="kurv_top">
           <h1>Kurv</h1>
           <div className="ingen_lavering_container">
-            <p>Ingen Levering</p>
+            <p className="remove_1rem">Ingen Levering</p>
             <FaTruck className="hw20_icon" />
           </div>
         </div>
@@ -20,7 +20,7 @@ function Kurv() {
             <MdOutlineKeyboardBackspace className="hw20_icon" />
             Tilføj mere
           </button>
-          <p>
+          <p className="remove_1rem">
             Afhenting <MdRestaurant className="hw20_icon" />
           </p>
         </div>
