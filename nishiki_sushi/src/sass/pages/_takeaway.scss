@@ -58,23 +58,36 @@ h3 {
   outline: none;
 }
 
+.search_container input::placeholder {
+  color: grey;
+}
+
 .kategorier_container {
   margin-bottom: margins.$marginUnderElementMobile;
 }
 
 .kategorier {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  grid-gap: 12px;
+}
+
+.kategorie {
   background-color: colors.$darkBlue;
-  height: 120px;
-  width: 180px;
+  height: 118px;
+  width: 171px;
   display: grid;
   justify-content: center;
 }
 
 .kategorier img {
   position: absolute;
-  height: 120px;
-  width: 180px;
-  opacity: 0.5;
+  height: 118px;
+  width: 171px;
+  /* height: 120px;
+  width: 180px; */
+  /* opacity: 0.5; */
 }
 .kategorier h3 {
   position: relative;
