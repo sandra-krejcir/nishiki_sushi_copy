@@ -8,10 +8,10 @@ import { MdOutlineKeyboardBackspace } from "react-icons/md";
 let sushiData;
 fetchSushiData();
 async function fetchSushiData() {
-  fetch("url", { headers: { "x-apikey": "606d606af55350043100752e" } });
   const restSushi = await fetch(
-    "https://kea21s-6eb0.restdb.io/rest/nishiki-sushi-products?max=2" +
-      "fetchchildren=true"
+    "https://kea21s-6eb0.restdb.io/rest/nishiki-sushi-products?max=39" +
+      "fetchchildren=true",
+    { headers: { "x-apikey": "606d606af55350043100752e" } }
   );
   const dataSushi = await restSushi.json();
   const sushiData = dataSushi;
