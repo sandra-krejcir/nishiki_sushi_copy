@@ -6,7 +6,7 @@ import { MdOutlineKeyboardBackspace } from "react-icons/md";
 /* import { MdOutlineKeyboardBackspace } from "../../img/kategorier_billeder/manedenstilbud.png"; */
 
 let sushiData;
-fetchSushiData();
+await fetchSushiData();
 async function fetchSushiData() {
   const restSushi = await fetch(
     "https://kea21s-6eb0.restdb.io/rest/nishiki-sushi-products?max=39" +
@@ -14,9 +14,11 @@ async function fetchSushiData() {
     { headers: { "x-apikey": "606d606af55350043100752e" } }
   );
   const dataSushi = await restSushi.json();
-  const sushiData = dataSushi;
-  console.log(sushiData);
+  sushiData = dataSushi;
+  /* console.log(sushiData); */
 }
+
+console.log(sushiData);
 
 function Takeaway() {
   return (
@@ -128,26 +130,45 @@ function Takeaway() {
           {}1 Resultater for "{}"
         </h2>
         <div className="result_container">
-          <div className="item">
-            <div className="in_basket_number_container">
-              <p className="in_basket_number">0</p>
-            </div>
-            <img
-              src="https://images-global.nhst.tech/image/bUpscFAvOWZnVnVIQ283TlAyeFI0WFMwZ0RiVjRucGhyek52d0pCdUJ3OD0=/nhst/binary/66e1fa282d12f429459b8b83628bb8b4?image_version=640"
-              alt="food_img"
-            />
-            <h4>Food Name</h4>
-            <p>Food info ærguaobgro oirae opaiuhr opuerh opeuarhol</p>
-            <p className="remove_1rem">Pris:</p>
-            <div className="basket_icons">
-              <div className="remove_from_basket">
-                <BsBasket3Fill className="hw40_icon" />
-              </div>
-              <div className="add_to_basket">
-                <BsBasket3Fill className="hw40_icon" />
-              </div>
-            </div>
-          </div>
+          {sushiData.map((val, key) => {
+            return (
+              <>
+                <div className="item">
+                  <div className="in_basket_number_container">
+                    <p className="in_basket_number">0</p>
+                  </div>
+                  {/* <img
+                    src={
+                      "https://kea21s-6eb0.restdb.io/media/" +
+                      val.sushi_img +
+                      "?s=o"
+                    }
+                    alt="sushi_img"
+                  /> */}
+                  {/*  <img src={val.sushi_img} alt="sushi_img" /> */}
+                  <h4 key={val.name}>
+                    {val.name + " "}
+                    {val.pieces_count}
+                  </h4>
+                  <div style={{ display: "inline-flex" }}>
+                    <p>Pris:</p>
+                    <p className="discount" key={val.discount}>
+                      {val.discount}kr
+                    </p>
+                    <p key={val.price}>{val.price}kr</p>
+                  </div>
+                  <div className="basket_icons">
+                    <div className="remove_from_basket">
+                      <BsBasket3Fill className="hw40_icon" />
+                    </div>
+                    <div className="add_to_basket">
+                      <BsBasket3Fill className="hw40_icon" />
+                    </div>
+                  </div>
+                </div>
+              </>
+            );
+          })}
         </div>
         <div className="chosen_kategorie_container">
           <button className="secondaryBtn">
