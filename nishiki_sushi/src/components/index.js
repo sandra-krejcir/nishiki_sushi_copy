@@ -4,3 +4,8 @@ export { default as Home } from "./LandingPage";
 export { default as Takeaway } from "./Takeaway";
 export { default as Kurv } from "./Kurv";
 export { default as Restaurant } from "./RestaurantPage";
+export { default as BookStep1 } from "./BookStep1";
+export { default as BookStep2 } from "./BookStep2";
+export { default as BookStep3 } from "./BookStep3";
+export { default as BookStep4 } from "./BookStep4";
+export { default as BookStep5 } from "./BookStep5";

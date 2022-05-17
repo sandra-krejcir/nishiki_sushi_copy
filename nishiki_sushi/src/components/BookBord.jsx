@@ -9,6 +9,10 @@ import { RiCalendarLine, RiCalendarCheckLine } from "react-icons/ri";
 import { AiOutlineClockCircle } from "react-icons/ai";
 
 export default function BookBord() {
+  let stepNumber = 1;
+  let stepName = "<BookStep" + stepNumber + " />";
+  console.log(stepName);
+
   return (
     <section id="book-app">
       <h2>Book Bord</h2>
