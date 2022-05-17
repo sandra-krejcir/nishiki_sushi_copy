@@ -68,26 +68,40 @@ h3 {
 
 .kategorier {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); */
+  grid-template-columns: repeat(auto-fill, 180px);
   justify-items: center;
-  grid-gap: 12px;
+  justify-content: center;
+  grid-gap: 9px;
 }
 
 .kategorie {
   background-color: colors.$darkBlue;
-  height: 118px;
-  width: 171px;
+  height: 124px;
+  width: 180px;
+
+  /*  width: 100%;
+  height: 100%;
+  object-fit: cover; */
+
   display: grid;
   justify-content: center;
 }
 
 .kategorier img {
   position: absolute;
-  height: 118px;
-  width: 171px;
+  height: 124px;
+  width: 180px;
+
+  /*  width: 100%;
+  height: 100%;
+  object-fit: cover; */
+
   /* height: 120px;
   width: 180px; */
   /* opacity: 0.5; */
+  box-shadow: effects.$boxShadowPress;
+  cursor: pointer;
 }
 .kategorier h3 {
   position: relative;
