@@ -8,7 +8,7 @@ function Oplysninger() {
   return (
     <>
       <div className="oplysninger_container">
-        <div>
+        <div className="hide_when_off_phone">
           <div className="oplysninger_top">
             <h1>Oplysninger</h1>
             <div className="ingen_lavering_container">

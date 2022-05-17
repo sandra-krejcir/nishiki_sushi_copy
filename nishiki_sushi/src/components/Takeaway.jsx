@@ -9,8 +9,7 @@ let sushiData;
 await fetchSushiData();
 async function fetchSushiData() {
   const restSushi = await fetch(
-    "https://kea21s-6eb0.restdb.io/rest/nishiki-sushi-products?max=39" +
-      "fetchchildren=true",
+    "https://kea21s-6eb0.restdb.io/rest/nishiki-sushi-products?fetchchildren=true",
     { headers: { "x-apikey": "606d606af55350043100752e" } }
   );
   const dataSushi = await restSushi.json();
@@ -21,6 +20,7 @@ async function fetchSushiData() {
 console.log(sushiData);
 
 function Takeaway() {
+  /*  const medieurl = " https:/kea21s-6eb0.restdb.io/media/"; */
   return (
     <>
       <div className="takeaway_container">
@@ -137,11 +137,15 @@ function Takeaway() {
                   <div className="in_basket_number_container">
                     <p className="in_basket_number">0</p>
                   </div>
-                  {/* <img
+                  <img
+                    src="https://images-global.nhst.tech/image/bUpscFAvOWZnVnVIQ283TlAyeFI0WFMwZ0RiVjRucGhyek52d0pCdUJ3OD0=/nhst/binary/66e1fa282d12f429459b8b83628bb8b4?image_version=640"
+                    alt="food_img"
+                  />
+                  {/*   <img
                     src={
                       "https://kea21s-6eb0.restdb.io/media/" +
                       val.sushi_img +
-                      "?s=o"
+                      "?key=606d606af55350043100752e"
                     }
                     alt="sushi_img"
                   /> */}
@@ -150,13 +154,23 @@ function Takeaway() {
                     {val.name + " "}
                     {val.pieces_count}
                   </h4>
+
                   <div style={{ display: "inline-flex" }}>
-                    <p>Pris:</p>
-                    <p className="discount" key={val.discount}>
+                    {val.ingrediants.map((ingVal) => {
+                      return <p>{ingVal.name}</p>;
+                    })}
+                  </div>
+                  <br />
+                  <div style={{ display: "inline-flex" }}>
+                    <p className="remove_1rem">Pris:</p>
+                    <p className="discount remove_1rem" key={val.discount}>
                       {val.discount}kr
                     </p>
-                    <p key={val.price}>{val.price}kr</p>
+                    <p className="remove_1rem" key={val.price}>
+                      {val.price}kr
+                    </p>
                   </div>
+
                   <div className="basket_icons">
                     <div className="remove_from_basket">
                       <BsBasket3Fill className="hw40_icon" />
@@ -183,25 +197,27 @@ function Takeaway() {
             ></input>
           </div>
           <h2>Name of Kategorie </h2>
-          <div className="item">
-            <div className="in_basket_number_container">
-              <p className="in_basket_number">0</p>
-            </div>
-
-            <img
-              src="https://images-global.nhst.tech/image/bUpscFAvOWZnVnVIQ283TlAyeFI0WFMwZ0RiVjRucGhyek52d0pCdUJ3OD0=/nhst/binary/66e1fa282d12f429459b8b83628bb8b4?image_version=640"
-              alt="food_img"
-            />
-            <h4>Food Name</h4>
-            <p>Food info orfo wiufh owi eufh owei jfjf rjk f jkf jrffhoewifh</p>
-            <p className="remove_1rem">Pris:</p>
-
-            <div className="basket_icons">
-              <div className="remove_from_basket">
-                <BsBasket3Fill className="hw40_icon" />
+          <div className="result_container">
+            <div className="item">
+              <div className="in_basket_number_container">
+                <p className="in_basket_number">0</p>
               </div>
-              <div className="add_to_basket">
-                <BsBasket3Fill className="hw40_icon" />
+              <img
+                src="https://images-global.nhst.tech/image/bUpscFAvOWZnVnVIQ283TlAyeFI0WFMwZ0RiVjRucGhyek52d0pCdUJ3OD0=/nhst/binary/66e1fa282d12f429459b8b83628bb8b4?image_version=640"
+                alt="food_img"
+              />
+              <h4>Food Name</h4>
+              <p>
+                Food info orfo wiufh owi eufh owei jfjf rjk f jkf jrffhoewifh
+              </p>
+              <p className="remove_1rem">Pris:</p>
+              <div className="basket_icons">
+                <div className="remove_from_basket">
+                  <BsBasket3Fill className="hw40_icon" />
+                </div>
+                <div className="add_to_basket">
+                  <BsBasket3Fill className="hw40_icon" />
+                </div>
               </div>
             </div>
           </div>

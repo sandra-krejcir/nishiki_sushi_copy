@@ -5,6 +5,8 @@
 
 .oplysninger_container {
   margin: margins.$marginHorisontalMobile;
+  /* display: flex;
+  justify-content: center; */
 }
 
 .oplysninger_container label {
@@ -38,6 +40,7 @@ h3 {
   padding: 18px;
   margin-top: margins.$marginUnderElementMobile;
   margin-bottom: margins.$marginUnderElementMobile;
+  max-width: 800px;
 }
 
 .oplysninger_form_container p {
@@ -52,4 +55,11 @@ h3 {
   border: none;
   box-shadow: effects.$boxShadowInset;
   margin-bottom: 10px;
+}
+
+@media screen and (min-width: 900px) {
+  .oplysninger_container {
+    display: flex;
+    justify-content: center;
+  }
 }

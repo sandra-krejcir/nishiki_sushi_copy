@@ -3,7 +3,7 @@ import { IoMdArrowDropup, IoMdArrowDropdown } from "react-icons/io";
 
 function OrdreInformation() {
   return (
-    <div>
+    <div className="ordreInformation_container">
       <h2>
         <b>Ordre</b> Information
       </h2>

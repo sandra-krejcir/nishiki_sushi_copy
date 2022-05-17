@@ -3,6 +3,10 @@
 @use "../base/effects";
 @use "../base/buttons";
 
+.ordreInformation_container {
+  max-width: 600px;
+}
+
 .order_information_item_container {
   display: grid;
   grid-template-columns: 0.5fr 3fr 1fr;

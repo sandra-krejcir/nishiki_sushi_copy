@@ -3,6 +3,11 @@
 @use "../base/effects";
 @use "../base/buttons";
 
+.betaling_og_info_container {
+  display: grid;
+  justify-content: center;
+}
+
 .betaling_container {
   margin: margins.$marginHorisontalMobile;
 }
@@ -34,6 +39,7 @@ h3 {
   padding: 18px;
   margin-top: margins.$marginUnderElementMobile;
   margin-bottom: margins.$marginUnderElementMobile;
+  max-width: 600px;
 }
 
 .betaling_form_container p {
@@ -83,4 +89,12 @@ option {
   width: unset;
   height: unset;
   margin-right: 10px;
+}
+
+@media screen and (min-width: 1200px) {
+  .betaling_og_info_container {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fit, 600px);
+  }
 }

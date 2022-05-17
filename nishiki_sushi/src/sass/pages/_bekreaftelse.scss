@@ -3,6 +3,11 @@
 @use "../base/effects";
 @use "../base/buttons";
 
+.time_and_info {
+  display: grid;
+  justify-content: center;
+}
+
 .bekræftelse_container {
   margin: margins.$marginHorisontalMobile;
 }
@@ -60,6 +65,7 @@ h3 {
   padding-top: margins.$marginUnderElementMobile;
   padding-bottom: margins.$marginUnderElementMobile;
   margin-bottom: margins.$marginUnderElementMobile;
+  max-width: 600px;
 }
 
 .time_line_left {
@@ -109,4 +115,12 @@ h3 {
 
 .time_line_comment_container {
   grid-row: 4;
+}
+
+@media screen and (min-width: 1200px) {
+  .time_and_info {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fit, 600px);
+  }
 }

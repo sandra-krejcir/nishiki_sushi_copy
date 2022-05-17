@@ -40,30 +40,32 @@ function Bekræftelse() {
             </p>
           </div>
         </div>
-        <div className="time_line_container">
-          <div className="time_line_left">
-            <div className="time_line_name_container">
-              <p className="time_line_name_label">Navn</p>
-              <p className="time_line_name">John Doe</p>
+        <div className="time_and_info">
+          <div className="time_line_container">
+            <div className="time_line_left">
+              <div className="time_line_name_container">
+                <p className="time_line_name_label">Navn</p>
+                <p className="time_line_name">John Doe</p>
+              </div>
+              <div className="time_line_number_container">
+                <p className="time_line_number_label">Mobil Nummer</p>
+                <p className="time_line_number">00 00 00 00</p>
+              </div>
             </div>
-            <div className="time_line_number_container">
-              <p className="time_line_number_label">Mobil Nummer</p>
-              <p className="time_line_number">00 00 00 00</p>
+            <div className="time_line"></div>
+            <div className="time_line_right">
+              <div className="time_line_time_container">
+                <p className="time_line_time_label">Afhentnings tid</p>
+                <p className="time_line_time">15:00</p>
+              </div>
+              <div className="time_line_comment_container">
+                <p className="time_line_comment_label">Kommentarer</p>
+                <p className="time_line_comment">Ingen Citrus</p>
+              </div>
             </div>
           </div>
-          <div className="time_line"></div>
-          <div className="time_line_right">
-            <div className="time_line_time_container">
-              <p className="time_line_time_label">Afhentnings tid</p>
-              <p className="time_line_time">15:00</p>
-            </div>
-            <div className="time_line_comment_container">
-              <p className="time_line_comment_label">Kommentarer</p>
-              <p className="time_line_comment">Ingen Citrus</p>
-            </div>
-          </div>
+          <OrdreInformation />
         </div>
-        <OrdreInformation />
       </div>
     </>
   );

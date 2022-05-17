@@ -25,7 +25,7 @@ function Betaling() {
             </p>
           </div>
         </div>
-        <div>
+        <div className="betaling_og_info_container">
           <div className="betaling_form_container">
             <form id="betaling_form">
               <label htmlFor="betaling_kortnummer">Kortnummer</label>
