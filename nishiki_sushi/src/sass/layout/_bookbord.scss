@@ -4,6 +4,9 @@
 #app-container {
   background: colors.$lightWood;
   padding: 2rem margins.$marginHorisontalMobile 2.5rem margins.$marginHorisontalMobile;
+  * {
+    color: colors.$darkBrown;
+  }
 }
 
 #table-booking-section {
@@ -13,7 +16,6 @@
 .book-icon {
   height: 1.5rem;
   width: 1.5rem;
-  background: red;
 }
 
 #book-icon-flex {
@@ -118,7 +120,7 @@
   #bookbord-img-container {
     width: 100%;
     margin-top: 3.5rem;
-    background: url(./img/adlibitum-img.webp);
+    background: url(./img/book-bord-img.webp);
     background-position: center;
     background-size: cover;
     max-height: 25rem;
@@ -126,6 +128,18 @@
 
   #bookbord-line-container {
     position: absolute;
+    display: flex;
+    margin-left: margins.$marginHorisontalTablet;
+    gap: 0.5rem;
+    z-index: -1;
+  }
+
+  .long {
+    height: 35rem;
+  }
+
+  .short {
+    height: 31rem;
   }
 
   #table-booking-section {
@@ -141,13 +155,26 @@
   #bookbord-img-container {
     width: 100%;
     margin-top: 3.5rem;
-    background: url(./img/adlibitum-img.webp);
+    background: url(./img/book-bord-img.webp);
     background-position: center;
     background-size: cover;
+    max-height: 25rem;
   }
 
   #bookbord-line-container {
     position: absolute;
+    display: flex;
+    margin-left: margins.$marginHorisontalDesktop;
+    gap: 0.5rem;
+    z-index: -1;
+  }
+
+  .long {
+    height: 35rem;
+  }
+
+  .short {
+    height: 31rem;
   }
 
   #table-booking-section {

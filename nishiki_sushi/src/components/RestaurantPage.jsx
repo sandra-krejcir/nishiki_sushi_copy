@@ -91,8 +91,8 @@ export default function RestaurantPage() {
           </div>
           <div id="adlibitum-img-container"></div>
           <div id="adlibitum-line-container">
-            <div className="adlibitum-line"></div>
-            <div className="adlibitum-line"></div>
+            <div className="adlibitum-line short"></div>
+            <div className="adlibitum-line long"></div>
           </div>
         </section>
         <section id="table-booking-section">
