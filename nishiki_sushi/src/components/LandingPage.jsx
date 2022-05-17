@@ -1,10 +1,12 @@
 import NewOffersSection from "./NewOffersSection";
 import VisitUsSection from "./VisitUsSection";
 import CateringAndEventsSection from "./CateringAndEventsSection";
+import BurgerMenu from "./BurgerMenu";
 
 export default function LandingPage() {
   return (
     <>
+      <BurgerMenu page={"home"} />
       <section className="thumbnail_images">
         <a href="" className="thumbnail_img restaurant_thumbnail">
           <h4 className="restaurant_title">

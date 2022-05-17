@@ -1,0 +1,61 @@
+@use "../base/colors";
+@use "../base/buttons";
+@use "../base/margins";
+
+.burgerNav {
+  display: none;
+}
+
+@media only screen and (min-width: 1099px) {
+  .selected {
+    color: colors.$darkBlue;
+  }
+
+  .non-selected {
+    color: #c4c4c4;
+  }
+
+  .burgerNav {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    position: absolute;
+    right: 0;
+    z-index: 5;
+  }
+
+  .burgerNav > ul {
+    padding: margins.$marginHorisontalDesktop;
+    background-color: colors.$cream;
+    z-index: 10;
+    grid-area: 1 / 8 / 2 / 9;
+    list-style: none;
+    text-align: center;
+  }
+
+  .column_flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+
+  .exit_icon {
+    position: absolute;
+    right: 0;
+    z-index: 11;
+    grid-area: 1 / 8 / 2 / 9;
+    margin: 20px;
+  }
+
+  .phone_number {
+    position: absolute;
+    right: 70px;
+    bottom: 45px;
+    z-index: 11;
+    grid-area: 1 / 8 / 2 / 9;
+  }
+
+  .phone_number > a {
+    color: colors.$darkBlue;
+  }
+}
