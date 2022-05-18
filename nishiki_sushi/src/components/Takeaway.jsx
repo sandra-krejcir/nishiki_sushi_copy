@@ -13,7 +13,7 @@ async function fetchSushiData() {
   sushiData = dataSushi;
   /* console.log(sushiData); */
 }
-
+console.log("this is the data:");
 console.log(sushiData);
 
 function Takeaway() {
@@ -98,14 +98,13 @@ function Takeaway() {
                   <div className="in_basket_number_container">
                     <p className="in_basket_number">0</p>
                   </div>
-                  <img src="https://images-global.nhst.tech/image/bUpscFAvOWZnVnVIQ283TlAyeFI0WFMwZ0RiVjRucGhyek52d0pCdUJ3OD0=/nhst/binary/66e1fa282d12f429459b8b83628bb8b4?image_version=640" alt="food_img" />
-                  <img src={"https://kea21s-6eb0.restdb.io/media/" + val.sushi_img + "?key=606d606af55350043100752e"} alt="sushi_img" />
+                  {/* <img src="https://images-global.nhst.tech/image/bUpscFAvOWZnVnVIQ283TlAyeFI0WFMwZ0RiVjRucGhyek52d0pCdUJ3OD0=/nhst/binary/66e1fa282d12f429459b8b83628bb8b4?image_version=640" alt="food_img" /> */}
+                  <img src={"https://rikkeblom.com/nishiki_sushi-images/" + val.img_filename} alt="sushi_img" />
                   {/* <img src={val.sushi_img} alt="sushi_img" /> */}
                   <h4 key={val.name}>
                     {val.name + " "}
                     {val.pieces_count}
                   </h4>
-                  {console.log(val.ingrediants)}
                   <div
                     style={{
                       display: "flex",
