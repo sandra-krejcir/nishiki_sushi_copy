@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function BookStep1() {
-  // const [guestAmount, setGuestAmout] = useState("2");
+  const [guestAmount, setGuestAmout] = useState(2);
   // console.log(guestAmount);
 
   const options = [
@@ -67,15 +67,18 @@ export default function BookStep1() {
     },
   ];
 
-  function change(e) {
-    console.log(e);
-  }
-
   return (
     <>
       <h4>Hvor mange bliver I?</h4>
       <label for="guest-count">
-        <select onClick={change} name="guest-count" id="guest-count">
+        <select
+          value={guestAmount}
+          onChange={(e) => {
+            setGuestAmout(e.target.value);
+          }}
+          name="guest-count"
+          id="guest-count"
+        >
           {options.map((option) => (
             <option value={option.value}>{option.label}</option>
           ))}
@@ -83,7 +86,7 @@ export default function BookStep1() {
         Gæster
       </label>
       <br />
-      <button onClick={change} type="submit" class="secondaryBtn">
+      <button type="submit" class="secondaryBtn">
         Fortsæt
       </button>
     </>
