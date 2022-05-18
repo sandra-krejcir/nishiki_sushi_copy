@@ -5,6 +5,7 @@
 
 .takeaway_container {
   margin: margins.$marginHorisontalMobile;
+  margin-top: 0;
 }
 /* .takeaway_container p {
   margin-bottom: unset;
@@ -182,12 +183,24 @@ h3 {
   margin-left: 5px;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 600px) {
+  .takeaway_container {
+    margin: margins.$marginHorisontalTablet;
+    margin-top: 0;
+  }
+
   .result_container {
     display: grid;
     grid-template-columns: repeat(auto-fill, 300px);
     justify-items: center;
     justify-content: start;
     grid-gap: 18px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .takeaway_container {
+    margin: margins.$marginHorisontalDesktop;
+    margin-top: 0;
   }
 }
