@@ -44,11 +44,28 @@
   h4 {
     margin: 1.5rem 0 1rem 0;
   }
-  button {
+  .secondaryBtn {
     margin-top: 1.5rem;
   }
   input[type="radio"] {
     display: none;
+  }
+
+  .react-calendar__tile,
+  .react-calendar__navigation__label,
+  .react-calendar__navigation__arrow {
+    border: none;
+    margin: 2px;
+  }
+
+  .react-calendar__month-view__weekdays {
+    text-align: center;
+    margin: 1rem 0 0.2rem 0;
+  }
+
+  .react-calendar__month-view__days {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   }
 }
 
