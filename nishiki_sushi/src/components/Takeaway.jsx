@@ -92,64 +92,125 @@ function Takeaway() {
         </h2>
         <div className="result_container">
           {sushiData.map((val, key) => {
-            return (
-              <>
-                <div className="item">
-                  <div className="in_basket_number_container">
-                    <p className="in_basket_number">0</p>
-                  </div>
-                  {/* <img src="https://images-global.nhst.tech/image/bUpscFAvOWZnVnVIQ283TlAyeFI0WFMwZ0RiVjRucGhyek52d0pCdUJ3OD0=/nhst/binary/66e1fa282d12f429459b8b83628bb8b4?image_version=640" alt="food_img" /> */}
-                  <img src={"https://rikkeblom.com/nishiki_sushi-images/" + val.img_filename} alt="sushi_img" />
-                  {/* <img src={val.sushi_img} alt="sushi_img" /> */}
-                  <h4 key={val.name}>
-                    {val.name + " "}
-                    {val.pieces_count}
-                  </h4>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexWrap: "wrap",
-                      flexDirection: "row",
-                      gap: "5px",
-                      width: "inherit",
-                    }}
-                  >
-                    {val.ingrediants.map((ingVal) => {
-                      return (
-                        <p
-                          style={{
-                            width: "max-content",
-                            margin: 0,
-                          }}
-                          key={ingVal.name}
-                        >
-                          {ingVal.name},
-                        </p>
-                      );
-                    })}
-                  </div>
-                  <br />
-                  <div style={{ display: "inline-flex" }}>
-                    <p className="remove_1rem">Pris:</p>
-                    <p className="discount remove_1rem" key={val.discount}>
-                      {val.discount}kr
-                    </p>
-                    <p className="remove_1rem" key={val.price}>
-                      {val.price}kr
-                    </p>
-                  </div>
+            if (val.category === "Dip") {
+              console.log("this is a dip");
+              return (
+                <>
+                  <div className="item">
+                    <div className="in_basket_number_container">
+                      <p className="in_basket_number">0</p>
+                    </div>
+                    <img src={"https://rikkeblom.com/nishiki_sushi-images/" + val.img_filename} alt="sushi_img" />
+                    {/* <img src={val.sushi_img} alt="sushi_img" /> */}
+                    <h4 key={val.name}>
+                      {val.name + " "}
+                      {val.pieces_count}
+                    </h4>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        flexDirection: "row",
+                        gap: "5px",
+                        width: "inherit",
+                      }}
+                    >
+                      {val.ingrediants.map((ingVal) => {
+                        return (
+                          <p
+                            style={{
+                              width: "max-content",
+                              margin: 0,
+                            }}
+                            key={ingVal.name}
+                          >
+                            {ingVal.name},
+                          </p>
+                        );
+                      })}
+                    </div>
+                    <br />
+                    <div style={{ display: "inline-flex" }}>
+                      <p className="remove_1rem">Pris:</p>
+                      <p className="discount remove_1rem" key={val.discount}>
+                        {val.discount}kr
+                      </p>
+                      <p className="remove_1rem" key={val.price}>
+                        {val.price}kr
+                      </p>
+                    </div>
 
-                  <div className="basket_icons">
-                    <div className="remove_from_basket">
-                      <BsBasket3Fill className="hw40_icon" />
-                    </div>
-                    <div className="add_to_basket">
-                      <BsBasket3Fill className="hw40_icon" />
+                    <div className="basket_icons">
+                      <div className="remove_from_basket">
+                        <BsBasket3Fill className="hw40_icon" />
+                      </div>
+                      <div className="add_to_basket">
+                        <BsBasket3Fill className="hw40_icon" />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </>
-            );
+                </>
+              );
+            } else {
+              return (
+                <>
+                  <div className="item">
+                    <div className="in_basket_number_container">
+                      <p className="in_basket_number">0</p>
+                    </div>
+                    {/* <img src="https://images-global.nhst.tech/image/bUpscFAvOWZnVnVIQ283TlAyeFI0WFMwZ0RiVjRucGhyek52d0pCdUJ3OD0=/nhst/binary/66e1fa282d12f429459b8b83628bb8b4?image_version=640" alt="food_img" /> */}
+                    <img src={"https://rikkeblom.com/nishiki_sushi-images/" + val.img_filename} alt="sushi_img" />
+                    {/* <img src={val.sushi_img} alt="sushi_img" /> */}
+                    <h4 key={val.name}>
+                      {val.name + " "}
+                      {val.pieces_count}
+                    </h4>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        flexDirection: "row",
+                        gap: "5px",
+                        width: "inherit",
+                      }}
+                    >
+                      {val.ingrediants.map((ingVal) => {
+                        return (
+                          <p
+                            style={{
+                              width: "max-content",
+                              margin: 0,
+                            }}
+                            key={ingVal.name}
+                          >
+                            {ingVal.name},
+                          </p>
+                        );
+                      })}
+                    </div>
+                    <br />
+                    <div style={{ display: "inline-flex" }}>
+                      <p className="remove_1rem">Pris:</p>
+                      <p className="discount remove_1rem" key={val.discount}>
+                        {val.discount}kr
+                      </p>
+                      <p className="remove_1rem" key={val.price}>
+                        {val.price}kr
+                      </p>
+                    </div>
+
+                    <div className="basket_icons">
+                      <div className="remove_from_basket">
+                        <BsBasket3Fill className="hw40_icon" />
+                      </div>
+                      <div className="add_to_basket">
+                        <BsBasket3Fill className="hw40_icon" />
+                      </div>
+                    </div>
+                  </div>
+                </>
+              );
+            }
           })}
         </div>
         <div className="chosen_kategorie_container">
