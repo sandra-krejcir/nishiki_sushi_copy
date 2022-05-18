@@ -1,0 +1,6 @@
+@use "../base/effects";
+
+.hero_img {
+  width: 100%;
+  box-shadow: effects.$boxShadowImage;
+}

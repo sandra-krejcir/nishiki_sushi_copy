@@ -1,4 +1,5 @@
 import React from "react";
+import BurgerMenu from "./BurgerMenu";
 import OrdreInformation from "./OrdreInformation";
 import { FaTruck } from "react-icons/fa";
 import { MdOutlineKeyboardBackspace, MdRestaurant } from "react-icons/md";
@@ -6,7 +7,18 @@ import { MdOutlineKeyboardBackspace, MdRestaurant } from "react-icons/md";
 function Betaling() {
   return (
     <>
+      <BurgerMenu page={"home"} />
+      <img
+        className="hero_img hide_when_off_phone"
+        src="../../img/hero_img/kurv_hero_mobile.png"
+        alt="takeaway"
+      />
       <div className="betaling_container">
+        <img
+          className="hero_img hide_when_on_phone"
+          src="../../img/hero_img/kurv_hero.png"
+          alt="takeaway"
+        />
         <div>
           <div className="betaling_top">
             <h1>Betaling</h1>

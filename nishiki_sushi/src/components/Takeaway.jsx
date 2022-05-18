@@ -1,4 +1,5 @@
 import React from "react";
+import BurgerMenu from "./BurgerMenu";
 import { IoIosSearch } from "react-icons/io";
 import { BsBasket3Fill } from "react-icons/bs";
 import { TiArrowUnsorted } from "react-icons/ti";
@@ -23,7 +24,19 @@ function Takeaway() {
   /*  const medieurl = " https:/kea21s-6eb0.restdb.io/media/"; */
   return (
     <>
+      <BurgerMenu page={"home"} />
+      <img
+        className="hero_img hide_when_off_phone"
+        src="../../img/hero_img/takeaway_hero_mobile.png"
+        alt="takeaway"
+      />
+
       <div className="takeaway_container">
+        <img
+          className="hero_img hide_when_on_phone"
+          src="../../img/hero_img/takeaway_hero.png"
+          alt="takeaway"
+        />
         <div className="takeaway_headline">
           <h1>
             <b>Take</b>Away

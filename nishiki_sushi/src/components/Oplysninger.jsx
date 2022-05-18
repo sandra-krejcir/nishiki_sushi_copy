@@ -1,4 +1,5 @@
 import React from "react";
+import BurgerMenu from "./BurgerMenu";
 import { FaTruck } from "react-icons/fa";
 import { MdOutlineKeyboardBackspace, MdRestaurant } from "react-icons/md";
 /* import useForm from "react-hook-form"; */
@@ -7,6 +8,12 @@ function Oplysninger() {
   /* const { register, handleSubmit, errors } = useForm(); */
   return (
     <>
+      <BurgerMenu page={"home"} />
+      <img
+        className="hero_img hide_when_off_phone"
+        src="../../img/hero_img/kurv_hero_mobile.png"
+        alt="takeaway"
+      />
       <div className="oplysninger_container">
         <div className="hide_when_off_phone">
           <div className="oplysninger_top">
