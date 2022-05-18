@@ -2,7 +2,7 @@ export default function BookStep4() {
   return (
     <>
       <h4>Bekræft din booking</h4>
-      <p>
+      <p className="booking-summary">
         Booking af bord til <span>2</span> gæster <span>torsdag d. 11. november</span> kl. <span>15:00</span>
       </p>
       <form action="">
@@ -22,7 +22,7 @@ export default function BookStep4() {
           <textarea name="" id="" cols="30" rows="4"></textarea>
         </label>
       </form>
-      <button className="secondaryBtn">Fortsæt</button>
+      <button className="primaryBtn">Fortsæt</button>
     </>
   );
 }

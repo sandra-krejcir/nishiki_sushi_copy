@@ -1,11 +1,15 @@
+import React, { useState } from "react";
+
 export default function BookStep3() {
+  const [state, setState] = useState("1500");
+
   return (
     <>
       <h4>Hvilket tidspunkt?</h4>
-      <form action="">
+      <form id="time-form">
         <input type="radio" id="1500" name="time" value="1500" /> <label for="1500">15:00</label>
         <br />
-        <input type="radio" id="1530" name="time" value="1530" /> <label for="1530">15:30</label>
+        <input data-state="fullybooked" type="radio" id="1530" name="time" value="1530" /> <label for="1530">15:30</label>
         <br />
         <input type="radio" id="1600" name="time" value="1600" /> <label for="1600">16:00</label>
         <br />
@@ -30,7 +34,7 @@ export default function BookStep3() {
         <input type="radio" id="2100" name="time" value="2100" /> <label for="2100">21:00</label>
         <br />
       </form>
-      <button>Fortsæt</button>
+      <button className="secondaryBtn">Fortsæt</button>
     </>
   );
 }

@@ -1,6 +1,10 @@
 @use "../base/margins";
 @use "../base/colors";
 
+#restaurant-page-main p {
+  margin-bottom: 0 !important;
+}
+
 .hero-container {
   overflow: hidden;
   height: 230px;
@@ -125,6 +129,12 @@
   width: 100%;
 }
 
+.adlibitum-line {
+  background-color: colors.$lightBrown;
+  position: relative;
+  width: 0.7rem;
+}
+
 // ----------------- mobile styling
 @media (max-width: margins.$layout-breakpoint-mobile-end) {
   .hideOnMobile {
@@ -181,16 +191,21 @@
 
   #adlibitum-line-container {
     position: absolute;
-    top: 0;
     right: 0;
-    width: calc(100% - margins.$marginHorisontalTablet);
-  }
+    display: flex;
+    margin-right: margins.$marginHorisontalTablet !important;
+    margin-top: -6rem !important;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap: 0.5rem;
+    z-index: -1;
 
-  .adlibitum-line {
-    background-color: colors.$lightBrown;
-    position: relative;
-    width: 0.5rem;
-    height: 10rem;
+    .short {
+      height: 26rem;
+    }
+    .long {
+      height: 29rem;
+    }
   }
 }
 
@@ -238,5 +253,24 @@
     height: 100%;
     padding: 0 !important;
     margin: 0 !important;
+  }
+
+  #adlibitum-line-container {
+    position: absolute;
+    right: 0;
+    display: flex;
+    margin-right: margins.$marginHorisontalDesktop !important;
+    margin-top: -6rem !important;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap: 0.5rem;
+    z-index: -1;
+
+    .short {
+      height: 26rem;
+    }
+    .long {
+      height: 29rem;
+    }
   }
 }

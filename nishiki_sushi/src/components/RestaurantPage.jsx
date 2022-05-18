@@ -1,4 +1,5 @@
 import BookBord from "./BookBord";
+import Footer from "./Footer";
 
 export default function RestaurantPage() {
   return (
@@ -12,7 +13,7 @@ export default function RestaurantPage() {
           <p></p>
         </div>
       </header>
-      <main>
+      <main id="restaurant-page-main">
         <div id="restaurant-grid-intro">
           <section id="restaurant-intro-section">
             <h1>Hos Nishiki Sushi</h1>
@@ -27,14 +28,14 @@ export default function RestaurantPage() {
           </section>
 
           <section id="restaurant-openinghours-section">
-            <div class="restaurant-times-flex">
+            <div className="restaurant-times-flex">
               <p className="caps">Besøg restauranten</p>
               <h3>Åbningstider</h3>
             </div>
 
             <div className="seperating-line-opening"></div>
 
-            <div class="restaurant-times-flex">
+            <div className="restaurant-times-flex">
               <div className="flex-horisontal">
                 <p>Mandag - Torsdag</p>
                 <p>15:00 - 22:00</p>
@@ -49,7 +50,7 @@ export default function RestaurantPage() {
         <section id="adlibitum-section">
           <div id="adlibitum-intro">
             <h2>
-              <span class="hideOnMobile">Sushi </span>
+              <span className="hideOnMobile">Sushi </span>
               <b>Ad libitum</b>
             </h2>
             <div>
@@ -60,7 +61,7 @@ export default function RestaurantPage() {
           </div>
           <div id="adlibitum-prices">
             <div>
-              <p class="Large-caps-tag">
+              <p className="Large-caps-tag">
                 Frokost <span>13-16</span>
               </p>
               <div className="flex-horisontal">
@@ -70,7 +71,7 @@ export default function RestaurantPage() {
             </div>
             <div>
               <div>
-                <p class="Large-caps-tag">
+                <p className="Large-caps-tag">
                   Aften <span>16-22</span>
                 </p>
                 <div className="flex-horisontal">
@@ -90,19 +91,20 @@ export default function RestaurantPage() {
           </div>
           <div id="adlibitum-img-container"></div>
           <div id="adlibitum-line-container">
-            <div class="adlibitum-line"></div>
-            <div class="adlibitum-line"></div>
+            <div className="adlibitum-line short"></div>
+            <div className="adlibitum-line long"></div>
           </div>
         </section>
         <section id="table-booking-section">
           <div id="bookbord-img-container"></div>
           <div id="bookbord-line-container">
-            <div className="adlibitum-line"></div>
-            <div className="adlibitum-line"></div>
+            <div className="adlibitum-line long"></div>
+            <div className="adlibitum-line short"></div>
           </div>
           <BookBord />
         </section>
       </main>
+      <Footer />
     </>
   );
 }
