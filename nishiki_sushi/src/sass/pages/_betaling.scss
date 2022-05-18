@@ -100,14 +100,14 @@ option {
   }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: margins.$layout-breakpoint-mobile-end) {
   .betaling_container {
     margin: margins.$marginHorisontalTablet;
     margin-top: 0;
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: margins.$layout-breakpoint-desktop-start) {
   .betaling_container {
     margin: margins.$marginHorisontalDesktop;
     margin-top: 0;

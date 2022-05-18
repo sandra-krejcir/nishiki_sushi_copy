@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import BurgerMenu from "./BurgerMenu";
 import { IoIosSearch } from "react-icons/io";
 import { BsBasket3Fill } from "react-icons/bs";
 import { TiArrowUnsorted } from "react-icons/ti";
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
-/* import { MdOutlineKeyboardBackspace } from "../../img/kategorier_billeder/manedenstilbud.png"; */
 
 let sushiData;
 await fetchSushiData();
@@ -18,10 +17,16 @@ async function fetchSushiData() {
   /* console.log(sushiData); */
 }
 
-console.log(sushiData);
+/* console.log(sushiData); */
 
 function Takeaway() {
-  /*  const medieurl = " https:/kea21s-6eb0.restdb.io/media/"; */
+  const [searchTerm, setsearchTerm] = useState("");
+  const [visible, setVisible] = useState(true);
+
+  const onChangeSearch = () => {
+    setVisible(!visible);
+    console.log("heloo");
+  };
   return (
     <>
       <BurgerMenu page={"home"} />
@@ -51,9 +56,21 @@ function Takeaway() {
           <input
             type="text"
             placeholder="Søg efter sushi eller ingredienser"
+            onChange={(event) => {
+              setsearchTerm(event.target.value);
+              if (searchTerm.length < 1) {
+                onChangeSearch();
+              } else if (searchTerm.length === 0) {
+              }
+            }}
+            /* onClick={onChangeSearch} */
           ></input>
         </div>
-        <div className="kategorier_container">
+        <div
+          className={`hidden ${
+            visible ? "show" : "hidden"
+          } kategorier_container`}
+        >
           <h2>Kategorier</h2>
           <div className="kategorier">
             <div className="kategorie manedens_tilbud">
@@ -143,68 +160,85 @@ function Takeaway() {
           {}1 Resultater for "{}"
         </h2>
         <div className="result_container">
-          {sushiData.map((val, key) => {
-            return (
-              <>
-                <div className="item">
-                  <div className="in_basket_number_container">
-                    <p className="in_basket_number">0</p>
-                  </div>
-                  <img
-                    src="https://images-global.nhst.tech/image/bUpscFAvOWZnVnVIQ283TlAyeFI0WFMwZ0RiVjRucGhyek52d0pCdUJ3OD0=/nhst/binary/66e1fa282d12f429459b8b83628bb8b4?image_version=640"
-                    alt="food_img"
-                  />
-                  <img
-                    src={
-                      "https://kea21s-6eb0.restdb.io/media/" +
-                      val.sushi_img +
-                      "?key=606d606af55350043100752e"
-                    }
-                    alt="sushi_img"
-                  />
-                  {/* <img src={val.sushi_img} alt="sushi_img" /> */}
-                  <h4 key={val.name}>
-                    {val.name + " "}
-                    {val.pieces_count}
-                  </h4>
-                  {console.log(val.ingrediants)}
-                  <div
-                    style={{
-                      display: "flex",
-                      flexWrap: "wrap",
-                      gap: "5px",
-                      width: "100%",
-                    }}
-                  >
-                    {val.ingrediants.map((ingVal) => {
-                      return <p key={ingVal.name}>{ingVal.name},</p>;
-                    })}
-                  </div>
-                  <br />
-                  <div style={{ display: "inline-flex" }}>
-                    <p className="remove_1rem">Pris:</p>
-                    <p className="discount remove_1rem" key={val.discount}>
-                      {val.discount}kr
-                    </p>
-                    <p className="remove_1rem" key={val.price}>
-                      {val.price}kr
-                    </p>
-                  </div>
+          {sushiData
+            .filter((val) => {
+              if (searchTerm == "") {
+                return null;
+              } else if (
+                val.name.toLowerCase().includes(searchTerm.toLowerCase())
+              ) {
+                /*  onChangeSearch(); */
+                return val;
+              }
+              /* else if (
+                ingVal.name.toLowerCase().includes(searchTerm.toLowerCase())
+              ) {
+                return val;
+              } */
+            })
+            .map((val, key) => {
+              return (
+                <>
+                  {/*  <div className={`hidden ${visible ? "show" : ""}item`}> */}
+                  <div className="item">
+                    <div className="in_basket_number_container">
+                      <p className="in_basket_number">0</p>
+                    </div>
+                    <img
+                      src="https://images-global.nhst.tech/image/bUpscFAvOWZnVnVIQ283TlAyeFI0WFMwZ0RiVjRucGhyek52d0pCdUJ3OD0=/nhst/binary/66e1fa282d12f429459b8b83628bb8b4?image_version=640"
+                      alt="food_img"
+                    />
+                    {/*  <img
+                      src={
+                        "https://kea21s-6eb0.restdb.io/media/" +
+                        val.sushi_img +
+                        "?key=606d606af55350043100752e"
+                      }
+                      alt="sushi_img"
+                    /> */}
+                    {/* <img src={val.sushi_img} alt="sushi_img" /> */}
+                    <h4 key={val.name}>
+                      {val.name + " "}
+                      {val.pieces_count}
+                    </h4>
+                    {/*  {console.log(val.ingrediants)} */}
+                    <div
+                      style={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        gap: "5px",
+                        width: "100%",
+                      }}
+                    >
+                      {val.ingrediants.map((ingVal) => {
+                        return <p key={ingVal.name}>{ingVal.name},</p>;
+                      })}
+                    </div>
+                    <br />
+                    <div style={{ display: "inline-flex" }}>
+                      <p className="remove_1rem">Pris:</p>
+                      <p className="discount remove_1rem" key={val.discount}>
+                        {val.discount}kr
+                      </p>
+                      <p className="remove_1rem" key={val.price}>
+                        {val.price}kr
+                      </p>
+                    </div>
 
-                  <div className="basket_icons">
-                    <div className="remove_from_basket">
-                      <BsBasket3Fill className="hw40_icon" />
-                    </div>
-                    <div className="add_to_basket">
-                      <BsBasket3Fill className="hw40_icon" />
+                    <div className="basket_icons">
+                      <div className="remove_from_basket">
+                        <BsBasket3Fill className="hw40_icon" />
+                      </div>
+                      <div className="add_to_basket">
+                        <BsBasket3Fill className="hw40_icon" />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </>
-            );
-          })}
+                </>
+              );
+            })}
         </div>
-        <div className="chosen_kategorie_container">
+        <div className="chosen_kategorie_container hidden">
           <button className="secondaryBtn">
             <MdOutlineKeyboardBackspace className="hw20_icon" />
             Kategorier
