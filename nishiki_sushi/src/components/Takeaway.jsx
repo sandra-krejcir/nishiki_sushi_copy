@@ -141,23 +141,30 @@ function Takeaway() {
                     src="https://images-global.nhst.tech/image/bUpscFAvOWZnVnVIQ283TlAyeFI0WFMwZ0RiVjRucGhyek52d0pCdUJ3OD0=/nhst/binary/66e1fa282d12f429459b8b83628bb8b4?image_version=640"
                     alt="food_img"
                   />
-                  {/*   <img
+                  <img
                     src={
                       "https://kea21s-6eb0.restdb.io/media/" +
                       val.sushi_img +
                       "?key=606d606af55350043100752e"
                     }
                     alt="sushi_img"
-                  /> */}
-                  {/*  <img src={val.sushi_img} alt="sushi_img" /> */}
+                  />
+                  {/* <img src={val.sushi_img} alt="sushi_img" /> */}
                   <h4 key={val.name}>
                     {val.name + " "}
                     {val.pieces_count}
                   </h4>
-
-                  <div style={{ display: "inline-flex" }}>
+                  {console.log(val.ingrediants)}
+                  <div
+                    style={{
+                      display: "flex",
+                      flexWrap: "wrap",
+                      gap: "5px",
+                      width: "100%",
+                    }}
+                  >
                     {val.ingrediants.map((ingVal) => {
-                      return <p>{ingVal.name}</p>;
+                      return <p key={ingVal.name}>{ingVal.name},</p>;
                     })}
                   </div>
                   <br />
