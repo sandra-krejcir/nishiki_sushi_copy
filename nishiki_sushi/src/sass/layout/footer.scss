@@ -1,0 +1,68 @@
+@use "../base/colors";
+@use "../base/buttons";
+@use "../base/margins";
+
+@media only screen and (min-width: 1099px) {
+  footer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: margins.$marginHorisontalDesktop;
+    background-color: colors.$darkBlue;
+    color: colors.$off-white;
+    font-size: 1.2rem;
+  }
+
+  footer > nav > ul {
+    list-style: none;
+    position: relative;
+    top: -180px;
+  }
+
+  .map_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+  }
+
+  .mini_nav > ul {
+    list-style: none;
+    margin-left: 120px;
+  }
+
+  .mini_nav > ul > li {
+    margin-bottom: 45px;
+  }
+
+  .mini_nav > ul > li > a {
+    color: colors.$off-white;
+    margin: 15px;
+  }
+
+  footer > div > div > div > h4 {
+    color: colors.$off-white;
+  }
+
+  .footer_times {
+    margin-top: 50px;
+  }
+
+  .footer_times > div {
+    display: flex;
+    flex-direction: row;
+    column-gap: 45px;
+    text-align: justify;
+  }
+
+  .footer_insta {
+    margin-top: 63px;
+    margin-left: 30.5px;
+  }
+
+  .footer_facebook {
+    margin-top: 40px;
+    margin-left: 28.5px;
+  }
+}

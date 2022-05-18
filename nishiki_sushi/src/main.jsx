@@ -17,7 +17,6 @@ import {
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Router>
-      <BurgerMenu />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/takeaway" element={<Takeaway />} />
@@ -27,8 +26,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/betaling" element={<Betaling />} />
         <Route path="/bekraeftelse" element={<Bekraeftelse />} />
       </Routes>
-      {/*    <Footer /> */}
+      <Footer />
     </Router>
-    ,
   </React.StrictMode>
 );
