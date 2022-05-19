@@ -87,10 +87,11 @@
   }
 
   .catering_container {
-    max-width: 45%;
+    // max-width: 45%;
     font-weight: 500;
     font-size: 1.2rem;
-    margin-top: -120px;
+    margin-top: -60px;
+    margin-left: margins.$marginHorisontalTablet;
     margin-right: margins.$marginHorisontalTablet + 280px;
     float: right;
   }
@@ -135,11 +136,12 @@
   }
 
   .catering_container {
-    max-width: 45%;
+    // max-width: 45%;
     font-weight: 500;
     font-size: 1.2rem;
     margin-top: -120px;
-    margin-right: margins.$marginHorisontalDesktop + 280px;
+    margin-left: margins.$marginHorisontalDesktop + 175px;
+    margin-right: margins.$marginHorisontalDesktop + 260px;
     float: right;
   }
 }
