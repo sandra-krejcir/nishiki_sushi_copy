@@ -37,7 +37,7 @@ function Kurv() {
             Afhenting <MdRestaurant className="hw20_icon" />
           </p>
         </div>
-        <div style={{ display: "flex", justifyContent: "center" }}>
+        <div className="mid_kurv_container">
           <div className="inner_kurv_container">
             <div>
               <div className="kurv_item_top">
@@ -78,7 +78,7 @@ function Kurv() {
                 <span>000</span>
               </div>
             </div>
-            <div className="button_container_center">
+            <div className="button_container_center hide_when_off_phone exstra_hidden">
               <button className="primaryBtn hide_when_off_phone">
                 Angiv Oplysninger
               </button>

@@ -6,6 +6,7 @@
 .betaling_og_info_container {
   display: grid;
   justify-content: center;
+  
 }
 
 .betaling_container {
@@ -32,7 +33,10 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  margin-top: margins.$marginUnderElementMobile;
 }
+
+
 
 .betaling_form_container {
   background: colors.$lightWood;
@@ -105,15 +109,10 @@ option {
     margin-top: 0;
   }
 
-  /* .betaling_og_info_container {
-    margin-left: -50px;
-    padding-left: 50px;
-  } */
-  /*  .betaling_form_container {
-    margin-left: -50px;
-    padding-left: 50px;
-  } */
+
 }
+
+
 
 @media screen and (min-width: margins.$layout-breakpoint-desktop-start) {
   .betaling_container {
