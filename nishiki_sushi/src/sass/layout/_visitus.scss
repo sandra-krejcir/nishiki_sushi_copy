@@ -56,16 +56,24 @@
   margin-left: 27px;
 }
 
-@media only screen and (min-width: 1099px) {
+@media only screen and (min-width: margins.$layout-breakpoint-tablet-start) and (max-width: margins.$layout-breakpoint-tablet-end) {
+  .visitUs_title {
+    margin-left: 35px;
+    margin-top: 20px;
+  }
   .side_picture {
-    background-image: url("../img/restaurant_visitus.webp");
+    background-image: url("../img/visitus.webp");
     /*  width: 822.67px;
     height: 617px; */
-    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 65vw 70vw;
+    height: 67vw;
+    align-self: center;
   }
+
   .visitUs_section {
     /* margin-right: margins.$marginHorisontalDesktop; */
-    margin-bottom: 80px;
+    margin-top: 80px;
     max-width: 100%;
     margin-left: 0;
   }
@@ -75,9 +83,10 @@
     flex-direction: row;
     max-width: 100%; */
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    margin-left: margins.$marginHorisontalDesktop;
-    margin-right: margins.$marginHorisontalDesktop;
+    grid-template-columns: 1.75fr 1fr;
+    margin-left: margins.$marginHorisontalTablet;
+    margin-right: margins.$marginHorisontalTablet;
+    margin-bottom: margins.$marginHorisontalTablet;
   }
   .times {
     /* width: 100%; */
@@ -90,7 +99,56 @@
   }
 
   .times_container {
-    margin-right: 27px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .openingTimes_button {
+    align-self: center;
+    width: fit-content;
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (min-width: 1225px) {
+  .side_picture {
+    background-image: url("../img/visitus.webp");
+    /*  width: 822.67px;
+    height: 617px; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left center;
+  }
+
+  .visitUs_section {
+    /* margin-right: margins.$marginHorisontalDesktop; */
+    margin-top: 80px;
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .side_row {
+    /* display: flex;
+    flex-direction: row;
+    max-width: 100%; */
+    display: grid;
+    grid-template-columns: 1.75fr 1fr;
+    margin-left: margins.$marginHorisontalDesktop;
+    margin-right: margins.$marginHorisontalDesktop;
+    margin-bottom: margins.$marginHorisontalDesktop;
+  }
+  .times {
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    color: colors.$cream;
+    margin-top: 28px;
+    margin-left: 28px;
+    margin-bottom: 28px;
+  }
+
+  .times_container {
+    margin-right: 0;
     margin-left: 0;
   }
 }
