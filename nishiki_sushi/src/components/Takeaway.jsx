@@ -30,6 +30,7 @@ function Takeaway() {
       <img className="hero_img hide_when_off_phone" src="../../img/hero_img/takeaway_hero_mobile.png" alt="takeaway" />
 
       <div className="takeaway_container">
+        <img src="../icons/logo.svg" alt="The logo icon." className="header_logo" />
         <img className="hero_img hide_when_on_phone" src="../../img/hero_img/takeaway_hero.png" alt="takeaway" />
         <div className="takeaway_headline">
           <h1>
@@ -52,16 +53,10 @@ function Takeaway() {
               } else if (searchTerm.length === 0) {
               }
             }}
-           /*  onClick={onChangeSearch} */
+            /*  onClick={onChangeSearch} */
           ></input>
         </div>
-        <div
-          className={`hidden ${
-            visible ? "show" : ""
-          } kategorier_container`}
-         
-
-        >
+        <div className={`hidden ${visible ? "show" : ""} kategorier_container`}>
           <h2>Kategorier</h2>
           <div className="kategorier">
             <div className="kategorie manedens_tilbud">
@@ -122,7 +117,7 @@ function Takeaway() {
             .filter((val) => {
               if (searchTerm == "") {
                 return null;
-               /*  return val; */
+                /*  return val; */
               } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
                 /*  onChangeSearch(); */
                 return val;
