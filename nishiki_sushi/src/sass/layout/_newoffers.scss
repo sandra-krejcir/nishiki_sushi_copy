@@ -250,8 +250,10 @@
   .offers_container {
     display: flex;
     flex-direction: row;
-    column-gap: 10vw;
-    margin-right: 50px;
+    justify-content: space-between;
+    // width: calc(100% - margins.$marginHorisontalDesktop);
+    column-gap: 1.5rem;
+    // margin-right: 50px;
   }
 
   .disappearing_offer {
@@ -261,11 +263,12 @@
   .offers_section {
     display: flex;
     flex-direction: column;
+    width: calc(100% - margins.$marginHorisontalDesktop);
   }
 
   .offer {
     max-width: 388px;
-    margin-top: 70px;
+    // margin-top: 70px;
     margin-bottom: 50px;
   }
 
@@ -293,7 +296,7 @@
   .newOffers_section {
     display: grid;
     grid-template-columns: 0.5fr 3fr;
-    margin-bottom: 80px;
+    // margin-bottom: 80px;
     margin-left: margins.$marginHorisontalDesktop;
     margin-right: margins.$marginHorisontalDesktop;
   }
