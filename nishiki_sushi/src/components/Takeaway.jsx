@@ -52,7 +52,7 @@ function Takeaway() {
               } else if (searchTerm.length === 0) {
               }
             }}
-            onClick={onChangeSearch}
+           /*  onClick={onChangeSearch} */
           ></input>
         </div>
         <div
