@@ -116,9 +116,12 @@ function Takeaway() {
           {sushiData
             .filter((val) => {
               if (searchTerm == "") {
+                console.log("empty string");
                 return null;
                 /*  return val; */
               } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                console.log("value");
+                console.log(val.ingrediants);
                 /*  onChangeSearch(); */
                 return val;
               }
