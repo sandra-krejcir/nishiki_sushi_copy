@@ -19,7 +19,9 @@
 }
 
 #restaurant-intro-section {
-  width: calc(100% - margins.$marginHorisontalMobile - margins.$marginHorisontalMobile);
+  width: calc(
+    100% - margins.$marginHorisontalMobile - margins.$marginHorisontalMobile
+  );
   margin-left: margins.$marginHorisontalMobile;
   margin-right: margins.$marginHorisontalMobile;
 }
@@ -36,7 +38,9 @@
   }
   > * {
     padding-left: margins.$marginHorisontalMobile;
-    padding-right: calc(margins.$marginHorisontalMobile + margins.$marginHorisontalMobile);
+    padding-right: calc(
+      margins.$marginHorisontalMobile + margins.$marginHorisontalMobile
+    );
   }
 }
 
@@ -52,9 +56,14 @@
 
 .seperating-line-opening {
   height: 1px;
-  width: calc(100% - margins.$marginHorisontalMobile - margins.$marginHorisontalMobile - margins.$marginHorisontalMobile);
+  width: calc(
+    100% - margins.$marginHorisontalMobile - margins.$marginHorisontalMobile -
+      margins.$marginHorisontalMobile
+  );
   background: white;
-  margin: 1.5rem calc(margins.$marginHorisontalMobile + margins.$marginHorisontalMobile) 1.5rem margins.$marginHorisontalMobile;
+  margin: 1.5rem
+    calc(margins.$marginHorisontalMobile + margins.$marginHorisontalMobile)
+    1.5rem margins.$marginHorisontalMobile;
 }
 
 .restaurant-flex-buttons {
@@ -88,7 +97,9 @@
   background: colors.$cream;
   > * {
     padding-right: margins.$marginHorisontalMobile;
-    padding-left: calc(margins.$marginHorisontalMobile + margins.$marginHorisontalMobile);
+    padding-left: calc(
+      margins.$marginHorisontalMobile + margins.$marginHorisontalMobile
+    );
   }
   div {
     display: flex;
@@ -103,7 +114,9 @@
   background-position: center;
   > * {
     padding-right: margins.$marginHorisontalMobile;
-    padding-left: calc(margins.$marginHorisontalMobile + margins.$marginHorisontalMobile);
+    padding-left: calc(
+      margins.$marginHorisontalMobile + margins.$marginHorisontalMobile
+    );
   }
   display: flex;
   flex-direction: column;
@@ -149,7 +162,9 @@
   }
 
   .hero-image {
-    width: calc(100% - margins.$marginHorisontalTablet - margins.$marginHorisontalTablet);
+    width: calc(
+      100% - margins.$marginHorisontalTablet - margins.$marginHorisontalTablet
+    );
   }
 
   #restaurant-grid-intro {
@@ -215,7 +230,9 @@
     height: 294px;
   }
   .hero-image {
-    width: calc(100% - margins.$marginHorisontalDesktop - margins.$marginHorisontalDesktop);
+    width: calc(
+      100% - margins.$marginHorisontalDesktop - margins.$marginHorisontalDesktop
+    );
   }
   #restaurant-grid-intro {
     display: grid;

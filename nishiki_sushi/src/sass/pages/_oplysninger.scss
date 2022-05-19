@@ -57,7 +57,7 @@ h3 {
   margin-bottom: 10px;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: margins.$layout-breakpoint-desktop-start) {
   .oplysninger_container {
     display: flex;
     justify-content: center;

@@ -10,6 +10,7 @@
 
 .betaling_container {
   margin: margins.$marginHorisontalMobile;
+  margin-top: 0;
 }
 
 .betaling_container label {
@@ -91,10 +92,24 @@ option {
   margin-right: 10px;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1399px) {
   .betaling_og_info_container {
     display: grid;
     justify-content: space-between;
     grid-template-columns: repeat(auto-fit, 600px);
+  }
+}
+
+@media screen and (min-width: margins.$layout-breakpoint-mobile-end) {
+  .betaling_container {
+    margin: margins.$marginHorisontalTablet;
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: margins.$layout-breakpoint-desktop-start) {
+  .betaling_container {
+    margin: margins.$marginHorisontalDesktop;
+    margin-top: 0;
   }
 }

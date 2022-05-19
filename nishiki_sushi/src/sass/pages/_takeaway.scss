@@ -5,14 +5,13 @@
 
 .takeaway_container {
   margin: margins.$marginHorisontalMobile;
+  margin-top: 0;
 }
-/* .takeaway_container p {
-  margin-bottom: unset;
-} */
 
 .takeaway_headline {
   display: flex;
   justify-content: space-between;
+  margin-top: margins.$marginUnderElementMobile;
 }
 .takeaway_container h1 {
   font-size: 2rem;
@@ -69,20 +68,18 @@ h3 {
 .kategorier {
   display: grid;
   /* grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); */
-  grid-template-columns: repeat(auto-fill, 180px);
+  /* grid-template-columns: repeat(auto-fill, 155px); */
+  grid-template-columns: 1fr 1fr;
   justify-items: center;
-  justify-content: start;
+  justify-content: center;
   grid-gap: 9px;
 }
 
 .kategorie {
   background-color: colors.$darkBlue;
-  height: 124px;
-  width: 180px;
 
-  /*  width: 100%;
-  height: 100%;
-  object-fit: cover; */
+  height: 109px;
+  width: 158px;
 
   display: grid;
   justify-content: center;
@@ -90,23 +87,34 @@ h3 {
 
 .kategorier img {
   position: absolute;
-  height: 124px;
-  width: 180px;
-
-  /*  width: 100%;
-  height: 100%;
-  object-fit: cover; */
 
   /* height: 120px;
   width: 180px; */
-  /* opacity: 0.5; */
+
+  height: 109px;
+  width: 158px;
+
   box-shadow: effects.$boxShadowPress;
   cursor: pointer;
 }
+
+@media screen and (min-width: 400px) {
+  .kategorier {
+    grid-template-columns: repeat(auto-fill, 180px);
+  }
+
+  .kategorie,
+  .kategorier img {
+    height: 120px;
+    width: 180px;
+  }
+}
+
 .kategorier h3 {
   position: relative;
   color: colors.$off-white;
   align-self: center;
+  text-align: center;
 }
 
 /* RESULTS */
@@ -142,8 +150,6 @@ h3 {
 
 .item img {
   width: 100%;
-  display: grid;
-  justify-content: center;
 }
 
 .item p {
@@ -182,12 +188,59 @@ h3 {
   margin-left: 5px;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: margins.$layout-breakpoint-mobile-end) {
+  .takeaway_container {
+    margin: margins.$marginHorisontalTablet;
+    margin-top: 0;
+  }
+
   .result_container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 300px);
+    grid-template-columns: repeat(auto-fill, 330px);
     justify-items: center;
-    justify-content: start;
+    justify-content: center;
     grid-gap: 18px;
+  }
+  .search_container {
+    width: 500px;
+  }
+
+  .kategorier {
+    grid-template-columns: repeat(auto-fill, 227px);
+  }
+
+  .kategorie,
+  .kategorier img {
+    height: 157px;
+    width: 227px;
+  }
+}
+
+@media screen and (min-width: margins.$layout-breakpoint-desktop-start) {
+  .takeaway_container {
+    margin: margins.$marginHorisontalDesktop;
+    margin-top: 0;
+  }
+  .takeaway_headline {
+    margin-top: margins.$marginUnderElementDesktop;
+    margin-bottom: margins.$marginUnderElementDesktop;
+  }
+
+  .result_container {
+    grid-template-columns: repeat(auto-fill, 500px);
+  }
+
+  .takeaway_container h1 {
+    margin-bottom: 0;
+  }
+
+  .kategorier {
+    grid-template-columns: repeat(auto-fill, 300px);
+  }
+
+  .kategorie,
+  .kategorier img {
+    height: 207px;
+    width: 300px;
   }
 }

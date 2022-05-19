@@ -117,10 +117,24 @@ h3 {
   grid-row: 4;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1399px) {
   .time_and_info {
     display: grid;
     justify-content: space-between;
     grid-template-columns: repeat(auto-fit, 600px);
+  }
+}
+
+@media screen and (min-width: margins.$layout-breakpoint-mobile-end) {
+  .bekræftelse_container {
+    margin: margins.$marginHorisontalTablet;
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: margins.$layout-breakpoint-desktop-start) {
+  .bekræftelse_container {
+    margin: margins.$marginHorisontalDesktop;
+    margin-top: 0;
   }
 }
