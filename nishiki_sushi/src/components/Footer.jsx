@@ -37,44 +37,46 @@ export default function Footer() {
           marginheight="0"
           marginwidth="0"
         ></iframe>
-        <div>
+        <div className="contact_info">
           <div>
-            <h4>
-              Nishiki <b>Sushi</b>
-            </h4>
-            <p>
-              Jernbanegade 9D,<br></br>
-              3600 Frederikssund
-            </p>
-          </div>
-          <div className="footer_times">
-            <p>
-              <b>Åbningstider</b>
-            </p>
             <div>
-              <p>Mandag - Torsdag</p> <p>15 - 22</p>
+              <h4>
+                Nishiki <b>Sushi</b>
+              </h4>
+              <p>
+                Jernbanegade 9D,<br></br>
+                3600 Frederikssund
+              </p>
             </div>
-            <div>
-              <p>Fredag - Søndag</p> <p>13 - 22</p>
+            <div className="footer_times">
+              <p>
+                <b>Åbningstider</b>
+              </p>
+              <div>
+                <p>Mandag - Torsdag</p> <p>15 - 22</p>
+              </div>
+              <div>
+                <p>Fredag - Søndag</p> <p>13 - 22</p>
+              </div>
             </div>
           </div>
+          <nav className="mini_nav">
+            <ul>
+              <li>
+                <a href="">Events & Catering</a>
+              </li>
+              <li>
+                <a href="">Smiley Raport</a>
+              </li>
+              <li>
+                <a href="">TakeAway</a>
+              </li>
+              <li>
+                <a href="">Restaurant</a>
+              </li>
+            </ul>
+          </nav>
         </div>
-        <nav className="mini_nav">
-          <ul>
-            <li>
-              <a href="">Events & Catering</a>
-            </li>
-            <li>
-              <a href="">Smiley Raport</a>
-            </li>
-            <li>
-              <a href="">TakeAway</a>
-            </li>
-            <li>
-              <a href="">Restaurant</a>
-            </li>
-          </ul>
-        </nav>
       </div>
     </footer>
   );

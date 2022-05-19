@@ -102,7 +102,117 @@
   margin-bottom: 50px;
 }
 
-@media only screen and (min-width: 1099px) {
+@media only screen and (min-width: margins.$layout-breakpoint-tablet-start) and (max-width: margins.$layout-breakpoint-tablet-end) {
+  .thumbnail_images {
+    display: flex;
+    flex-direction: row;
+    margin-left: margins.$marginHorisontalTablet;
+    margin-right: margins.$marginHorisontalTablet;
+    justify-content: space-between;
+  }
+
+  .thumbnail_img {
+    display: flex;
+    flex-direction: column;
+    width: 44vw;
+    height: 55vw;
+  }
+
+  .restaurant_thumbnail {
+    background-image: url("../img/landingimg1.webp");
+    background-position: center left;
+    background-size: 50vw 91vw;
+  }
+
+  .takeaway_thumbnail {
+    background-image: url("../img/landingimg2.webp");
+    background-position: center;
+    background-size: 50vw 80vw;
+  }
+
+  .offers_title {
+    margin-left: margins.$marginHorisontalTablet + 160px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+  }
+
+  .third_offer {
+    background-image: url("../img/disappear_offer.webp");
+    width: 18vw;
+    height: 17vw;
+    background-size: cover;
+  }
+
+  .first_offer {
+    background-image: url("../img/offer1.webp");
+    width: 18vw;
+    height: 17vw;
+    background-size: cover;
+  }
+
+  .second_offer {
+    background-image: url("../img/offer2.webp");
+    width: 18vw;
+    height: 17vw;
+    background-size: cover;
+  }
+
+  .offers_container {
+    display: flex;
+    flex-direction: row;
+    column-gap: 5vw;
+    margin-right: 50px;
+  }
+
+  .disappearing_offer {
+    display: block;
+  }
+
+  .offers_section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .offer {
+    max-width: 388px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .newOffers_section {
+    display: grid;
+    grid-template-columns: 0.5fr 3fr;
+    margin-bottom: 80px;
+    margin-left: margins.$marginHorisontalTablet;
+    margin-right: margins.$marginHorisontalTablet;
+  }
+
+  .newOffers_buttons {
+    flex-direction: row;
+    column-gap: 30px;
+    align-self: center;
+  }
+
+  .side_ornament {
+    background-image: url("../img/wood pattern.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 135px;
+    height: 604px;
+    position: relative;
+    top: -90px;
+    right: -40px;
+    justify-self: center;
+  }
+}
+
+@media only screen and (min-width: margins.$layout-breakpoint-desktop-start) {
+  .offers_title {
+    margin-left: margins.$marginHorisontalDesktop + 270px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+  }
+
   .thumbnail_images {
     display: flex;
     flex-direction: row;
@@ -133,11 +243,17 @@
   .offers_container {
     display: flex;
     flex-direction: row;
-    column-gap: 150px;
+    column-gap: 10vw;
+    margin-right: 50px;
   }
 
   .disappearing_offer {
     display: block;
+  }
+
+  .offers_section {
+    display: flex;
+    flex-direction: column;
   }
 
   .offer {
@@ -148,29 +264,28 @@
 
   .third_offer {
     background-image: url("../img/disapper_offer_desktop.webp");
-    width: 388px;
-    height: 349px;
+    width: 18vw;
+    height: 17vw;
     background-size: cover;
   }
 
   .first_offer {
     background-image: url("../img/offer1_desktop.webp");
-    width: 388px;
-    height: 349px;
+    width: 18vw;
+    height: 17vw;
     background-size: cover;
   }
 
   .second_offer {
     background-image: url("../img/offer2_desktop.webp");
-    width: 388px;
-    height: 349px;
+    width: 18vw;
+    height: 17vw;
     background-size: cover;
   }
 
   .newOffers_section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 0.5fr 3fr;
     margin-bottom: 80px;
     margin-left: margins.$marginHorisontalDesktop;
     margin-right: margins.$marginHorisontalDesktop;
@@ -179,5 +294,17 @@
   .newOffers_buttons {
     flex-direction: row;
     column-gap: 30px;
+    justify-content: center;
+  }
+
+  .side_ornament {
+    background-image: url("../img/wood pattern.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 135px;
+    height: 804px;
+    position: relative;
+    top: -90px;
+    justify-self: center;
   }
 }

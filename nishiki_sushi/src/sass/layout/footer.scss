@@ -2,7 +2,169 @@
 @use "../base/buttons";
 @use "../base/margins";
 
-@media only screen and (min-width: 1099px) {
+footer {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: margins.$marginHorisontalMobile;
+  background-color: colors.$darkBlue;
+  color: colors.$off-white;
+}
+
+footer > nav > ul {
+  list-style: none;
+  position: relative;
+  top: -80px;
+}
+
+.map_container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+  margin-top: 20px;
+}
+
+iframe {
+  margin-right: margins.$marginHorisontalMobile;
+  width: 200px;
+  height: 200px;
+}
+
+.mini_nav {
+  min-width: 240%;
+}
+
+.mini_nav > ul {
+  list-style: none;
+  padding: 0;
+  /*  display: grid;
+  grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr; */
+}
+
+.mini_nav > ul > li {
+  margin-bottom: 0;
+  /* width: min-content; */
+}
+
+.mini_nav > ul > li > a {
+  color: colors.$off-white;
+}
+
+footer > div > div > div > div > h4 {
+  color: colors.$off-white;
+  margin-top: 40px;
+}
+
+.footer_times {
+  margin-top: 30px;
+}
+
+.footer_insta {
+  margin-top: 25px;
+  margin-left: 30.5px;
+}
+
+.footer_facebook {
+  margin-top: 20px;
+  margin-left: 28.5px;
+}
+
+.footer_times > div {
+  display: flex;
+  flex-direction: row;
+}
+
+@media only screen and (min-width: margins.$layout-breakpoint-tablet-start) and (max-width: margins.$layout-breakpoint-tablet-end) {
+  footer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: margins.$marginHorisontalTablet;
+    background-color: colors.$darkBlue;
+    color: colors.$off-white;
+    font-size: 1.2rem;
+  }
+
+  footer > nav > ul {
+    list-style: none;
+    position: relative;
+    top: -180px;
+  }
+
+  .map_container {
+    display: flex;
+    flex-direction: row;
+    /*    align-items: center; */
+    width: 100%;
+  }
+
+  .contact_info {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .contact_info > div {
+    padding-right: 150px;
+  }
+
+  .footer_times > div {
+    display: flex;
+    flex-direction: row;
+    column-gap: 30px;
+    width: 200%;
+  }
+
+  iframe {
+    margin-right: margins.$marginHorisontalTablet;
+    width: 20vw;
+    height: 20vw;
+  }
+
+  .mini_nav {
+    min-width: unset;
+    position: relative;
+  }
+
+  .mini_nav > ul {
+    list-style: none;
+    width: 80%;
+    text-align: left;
+    margin: 0;
+  }
+
+  .mini_nav > ul > li {
+    margin-bottom: 45px;
+    text-align: justify;
+  }
+
+  .mini_nav > ul > li > a {
+    color: colors.$off-white;
+    margin: 0;
+  }
+
+  footer > div > div > div > div > h4 {
+    margin-top: 0;
+  }
+
+  .footer_times {
+    margin-top: 50px;
+  }
+
+  .footer_insta {
+    margin-top: 63px;
+    margin-left: 30.5px;
+  }
+
+  .footer_facebook {
+    margin-top: 40px;
+    margin-left: 28.5px;
+  }
+}
+
+@media only screen and (min-width: 1225px) {
   footer {
     display: flex;
     flex-direction: row-reverse;
@@ -23,13 +185,39 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 100%;
+  }
+
+  .contact_info {
+    display: flex;
+    flex-direction: row;
+    width: 35%;
     justify-content: space-between;
-    width: 80%;
+  }
+
+  .footer_times > div {
+    display: flex;
+    flex-direction: row;
+    column-gap: 45px;
+    text-align: justify;
+    width: 100%;
+  }
+
+  iframe {
+    margin-right: margins.$marginHorisontalDesktop;
+    width: 500px;
+    height: 500px;
+  }
+
+  .mini_nav {
+    min-width: unset;
+    position: unset;
+    right: 0;
   }
 
   .mini_nav > ul {
     list-style: none;
-    margin-left: 120px;
+    width: 100%;
   }
 
   .mini_nav > ul > li {
@@ -41,19 +229,12 @@
     margin: 15px;
   }
 
-  footer > div > div > div > h4 {
-    color: colors.$off-white;
+  footer > div > div > div > div > h4 {
+    margin-top: 0;
   }
 
   .footer_times {
     margin-top: 50px;
-  }
-
-  .footer_times > div {
-    display: flex;
-    flex-direction: row;
-    column-gap: 45px;
-    text-align: justify;
   }
 
   .footer_insta {
