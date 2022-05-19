@@ -70,6 +70,8 @@ function Takeaway() {
           className={`hidden ${
             visible ? "show" : "hidden"
           } kategorier_container`}
+         /*  className="kategorier_container" */
+
         >
           <h2>Kategorier</h2>
           <div className="kategorier">
