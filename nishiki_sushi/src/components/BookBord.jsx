@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import BookStep1 from "./BookStep1";
 import BookStep2 from "./BookStep2";
@@ -11,47 +11,82 @@ import { RiCalendarLine, RiCalendarCheckLine } from "react-icons/ri";
 import { AiOutlineClockCircle } from "react-icons/ai";
 
 export default function BookBord() {
-  const [stepChoice, setStepChoice] = useState(1);
+  const [stepChoice, setStepChoice] = useState("1");
+  useEffect(() => {
+    if (!stepChoice.current) {
+      changeStep();
+    }
+  }, [stepChoice]);
   const [bookingStep, setBookingStep] = useState(<BookStep1 />);
 
-  function handleChange(value) {
-    setStepChoice(value);
-    changeStep();
-
-    function changeStep() {
-      if (stepChoice === "1") {
-        console.log("step 1");
-        setBookingStep(<BookStep1 />);
-      } else if (stepChoice === "2") {
-        console.log("step 2");
-        setBookingStep(<BookStep2 />);
-      } else if (stepChoice === "3") {
-        console.log("step 3");
-        setBookingStep(<BookStep3 />);
-      } else if (stepChoice === "4") {
-        console.log("step 4");
-        setBookingStep(<BookStep4 />);
-      } else if (stepChoice === "5") {
-        console.log("step 5");
-        setBookingStep(<BookStep5 />);
-      }
+  function changeStep() {
+    if (stepChoice == "1") {
+      console.log("step 1");
+      setBookingStep(<BookStep1 />);
+    } else if (stepChoice == "2") {
+      console.log("step 2");
+      setBookingStep(<BookStep2 />);
+    } else if (stepChoice == "3") {
+      console.log("step 3");
+      setBookingStep(<BookStep3 />);
+    } else if (stepChoice == "4") {
+      console.log("step 4");
+      setBookingStep(<BookStep4 />);
+    } else if (stepChoice == "5") {
+      console.log("step 5");
+      setBookingStep(<BookStep5 />);
     }
   }
 
   return (
     <>
-      <select
-        value={stepChoice}
-        onChange={(e) => {
-          handleChange(e.target.value);
-        }}
-      >
-        <option value={1}>1</option>
-        <option value={2}>2</option>
-        <option value={3}>3</option>
-        <option value={4}>4</option>
-        <option value={5}>5</option>
-      </select>
+      <ul>
+        <li
+          value={"1"}
+          onClick={(e) => {
+            setStepChoice(e.target.value);
+            console.log(e.target.value);
+          }}
+        >
+          1
+        </li>
+        <li
+          value={"2"}
+          onClick={(e) => {
+            setStepChoice(e.target.value);
+            console.log(e.target.value);
+          }}
+        >
+          2
+        </li>
+        <li
+          value={"3"}
+          onClick={(e) => {
+            setStepChoice(e.target.value);
+            console.log(e.target.value);
+          }}
+        >
+          3
+        </li>
+        <li
+          value={"4"}
+          onClick={(e) => {
+            setStepChoice(e.target.value);
+            console.log(e.target.value);
+          }}
+        >
+          4
+        </li>
+        <li
+          value={"5"}
+          onClick={(e) => {
+            setStepChoice(e.target.value);
+            console.log(e.target.value);
+          }}
+        >
+          5
+        </li>
+      </ul>
 
       <section id="book-app">
         <h2>Book Bord</h2>
