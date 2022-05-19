@@ -52,14 +52,14 @@ function Takeaway() {
               } else if (searchTerm.length === 0) {
               }
             }}
-            /* onClick={onChangeSearch} */
+            onClick={onChangeSearch}
           ></input>
         </div>
         <div
           className={`hidden ${
             visible ? "show" : "hidden"
           } kategorier_container`}
-         /*  className="kategorier_container" */
+         
 
         >
           <h2>Kategorier</h2>
@@ -122,6 +122,7 @@ function Takeaway() {
             .filter((val) => {
               if (searchTerm == "") {
                 return null;
+               /*  return val; */
               } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
                 /*  onChangeSearch(); */
                 return val;
