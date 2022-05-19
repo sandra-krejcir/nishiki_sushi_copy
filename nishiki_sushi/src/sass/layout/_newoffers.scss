@@ -2,10 +2,17 @@
 @use "../base/buttons";
 @use "../base/margins";
 
+.header_logo {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 51px);
+}
+
 .thumbnail_images {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 .thumbnail_images > a {

@@ -8,6 +8,7 @@ export default function LandingPage() {
     <>
       <BurgerMenu page={"home"} />
       <section className="thumbnail_images">
+        <img src="../icons/logo.svg" alt="The logo icon." className="header_logo" />
         <a href="" className="thumbnail_img restaurant_thumbnail">
           <h4 className="restaurant_title">
             <b>BESØG RESTAURANTEN</b>
