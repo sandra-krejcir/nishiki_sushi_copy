@@ -4,7 +4,7 @@
 
 .catering_form {
   margin-left: margins.$marginHorisontalMobile + 27;
-  background-color: colors.$lightBrown;
+  background: colors.$lightWood;
   margin-bottom: 100px;
   position: relative;
   top: -270px;
@@ -68,7 +68,8 @@
 
   .catering_img {
     background-image: url("../img/catering_img_desktop.webp");
-    min-width: 298px;
+    max-width: 298px;
+    min-width: 200px;
     min-height: 702px;
     margin-right: margins.$marginHorisontalTablet;
     background-repeat: no-repeat;
@@ -83,7 +84,6 @@
     margin-top: 25px;
     margin-right: 25px;
     margin-left: margins.$marginHorisontalTablet;
-    background: colors.$lightWood;
     margin-bottom: 250px;
     position: unset;
     top: 0;
@@ -95,11 +95,11 @@
   }
 
   .cateringForm_container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    column-gap: 30px;
-    row-gap: 0;
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    // grid-template-rows: repeat(3, 1fr);
+    // column-gap: 30px;
+    // row-gap: 0;
     margin-right: 27px;
     margin-top: 35px;
     margin-bottom: 0;
