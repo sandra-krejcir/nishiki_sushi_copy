@@ -12,7 +12,7 @@ what do we do about the spacses arround the sections where it will not flucurate
     - result_container(2) - not done any real work in this yet, this is the container for the chosen kategorie section,
                             its a mess, please ignore this for now
 jsx search problem,
-having truble finding a way to fet the seach engine to seach for ingredients. Option 1: new data element. Option 2: find a way to code it 
+having truble finding a way to get the seach engine to seach for ingredients. Option 1: new data element. Option 2: find a way to code it 
 
 
 Console error
