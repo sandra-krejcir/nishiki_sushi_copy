@@ -52,7 +52,7 @@ function Takeaway() {
               } else if (searchTerm.length === 0) {
               }
             }}
-            onClick={onChangeSearch}
+            /* onClick={onChangeSearch} */
           ></input>
         </div>
         <div
@@ -124,7 +124,7 @@ function Takeaway() {
                 return null;
                /*  return val; */
               } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-                /*  onChangeSearch(); */
+                 onChangeSearch();
                 return val;
               }
               /* else if (
