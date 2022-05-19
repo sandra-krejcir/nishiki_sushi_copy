@@ -145,12 +145,17 @@ function Takeaway() {
                       style={{
                         display: "flex",
                         flexWrap: "wrap",
+                        flexDirection: "row",
                         gap: "5px",
-                        width: "100%",
+                        width: "inherit",
                       }}
                     >
                       {val.ingrediants.map((ingVal) => {
-                        return <p key={ingVal.name}>{ingVal.name},</p>;
+                        return (
+                          <p style={{ width: "max-content", margin: "0" }} key={ingVal.name}>
+                            {ingVal.name},
+                          </p>
+                        );
                       })}
                     </div>
                     <br />
