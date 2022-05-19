@@ -40,7 +40,6 @@ h3 {
   padding: 18px;
   margin-top: margins.$marginUnderElementMobile;
   margin-bottom: margins.$marginUnderElementMobile;
-  max-width: 600px;
 }
 
 .betaling_form_container p {
@@ -105,11 +104,33 @@ option {
     margin: margins.$marginHorisontalTablet;
     margin-top: 0;
   }
+
+  /* .betaling_og_info_container {
+    margin-left: -50px;
+    padding-left: 50px;
+  } */
+  /*  .betaling_form_container {
+    margin-left: -50px;
+    padding-left: 50px;
+  } */
 }
 
 @media screen and (min-width: margins.$layout-breakpoint-desktop-start) {
   .betaling_container {
     margin: margins.$marginHorisontalDesktop;
     margin-top: 0;
+  }
+
+  .betaling_top {
+    margin-top: margins.$marginUnderElementDesktop;
+  }
+
+  .button_and_afhentling_container {
+    margin-bottom: margins.$marginUnderElementDesktop;
+  }
+
+  .order_info_container {
+    margin-top: -50px !important;
+    margin-bottom: margins.$marginUnderElementDesktop;
   }
 }

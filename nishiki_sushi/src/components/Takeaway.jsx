@@ -57,7 +57,7 @@ function Takeaway() {
         </div>
         <div
           className={`hidden ${
-            visible ? "show" : "hidden"
+            visible ? "show" : ""
           } kategorier_container`}
          
 

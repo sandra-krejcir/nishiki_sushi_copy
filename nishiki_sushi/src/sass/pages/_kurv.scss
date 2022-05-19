@@ -5,6 +5,7 @@
 
 .kurv_container {
   margin: margins.$marginHorisontalMobile;
+  margin-top: 0;
 }
 
 .kurv_headline {
@@ -115,4 +116,22 @@ h3 {
   justify-content: center;
   margin-top: margins.$marginUnderElementMobile;
   margin-bottom: margins.$marginUnderElementMobile;
+}
+
+@media screen and (min-width: margins.$layout-breakpoint-mobile-end) {
+  .kurv_container {
+    margin: margins.$marginHorisontalTablet;
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: margins.$layout-breakpoint-desktop-start) {
+  .kurv_container {
+    margin: margins.$marginHorisontalDesktop;
+    margin-top: 0;
+  }
+
+  .kurv_top {
+    margin-top: margins.$marginUnderElementDesktop;
+  }
 }

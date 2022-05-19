@@ -40,7 +40,8 @@ h3 {
   padding: 18px;
   margin-top: margins.$marginUnderElementMobile;
   margin-bottom: margins.$marginUnderElementMobile;
-  max-width: 800px;
+  /* max-width: 800px; */
+  /*   width: 100%; */
 }
 
 .oplysninger_form_container p {
@@ -55,6 +56,11 @@ h3 {
   border: none;
   box-shadow: effects.$boxShadowInset;
   margin-bottom: 10px;
+}
+
+@media screen and (min-width: margins.$layout-breakpoint-mobile-end) {
+  .oplysninger_container {
+  }
 }
 
 @media screen and (min-width: margins.$layout-breakpoint-desktop-start) {

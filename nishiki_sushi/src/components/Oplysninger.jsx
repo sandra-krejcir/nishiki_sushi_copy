@@ -8,7 +8,7 @@ function Oplysninger() {
   /* const { register, handleSubmit, errors } = useForm(); */
   return (
     <>
-      <BurgerMenu page={"home"} />
+     
       <img
         className="hero_img hide_when_off_phone"
         src="../../img/hero_img/kurv_hero_mobile.png"
