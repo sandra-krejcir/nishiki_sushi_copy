@@ -6,7 +6,6 @@
 .betaling_og_info_container {
   display: grid;
   justify-content: center;
-  
 }
 
 .betaling_container {
@@ -35,8 +34,6 @@ h3 {
   align-items: baseline;
   margin-top: margins.$marginUnderElementMobile;
 }
-
-
 
 .betaling_form_container {
   background: colors.$lightWood;
@@ -95,24 +92,35 @@ option {
   margin-right: 10px;
 }
 
-@media screen and (min-width: 1399px) {
-  .betaling_og_info_container {
-    display: grid;
-    justify-content: space-between;
-    grid-template-columns: repeat(auto-fit, 600px);
-  }
-}
-
 @media screen and (min-width: margins.$layout-breakpoint-mobile-end) {
   .betaling_container {
     margin: margins.$marginHorisontalTablet;
     margin-top: 0;
   }
+  .betaling_og_info_container {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    /* align-items: center; */
+  }
 
+  .betaling_form_container {
+    margin: 0;
+    max-width: 600px;
+    margin-left: -50px;
+    padding-left: 50px;
+  }
 
+  .ordre_inof_container_container {
+    justify-self: end;
+    width: 100%;
+    margin-right: -50px;
+    padding-right: 50px;
+    background-color: colors.$cream;
+    max-width: 600px;
+  }
 }
-
-
 
 @media screen and (min-width: margins.$layout-breakpoint-desktop-start) {
   .betaling_container {
@@ -121,6 +129,7 @@ option {
   }
 
   .betaling_top {
+    margin-top: margins.$marginUnderElementDesktop;
     margin-top: margins.$marginUnderElementDesktop;
   }
 
@@ -131,5 +140,26 @@ option {
   .order_info_container {
     margin-top: -50px !important;
     margin-bottom: margins.$marginUnderElementDesktop;
+  }
+
+  .betaling_form_container {
+    max-width: 800px;
+    margin-left: -100px;
+    padding-left: 100px;
+  }
+
+  .ordre_inof_container_container {
+    margin-right: -100px;
+    padding-right: 100px;
+    max-width: 800px;
+    padding-top: margins.$marginHorisontalDesktop;
+    padding-bottom: margins.$marginHorisontalDesktop;
+    padding-left: margins.$marginHorisontalDesktop;
+  }
+
+  #betaling_form {
+    margin-top: margins.$marginHorisontalDesktop;
+    margin-bottom: margins.$marginHorisontalDesktop;
+    margin-right: margins.$marginHorisontalDesktop;
   }
 }

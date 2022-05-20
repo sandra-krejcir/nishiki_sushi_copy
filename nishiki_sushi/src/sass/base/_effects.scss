@@ -4,7 +4,7 @@ $boxShadowPress: 0 4px 4px rgba(0, 0, 0, 0.5);
 $boxShadowImage: 0 4px 4px #c4c4c477;
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .show {
@@ -32,11 +32,11 @@ $boxShadowImage: 0 4px 4px #c4c4c477;
 
 @media screen and (min-width: margins.$layout-breakpoint-mobile-end) {
   .hide_when_off_phone {
-    display: none;
+    display: none !important;
   }
 }
 @media screen and (max-width: margins.$layout-breakpoint-mobile-end) {
   .hide_when_on_phone {
-    display: none;
+    display: none !important;
   }
 }

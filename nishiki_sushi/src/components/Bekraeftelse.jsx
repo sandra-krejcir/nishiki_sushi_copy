@@ -11,21 +11,21 @@ function Bekræftelse() {
       <BurgerMenu page={"home"} />
       <img
         className="hero_img hide_when_off_phone"
-        src="../../img/hero_img/kurv_hero_mobile.png"
+        src="../../img/hero_img/takeaway_hero_mobile.png"
         alt="takeaway"
       />
 
       <div className="bekræftelse_container">
         <img
           className="hero_img hide_when_on_phone"
-          src="../../img/hero_img/kurv_hero.png"
+          src="../../img/hero_img/takeaway_hero.png"
           alt="takeaway"
         />
         <div>
           <div className="bekræftelse_top">
             <h1>Bekræftelse</h1>
             <div className="ingen_lavering_container">
-              <p className="remove_1rem">Ingen Levering</p>
+              <p className="remove_1rem text_left">Ingen Levering</p>
               <FaTruck className="hw20_icon" />
             </div>
           </div>
@@ -77,7 +77,9 @@ function Bekræftelse() {
               </div>
             </div>
           </div>
-          <OrdreInformation />
+          <div className="ordre_inof_container_container">
+            <OrdreInformation />
+          </div>
         </div>
       </div>
     </>

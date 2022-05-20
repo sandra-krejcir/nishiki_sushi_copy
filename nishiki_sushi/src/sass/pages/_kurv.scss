@@ -143,6 +143,8 @@ h3 {
 
   .inner_kurv_container {
     max-width: 700px;
+    padding-top: margins.$marginUnderElementMobile;
+    padding-bottom: margins.$marginUnderElementMobile;
   }
 
   .exstra_hidden {
@@ -170,5 +172,7 @@ h3 {
 
   .inner_kurv_container {
     max-width: 800px;
+    padding-top: margins.$marginUnderElementDesktop;
+    padding-bottom: margins.$marginUnderElementDesktop;
   }
 }

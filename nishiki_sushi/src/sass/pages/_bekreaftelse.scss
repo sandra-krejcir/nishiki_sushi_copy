@@ -3,13 +3,16 @@
 @use "../base/effects";
 @use "../base/buttons";
 
-.time_and_info {
+/* .time_and_info {
   display: grid;
   justify-content: center;
-}
+} */
 
 .bekræftelse_container {
   margin: margins.$marginHorisontalMobile;
+
+  /*   display: grid;
+  justify-content: center; */
 }
 
 .bekræftelse_container label {
@@ -34,10 +37,13 @@ h3 {
   margin-top: margins.$marginUnderElementMobile;
 }
 
-
 .order_h2 h2 {
   font-weight: bold;
   margin-bottom: margins.$marginUnderElementMobile;
+}
+
+.text_left {
+  text-align: end;
 }
 
 .order_info_container {
@@ -55,6 +61,7 @@ h3 {
 
 .under_basket_icon_txt {
   margin-top: margins.$marginUnderElementMobile;
+  margin-bottom: margins.$marginUnderElementMobile;
 }
 
 .time_line_container {
@@ -67,7 +74,7 @@ h3 {
   padding-top: margins.$marginUnderElementMobile;
   padding-bottom: margins.$marginUnderElementMobile;
   margin-bottom: margins.$marginUnderElementMobile;
-  max-width: 600px;
+  /* max-width: 600px; */
 }
 
 .time_line_left {
@@ -119,21 +126,29 @@ h3 {
   grid-row: 4;
 }
 
-@media screen and (min-width: 1399px) {
-  .time_and_info {
-    display: grid;
-    justify-content: space-between;
-    grid-template-columns: repeat(auto-fit, 600px);
-  }
-}
-
 @media screen and (min-width: margins.$layout-breakpoint-mobile-end) {
   .bekræftelse_container {
     margin: margins.$marginHorisontalTablet;
     margin-top: 0;
   }
 
- 
+  .time_and_info {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+
+  .time_line_container {
+    margin: 0;
+    max-width: 600px;
+    margin-left: -50px;
+    padding-left: 50px;
+  }
+
+  .under_basket_icon_txt {
+    margin-bottom: margins.$marginUnderElementDesktop;
+  }
 }
 
 @media screen and (min-width: margins.$layout-breakpoint-desktop-start) {
@@ -143,5 +158,11 @@ h3 {
   }
   .bekræftelse_top {
     margin-top: margins.$marginUnderElementDesktop;
+  }
+
+  .time_line_container {
+    max-width: 800px;
+    margin-left: -100px;
+    padding-left: 100px;
   }
 }

@@ -4,9 +4,10 @@
 @use "../base/buttons";
 
 .ordreInformation_container {
-  max-width: 600px;
+  /* max-width: 600px; */
   background-color: colors.$cream;
   padding: 18px;
+  margin: -18px;
 }
 
 .order_information_item_container {
@@ -49,4 +50,15 @@
   background-color: black;
   margin-top: margins.$marginUnderElementMobile;
   margin-bottom: margins.$marginUnderElementMobile;
+}
+
+@media screen and (min-width: margins.$layout-breakpoint-mobile-end) {
+  .ordreInformation_container {
+    margin: 0px;
+  }
+
+  .ordreInformation_container h2 {
+    font-size: 1.8rem;
+    margin-top: margins.$marginHorisontalMobile;
+  }
 }

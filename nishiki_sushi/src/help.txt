@@ -44,7 +44,9 @@ Clean up Bekræftelse
     - fix narrowing of timeline when centered (Might need exsternal help) (ERROR)
 
 
-
+noets
+    - why kurv mobile wonky?
+    - header image needs to stop browing 
  
 
 

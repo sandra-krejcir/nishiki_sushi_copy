@@ -28,9 +28,13 @@ function Betaling() {
             </div>
           </div>
           <div className="button_and_afhentling_container">
-            <button className="secondaryBtn">
+            <button className="secondaryBtn hide_when_off_phone">
               <MdOutlineKeyboardBackspace className="hw20_icon" />
               Oplys
+            </button>
+            <button className="secondaryBtn hide_when_on_phone">
+              <MdOutlineKeyboardBackspace className="hw20_icon" />
+              Kurv
             </button>
             <p className="remove_1rem">
               Afhenting <MdRestaurant className="hw20_icon" />
@@ -112,7 +116,9 @@ function Betaling() {
               </div>
             </form>
           </div>
-          <OrdreInformation />
+          <div className="ordre_inof_container_container">
+            <OrdreInformation />
+          </div>
         </div>
       </div>
     </>
