@@ -36,6 +36,8 @@ h3 {
 
 .oplysninger_form_container {
   background: colors.$lightWood;
+  background-size: cover;
+  background-position: center;
   margin: -18px;
   padding: 18px;
   margin-top: margins.$marginUnderElementMobile;
@@ -66,18 +68,26 @@ h3 {
   }
 
   .oplysninger_form_container {
-   
     margin-right: -680px;
     padding-right: 680px;
-    
+    padding-left: margins.$marginHorisontalTablet;
   }
-  
-  
+
+  .oplysninger_form_container h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: colors.$darkBrown;
+    margin-top: margins.$marginUnderElementMobile;
+    margin-bottom: margins.$marginUnderElementDesktop;
+  }
 }
 
 @media screen and (min-width: margins.$layout-breakpoint-desktop-start) {
   .oplysninger_container {
     display: flex;
     justify-content: center;
+  }
+  .oplysninger_form_container {
+    padding-left: margins.$marginHorisontalDesktop;
   }
 }

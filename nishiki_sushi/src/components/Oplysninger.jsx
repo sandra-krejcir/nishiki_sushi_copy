@@ -8,7 +8,6 @@ function Oplysninger() {
   /* const { register, handleSubmit, errors } = useForm(); */
   return (
     <>
-     
       <img
         className="hero_img hide_when_off_phone"
         src="../../img/hero_img/kurv_hero_mobile.png"
@@ -34,6 +33,7 @@ function Oplysninger() {
           </div>
         </div>
         <div className="oplysninger_form_container">
+          <h2 className="hide_when_on_phone">Oplysninger</h2>
           <p>
             For vi bedst kan servere dig mad, får vi brug for nogen oplysninger
             om dig. Efter bestillingen er bekræftet vil du modtage en SMS

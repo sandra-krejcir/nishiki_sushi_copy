@@ -73,7 +73,6 @@ h3 {
 }
 
 .inner_kurv_container {
-  
   margin-bottom: margins.$marginUnderElementMobile;
   max-width: 600px;
 }
@@ -127,10 +126,8 @@ h3 {
 
 @media screen and (min-width: 610px) {
   .inner_kurv_container {
-    
     margin-left: -180px;
     padding-left: 180px;
-    
   }
 }
 @media screen and (min-width: margins.$layout-breakpoint-mobile-end) {
@@ -140,15 +137,17 @@ h3 {
   }
 
   .mid_kurv_container {
-    
     margin-left: -280px;
     padding-left: 280px;
-    
   }
 
-.exstra_hidden {
-  display: none;
-}
+  .inner_kurv_container {
+    max-width: 700px;
+  }
+
+  .exstra_hidden {
+    display: none;
+  }
 }
 
 @media screen and (min-width: margins.$layout-breakpoint-desktop-start) {
@@ -161,8 +160,15 @@ h3 {
     margin-top: margins.$marginUnderElementDesktop;
   }
 
+  .kurv_container h1 {
+    margin-bottom: margins.$marginUnderElementDesktop;
+  }
+
   .mid_kurv_container {
     margin-top: -50px;
   }
-  
+
+  .inner_kurv_container {
+    max-width: 800px;
+  }
 }

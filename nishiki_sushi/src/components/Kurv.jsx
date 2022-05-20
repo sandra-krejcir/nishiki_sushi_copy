@@ -16,7 +16,7 @@ function Kurv() {
         alt="takeaway"
       />
       <div className="kurv_container">
-      <img
+        <img
           className="hero_img hide_when_on_phone"
           src="../../img/hero_img/kurv_hero.png"
           alt="takeaway"
@@ -31,7 +31,7 @@ function Kurv() {
         <div className="button_and_afhentling_container">
           <button className="secondaryBtn">
             <MdOutlineKeyboardBackspace className="hw20_icon" />
-            Tilføj mere
+            Tilføj
           </button>
           <p className="remove_1rem">
             Afhenting <MdRestaurant className="hw20_icon" />
