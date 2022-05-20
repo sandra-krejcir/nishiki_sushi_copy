@@ -6,6 +6,7 @@ export default function RestaurantPage() {
     <>
       <header>
         <div className="hero-container">
+          <img src="../icons/logo.svg" alt="The logo icon." className="header_logo" />
           <img className="hero-image" src="../img/restaurant_header-image.webp" alt="image of Nishiki Sushis interior in Frederikssund" />
         </div>
         <div>
@@ -95,7 +96,7 @@ export default function RestaurantPage() {
             <div className="adlibitum-line long"></div>
           </div>
         </section>
-        <section id="table-booking-section">
+        <section id="table-booking-section" style={{ marginBottom: "150px" }}>
           <div id="bookbord-img-container"></div>
           <div id="bookbord-line-container">
             <div className="adlibitum-line long"></div>
@@ -104,7 +105,6 @@ export default function RestaurantPage() {
           <BookBord />
         </section>
       </main>
-      <Footer />
     </>
   );
 }

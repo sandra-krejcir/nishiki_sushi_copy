@@ -5,8 +5,8 @@ export default function BookStep3() {
 
   return (
     <>
-      <h4>Hvilket tidspunkt?</h4>
-      <form id="time-form">
+      <h4 style={{ marginBottom: "1.5rem" }}>Hvilket tidspunkt?</h4>
+      <form id="time-form" style={{ marginBottom: "1.5rem" }}>
         <input
           onChange={(e) => {
             setState(e.target.value);

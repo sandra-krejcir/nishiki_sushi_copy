@@ -18,7 +18,9 @@ export default function BookStep2() {
       <div>
         <Calendar onChange={onChange} value={value} />
       </div>
-      <button className="secondaryBtn">Fortsæt</button>
+      <button style={{ marginTop: "1.5rem" }} className="secondaryBtn">
+        Fortsæt
+      </button>
     </>
   );
 }

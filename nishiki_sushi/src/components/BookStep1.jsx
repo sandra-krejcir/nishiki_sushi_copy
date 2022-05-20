@@ -70,7 +70,7 @@ export default function BookStep1() {
   return (
     <>
       <h4>Hvor mange bliver I?</h4>
-      <label for="guest-count">
+      <label for="guest-count" style={{ display: "flex", alignItems: "center", width: "max-content", marginTop: "1.5rem" }}>
         <select
           value={guestAmount}
           onChange={(e) => {
