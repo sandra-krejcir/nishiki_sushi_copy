@@ -59,8 +59,20 @@ h3 {
 }
 
 @media screen and (min-width: margins.$layout-breakpoint-mobile-end) {
-  .oplysninger_container {
+  .from_name_time_number {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
   }
+
+  .oplysninger_form_container {
+   
+    margin-right: -680px;
+    padding-right: 680px;
+    
+  }
+  
+  
 }
 
 @media screen and (min-width: margins.$layout-breakpoint-desktop-start) {

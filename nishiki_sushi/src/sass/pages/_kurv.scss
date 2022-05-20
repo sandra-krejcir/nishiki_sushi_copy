@@ -27,6 +27,7 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  margin-top: margins.$marginUnderElementMobile;
 }
 
 .ingen_lavering_container {
@@ -62,11 +63,17 @@ h3 {
   align-items: center;
 }
 
-.inner_kurv_container {
+.mid_kurv_container {
+  display: flex;
+  justify-content: center;
   background-color: colors.$cream;
   margin: -18px;
   padding: 18px;
   margin-top: margins.$marginUnderElementMobile;
+}
+
+.inner_kurv_container {
+  
   margin-bottom: margins.$marginUnderElementMobile;
   max-width: 600px;
 }
@@ -118,11 +125,30 @@ h3 {
   margin-bottom: margins.$marginUnderElementMobile;
 }
 
+@media screen and (min-width: 610px) {
+  .inner_kurv_container {
+    
+    margin-left: -180px;
+    padding-left: 180px;
+    
+  }
+}
 @media screen and (min-width: margins.$layout-breakpoint-mobile-end) {
   .kurv_container {
     margin: margins.$marginHorisontalTablet;
     margin-top: 0;
   }
+
+  .mid_kurv_container {
+    
+    margin-left: -280px;
+    padding-left: 280px;
+    
+  }
+
+.exstra_hidden {
+  display: none;
+}
 }
 
 @media screen and (min-width: margins.$layout-breakpoint-desktop-start) {
@@ -134,4 +160,9 @@ h3 {
   .kurv_top {
     margin-top: margins.$marginUnderElementDesktop;
   }
+
+  .mid_kurv_container {
+    margin-top: -50px;
+  }
+  
 }

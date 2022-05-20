@@ -31,7 +31,9 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  margin-top: margins.$marginUnderElementMobile;
 }
+
 
 .order_h2 h2 {
   font-weight: bold;
@@ -130,6 +132,8 @@ h3 {
     margin: margins.$marginHorisontalTablet;
     margin-top: 0;
   }
+
+ 
 }
 
 @media screen and (min-width: margins.$layout-breakpoint-desktop-start) {

@@ -35,7 +35,7 @@ clean up takeaway:
     - style new pictuers (Might need exsternal help)
 Clean up kurv 
     - yes (DONE)
-    - Give form attention 
+    - Give form attention (DONE)
 Clean up Beatling
     - vertical margins for desktop (DONE)
     - make sure the form keeps sticking to the left (ERROR)
