@@ -110,6 +110,7 @@ option {
     max-width: 600px;
     margin-left: -50px;
     padding-left: 50px;
+    box-shadow: effects.$boxShadowImage;
   }
 
   .ordre_inof_container_container {
@@ -119,6 +120,7 @@ option {
     padding-right: 50px;
     background-color: colors.$cream;
     max-width: 600px;
+    box-shadow: effects.$boxShadowImage;
   }
 }
 
