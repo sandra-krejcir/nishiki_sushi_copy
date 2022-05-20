@@ -19,13 +19,71 @@ async function fetchSushiData() {
 function Takeaway() {
   const [searchTerm, setsearchTerm] = useState("");
   const [visible, setVisible] = useState(true);
+  const [chosenIDs, setChosenIDs] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
-  const onChangeSearch = () => {
+  const onChangeSearch = async () => {
     setVisible(!visible);
-    // console.log("heloo");
+
+    //first we reset the ID-list between each edit
+    setChosenIDs("");
+
+    //filtering through sushi to find matches
+    //first we go by name
+
+    await sushiData.filter((val) => {
+      if (searchTerm === "") {
+        console.log("empty string");
+      } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+        //if there is a match we loop through the id list and check if it was added yet or not
+        let currentIDList = chosenIDs.toString();
+        if (currentIDList.includes(val._id)) {
+          console.log("this ID was already on the list");
+        } else if (!currentIDList.includes(val._id)) {
+          console.log("added id to list");
+          setChosenIDs((arr) => [...arr, val._id]);
+        }
+      } else if (!val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+        //If the search team doesn't match the name we look through ingredients instead
+        //first we check if it has any ingredients
+        if (val.ingrediants) {
+          val.ingrediants.filter((ing) => {
+            if (ing.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+              //if there is a match we loop through the id list and check if it was added yet or not
+              let currentIDList = chosenIDs.toString();
+              if (currentIDList.includes(ing._parent_id)) {
+                console.log("this ID was already on the list");
+              } else if (!currentIDList.includes(ing._parent_id)) {
+                console.log("added id to list");
+                setChosenIDs((arr) => [...arr, ing._parent_id]);
+              }
+            }
+          });
+        }
+      }
+    });
+    console.log("this is the full list of IDs");
+    console.log(chosenIDs);
   };
 
-  const [chosenIDs, setChosenIDs] = useState([]);
+  let SearchResults = () => {
+    sushiData
+      .filter((sushi) => {
+        if (chosenIDs) {
+          if (chosenIDs.toString().includes(sushi._id)) {
+            console.log("print: " + sushi._id);
+            return sushi;
+          }
+        }
+      })
+      .map((val, key) => {
+        return (
+          <>
+            <p>{val.name}</p>;
+          </>
+        );
+      });
+  };
 
   return (
     <>
@@ -48,16 +106,12 @@ function Takeaway() {
           <IoIosSearch className="hw20_icon" />
           <input
             type="text"
+            value={searchTerm}
             placeholder="Søg efter sushi eller ingredienser"
             onChange={(event) => {
               setsearchTerm(event.target.value);
-              setChosenIDs([]);
-              if (searchTerm.length < 1) {
-                onChangeSearch();
-              } else if (searchTerm.length === 0) {
-              }
+              onChangeSearch();
             }}
-            /*  onClick={onChangeSearch} */
           ></input>
         </div>
         <div className={`hidden ${visible ? "show" : ""} kategorier_container`}>
@@ -116,108 +170,7 @@ function Takeaway() {
         <h2>
           {}1 Resultater for "{}"
         </h2>
-        <div className="result_container">
-          {sushiData
-            .filter((val) => {
-              if (searchTerm === "") {
-                console.log("empty string");
-                return null;
-                /*  return val; */
-              } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-                // console.log("You've got results!");
-                // console.log(val._id);
-                let currentIDList = chosenIDs.toString();
-                if (currentIDList.includes(val._id)) {
-                  console.log("this ID was already on the list");
-                } else if (!currentIDList.includes(val._id)) {
-                  console.log("added id to list");
-                  setChosenIDs([...chosenIDs, val._id]);
-                }
-                return val;
-              } else if (!val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-                // console.log("no sushi name has those search words");
-                //searching the ingredients next
-                val.ingrediants
-                  .filter((val) => {
-                    if (searchTerm === "") {
-                      // console.log("empty string");
-                      return null;
-                    } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-                      // console.log("sushi ingredient match!");
-                      // console.log(val);
-                      return val;
-                    } else if (!val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-                      // console.log("no sushi ingredient has those search words");
-                      return null;
-                    }
-                  })
-                  .map((val, key) => {
-                    return (
-                      <>
-                        <div>
-                          <p>{val}</p>
-                        </div>
-                      </>
-                    );
-                  });
-              }
-            })
-            .map((val, key) => {
-              return (
-                <>
-                  {/*  <div className={`hidden ${visible ? "show" : ""}item`}> */}
-                  <div className="item">
-                    <div className="in_basket_number_container">
-                      <p className="in_basket_number">0</p>
-                    </div>
-                    <img src={"https://rikkeblom.com/nishiki_sushi-images/" + val.img_filename} alt="sushi_img" />
-                    {/* <img src={val.sushi_img} alt="sushi_img" /> */}
-                    <h4 key={val.name}>
-                      {val.name + " "}
-                      {val.pieces_count}
-                    </h4>
-                    {/*  {console.log(val.ingrediants)} */}
-                    <div
-                      style={{
-                        display: "flex",
-                        flexWrap: "wrap",
-                        flexDirection: "row",
-                        gap: "5px",
-                        width: "inherit",
-                      }}
-                    >
-                      {val.ingrediants.map((ingVal) => {
-                        return (
-                          <p style={{ width: "max-content", margin: "0" }} key={ingVal.name}>
-                            {ingVal.name},
-                          </p>
-                        );
-                      })}
-                    </div>
-                    <br />
-                    <div style={{ display: "inline-flex" }}>
-                      <p className="remove_1rem">Pris:</p>
-                      <p className="discount remove_1rem" key={val.discount}>
-                        {val.discount}kr
-                      </p>
-                      <p className="remove_1rem" key={val.price}>
-                        {val.price}kr
-                      </p>
-                    </div>
-
-                    <div className="basket_icons">
-                      <div className="remove_from_basket">
-                        <BsBasket3Fill className="hw40_icon" />
-                      </div>
-                      <div className="add_to_basket">
-                        <BsBasket3Fill className="hw40_icon" />
-                      </div>
-                    </div>
-                  </div>
-                </>
-              );
-            })}
-        </div>
+        <div className="result_container">{SearchResults()}</div>
         <div className="chosen_kategorie_container hidden">
           <button className="secondaryBtn">
             <MdOutlineKeyboardBackspace className="hw20_icon" />

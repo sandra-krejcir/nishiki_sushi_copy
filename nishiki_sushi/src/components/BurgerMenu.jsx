@@ -3,7 +3,7 @@ import { BiXCircle } from "react-icons/bi";
 import React, { useState } from "react";
 
 export default function BurgerMenu(props) {
-  console.log(props.page);
+  // console.log(props.page);
   const [visible, setVisible] = useState(false);
   return (
     <nav className="burgerNav">
@@ -15,70 +15,26 @@ export default function BurgerMenu(props) {
       {visible && (
         <ul>
           <li>
-            <NavLink
-              className={
-                props.page === "home"
-                  ? "selected column_flex"
-                  : "non-selected column_flex"
-              }
-              to="/"
-            >
-              <img
-                src="../icons/homeIcon.svg"
-                alt="Home icon."
-                className="hw40_icon"
-              ></img>
+            <NavLink className={props.page === "home" ? "selected column_flex" : "non-selected column_flex"} to="/">
+              <img src="../icons/homeIcon.svg" alt="Home icon." className="hw40_icon"></img>
               Forside
             </NavLink>
           </li>
           <li>
-            <NavLink
-              className={
-                props.page === "restaurant"
-                  ? "selected column_flex"
-                  : "non-selected column_flex"
-              }
-              to="/restaurant"
-            >
-              <img
-                src="../icons/restaurantIcon.svg"
-                alt="Restaurant icon."
-                className="hw40_icon"
-              ></img>
+            <NavLink className={props.page === "restaurant" ? "selected column_flex" : "non-selected column_flex"} to="/restaurant">
+              <img src="../icons/restaurantIcon.svg" alt="Restaurant icon." className="hw40_icon"></img>
               Restaurant
             </NavLink>
           </li>
           <li>
-            <NavLink
-              className={
-                props.page === "takeaway"
-                  ? "selected column_flex"
-                  : "non-selected column_flex"
-              }
-              to="/takeaway"
-            >
-              <img
-                src="../icons/takeaway.svg"
-                alt="Takeaway icon."
-                className="hw40_icon"
-              ></img>
+            <NavLink className={props.page === "takeaway" ? "selected column_flex" : "non-selected column_flex"} to="/takeaway">
+              <img src="../icons/takeaway.svg" alt="Takeaway icon." className="hw40_icon"></img>
               TakeAway
             </NavLink>
           </li>
           <li>
-            <NavLink
-              className={
-                props.page === "kurv"
-                  ? "selected column_flex"
-                  : "non-selected column_flex"
-              }
-              to="/kurv"
-            >
-              <img
-                src="../icons/basketIcon.svg"
-                alt="Basket icon."
-                className="hw40_icon"
-              ></img>
+            <NavLink className={props.page === "kurv" ? "selected column_flex" : "non-selected column_flex"} to="/kurv">
+              <img src="../icons/basketIcon.svg" alt="Basket icon." className="hw40_icon"></img>
               Kurv
             </NavLink>
           </li>
