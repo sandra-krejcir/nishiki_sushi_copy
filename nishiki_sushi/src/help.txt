@@ -36,17 +36,10 @@ clean up takeaway:
 Clean up kurv 
     - yes (DONE)
     - Give form attention (DONE)
-Clean up Beatling
-    - vertical margins for desktop (DONE)
-    - make sure the form keeps sticking to the left (ERROR)
-Clean up Bekræftelse
-    - vertical margins for desktop (DONE)
-    - fix narrowing of timeline when centered (Might need exsternal help) (ERROR)
-
 
 noets
     - why kurv mobile wonky?
-    - header image needs to stop browing 
+    - does header image needs to stop growing ?
  
 
 
