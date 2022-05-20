@@ -22,8 +22,11 @@ function Takeaway() {
 
   const onChangeSearch = () => {
     setVisible(!visible);
-    console.log("heloo");
+    // console.log("heloo");
   };
+
+  const [chosenIDs, setChosenIDs] = useState([]);
+
   return (
     <>
       <BurgerMenu page={"home"} />
@@ -48,6 +51,7 @@ function Takeaway() {
             placeholder="Søg efter sushi eller ingredienser"
             onChange={(event) => {
               setsearchTerm(event.target.value);
+              setChosenIDs([]);
               if (searchTerm.length < 1) {
                 onChangeSearch();
               } else if (searchTerm.length === 0) {
@@ -115,21 +119,48 @@ function Takeaway() {
         <div className="result_container">
           {sushiData
             .filter((val) => {
-              if (searchTerm == "") {
+              if (searchTerm === "") {
                 console.log("empty string");
                 return null;
                 /*  return val; */
               } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-                console.log("value");
-                console.log(val.ingrediants);
-                /*  onChangeSearch(); */
+                // console.log("You've got results!");
+                // console.log(val._id);
+                let currentIDList = chosenIDs.toString();
+                if (currentIDList.includes(val._id)) {
+                  console.log("this ID was already on the list");
+                } else if (!currentIDList.includes(val._id)) {
+                  console.log("added id to list");
+                  setChosenIDs([...chosenIDs, val._id]);
+                }
                 return val;
+              } else if (!val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                // console.log("no sushi name has those search words");
+                //searching the ingredients next
+                val.ingrediants
+                  .filter((val) => {
+                    if (searchTerm === "") {
+                      // console.log("empty string");
+                      return null;
+                    } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                      // console.log("sushi ingredient match!");
+                      // console.log(val);
+                      return val;
+                    } else if (!val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                      // console.log("no sushi ingredient has those search words");
+                      return null;
+                    }
+                  })
+                  .map((val, key) => {
+                    return (
+                      <>
+                        <div>
+                          <p>{val}</p>
+                        </div>
+                      </>
+                    );
+                  });
               }
-              /* else if (
-                ingVal.name.toLowerCase().includes(searchTerm.toLowerCase())
-              ) {
-                return val;
-              } */
             })
             .map((val, key) => {
               return (
