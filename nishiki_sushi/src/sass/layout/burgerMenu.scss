@@ -6,15 +6,15 @@
   display: none;
 }
 
+.selected {
+  color: colors.$darkBlue;
+}
+
+.non-selected {
+  color: #c4c4c4;
+}
+
 @media only screen and (min-width: 1225px) {
-  .selected {
-    color: colors.$darkBlue;
-  }
-
-  .non-selected {
-    color: #c4c4c4;
-  }
-
   .burgerNav {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
