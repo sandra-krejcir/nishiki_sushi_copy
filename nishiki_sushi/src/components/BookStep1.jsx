@@ -1,7 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function BookStep1() {
   const [guestAmount, setGuestAmout] = useState(2);
+
+  useEffect(() => {
+    if (!guestAmount.current) {
+      changeGuestAmount();
+    }
+  }, [guestAmount]);
+
+  async function changeGuestAmount() {
+    console.log(guestAmount);
+    localStorage.setItem("NishikiTableGuestAmount", guestAmount);
+  }
+
   // console.log(guestAmount);
 
   const options = [
