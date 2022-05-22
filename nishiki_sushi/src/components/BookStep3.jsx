@@ -163,7 +163,6 @@ export default function BookStep3() {
         <label for="2100">21:00</label>
         <br />
       </form>
-      <button className="secondaryBtn">Fortsæt</button>
     </>
   );
 }

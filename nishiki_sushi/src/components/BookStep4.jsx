@@ -127,7 +127,6 @@ export default function BookStep4() {
           <textarea value={comment} onChange={(e) => setComment(e.target.value)} cols="30" rows="4"></textarea>
         </label>
       </form>
-      <button className="primaryBtn">Fortsæt</button>
     </>
   );
 }

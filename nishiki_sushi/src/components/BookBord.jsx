@@ -69,6 +69,35 @@ export default function BookBord() {
     }
   }
 
+  function submitBooking() {
+    let payload = {
+      guest_number: localStorage.getItem("NishikiTableGuestAmount"),
+      reservation_date: localStorage.getItem("NishikiTableDate"),
+      reservation_time: localStorage.getItem("NishikiTableTime"),
+      name: localStorage.getItem("NishikiTableName"),
+      phone_number: localStorage.getItem("NishikiTablePhone"),
+      comment: localStorage.getItem("NishikiTableComment"),
+    };
+
+    console.log("Submit");
+    fetch("https://kea21s-6eb0.restdb.io/rest/nishiki-booking", {
+      method: "POST",
+      headers: {
+        "x-apikey": "606d606af55350043100752e",
+        "Content-Type": "application/json",
+      },
+
+      body: JSON.stringify(payload),
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
+
   return (
     <>
       <section id="book-app">
@@ -125,6 +154,61 @@ export default function BookBord() {
           </div>
           <div className="seperating-line-book"></div>
           {bookingStep}
+          <button
+            class="secondaryBtn"
+            style={{ display: step1 ? "block" : "none" }}
+            value={"2"}
+            onClick={(e) => {
+              setStepChoice(e.target.value);
+              console.log(e.target.value);
+            }}
+          >
+            Fortsæt
+          </button>
+          <button
+            style={{ marginTop: "1.5rem", display: step2 ? "block" : "none" }}
+            className="secondaryBtn"
+            value={"3"}
+            onClick={(e) => {
+              setStepChoice(e.target.value);
+              console.log(e.target.value);
+            }}
+          >
+            Fortsæt
+          </button>
+          <button
+            className="secondaryBtn"
+            style={{ marginTop: "1.5rem", display: step3 ? "block" : "none" }}
+            value={"4"}
+            onClick={(e) => {
+              setStepChoice(e.target.value);
+              console.log(e.target.value);
+            }}
+          >
+            Fortsæt
+          </button>
+          <button
+            className="primaryBtn"
+            style={{ display: step4 ? "block" : "none" }}
+            value={"5"}
+            onClick={(e) => {
+              setStepChoice(e.target.value);
+              submitBooking();
+              console.log(e.target.value);
+            }}
+          >
+            Fortsæt
+          </button>
+          <button
+            style={{ display: step5 ? "block" : "none" }}
+            value={"1"}
+            onClick={(e) => {
+              setStepChoice(e.target.value);
+              console.log(e.target.value);
+            }}
+          >
+            Foretag endnu en booking
+          </button>
         </div>
       </section>
     </>

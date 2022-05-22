@@ -27,9 +27,6 @@ export default function BookStep2() {
           value={value}
         />
       </div>
-      <button style={{ marginTop: "1.5rem" }} className="secondaryBtn">
-        Fortsæt
-      </button>
     </>
   );
 }

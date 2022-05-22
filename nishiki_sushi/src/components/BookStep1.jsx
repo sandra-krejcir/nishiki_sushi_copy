@@ -98,9 +98,6 @@ export default function BookStep1() {
         Gæster
       </label>
       <br />
-      <button type="submit" class="secondaryBtn">
-        Fortsæt
-      </button>
     </>
   );
 }
