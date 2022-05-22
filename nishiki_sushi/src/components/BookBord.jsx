@@ -136,7 +136,9 @@ export default function BookBord() {
   return (
     <>
       <section id="book-app">
-        <h2>Book Bord</h2>
+        <h2>
+          <b>Book</b> Bord
+        </h2>
         <div id="app-container">
           <div id="book-icon-container">
             <ul id="book-icon-flex">
