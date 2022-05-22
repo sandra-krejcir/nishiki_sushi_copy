@@ -17,6 +17,21 @@ export default function BookBord() {
   const [step4, setStep4State] = useState(false);
   const [step5, setStep5State] = useState(false);
 
+  const NoClickIcon = {
+    pointerEvents: "none",
+    cursor: "none",
+  };
+
+  const ClickIcon = {
+    pointerEvents: "all",
+    cursor: "pointer",
+  };
+
+  const [icon1Style, seticon1Style] = useState(NoClickIcon);
+  const [icon2Style, seticon2Style] = useState(NoClickIcon);
+  const [icon3Style, seticon3Style] = useState(NoClickIcon);
+  const [icon4Style, seticon4Style] = useState(NoClickIcon);
+
   const [stepChoice, setStepChoice] = useState("1");
   useEffect(() => {
     if (!stepChoice.current) {
@@ -34,6 +49,10 @@ export default function BookBord() {
       setStep3State(false);
       setStep4State(false);
       setStep5State(false);
+      seticon1Style(NoClickIcon);
+      seticon2Style(NoClickIcon);
+      seticon3Style(NoClickIcon);
+      seticon4Style(NoClickIcon);
     } else if (stepChoice == "2") {
       console.log("step 2");
       setBookingStep(<BookStep2 />);
@@ -42,6 +61,10 @@ export default function BookBord() {
       setStep3State(false);
       setStep4State(false);
       setStep5State(false);
+      seticon1Style(ClickIcon);
+      seticon2Style(NoClickIcon);
+      seticon3Style(NoClickIcon);
+      seticon4Style(NoClickIcon);
     } else if (stepChoice == "3") {
       console.log("step 3");
       setBookingStep(<BookStep3 />);
@@ -50,6 +73,10 @@ export default function BookBord() {
       setStep3State(true);
       setStep4State(false);
       setStep5State(false);
+      seticon1Style(ClickIcon);
+      seticon2Style(ClickIcon);
+      seticon3Style(NoClickIcon);
+      seticon4Style(NoClickIcon);
     } else if (stepChoice == "4") {
       console.log("step 4");
       setBookingStep(<BookStep4 />);
@@ -58,6 +85,10 @@ export default function BookBord() {
       setStep3State(false);
       setStep4State(true);
       setStep5State(false);
+      seticon1Style(ClickIcon);
+      seticon2Style(ClickIcon);
+      seticon3Style(ClickIcon);
+      seticon4Style(NoClickIcon);
     } else if (stepChoice == "5") {
       console.log("step 5");
       setBookingStep(<BookStep5 />);
@@ -66,6 +97,10 @@ export default function BookBord() {
       setStep3State(false);
       setStep4State(false);
       setStep5State(true);
+      seticon1Style(ClickIcon);
+      seticon2Style(ClickIcon);
+      seticon3Style(ClickIcon);
+      seticon4Style(ClickIcon);
     }
   }
 
@@ -107,6 +142,7 @@ export default function BookBord() {
             <ul id="book-icon-flex">
               <li
                 value={"1"}
+                style={icon1Style}
                 onClick={(e) => {
                   setStepChoice(e.target.value);
                   console.log(e.target.value);
@@ -116,6 +152,7 @@ export default function BookBord() {
               </li>
               <li
                 value={"2"}
+                style={icon2Style}
                 onClick={(e) => {
                   setStepChoice(e.target.value);
                   console.log(e.target.value);
@@ -125,6 +162,7 @@ export default function BookBord() {
               </li>
               <li
                 value={"3"}
+                style={icon3Style}
                 onClick={(e) => {
                   setStepChoice(e.target.value);
                   console.log(e.target.value);
@@ -134,6 +172,7 @@ export default function BookBord() {
               </li>
               <li
                 value={"4"}
+                style={icon4Style}
                 onClick={(e) => {
                   setStepChoice(e.target.value);
                   console.log(e.target.value);
@@ -166,7 +205,7 @@ export default function BookBord() {
             Fortsæt
           </button>
           <button
-            style={{ marginTop: "1.5rem", display: step2 ? "block" : "none" }}
+            style={{ marginTop: "2rem", display: step2 ? "block" : "none" }}
             className="secondaryBtn"
             value={"3"}
             onClick={(e) => {
@@ -189,7 +228,7 @@ export default function BookBord() {
           </button>
           <button
             className="primaryBtn"
-            style={{ display: step4 ? "block" : "none" }}
+            style={{ marginTop: "1.2rem", display: step4 ? "block" : "none" }}
             value={"5"}
             onClick={(e) => {
               setStepChoice(e.target.value);
@@ -200,6 +239,7 @@ export default function BookBord() {
             Fortsæt
           </button>
           <button
+            id="a-style-btn"
             style={{ display: step5 ? "block" : "none" }}
             value={"1"}
             onClick={(e) => {

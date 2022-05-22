@@ -136,9 +136,9 @@ export default function BookStep3() {
           type="radio"
           id="2000"
           name="time"
-          value="2000"
-        />{" "}
-        <label for="20:00">20:00</label>
+          value="20:00"
+        />
+        <label htmlFor="2000">20:00</label>
         <br />
         <input
           onChange={(e) => {

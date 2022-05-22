@@ -82,7 +82,7 @@ export default function BookStep1() {
   return (
     <>
       <h4>Hvor mange bliver I?</h4>
-      <label for="guest-count" style={{ display: "flex", alignItems: "center", width: "max-content", marginTop: "1.5rem" }}>
+      <label HTMLfor="guest-count" style={{ display: "flex", alignItems: "baseline", width: "max-content", marginTop: "1.5rem" }}>
         <select
           value={guestAmount}
           onChange={(e) => {
@@ -90,6 +90,7 @@ export default function BookStep1() {
           }}
           name="guest-count"
           id="guest-count"
+          required
         >
           {options.map((option) => (
             <option value={option.value}>{option.label}</option>

@@ -114,12 +114,12 @@ export default function BookStep4() {
         <label>
           Navn
           <br />
-          <input value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Jens Jensen" />{" "}
+          <input required value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Jens Jensen" />{" "}
         </label>
         <br />
         <label>
           Mobil nummer <br />
-          <input value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" placeholder="12 34 56 78" />{" "}
+          <input required max={11} min={8} value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" placeholder="12 34 56 78" />{" "}
         </label>
         <br />
         <label>
