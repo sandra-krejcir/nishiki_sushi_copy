@@ -1,13 +1,17 @@
 import BookBord from "./BookBord";
+import Footer from "./Footer";
+import useWindowDimensions from "./screenResize_hook";
 import BurgerMenu from "./BurgerMenu";
 
 export default function RestaurantPage() {
+  const screenSize = useWindowDimensions();
+
   return (
     <>
       <header>
-        <BurgerMenu page={"restaurant"} />
+        {screenSize.width > 799 && <BurgerMenu page={"restaurant"} />}
+        {screenSize.width < 799 && <MobileNav page={"restaurant"} />}
         <div className="hero-container">
-          <img src="../icons/logo.svg" alt="The logo icon." className="header_logo" />
           <img className="hero-image" src="../img/restaurant_header-image.webp" alt="image of Nishiki Sushis interior in Frederikssund" />
         </div>
         <div>

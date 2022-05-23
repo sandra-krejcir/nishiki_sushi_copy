@@ -3,11 +3,15 @@ import BurgerMenu from "./BurgerMenu";
 import OrdreInformation from "./OrdreInformation";
 import { FaTruck } from "react-icons/fa";
 import { MdOutlineKeyboardBackspace, MdRestaurant } from "react-icons/md";
+import { NavLink } from "react-router-dom";
+import useWindowDimensions from "./screenResize_hook";
 
 function Betaling() {
+  const screenSize = useWindowDimensions();
   return (
     <>
-      <BurgerMenu page={"home"} />
+      {screenSize.width > 799 && <BurgerMenu page={"kurv"} />}
+      {/*  {screenSize.width < 799 && <MobileNav page={"kurv"} />} */}
       <img
         className="hero_img hide_when_off_phone"
         src="../../img/hero_img/kurv_hero_mobile.png"
@@ -111,9 +115,9 @@ function Betaling() {
                   Jeg har læst og accepteret handelsbetingelserne
                 </label>
               </div>
-              <div className="button_container_center">
+              <NavLink to="/Bekraeftelse" className="button_container_center">
                 <button className="primaryBtn">Betal</button>
-              </div>
+              </NavLink>
             </form>
           </div>
           <div className="ordre_inof_container_container">

@@ -5,22 +5,18 @@ import { MdOutlineKeyboardBackspace, MdRestaurant } from "react-icons/md";
 import { AiOutlineMinusSquare, AiOutlinePlusSquare } from "react-icons/ai";
 import { IoMdArrowDropup, IoMdArrowDropdown } from "react-icons/io";
 import Oplysninger from "./Oplysninger";
+import useWindowDimensions from "./screenResize_hook";
+import { NavLink } from "react-router-dom";
 
 function Kurv() {
+  const screenSize = useWindowDimensions();
   return (
     <>
-      <BurgerMenu page={"kurv"} />
-      <img
-        className="hero_img hide_when_off_phone"
-        src="../../img/hero_img/kurv_hero_mobile.png"
-        alt="takeaway"
-      />
+      {screenSize.width > 799 && <BurgerMenu page={"kurv"} />}
+      {screenSize.width < 799 && <MobileNav page={"kurv"} />}
+      <img className="hero_img hide_when_off_phone" src="../../img/hero_img/kurv_hero_mobile.png" alt="takeaway" />
       <div className="kurv_container">
-        <img
-          className="hero_img hide_when_on_phone"
-          src="../../img/hero_img/kurv_hero.png"
-          alt="takeaway"
-        />
+        <img className="hero_img hide_when_on_phone" src="../../img/hero_img/kurv_hero.png" alt="takeaway" />
         <div className="kurv_top">
           <h1>Kurv</h1>
           <div className="ingen_lavering_container">
@@ -78,16 +74,18 @@ function Kurv() {
                 <span>000</span>
               </div>
             </div>
-            <div className="button_container_center hide_when_off_phone exstra_hidden">
-              <button className="primaryBtn hide_when_off_phone">
-                Angiv Oplysninger
-              </button>
-            </div>
+            {screenSize.width < 799 && (
+              <NavLink to="/Oplysninger" className="button_container_center">
+                <button className="primaryBtn">Angiv Oplysninger</button>
+              </NavLink>
+            )}
           </div>
         </div>
-        <div className="hide_when_on_phone">
-          <Oplysninger />
-        </div>
+        {screenSize.width > 799 && (
+          <div>
+            <Oplysninger />
+          </div>
+        )}
       </div>
     </>
   );
