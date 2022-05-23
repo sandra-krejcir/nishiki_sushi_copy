@@ -6,13 +6,14 @@ import { BsBagCheckFill } from "react-icons/bs";
 import OrdreInformation from "./OrdreInformation";
 import { NavLink } from "react-router-dom";
 import useWindowDimensions from "./screenResize_hook";
+import MobileNav from "./MobileNavBar";
 
 function Bekræftelse() {
   const screenSize = useWindowDimensions();
   return (
     <>
       {screenSize.width > 799 && <BurgerMenu page={"kurv"} />}
-      {/*  {screenSize.width < 799 && <MobileNav page={"kurv"} />} */}
+      {screenSize.width < 799 && <MobileNav page={"kurv"} />}
       <img
         className="hero_img hide_when_off_phone"
         src="../../img/hero_img/takeaway_hero_mobile.png"

@@ -5,6 +5,7 @@ import { BsBasket3Fill } from "react-icons/bs";
 import { TiArrowUnsorted } from "react-icons/ti";
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
 import useWindowDimensions from "./screenResize_hook";
+import MobileNav from "./MobileNavBar";
 
 let sushiData;
 await fetchSushiData();

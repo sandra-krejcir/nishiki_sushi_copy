@@ -7,6 +7,7 @@ import { IoMdArrowDropup, IoMdArrowDropdown } from "react-icons/io";
 import Oplysninger from "./Oplysninger";
 import useWindowDimensions from "./screenResize_hook";
 import { NavLink } from "react-router-dom";
+import MobileNav from "./MobileNavBar";
 
 function Kurv() {
   const screenSize = useWindowDimensions();

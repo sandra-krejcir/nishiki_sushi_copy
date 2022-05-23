@@ -5,13 +5,14 @@ import { FaTruck } from "react-icons/fa";
 import { MdOutlineKeyboardBackspace, MdRestaurant } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import useWindowDimensions from "./screenResize_hook";
+import MobileNav from "./MobileNavBar";
 
 function Betaling() {
   const screenSize = useWindowDimensions();
   return (
     <>
       {screenSize.width > 799 && <BurgerMenu page={"kurv"} />}
-      {/*  {screenSize.width < 799 && <MobileNav page={"kurv"} />} */}
+      {screenSize.width < 799 && <MobileNav page={"kurv"} />}
       <img
         className="hero_img hide_when_off_phone"
         src="../../img/hero_img/kurv_hero_mobile.png"
