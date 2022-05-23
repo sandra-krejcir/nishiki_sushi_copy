@@ -23,12 +23,14 @@ console.log(sushiData);
 
 function Takeaway() {
   const [searchTerm, setsearchTerm] = useState("");
+  const [filterTerm, setFilterTerm] = useState("");
   const [visible, setVisible] = useState(true);
   const screenSize = useWindowDimensions();
 
   const onChangeSearch = () => {
     setVisible(!visible);
   };
+
   return (
     <>
       <img
@@ -71,90 +73,152 @@ function Takeaway() {
                 onChangeSearch();
               }
             }}
-            /*  onClick={onChangeSearch} */
           ></input>
         </div>
         <div className={`hidden ${visible ? "show" : ""} kategorier_container`}>
           <h2>Kategorier</h2>
           <div className="kategorier">
-            <div className="kategorie manedens_tilbud">
+            <div
+              className="kategorie manedens_tilbud"
+              onClick={() => {
+                setFilterTerm("Månedsens tilbud");
+                if (visible === true) {
+                  setVisible(!visible);
+                }
+              }}
+            >
               <img
                 src="../../img/kategorier_billeder/manedenstilbud.png"
                 alt="månedens_tilbud"
               />
               <h3>Månedens tilbud</h3>
             </div>
-            <div className="kategorie sushi_menu">
+            <div
+              className="kategorie sushi_menu"
+              onClick={() => {
+                setFilterTerm("Sushi menu");
+              }}
+            >
               <img
                 src="../../img/kategorier_billeder/sushimenu.png"
                 alt="sushi_menu"
               />
               <h3>Sushi Menu</h3>
             </div>
-            <div className="kategorie forret">
+            <div
+              className="kategorie forret"
+              onClick={() => {
+                setFilterTerm("Forret");
+              }}
+            >
               <img
                 src="../../img/kategorier_billeder/forret.png"
                 alt="forret"
               />
               <h3>Forret</h3>
             </div>
-            <div className="kategorie yakitori_sticks">
+            <div
+              className="kategorie yakitori_sticks"
+              onClick={() => {
+                setFilterTerm("Yakitori Sticks");
+              }}
+            >
               <img
                 src="../../img/kategorier_billeder/yakitori_sticks.png"
                 alt="yakitori_sticks"
               />
               <h3>Yakitori Sticks</h3>
             </div>
-            <div className="kategorie nigiri">
+            <div
+              className="kategorie nigiri"
+              onClick={() => {
+                setFilterTerm("Nigiri");
+              }}
+            >
               <img
                 src="../../img/kategorier_billeder/nigiri.png"
                 alt="nigiri"
               />
               <h3>Nigiri 2stk</h3>
             </div>
-            <div className="kategorie hosomaki">
+            <div
+              className="kategorie hosomaki"
+              onClick={() => {
+                setFilterTerm("Hosomaki");
+              }}
+            >
               <img
                 src="../../img/kategorier_billeder/hosomaki.png"
                 alt="hosomaki"
               />
               <h3>Hosomaki 8stk</h3>
             </div>
-            <div className="kategorie futomaki">
+            <div
+              className="kategorie futomaki"
+              onClick={() => {
+                setFilterTerm("Futomaki");
+              }}
+            >
               <img
                 src="../../img/kategorier_billeder/futomaki.png"
                 alt="futomaki"
               />
               <h3>Futomaki 5stk</h3>
             </div>
-            <div className="kategorie sashimi">
+            <div
+              className="kategorie sashimi"
+              onClick={() => {
+                setFilterTerm("Sashimi");
+              }}
+            >
               <img
                 src="../../img/kategorier_billeder/sashimi.png"
                 alt="sashimi"
               />
               <h3>Sashimi</h3>
             </div>
-            <div className="kategorie rispapir">
+            <div
+              className="kategorie rispapir"
+              onClick={() => {
+                setFilterTerm("Rispapir");
+              }}
+            >
               <img
                 src="../../img/kategorier_billeder/rispapir.png"
                 alt="rispapir"
               />
               <h3>Rispapir 6stk</h3>
             </div>
-            <div className="kategorie uramaki">
+            <div
+              className="kategorie uramaki"
+              onClick={() => {
+                setFilterTerm("Uramaki");
+              }}
+            >
               <img
                 src="../../img/kategorier_billeder/uramaki.png"
                 alt="uramaki"
               />
               <h3>Uramaki 8stk</h3>
             </div>
-            <div className="kategorie kaburimaki">
+            <div
+              className="kategorie kaburimaki"
+              onClick={() => {
+                setFilterTerm("Kaburimaki");
+              }}
+            >
               <img
                 src="../../img/kategorier_billeder/kaburimaki.png"
                 alt="kaburimaki"
               />
               <h3>Kaburimaki 8stk</h3>
             </div>
-            <div className="kategorie dip">
+            <div
+              className="kategorie dip"
+              onClick={() => {
+                setFilterTerm("Dip");
+              }}
+            >
               <img src="../../img/kategorier_billeder/dip.png" alt="dip" />
               <h3>Dip</h3>
             </div>
@@ -174,7 +238,6 @@ function Takeaway() {
               } else if (
                 val.name.toLowerCase().includes(searchTerm.toLowerCase())
               ) {
-                /*  onChangeSearch(); */
                 return val;
               } else if (
                 val.ingrediant_list
@@ -189,7 +252,6 @@ function Takeaway() {
             .map((val, key) => {
               return (
                 <>
-                  {/*  <div className={`hidden ${visible ? "show" : ""}item`}> */}
                   <div className="item">
                     <div className="in_basket_number_container">
                       <p className="in_basket_number">0</p>
@@ -201,12 +263,12 @@ function Takeaway() {
                       }
                       alt="sushi_img"
                     />
-                    {/* <img src={val.sushi_img} alt="sushi_img" /> */}
+
                     <h4 key={val.name}>
                       {val.name + " "}
                       {val.pieces_count}
                     </h4>
-                    {/*  {console.log(val.ingrediants)} */}
+
                     <div
                       style={{
                         display: "flex",
@@ -236,9 +298,6 @@ function Takeaway() {
                       <p className="remove_1rem" key={val.price}>
                         {val.price}kr
                       </p>
-                      {/* <p className="remove_1rem" key={val.ingrediant_list}>
-                        {val.ingrediant_list}kr
-                      </p> */}
                     </div>
 
                     <div className="basket_icons">
@@ -254,7 +313,11 @@ function Takeaway() {
               );
             })}
         </div>
-        <div className="chosen_kategorie_container hidden">
+        <div
+          className={`hidden ${
+            visible ? "show" : ""
+          } chosen_kategorie_container`}
+        >
           <button className="secondaryBtn">
             <MdOutlineKeyboardBackspace className="hw20_icon" />
             Kategorier
@@ -268,28 +331,76 @@ function Takeaway() {
           </div>
           <h2>Name of Kategorie </h2>
           <div className="result_container">
-            <div className="item">
-              <div className="in_basket_number_container">
-                <p className="in_basket_number">0</p>
-              </div>
-              <img
-                src="https://images-global.nhst.tech/image/bUpscFAvOWZnVnVIQ283TlAyeFI0WFMwZ0RiVjRucGhyek52d0pCdUJ3OD0=/nhst/binary/66e1fa282d12f429459b8b83628bb8b4?image_version=640"
-                alt="food_img"
-              />
-              <h4>Food Name</h4>
-              <p>
-                Food info orfo wiufh owi eufh owei jfjf rjk f jkf jrffhoewifh
-              </p>
-              <p className="remove_1rem">Pris:</p>
-              <div className="basket_icons">
-                <div className="remove_from_basket">
-                  <BsBasket3Fill className="hw40_icon" />
-                </div>
-                <div className="add_to_basket">
-                  <BsBasket3Fill className="hw40_icon" />
-                </div>
-              </div>
-            </div>
+            {sushiData
+              .filter((val) => {
+                if (val.category.includes(filterTerm)) {
+                  return val;
+                }
+              })
+
+              .map((val, key) => {
+                return (
+                  <>
+                    <div className="item">
+                      <div className="in_basket_number_container">
+                        <p className="in_basket_number">0</p>
+                      </div>
+                      <img
+                        src={
+                          "https://rikkeblom.com/nishiki_sushi-images/" +
+                          val.img_filename
+                        }
+                        alt="sushi_img"
+                      />
+
+                      <h4 key={val.name}>
+                        {val.name + " "}
+                        {val.pieces_count}
+                      </h4>
+
+                      <div
+                        style={{
+                          display: "flex",
+                          flexWrap: "wrap",
+                          flexDirection: "row",
+                          gap: "5px",
+                          width: "inherit",
+                        }}
+                      >
+                        {val.ingrediants.map((ingVal) => {
+                          return (
+                            <p
+                              style={{ width: "max-content", margin: "0" }}
+                              key={ingVal.name}
+                            >
+                              {ingVal.name},
+                            </p>
+                          );
+                        })}
+                      </div>
+                      <br />
+                      <div style={{ display: "inline-flex" }}>
+                        <p className="remove_1rem">Pris:</p>
+                        <p className="discount remove_1rem" key={val.discount}>
+                          {val.discount}kr
+                        </p>
+                        <p className="remove_1rem" key={val.price}>
+                          {val.price}kr
+                        </p>
+                      </div>
+
+                      <div className="basket_icons">
+                        <div className="remove_from_basket">
+                          <BsBasket3Fill className="hw40_icon" />
+                        </div>
+                        <div className="add_to_basket">
+                          <BsBasket3Fill className="hw40_icon" />
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                );
+              })}
           </div>
         </div>
       </div>

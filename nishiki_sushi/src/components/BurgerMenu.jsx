@@ -4,7 +4,7 @@ import { CgMenu } from "react-icons/cg";
 import React, { useState } from "react";
 
 export default function BurgerMenu(props) {
-  console.log(props.page);
+  /*  console.log(props.page); */
   const [visible, setVisible] = useState(false);
   return (
     <>
