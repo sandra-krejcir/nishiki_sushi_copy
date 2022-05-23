@@ -9,7 +9,7 @@ import Oplysninger from "./Oplysninger";
 function Kurv() {
   return (
     <>
-      <BurgerMenu page={"home"} />
+      <BurgerMenu page={"kurv"} />
       <img
         className="hero_img hide_when_off_phone"
         src="../../img/hero_img/kurv_hero_mobile.png"

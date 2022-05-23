@@ -8,7 +8,10 @@ import { MdOutlineKeyboardBackspace } from "react-icons/md";
 let sushiData;
 await fetchSushiData();
 async function fetchSushiData() {
-  const restSushi = await fetch("https://kea21s-6eb0.restdb.io/rest/nishiki-sushi-products?fetchchildren=true", { headers: { "x-apikey": "606d606af55350043100752e" } });
+  const restSushi = await fetch(
+    "https://kea21s-6eb0.restdb.io/rest/nishiki-sushi-products?fetchchildren=true",
+    { headers: { "x-apikey": "606d606af55350043100752e" } }
+  );
   const dataSushi = await restSushi.json();
   sushiData = dataSushi;
   /* console.log(sushiData); */
@@ -26,12 +29,24 @@ function Takeaway() {
   };
   return (
     <>
-      <BurgerMenu page={"home"} />
-      <img className="hero_img hide_when_off_phone" src="../../img/hero_img/takeaway_hero_mobile.png" alt="takeaway" />
+      <BurgerMenu page={"takeaway"} />
+      <img
+        className="hero_img hide_when_off_phone"
+        src="../../img/hero_img/takeaway_hero_mobile.png"
+        alt="takeaway"
+      />
 
       <div className="takeaway_container">
-        <img src="../icons/logo.svg" alt="The logo icon." className="header_logo" />
-        <img className="hero_img hide_when_on_phone" src="../../img/hero_img/takeaway_hero.png" alt="takeaway" />
+        <img
+          src="../icons/logo.svg"
+          alt="The logo icon."
+          className="header_logo"
+        />
+        <img
+          className="hero_img hide_when_on_phone"
+          src="../../img/hero_img/takeaway_hero.png"
+          alt="takeaway"
+        />
         <div className="takeaway_headline">
           <h1>
             <b>Take</b>Away
@@ -60,47 +75,80 @@ function Takeaway() {
           <h2>Kategorier</h2>
           <div className="kategorier">
             <div className="kategorie manedens_tilbud">
-              <img src="../../img/kategorier_billeder/manedenstilbud.png" alt="månedens_tilbud" />
+              <img
+                src="../../img/kategorier_billeder/manedenstilbud.png"
+                alt="månedens_tilbud"
+              />
               <h3>Månedens tilbud</h3>
             </div>
             <div className="kategorie sushi_menu">
-              <img src="../../img/kategorier_billeder/sushimenu.png" alt="sushi_menu" />
+              <img
+                src="../../img/kategorier_billeder/sushimenu.png"
+                alt="sushi_menu"
+              />
               <h3>Sushi Menu</h3>
             </div>
             <div className="kategorie forret">
-              <img src="../../img/kategorier_billeder/forret.png" alt="forret" />
+              <img
+                src="../../img/kategorier_billeder/forret.png"
+                alt="forret"
+              />
               <h3>Forret</h3>
             </div>
             <div className="kategorie yakitori_sticks">
-              <img src="../../img/kategorier_billeder/yakitori_sticks.png" alt="yakitori_sticks" />
+              <img
+                src="../../img/kategorier_billeder/yakitori_sticks.png"
+                alt="yakitori_sticks"
+              />
               <h3>Yakitori Sticks</h3>
             </div>
             <div className="kategorie nigiri">
-              <img src="../../img/kategorier_billeder/nigiri.png" alt="nigiri" />
+              <img
+                src="../../img/kategorier_billeder/nigiri.png"
+                alt="nigiri"
+              />
               <h3>Nigiri 2stk</h3>
             </div>
             <div className="kategorie hosomaki">
-              <img src="../../img/kategorier_billeder/hosomaki.png" alt="hosomaki" />
+              <img
+                src="../../img/kategorier_billeder/hosomaki.png"
+                alt="hosomaki"
+              />
               <h3>Hosomaki 8stk</h3>
             </div>
             <div className="kategorie futomaki">
-              <img src="../../img/kategorier_billeder/futomaki.png" alt="futomaki" />
+              <img
+                src="../../img/kategorier_billeder/futomaki.png"
+                alt="futomaki"
+              />
               <h3>Futomaki 5stk</h3>
             </div>
             <div className="kategorie sashimi">
-              <img src="../../img/kategorier_billeder/sashimi.png" alt="sashimi" />
+              <img
+                src="../../img/kategorier_billeder/sashimi.png"
+                alt="sashimi"
+              />
               <h3>Sashimi</h3>
             </div>
             <div className="kategorie rispapir">
-              <img src="../../img/kategorier_billeder/rispapir.png" alt="rispapir" />
+              <img
+                src="../../img/kategorier_billeder/rispapir.png"
+                alt="rispapir"
+              />
               <h3>Rispapir 6stk</h3>
             </div>
             <div className="kategorie uramaki">
-              <img src="../../img/kategorier_billeder/uramaki.png" alt="uramaki" />
+              <img
+                src="../../img/kategorier_billeder/uramaki.png"
+                alt="uramaki"
+              />
               <h3>Uramaki 8stk</h3>
             </div>
             <div className="kategorie kaburimaki">
-              <img src="../../img/kategorier_billeder/kaburimaki.png" alt="kaburimaki" />
+              <img
+                src="../../img/kategorier_billeder/kaburimaki.png"
+                alt="kaburimaki"
+              />
               <h3>Kaburimaki 8stk</h3>
             </div>
             <div className="kategorie dip">
@@ -119,7 +167,9 @@ function Takeaway() {
                 console.log("empty string");
                 return null;
                 /*  return val; */
-              } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+              } else if (
+                val.name.toLowerCase().includes(searchTerm.toLowerCase())
+              ) {
                 console.log("value");
                 console.log(val.ingrediants);
                 /*  onChangeSearch(); */
@@ -139,7 +189,13 @@ function Takeaway() {
                     <div className="in_basket_number_container">
                       <p className="in_basket_number">0</p>
                     </div>
-                    <img src={"https://rikkeblom.com/nishiki_sushi-images/" + val.img_filename} alt="sushi_img" />
+                    <img
+                      src={
+                        "https://rikkeblom.com/nishiki_sushi-images/" +
+                        val.img_filename
+                      }
+                      alt="sushi_img"
+                    />
                     {/* <img src={val.sushi_img} alt="sushi_img" /> */}
                     <h4 key={val.name}>
                       {val.name + " "}
@@ -157,7 +213,10 @@ function Takeaway() {
                     >
                       {val.ingrediants.map((ingVal) => {
                         return (
-                          <p style={{ width: "max-content", margin: "0" }} key={ingVal.name}>
+                          <p
+                            style={{ width: "max-content", margin: "0" }}
+                            key={ingVal.name}
+                          >
                             {ingVal.name},
                           </p>
                         );
@@ -194,7 +253,10 @@ function Takeaway() {
           </button>
           <div className="search_container">
             <IoIosSearch className="hw20_icon" />
-            <input type="text" placeholder="Søg efter sushi eller ingredienser"></input>
+            <input
+              type="text"
+              placeholder="Søg efter sushi eller ingredienser"
+            ></input>
           </div>
           <h2>Name of Kategorie </h2>
           <div className="result_container">
@@ -202,9 +264,14 @@ function Takeaway() {
               <div className="in_basket_number_container">
                 <p className="in_basket_number">0</p>
               </div>
-              <img src="https://images-global.nhst.tech/image/bUpscFAvOWZnVnVIQ283TlAyeFI0WFMwZ0RiVjRucGhyek52d0pCdUJ3OD0=/nhst/binary/66e1fa282d12f429459b8b83628bb8b4?image_version=640" alt="food_img" />
+              <img
+                src="https://images-global.nhst.tech/image/bUpscFAvOWZnVnVIQ283TlAyeFI0WFMwZ0RiVjRucGhyek52d0pCdUJ3OD0=/nhst/binary/66e1fa282d12f429459b8b83628bb8b4?image_version=640"
+                alt="food_img"
+              />
               <h4>Food Name</h4>
-              <p>Food info orfo wiufh owi eufh owei jfjf rjk f jkf jrffhoewifh</p>
+              <p>
+                Food info orfo wiufh owi eufh owei jfjf rjk f jkf jrffhoewifh
+              </p>
               <p className="remove_1rem">Pris:</p>
               <div className="basket_icons">
                 <div className="remove_from_basket">

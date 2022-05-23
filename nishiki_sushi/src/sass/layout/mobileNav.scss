@@ -1,0 +1,42 @@
+@use "../base/colors";
+@use "../base/buttons";
+@use "../base/margins";
+
+.mobile_nav {
+  z-index: 20;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: colors.$cream;
+  align-items: center;
+}
+
+.mobile_nav > ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  column-gap: 5px;
+  padding: 0;
+}
+
+.column_flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+@media only screen and (min-width: margins.$layout-breakpoint-tablet-start) and (max-width: margins.$layout-breakpoint-tablet-end) {
+  .mobile_nav {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1225px) {
+  .mobile_nav {
+    display: none;
+  }
+}

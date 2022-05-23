@@ -1,10 +1,11 @@
 import BookBord from "./BookBord";
-import Footer from "./Footer";
+import BurgerMenu from "./BurgerMenu";
 
 export default function RestaurantPage() {
   return (
     <>
       <header>
+        <BurgerMenu page={"restaurant"} />
         <div className="hero-container">
           <img src="../icons/logo.svg" alt="The logo icon." className="header_logo" />
           <img className="hero-image" src="../img/restaurant_header-image.webp" alt="image of Nishiki Sushis interior in Frederikssund" />
