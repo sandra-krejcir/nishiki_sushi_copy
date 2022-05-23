@@ -2,13 +2,16 @@ import React from "react";
 import BurgerMenu from "./BurgerMenu";
 import { FaTruck } from "react-icons/fa";
 import { MdOutlineKeyboardBackspace, MdRestaurant } from "react-icons/md";
+import { NavLink } from "react-router-dom";
+/* import useWindowDimensions from "./screenResize_hook"; */
 /* import useForm from "react-hook-form"; */
 
 function Oplysninger() {
   /* const { register, handleSubmit, errors } = useForm(); */
+  /*  screenSize = useWindowDimensions(); */
   return (
     <>
-     
+      {/*  {screenSize.width < 799 && <MobileNav page={"kurv"} />} */}
       <img
         className="hero_img hide_when_off_phone"
         src="../../img/hero_img/kurv_hero_mobile.png"
@@ -82,9 +85,9 @@ function Oplysninger() {
               pattern="^[A-Z][a-z]*(\s([A-Z]|\([A-Z])[a-z\'\(\)]*)?((\s|\-)([A-Z]|\([A-Z])[a-z\'\(\)]*)?((\s|\-)([A-Z]|\([A-Z])[a-z\'\(\)]*)?((\s|\-)([A-Z]|\([A-Z])[a-z\'\(\)]*)?$"
               placeholder="Jeg vil gerne tilføje..."
             />
-            <div className="button_container_center">
+            <NavLink to="/Betaling" className="button_container_center">
               <button className="primaryBtn">Til Betaling</button>
-            </div>
+            </NavLink>
           </form>
         </div>
       </div>

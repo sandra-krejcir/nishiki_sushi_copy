@@ -1,12 +1,22 @@
 import BookBord from "./BookBord";
 import Footer from "./Footer";
+import useWindowDimensions from "./screenResize_hook";
+import BurgerMenu from "./BurgerMenu";
 
 export default function RestaurantPage() {
+  const screenSize = useWindowDimensions();
+
   return (
     <>
       <header>
+        {screenSize.width > 799 && <BurgerMenu page={"restaurant"} />}
+        {/*  {screenSize.width < 799 && <MobileNav page={"restaurant"} />} */}
         <div className="hero-container">
-          <img className="hero-image" src="../img/restaurant_header-image.webp" alt="image of Nishiki Sushis interior in Frederikssund" />
+          <img
+            className="hero-image"
+            src="../img/restaurant_header-image.webp"
+            alt="image of Nishiki Sushis interior in Frederikssund"
+          />
         </div>
         <div>
           <img src="" alt="" />
@@ -18,8 +28,16 @@ export default function RestaurantPage() {
           <section id="restaurant-intro-section">
             <h1>Hos Nishiki Sushi</h1>
             <div>
-              <p>Besøg os i hjertet af Frederikssund. Vi sætter en ære i altid at tilbyde friske råvarer og lækre specialiteter i top kvalitet til gode priser.</p>
-              <p>Prøv vores populære ad libitum menu fra kun 199kr eller bestil ala carte fra vores mange sushi varianter, lækre forreter eller sticks.</p>
+              <p>
+                Besøg os i hjertet af Frederikssund. Vi sætter en ære i altid at
+                tilbyde friske råvarer og lækre specialiteter i top kvalitet til
+                gode priser.
+              </p>
+              <p>
+                Prøv vores populære ad libitum menu fra kun 199kr eller bestil
+                ala carte fra vores mange sushi varianter, lækre forreter eller
+                sticks.
+              </p>
             </div>
             <div className="restaurant-flex-buttons">
               <button className="primaryBtn">Ad Libitum</button>
@@ -54,9 +72,18 @@ export default function RestaurantPage() {
               <b>Ad libitum</b>
             </h2>
             <div>
-              <p>Betal et engangsbeløb og smag sushi og sticks fra hele vores ala carte menu.</p>
-              <p>Du kan bestille så meget du ønsker, og maden serveres altid frisklavet.</p>
-              <p>Da vi prøver at bekæmpe madspild, skal der betales 10 kr. pr stk. hvis der efterlades mere end 4 stk.</p>
+              <p>
+                Betal et engangsbeløb og smag sushi og sticks fra hele vores ala
+                carte menu.
+              </p>
+              <p>
+                Du kan bestille så meget du ønsker, og maden serveres altid
+                frisklavet.
+              </p>
+              <p>
+                Da vi prøver at bekæmpe madspild, skal der betales 10 kr. pr
+                stk. hvis der efterlades mere end 4 stk.
+              </p>
             </div>
           </div>
           <div id="adlibitum-prices">

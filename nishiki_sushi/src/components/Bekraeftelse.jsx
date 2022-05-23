@@ -4,11 +4,15 @@ import { FaTruck } from "react-icons/fa";
 import { MdOutlineKeyboardBackspace, MdRestaurant } from "react-icons/md";
 import { BsBagCheckFill } from "react-icons/bs";
 import OrdreInformation from "./OrdreInformation";
+import { NavLink } from "react-router-dom";
+import useWindowDimensions from "./screenResize_hook";
 
 function Bekræftelse() {
+  const screenSize = useWindowDimensions();
   return (
     <>
-      <BurgerMenu page={"home"} />
+      {screenSize.width > 799 && <BurgerMenu page={"kurv"} />}
+      {/*  {screenSize.width < 799 && <MobileNav page={"kurv"} />} */}
       <img
         className="hero_img hide_when_off_phone"
         src="../../img/hero_img/kurv_hero_mobile.png"
@@ -30,10 +34,10 @@ function Bekræftelse() {
             </div>
           </div>
           <div className="button_and_afhentling_container">
-            <button className="primaryBtn">
+            <NavLink to="/takeaway" className="primaryBtn">
               <MdOutlineKeyboardBackspace className="hw20_icon" />
               Kategorier
-            </button>
+            </NavLink>
             <p className="remove_1rem">
               Afhenting <MdRestaurant className="hw20_icon" />
             </p>
