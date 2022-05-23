@@ -17,7 +17,7 @@ async function fetchSushiData() {
   /* console.log(sushiData); */
 }
 
-/* console.log(sushiData); */
+console.log(sushiData);
 
 function Takeaway() {
   const [searchTerm, setsearchTerm] = useState("");
@@ -71,11 +71,7 @@ function Takeaway() {
             /*  onClick={onChangeSearch} */
           ></input>
         </div>
-        <div
-          className={`hidden ${
-            visible ? "show" : "hidden"
-          } kategorier_container`}
-        >
+        <div className={`hidden ${visible ? "show" : ""} kategorier_container`}>
           <h2>Kategorier</h2>
           <div className="kategorier">
             <div className="kategorie manedens_tilbud">
@@ -167,23 +163,23 @@ function Takeaway() {
         <div className="result_container">
           {sushiData
             .filter((val) => {
-              if (searchTerm == "") {
-                console.log("empty string");
-                /* return null; */
-                return val;
+              if (searchTerm === "") {
+                return null;
+                /*  return val; */
               } else if (
                 val.name.toLowerCase().includes(searchTerm.toLowerCase())
               ) {
-                console.log("value");
-                console.log(val.ingrediants);
                 /*  onChangeSearch(); */
                 return val;
-              }
-              /* else if (
-                ingVal.name.toLowerCase().includes(searchTerm.toLowerCase())
+              } else if (
+                val.category.toLowerCase().includes(searchTerm.toLowerCase())
               ) {
                 return val;
-              } */
+              } else if (searchTerm === "alle") {
+                return val;
+              } else if (searchTerm.length === 0) {
+                onChangeSearch();
+              }
             })
             .map((val, key) => {
               return (
@@ -235,6 +231,9 @@ function Takeaway() {
                       <p className="remove_1rem" key={val.price}>
                         {val.price}kr
                       </p>
+                      {/* <p className="remove_1rem" key={val.ingrediant_list}>
+                        {val.ingrediant_list}kr
+                      </p> */}
                     </div>
 
                     <div className="basket_icons">
