@@ -25,7 +25,6 @@ function Takeaway() {
 
   const onChangeSearch = () => {
     setVisible(!visible);
-    console.log("heloo");
   };
   return (
     <>
@@ -51,9 +50,10 @@ function Takeaway() {
           <h1>
             <b>Take</b>Away
           </h1>
-          <div className="sorter_pris">
-            <p>Sorter Pris</p>
-            <TiArrowUnsorted className="hw20_icon" />
+          <div className={`hidden ${visible ? "hidden" : "show"} sorter_pris`}>
+            <p>
+              Sorter Pris <TiArrowUnsorted className="hw20_icon" />
+            </p>
           </div>
         </div>
         <div className="search_container">
@@ -63,16 +63,14 @@ function Takeaway() {
             placeholder="Søg efter sushi eller ingredienser"
             onChange={(event) => {
               setsearchTerm(event.target.value);
-              if (searchTerm.length < 2) {
+              if (searchTerm.length < 1) {
                 onChangeSearch();
-              } else if (searchTerm.length === 0) {
               }
             }}
             /*  onClick={onChangeSearch} */
           ></input>
         </div>
-        {/*  <div className={`hidden ${visible ? "show" : ""} kategorier_container`}> */}
-        {/* <div className="kategorier_container">
+        <div className={`hidden ${visible ? "show" : ""} kategorier_container`}>
           <h2>Kategorier</h2>
           <div className="kategorier">
             <div className="kategorie manedens_tilbud">
@@ -158,13 +156,16 @@ function Takeaway() {
             </div>
           </div>
         </div>
-        <h2>
-          {}1 Resultater for "{}"
-        </h2> */}
+        <h2 className={`hidden ${visible ? "hidden" : "show"}`}>
+          {} Resultater for "{searchTerm}"
+        </h2>
         <div className="result_container">
           {sushiData
             .filter((val) => {
               if (searchTerm === "") {
+                if (visible === false) {
+                  setVisible(!visible);
+                }
                 return null;
               } else if (
                 val.name.toLowerCase().includes(searchTerm.toLowerCase())
