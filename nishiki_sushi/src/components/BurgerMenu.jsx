@@ -1,15 +1,19 @@
 import { NavLink } from "react-router-dom";
 import { BiXCircle } from "react-icons/bi";
+import { CgMenu } from "react-icons/cg";
 import React, { useState } from "react";
-import { IoMenu } from "react-icons/io";
 
 export default function BurgerMenu(props) {
   console.log(props.page);
   const [visible, setVisible] = useState(false);
   return (
-      <IoMenu onClick={() => setVisible(!visible)}>
-       
-      </IoMenu>
+    <>
+      {!visible && (
+        <CgMenu
+          onClick={() => setVisible(!visible)}
+          className="exit_icon hw40_icon"
+        ></CgMenu>
+      )}
       {visible && (
         <nav className="burgerNav">
           <BiXCircle
@@ -26,7 +30,7 @@ export default function BurgerMenu(props) {
                 }
                 to="/"
               >
-                <img
+                <svg
                   src="../icons/homeIcon.svg"
                   alt="Home icon."
                   className={
@@ -34,7 +38,7 @@ export default function BurgerMenu(props) {
                       ? "selected hw40_icon"
                       : "non-selected hw40_icon"
                   }
-                ></img>
+                ></svg>
                 Forside
               </NavLink>
             </li>
@@ -47,7 +51,7 @@ export default function BurgerMenu(props) {
                 }
                 to="/restaurant"
               >
-                <img
+                <svg
                   src="../icons/restaurantIcon.svg"
                   alt="Restaurant icon."
                   className={
@@ -55,7 +59,7 @@ export default function BurgerMenu(props) {
                       ? "selected hw40_icon"
                       : "non-selected hw40_icon"
                   }
-                ></img>
+                ></svg>
                 Restaurant
               </NavLink>
             </li>
@@ -107,11 +111,15 @@ export default function BurgerMenu(props) {
               </NavLink>
             </li>
           </ul>
-      <div className="phone_number">
-        <img src="../icons/monochromaticLogo.svg" className="hw30_icon"></img>
-        <a href="tel:45 42 31 47 99">+45 42 31 47 99</a>
-      </div>
-    </nav>
-    )}
+          <div className="phone_number">
+            <img
+              src="../icons/monochromaticLogo.svg"
+              className="hw30_icon"
+            ></img>
+            <a href="tel:45 42 31 47 99">+45 42 31 47 99</a>
+          </div>
+        </nav>
+      )}
+    </>
   );
 }
