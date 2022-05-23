@@ -1,7 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function BookStep1() {
   const [guestAmount, setGuestAmout] = useState(2);
+
+  useEffect(() => {
+    if (!guestAmount.current) {
+      changeGuestAmount();
+    }
+  }, [guestAmount]);
+
+  async function changeGuestAmount() {
+    console.log(guestAmount);
+    localStorage.setItem("NishikiTableGuestAmount", guestAmount);
+  }
+
   // console.log(guestAmount);
 
   const options = [
@@ -70,7 +82,7 @@ export default function BookStep1() {
   return (
     <>
       <h4>Hvor mange bliver I?</h4>
-      <label for="guest-count">
+      <label HTMLfor="guest-count" style={{ display: "flex", alignItems: "baseline", width: "max-content", marginTop: "1.5rem" }}>
         <select
           value={guestAmount}
           onChange={(e) => {
@@ -78,6 +90,7 @@ export default function BookStep1() {
           }}
           name="guest-count"
           id="guest-count"
+          required
         >
           {options.map((option) => (
             <option value={option.value}>{option.label}</option>
@@ -86,9 +99,6 @@ export default function BookStep1() {
         Gæster
       </label>
       <br />
-      <button type="submit" class="secondaryBtn">
-        Fortsæt
-      </button>
     </>
   );
 }
