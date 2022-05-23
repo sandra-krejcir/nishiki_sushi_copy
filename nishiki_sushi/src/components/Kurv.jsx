@@ -7,6 +7,7 @@ import { IoMdArrowDropup, IoMdArrowDropdown } from "react-icons/io";
 import Oplysninger from "./Oplysninger";
 import useWindowDimensions from "./screenResize_hook";
 import { NavLink } from "react-router-dom";
+import MobileNav from "./MobileNavBar";
 
 function Kurv() {
   const screenSize = useWindowDimensions();
@@ -14,9 +15,17 @@ function Kurv() {
     <>
       {screenSize.width > 799 && <BurgerMenu page={"kurv"} />}
       {screenSize.width < 799 && <MobileNav page={"kurv"} />}
-      <img className="hero_img hide_when_off_phone" src="../../img/hero_img/kurv_hero_mobile.png" alt="takeaway" />
+      <img
+        className="hero_img hide_when_off_phone"
+        src="../../img/hero_img/kurv_hero_mobile.png"
+        alt="takeaway"
+      />
       <div className="kurv_container">
-        <img className="hero_img hide_when_on_phone" src="../../img/hero_img/kurv_hero.png" alt="takeaway" />
+        <img
+          className="hero_img hide_when_on_phone"
+          src="../../img/hero_img/kurv_hero.png"
+          alt="takeaway"
+        />
         <div className="kurv_top">
           <h1>Kurv</h1>
           <div className="ingen_lavering_container">

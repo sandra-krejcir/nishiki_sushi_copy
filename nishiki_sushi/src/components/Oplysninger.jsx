@@ -1,18 +1,23 @@
 import React from "react";
-import BurgerMenu from "./BurgerMenu";
+/* import BurgerMenu from "./BurgerMenu"; */
 import { FaTruck } from "react-icons/fa";
 import { MdOutlineKeyboardBackspace, MdRestaurant } from "react-icons/md";
 import { NavLink } from "react-router-dom";
-/* import useWindowDimensions from "./screenResize_hook"; */
+import useWindowDimensions from "./screenResize_hook";
+import MobileNav from "./MobileNavBar";
 /* import useForm from "react-hook-form"; */
 
 function Oplysninger() {
   /* const { register, handleSubmit, errors } = useForm(); */
-  /*  screenSize = useWindowDimensions(); */
+  const screenSize = useWindowDimensions();
   return (
     <>
       {screenSize.width < 799 && <MobileNav page={"kurv"} />}
-      <img className="hero_img hide_when_off_phone" src="../../img/hero_img/kurv_hero_mobile.png" alt="takeaway" />
+      <img
+        className="hero_img hide_when_off_phone"
+        src="../../img/hero_img/kurv_hero_mobile.png"
+        alt="takeaway"
+      />
       <div className="oplysninger_container">
         <div className="hide_when_off_phone">
           <div className="oplysninger_top">
@@ -34,20 +39,44 @@ function Oplysninger() {
         </div>
         <div className="oplysninger_form_container">
           <h2 className="hide_when_on_phone">Oplysninger</h2>
-          <p>For vi bedst kan servere dig mad, får vi brug for nogen oplysninger om dig. Efter bestillingen er bekræftet vil du modtage en SMS</p>
+          <p>
+            For vi bedst kan servere dig mad, får vi brug for nogen oplysninger
+            om dig. Efter bestillingen er bekræftet vil du modtage en SMS
+          </p>
           <form id="oplysninger_form">
             <div className="from_name_time_number">
               <div>
                 <label htmlFor="oplysninger_navn">Navn</label>
-                <input type="text" name="oplysninger_navn" id="oplysninger_navn" minLength="2" placeholder="John Doe" required />
+                <input
+                  type="text"
+                  name="oplysninger_navn"
+                  id="oplysninger_navn"
+                  minLength="2"
+                  placeholder="John Doe"
+                  required
+                />
               </div>
               <div>
                 <label htmlFor="oplysninger_tid">Afhentnings tidspunkt</label>
-                <input type="time" id="oplysninger_tid" name="oplysninger_tid" min="15:00" max="21:00" required />
+                <input
+                  type="time"
+                  id="oplysninger_tid"
+                  name="oplysninger_tid"
+                  min="15:00"
+                  max="21:00"
+                  required
+                />
               </div>
               <div>
                 <label htmlFor="oplysninger_mobil">Mobil Nummer</label>
-                <input type="tel" id="oplysninger_mobil" name="oplysninger_mobil" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" placeholder="00 00 00 00" required />
+                <input
+                  type="tel"
+                  id="oplysninger_mobil"
+                  name="oplysninger_mobil"
+                  pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}"
+                  placeholder="00 00 00 00"
+                  required
+                />
               </div>
             </div>
             <label htmlFor="oplysninger_kommentarer">Kommentarer</label>
