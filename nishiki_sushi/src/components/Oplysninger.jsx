@@ -28,10 +28,12 @@ function Oplysninger() {
             </div>
           </div>
           <div className="button_and_afhentling_container">
-            <button className="secondaryBtn">
-              <MdOutlineKeyboardBackspace className="hw20_icon" />
-              Kurv
-            </button>
+            <NavLink to="/kurv">
+              <button className="secondaryBtn">
+                <MdOutlineKeyboardBackspace className="hw20_icon" />
+                Kurv
+              </button>
+            </NavLink>
             <p className="remove_1rem">
               Afhenting <MdRestaurant className="hw20_icon" />
             </p>

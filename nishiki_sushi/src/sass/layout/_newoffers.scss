@@ -1,6 +1,7 @@
 @use "../base/colors";
 @use "../base/buttons";
 @use "../base/margins";
+@use "../base/effects";
 
 .header_logo {
   position: absolute;
@@ -37,6 +38,7 @@
   flex-direction: column;
   width: 48vw;
   height: 100vw;
+  box-shadow: effects.$boxShadowImage;
 }
 
 .thumbnail_images > a > h4 {
@@ -120,22 +122,18 @@
   margin-left: margins.$marginHorisontalMobile;
 }
 
-.offer {
-  max-width: 240px;
-  margin-top: 10px;
-  margin-bottom: 50px;
-}
-
 .first_offer {
   background-image: url("../img/offer1.webp");
   width: 230px;
   height: 215px;
+  box-shadow: effects.$boxShadowImage;
 }
 
 .second_offer {
   background-image: url("../img/offer2.webp");
   width: 230px;
   height: 215px;
+  box-shadow: effects.$boxShadowImage;
 }
 
 .offer > p {
@@ -165,6 +163,7 @@
     flex-direction: column;
     width: 44vw;
     height: 55vw;
+    box-shadow: effects.$boxShadowImage;
   }
 
   .restaurant_thumbnail {
@@ -190,6 +189,7 @@
     width: 18vw;
     height: 17vw;
     background-size: cover;
+    box-shadow: effects.$boxShadowImage;
   }
 
   .first_offer {
@@ -197,6 +197,7 @@
     width: 18vw;
     height: 17vw;
     background-size: cover;
+    box-shadow: effects.$boxShadowImage;
   }
 
   .second_offer {
@@ -204,6 +205,7 @@
     width: 18vw;
     height: 17vw;
     background-size: cover;
+    box-shadow: effects.$boxShadowImage;
   }
 
   .offers_container {
@@ -287,6 +289,7 @@
     flex-direction: column;
     width: 45vw;
     height: 48vw;
+    box-shadow: effects.$boxShadowImage;
   }
 
   .restaurant_thumbnail {
@@ -332,6 +335,7 @@
     width: 18vw;
     height: 17vw;
     background-size: cover;
+    box-shadow: effects.$boxShadowImage;
   }
 
   .first_offer {
@@ -339,6 +343,7 @@
     width: 18vw;
     height: 17vw;
     background-size: cover;
+    box-shadow: effects.$boxShadowImage;
   }
 
   .second_offer {
@@ -346,6 +351,7 @@
     width: 18vw;
     height: 17vw;
     background-size: cover;
+    box-shadow: effects.$boxShadowImage;
   }
 
   .newOffers_section {

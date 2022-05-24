@@ -1,6 +1,7 @@
 @use "../base/colors";
 @use "../base/buttons";
 @use "../base/margins";
+@use "../base/effects";
 
 .catering_form {
   margin-left: margins.$marginHorisontalMobile + 27;
@@ -9,6 +10,7 @@
   margin-bottom: 100px;
   position: relative;
   top: -270px;
+  box-shadow: effects.$boxShadowImage;
 }
 
 .catering_form > div {
@@ -53,6 +55,7 @@
   position: relative;
   top: -220px;
   z-index: 5;
+  box-shadow: effects.$boxShadowImage;
 }
 
 .column_formFlex {
@@ -79,6 +82,7 @@
     position: relative;
     top: -250px;
     z-index: 5;
+    box-shadow: effects.$boxShadowImage;
   }
 
   .catering_form {
@@ -88,6 +92,7 @@
     margin-bottom: 250px;
     position: unset;
     top: 0;
+    box-shadow: effects.$boxShadowImage;
     width: 100%;
   }
 
@@ -148,6 +153,7 @@
     position: relative;
     top: -250px;
     z-index: 5;
+    box-shadow: effects.$boxShadowImage;
   }
 
   .catering_form {
@@ -159,6 +165,7 @@
     position: unset;
     top: 0;
     width: 100%;
+    box-shadow: effects.$boxShadowImage;
   }
 
   .catering_form > div > p {

@@ -1,6 +1,7 @@
 @use "../base/colors";
 @use "../base/buttons";
 @use "../base/margins";
+@use "../base/effects";
 
 .visitUs_section {
   margin-left: margins.$marginHorisontalMobile;
@@ -69,6 +70,7 @@
     background-size: 65vw 70vw;
     height: 67vw;
     align-self: center;
+    box-shadow: effects.$boxShadowImage;
   }
 
   .visitUs_section {
@@ -118,6 +120,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left center;
+    box-shadow: effects.$boxShadowImage;
   }
 
   .visitUs_section {

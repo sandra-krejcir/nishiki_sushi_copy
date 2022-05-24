@@ -16,10 +16,13 @@ export default function MobileNavBar(props) {
               to="/"
             >
               <img
-                src="../icons/homeIcon.svg"
+                src={
+                  props.page === "home"
+                    ? "../icons/homeColored.svg"
+                    : "../icons/homeUncolored.svg"
+                }
                 alt="Home icon."
-                fill={props.page === "home" ? "#30404f" : "#c4c4c4"}
-                className="hw30_icon"
+                className="hw40_icon"
               ></img>
               Forside
             </NavLink>
@@ -34,10 +37,13 @@ export default function MobileNavBar(props) {
               to="/restaurant"
             >
               <img
-                src="../icons/restaurantIcon.svg"
+                src={
+                  props.page === "restaurant"
+                    ? "../icons/restaurantColored.svg"
+                    : "../icons/restaurantUncolored.svg"
+                }
                 alt="Restaurant icon."
-                fill={props.page === "restaurant" ? "#30404f" : "#c4c4c4"}
-                className="hw30_icon"
+                className="hw40_icon"
               ></img>
               Restaurant
             </NavLink>
@@ -52,10 +58,13 @@ export default function MobileNavBar(props) {
               to="/takeaway"
             >
               <img
-                src="../icons/takeaway.svg"
+                src={
+                  props.page === "takeaway"
+                    ? "../icons/takeawayColored.svg"
+                    : "../icons/takeawayUncolored.svg"
+                }
                 alt="Takeaway icon."
-                fill={props.page === "takeaway" ? "#30404f" : "#c4c4c4"}
-                className="hw30_icon"
+                className="hw40_icon"
               ></img>
               Takeaway
             </NavLink>
@@ -70,10 +79,13 @@ export default function MobileNavBar(props) {
               to="/kurv"
             >
               <img
-                src="../icons/basketIcon.svg"
-                alt="Kurv icon."
-                fill={props.page === "kurv" ? "#30404f" : "#c4c4c4"}
-                className="hw30_icon"
+                src={
+                  props.page === "kurv"
+                    ? "../icons/basketColored.svg"
+                    : "../icons/basketUncolored.svg"
+                }
+                alt="Basket icon."
+                className="hw40_icon"
               ></img>
               Kurv
             </NavLink>
