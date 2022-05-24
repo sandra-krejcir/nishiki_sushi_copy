@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import BurgerMenu from "./BurgerMenu";
 import { IoIosSearch } from "react-icons/io";
-import { BsBasket3Fill } from "react-icons/bs";
 import { TiArrowUnsorted } from "react-icons/ti";
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
 import useWindowDimensions from "./screenResize_hook";
@@ -305,20 +304,28 @@ function Takeaway() {
                       <br />
                       <div style={{ display: "inline-flex" }}>
                         <p className="remove_1rem">Pris:</p>
-                        <p className="discount remove_1rem" key={val.discount}>
-                          {val.discount}kr
-                        </p>
-                        <p className="remove_1rem" key={val.price}>
+                        <p className="discount remove_1rem" key={val.price}>
                           {val.price}kr
+                        </p>
+                        <p className="remove_1rem" key={val.discount}>
+                          {val.discount}kr
                         </p>
                       </div>
 
                       <div className="basket_icons">
                         <div className="remove_from_basket">
-                          <BsBasket3Fill className="hw40_icon" />
+                          <img
+                            className="hw40_icon"
+                            src="../../icons/basket-minus.svg"
+                            alt="basket_icon"
+                          />
                         </div>
                         <div className="add_to_basket">
-                          <BsBasket3Fill className="hw40_icon" />
+                          <img
+                            className="hw40_icon"
+                            src="../../icons/basket-plus.svg"
+                            alt="basket_icon"
+                          />
                         </div>
                       </div>
                     </div>
@@ -402,20 +409,28 @@ function Takeaway() {
                       <br />
                       <div style={{ display: "inline-flex" }}>
                         <p className="remove_1rem">Pris:</p>
-                        <p className="discount remove_1rem" key={val.discount}>
-                          {val.discount}kr
-                        </p>
-                        <p className="remove_1rem" key={val.price}>
+                        <p className="discount remove_1rem" key={val.preice}>
                           {val.price}kr
+                        </p>
+                        <p className="remove_1rem" key={val.discount}>
+                          {val.discount}kr
                         </p>
                       </div>
 
                       <div className="basket_icons">
                         <div className="remove_from_basket">
-                          <BsBasket3Fill className="hw40_icon" />
+                          <img
+                            className="hw40_icon"
+                            src="../../icons/basket-minus.svg"
+                            alt="basket_icon"
+                          />
                         </div>
                         <div className="add_to_basket">
-                          <BsBasket3Fill className="hw40_icon" />
+                          <img
+                            className="hw40_icon"
+                            src="../../icons/basket-plus.svg"
+                            alt="basket_icon"
+                          />
                         </div>
                       </div>
                     </div>
