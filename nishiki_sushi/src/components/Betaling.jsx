@@ -33,14 +33,22 @@ function Betaling() {
             </div>
           </div>
           <div className="button_and_afhentling_container">
-            <button className="secondaryBtn hide_when_off_phone">
-              <MdOutlineKeyboardBackspace className="hw20_icon" />
-              Oplys
-            </button>
-            <button className="secondaryBtn hide_when_on_phone">
-              <MdOutlineKeyboardBackspace className="hw20_icon" />
-              Kurv
-            </button>
+            {screenSize.width < 799 && (
+              <NavLink to="/Oplysninger">
+                <button className="secondaryBtn hide_when_off_phone">
+                  <MdOutlineKeyboardBackspace className="hw20_icon" />
+                  Oplys
+                </button>
+              </NavLink>
+            )}
+            {screenSize.width > 799 && (
+              <NavLink to="/kurv">
+                <button className="secondaryBtn hide_when_on_phone">
+                  <MdOutlineKeyboardBackspace className="hw20_icon" />
+                  Kurv
+                </button>
+              </NavLink>
+            )}
             <p className="remove_1rem">
               Afhenting <MdRestaurant className="hw20_icon" />
             </p>

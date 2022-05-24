@@ -34,10 +34,12 @@ function Kurv() {
           </div>
         </div>
         <div className="button_and_afhentling_container">
-          <button className="secondaryBtn">
-            <MdOutlineKeyboardBackspace className="hw20_icon" />
-            Tilføj
-          </button>
+          <NavLink to="/takeaway">
+            <button className="secondaryBtn">
+              <MdOutlineKeyboardBackspace className="hw20_icon" />
+              Tilføj
+            </button>
+          </NavLink>
           <p className="remove_1rem">
             Afhenting <MdRestaurant className="hw20_icon" />
           </p>

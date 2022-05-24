@@ -1,6 +1,7 @@
 @use "../base/colors";
 @use "../base/buttons";
 @use "../base/margins";
+@use "../base/effects";
 
 .catering_event_section {
   background-color: colors.$cream;
@@ -34,6 +35,7 @@
   height: 253px;
   position: relative;
   top: -55px;
+  box-shadow: effects.$boxShadowImage;
 }
 
 .catering_container {
@@ -84,6 +86,7 @@
     height: 386px;
     position: relative;
     top: -95px;
+    box-shadow: effects.$boxShadowImage;
   }
 
   .catering_container {
@@ -133,6 +136,7 @@
     height: 386px;
     position: relative;
     top: -95px;
+    box-shadow: effects.$boxShadowImage;
   }
 
   .catering_container {

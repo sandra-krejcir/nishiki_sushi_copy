@@ -24,7 +24,10 @@
   }
 
   .burgerNav > ul {
-    padding: margins.$marginHorisontalDesktop;
+    padding-top: calc(margins.$marginHorisontalDesktop/2);
+    padding-right: margins.$marginHorisontalDesktop;
+    padding-left: margins.$marginHorisontalDesktop;
+    padding-bottom: margins.$marginHorisontalDesktop;
     background-color: colors.$cream;
     z-index: 10;
     grid-area: 1 / 8 / 2 / 9;
