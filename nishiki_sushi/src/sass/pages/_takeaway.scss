@@ -31,7 +31,12 @@ h3 {
   margin-top: 1rem;
 }
 .item img {
-  max-height: 149px;
+  /* max-height: 149px; */
+  box-shadow: effects.$boxShadowImage;
+}
+
+.item .hw40_icon {
+  box-shadow: none;
 }
 
 .sorter_pris {
@@ -52,6 +57,7 @@ h3 {
   align-items: center;
   box-shadow: effects.$boxShadowInset;
   margin-bottom: margins.$marginUnderElementMobile;
+  height: 45px;
 }
 .search_container input {
   border: none;
@@ -143,7 +149,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: colors.$lightBrown;
+  background: colors.$lightWood;
   color: colors.$darkBrown;
   font-weight: bold;
   width: 30px !important;
