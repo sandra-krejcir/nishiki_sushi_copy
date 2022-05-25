@@ -7,7 +7,7 @@ footer {
   flex-direction: row-reverse;
   justify-content: space-between;
   padding: margins.$marginHorisontalMobile;
-  background-color: colors.$darkBlue;
+  background: colors.$blueGradient;
   color: colors.$off-white;
   margin-top: calc(margins.$marginVerticalSectionsMobile * 1.5);
 }
