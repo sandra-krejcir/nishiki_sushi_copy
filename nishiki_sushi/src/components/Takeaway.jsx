@@ -5,6 +5,7 @@ import { TiArrowUnsorted } from "react-icons/ti";
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
 import useWindowDimensions from "./screenResize_hook";
 import MobileNav from "./MobileNavBar";
+import cartSetup from "./Cart";
 
 let sushiData;
 await fetchSushiData();
@@ -26,6 +27,7 @@ function Takeaway() {
   const [visible, setVisible] = useState(true);
   const [visible2, setVisible2] = useState(true);
   const screenSize = useWindowDimensions();
+  const CART = cartSetup();
 
   const onChangeSearch = () => {
     setVisible(!visible);
@@ -262,11 +264,22 @@ function Takeaway() {
                 }
               })
               .map((val, key) => {
+                /*  console.log(
+                  JSON.parse(localStorage.getItem(CART.KEY)).find(
+                    (element) => element.name === val.name
+                  )
+                ); */
+                console.log(
+                  JSON.stringify(JSON.parse(localStorage.getItem(CART.KEY)))
+                );
                 return (
                   <>
                     <div className="item">
                       <div className="in_basket_number_container">
                         <p className="in_basket_number">0</p>
+                        {/* {CART.contents.find(
+                          (element) => element.name === val.name
+                        ).qty >= 1 ? <p className="in_basket_number"></p> : null} */}
                       </div>
                       <img
                         src={
@@ -313,14 +326,26 @@ function Takeaway() {
                       </div>
 
                       <div className="basket_icons">
-                        <div className="remove_from_basket">
+                        <div
+                          className="remove_from_basket"
+                          onClick={() => CART.minusOne(val)}
+                        >
                           <img
                             className="hw40_icon"
                             src="../../icons/basket-minus.svg"
                             alt="basket_icon"
                           />
                         </div>
-                        <div className="add_to_basket">
+                        <div
+                          className="add_to_basket"
+                          onClick={() =>
+                            CART.add({
+                              name: val.name,
+                              price: val.discount,
+                              ingrediants: val.ingrediants,
+                            })
+                          }
+                        >
                           <img
                             className="hw40_icon"
                             src="../../icons/basket-plus.svg"
