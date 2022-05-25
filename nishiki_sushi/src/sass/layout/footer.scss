@@ -9,6 +9,7 @@ footer {
   padding: margins.$marginHorisontalMobile;
   background-color: colors.$darkBlue;
   color: colors.$off-white;
+  margin-top: calc(margins.$marginVerticalSectionsMobile * 1.5);
 }
 
 footer > nav > ul {
@@ -84,6 +85,7 @@ footer > div > div > div > div > h4 {
     background-color: colors.$darkBlue;
     color: colors.$off-white;
     font-size: 1.2rem;
+    margin-top: calc(margins.$marginVerticalSectionsTablet * 1.5);
   }
 
   footer > nav > ul {
@@ -173,6 +175,7 @@ footer > div > div > div > div > h4 {
     background-color: colors.$darkBlue;
     color: colors.$off-white;
     font-size: 1.2rem;
+    margin-top: calc(margins.$marginVerticalSectionsDesktop * 1.5);
   }
 
   footer > nav > ul {

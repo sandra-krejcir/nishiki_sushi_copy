@@ -14,6 +14,14 @@
   color: #c4c4c4;
 }
 
+.exit_icon {
+  position: absolute;
+  right: 0;
+  z-index: 11;
+  grid-area: 1 / 8 / 2 / 9;
+  margin: 20px;
+}
+
 @media only screen and (min-width: 1225px) {
   .burgerNav {
     display: grid;

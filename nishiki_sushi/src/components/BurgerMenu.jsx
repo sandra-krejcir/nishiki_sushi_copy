@@ -2,8 +2,10 @@ import { NavLink } from "react-router-dom";
 import { BiXCircle } from "react-icons/bi";
 import { CgMenu } from "react-icons/cg";
 import React, { useState } from "react";
+import useWindowDimensions from "./screenResize_hook";
 
 export default function BurgerMenu(props) {
+  const screenSize = useWindowDimensions();
   /*  console.log(props.page); */
   const [visible, setVisible] = useState(false);
   return (
@@ -13,6 +15,27 @@ export default function BurgerMenu(props) {
           onClick={() => setVisible(!visible)}
           className="exit_icon hw40_icon"
         ></CgMenu>
+      )}
+      {screenSize.width > 799 && (
+        <NavLink
+          className={
+            props.page === "kurv"
+              ? "selected column_flex"
+              : "non-selected column_flex"
+          }
+          to="/kurv"
+        >
+          <img
+            src={
+              props.page === "kurv"
+                ? "../icons/basketColored.svg"
+                : "../icons/basketUncolored.svg"
+            }
+            alt="Basket icon."
+            className="hw40_icon"
+          ></img>
+          Kurv
+        </NavLink>
       )}
       {visible && (
         <nav className="burgerNav">
