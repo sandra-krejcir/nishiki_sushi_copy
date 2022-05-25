@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import useWindowDimensions from "./screenResize_hook";
 import BurgerMenu from "./BurgerMenu";
 import MobileNav from "./MobileNavBar";
+import { NavLink } from "react-router-dom";
 
 export default function RestaurantPage() {
   const screenSize = useWindowDimensions();
@@ -12,6 +13,13 @@ export default function RestaurantPage() {
       <header>
         {screenSize.width > 799 && <BurgerMenu page={"restaurant"} />}
         {screenSize.width < 799 && <MobileNav page={"restaurant"} />}
+        <NavLink to="/">
+          <img
+            src="../icons/logo.svg"
+            alt="The logo icon."
+            className="header_logo"
+          />
+        </NavLink>
         <div className="hero-container">
           <img
             className="hero-image"

@@ -6,6 +6,7 @@ import { MdOutlineKeyboardBackspace } from "react-icons/md";
 import useWindowDimensions from "./screenResize_hook";
 import MobileNav from "./MobileNavBar";
 import cartSetup from "./Cart";
+import { NavLink } from "react-router-dom";
 
 let sushiData;
 await fetchSushiData();
@@ -44,11 +45,13 @@ function Takeaway() {
       <div className="takeaway_container">
         {screenSize.width > 799 && <BurgerMenu page={"takeaway"} />}
         {screenSize.width < 799 && <MobileNav page={"takeaway"} />}
-        <img
-          src="../icons/logo.svg"
-          alt="The logo icon."
-          className="header_logo"
-        />
+        <NavLink to="/">
+          <img
+            src="../icons/logo.svg"
+            alt="The logo icon."
+            className="header_logo"
+          />
+        </NavLink>
         <img
           className="hero_img hide_when_on_phone"
           src="../../img/hero_img/takeaway_hero.png"

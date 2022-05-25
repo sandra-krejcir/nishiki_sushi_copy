@@ -10,3 +10,22 @@ main {
   max-width: 2400px;
   margin: 0 auto;
 }
+
+.header_logo {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 30px);
+  width: 60px;
+}
+
+.header_logo_landing_page {
+  left: calc(50% - 51px);
+  width: 102px;
+}
+
+@media screen and (min-width: margins.$layout-breakpoint-mobile-end) {
+  .header_logo {
+    left: calc(50% - 51px);
+    width: 102px;
+  }
+}

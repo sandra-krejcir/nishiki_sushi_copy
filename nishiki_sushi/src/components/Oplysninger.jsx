@@ -13,6 +13,13 @@ function Oplysninger() {
   return (
     <>
       {screenSize.width < 799 && <MobileNav page={"kurv"} />}
+      <NavLink to="/">
+        <img
+          src="../icons/logo.svg"
+          alt="The logo icon."
+          className="header_logo"
+        />
+      </NavLink>
       <img
         className="hero_img hide_when_off_phone"
         src="../../img/hero_img/kurv_hero_mobile.png"
