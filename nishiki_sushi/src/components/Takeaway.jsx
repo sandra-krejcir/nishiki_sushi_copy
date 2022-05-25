@@ -307,6 +307,18 @@ function Takeaway() {
                         }}
                       >
                         {val.ingrediants.map((ingVal) => {
+                          if (ingVal.name === "menu") {
+                            return (
+                              <>
+                                <p>{val.ingrediant_list}</p>
+                                <p>{val.ingrediant_list2}</p>
+                                <p>{val.ingrediant_list3}</p>
+                                <p>{val.ingrediant_list4}</p>
+                                <p>{val.ingrediant_list5}</p>
+                                <p>{val.ingrediant_list6}</p>
+                              </>
+                            );
+                          }
                           return (
                             <p
                               style={{ width: "max-content", margin: "0" }}
@@ -424,6 +436,19 @@ function Takeaway() {
                         }}
                       >
                         {val.ingrediants.map((ingVal) => {
+                          if (ingVal.name === "menu") {
+                            return (
+                              <>
+                                <p>{val.ingrediant_list}</p>
+                                <p>{val.ingrediant_list2}</p>
+                                <p>{val.ingrediant_list3}</p>
+                                <p>{val.ingrediant_list4}</p>
+                                <p>{val.ingrediant_list5}</p>
+                                <p>{val.ingrediant_list6}</p>
+                              </>
+                            );
+                          }
+
                           return (
                             <p
                               style={{ width: "max-content", margin: "0" }}
