@@ -23,7 +23,7 @@ const useFormBetaling = (callback, validateInfoBetaling) => {
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
-      localStorage.setItem("henvendelse", JSON.stringify(values));
+      localStorage.setItem("Betaling", JSON.stringify(values));
       callback();
     }
   }, [errors]);
