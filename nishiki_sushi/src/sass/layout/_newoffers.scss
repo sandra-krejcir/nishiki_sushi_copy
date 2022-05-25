@@ -281,8 +281,8 @@
   .thumbnail_img {
     display: flex;
     flex-direction: column;
-    width: 45vw;
-    height: 48vw;
+    width: 100%;
+    height: 35vw;
     box-shadow: effects.$boxShadowImage;
   }
 
