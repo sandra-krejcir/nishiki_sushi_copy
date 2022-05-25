@@ -62,8 +62,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 80px;
   background-color: colors.$cream;
+  margin-bottom: margins.$marginVerticalSectionsMobile;
 }
 
 .row_flex {
@@ -76,7 +76,7 @@
 
 .offers_title {
   margin-left: margins.$marginHorisontalMobile + 78px;
-  margin-top: 70px;
+  margin-top: margins.$marginVerticalSectionsMobile;
   margin-bottom: 30px;
 }
 
@@ -180,7 +180,7 @@
 
   .offers_title {
     margin-left: margins.$marginHorisontalTablet + 160px;
-    margin-top: 100px;
+    margin-top: margins.$marginVerticalSectionsTablet;
     margin-bottom: 30px;
   }
 
@@ -233,9 +233,9 @@
   .newOffers_section {
     display: grid;
     grid-template-columns: 0.5fr 3fr;
-    margin-bottom: 80px;
     margin-left: margins.$marginHorisontalTablet;
     margin-right: margins.$marginHorisontalTablet;
+    margin-bottom: margins.$marginVerticalSectionsTablet;
   }
 
   .newOffers_buttons {
@@ -272,7 +272,7 @@
 
   .offers_title {
     margin-left: margins.$marginHorisontalDesktop + 270px;
-    margin-top: 100px;
+    margin-top: margins.$marginVerticalSectionsDesktop;
     margin-bottom: 30px;
   }
 
@@ -360,6 +360,7 @@
     // margin-bottom: 80px;
     margin-left: margins.$marginHorisontalDesktop;
     margin-right: margins.$marginHorisontalDesktop;
+    margin-bottom: margins.$marginVerticalSectionsDesktop;
   }
 
   .newOffers_buttons {

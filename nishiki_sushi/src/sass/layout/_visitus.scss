@@ -5,7 +5,7 @@
 
 .visitUs_section {
   margin-left: margins.$marginHorisontalMobile;
-  margin-bottom: 80px;
+  margin-bottom: margins.$marginVerticalSectionsMobile;
 }
 .visitUs_title {
   margin-left: 55px;
@@ -78,6 +78,7 @@
     margin-top: 80px;
     max-width: 100%;
     margin-left: 0;
+    margin-bottom: unset;
   }
 
   .side_row {
@@ -88,7 +89,7 @@
     grid-template-columns: 1.75fr 1fr;
     margin-left: margins.$marginHorisontalTablet;
     margin-right: margins.$marginHorisontalTablet;
-    margin-bottom: margins.$marginHorisontalTablet;
+    margin-bottom: margins.$marginVerticalSectionsTablet;
   }
   .times {
     /* width: 100%; */
@@ -138,7 +139,7 @@
     grid-template-columns: 1.75fr 1fr;
     margin-left: margins.$marginHorisontalDesktop;
     margin-right: margins.$marginHorisontalDesktop;
-    margin-bottom: margins.$marginHorisontalDesktop;
+    margin-bottom: margins.$marginVerticalSectionsDesktop;
   }
   .times {
     /* width: 100%; */
