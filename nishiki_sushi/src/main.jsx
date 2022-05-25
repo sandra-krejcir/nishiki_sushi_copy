@@ -16,17 +16,19 @@ import {
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/takeaway" element={<Takeaway />} />
-        <Route path="/restaurant" element={<RestaurantPage />} />
-        <Route path="/kurv" element={<Kurv />} />
-        <Route path="/oplysninger" element={<Oplysninger />} />
-        <Route path="/betaling" element={<Betaling />} />
-        <Route path="/bekraeftelse" element={<Bekraeftelse />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <main>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/takeaway" element={<Takeaway />} />
+          <Route path="/restaurant" element={<RestaurantPage />} />
+          <Route path="/kurv" element={<Kurv />} />
+          <Route path="/oplysninger" element={<Oplysninger />} />
+          <Route path="/betaling" element={<Betaling />} />
+          <Route path="/bekraeftelse" element={<Bekraeftelse />} />
+        </Routes>
+      </Router>
+    </main>
+    <Footer />
   </React.StrictMode>
 );

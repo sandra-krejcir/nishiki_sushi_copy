@@ -4,6 +4,9 @@
 body {
   background-color: colors.$off-white;
   /*  margin: margins.$marginHorisontalMobile; */
-  margin: 0 auto;
+}
+
+main {
   max-width: 2400px;
+  margin: 0 auto;
 }
