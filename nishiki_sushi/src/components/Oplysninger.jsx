@@ -75,15 +75,7 @@ const Oplysninger = ({ submitForm }) => {
               </div>
             </div>
             <label htmlFor="oplysninger_kommentarer">Kommentarer</label>
-            <input
-              style={{ border: errors.oplysninger_kommentarer ? "2px solid red" : "" }}
-              onChange={handleChange}
-              value={values.oplysninger_kommentarer}
-              type="text"
-              name="oplysninger_kommentarer"
-              id="oplysninger_kommentarer"
-              placeholder="Jeg vil gerne tilføje..."
-            />
+            <input onChange={handleChange} value={values.oplysninger_kommentarer} type="text" name="oplysninger_kommentarer" id="oplysninger_kommentarer" placeholder="Jeg vil gerne tilføje..." />
             {errors.oplysninger_kommentarer && <p className="errorMessage">{errors.oplysninger_kommentarer}</p>}
             <div className="button_container_center">
               {isSubmitted && (

@@ -15,8 +15,5 @@ export default function validateInfoOplysninger(values) {
     errors.oplysninger_mobil = "Telefonnummer ugyldigt";
   }
 
-  if (!values.oplysninger_kommentarer.trim()) {
-    errors.oplysninger_kommentarer = "Beskrivelse påkrævet";
-  }
   return errors;
 }

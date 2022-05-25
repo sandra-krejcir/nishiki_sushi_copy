@@ -4,8 +4,9 @@
 @use "../base/buttons";
 
 .errorMessage {
-  margin-top: 0 !important;
+  margin-top: 0.2rem !important;
   color: red !important;
+  text-transform: initial;
 }
 
 .ordreInformation_container {

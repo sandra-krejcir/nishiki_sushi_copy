@@ -14,13 +14,15 @@ const CateringFormStep1 = ({ submitForm }) => {
         <label htmlFor="enquiryName" className="form_input enquiryName column_formFlex">
           NAVN
           <input style={{ border: errors.enquiryName ? "2px solid red" : "" }} onChange={handleChange} value={values.enquiryName} type="text" id="enquiryName" name="enquiryName" placeholder="John Doe"></input>
+          {errors.enquiryName && <p className="errorMessage">{errors.enquiryName}</p>}
         </label>
-        {errors.enquiryName && <p>{errors.enquiryName}</p>}
+
         <label htmlFor="enquiryEmailAddress" className="form_input enquiryEmailAddress column_formFlex">
           EMAIL ADRESSE
           <input style={{ border: errors.enquiryEmailAddress ? "2px solid red" : "" }} onChange={handleChange} value={values.enquiryEmailAddress} type="email" id="enquiryEmailAddress" name="enquiryEmailAddress" placeholder="Johndoe@mail.com"></input>
+          {errors.enquiryEmailAddress && <p className="errorMessage">{errors.enquiryEmailAddress}</p>}
         </label>
-        {errors.enquiryEmailAddress && <p>{errors.enquiryEmailAddress}</p>}
+
         <label htmlFor="enquiryFestType" className="form_input enquiryFestType column_formFlex">
           FEST TYPE
           <select onChange={handleChange} value={values.enquiryFestType} type="text" id="enquiryFestType" name="enquiryFestType">
@@ -28,15 +30,17 @@ const CateringFormStep1 = ({ submitForm }) => {
             <option value="Offsite catering">Offsite catering</option>
           </select>
         </label>
+
         <label htmlFor="enquiryComment" className="formTextarea_input enquiryComment column_formFlex">
           EVENT BESKRIVELSE
           <textarea style={{ border: errors.enquiryComment ? "2px solid red" : "" }} onChange={handleChange} value={values.enquiryComment} id="enquiryComment" name="enquiryComment"></textarea>
+          {errors.enquiryComment && <p className="errorMessage">{errors.enquiryComment}</p>}
         </label>
-        {errors.enquiryComment && <p>{errors.enquiryComment}</p>}
+
         <div className="enquirySubmit_button">
           <a href="">
             <button type="submit" className="primaryBtn">
-              Send enquiry
+              Send forespørgsel
             </button>
           </a>
         </div>
