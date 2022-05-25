@@ -61,11 +61,11 @@ function Takeaway() {
           <h1>
             <b>Take</b>Away
           </h1>
-          <div className={`hidden ${visible ? "hidden" : "show"} sorter_pris`}>
+          {/* <div className={`hidden ${visible ? "hidden" : "show"} sorter_pris`}>
             <p>
               Sorter Pris <TiArrowUnsorted className="hw20_icon" />
             </p>
-          </div>
+          </div> */}
         </div>
         <div className={`show_lesser ${visible2 ? "" : "hidden"}`}>
           <div className="search_container">
