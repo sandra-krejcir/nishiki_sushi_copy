@@ -60,7 +60,7 @@ function Kurv() {
                   <span>0</span>
                   <AiOutlinePlusSquare className="hw30_icon" />
                 </div>
-                <p>Name of Item</p>
+                <p className="remove_1rem">Name of Item</p>
                 <span>000</span>
               </div>
               <div className="show_hide_indhold_container">
