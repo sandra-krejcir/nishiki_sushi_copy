@@ -150,7 +150,13 @@ export default function BookBord() {
                   console.log(e.target.value);
                 }}
               >
-                <MdPerson className="book-icon" style={{ pointerEvents: "none", color: step1 ? "#462900" : "#C09E85" }} />
+                <MdPerson
+                  className="book-icon"
+                  style={{
+                    pointerEvents: "none",
+                    color: step1 ? "#462900" : "#C09E85",
+                  }}
+                />
               </li>
               <li
                 value={"2"}
@@ -160,7 +166,13 @@ export default function BookBord() {
                   console.log(e.target.value);
                 }}
               >
-                <RiCalendarLine className="book-icon" style={{ pointerEvents: "none", color: step2 ? "#462900" : "#C09E85" }} />
+                <RiCalendarLine
+                  className="book-icon"
+                  style={{
+                    pointerEvents: "none",
+                    color: step2 ? "#462900" : "#C09E85",
+                  }}
+                />
               </li>
               <li
                 value={"3"}
@@ -170,7 +182,13 @@ export default function BookBord() {
                   console.log(e.target.value);
                 }}
               >
-                <AiOutlineClockCircle className="book-icon" style={{ pointerEvents: "none", color: step3 ? "#462900" : "#C09E85" }} />
+                <AiOutlineClockCircle
+                  className="book-icon"
+                  style={{
+                    pointerEvents: "none",
+                    color: step3 ? "#462900" : "#C09E85",
+                  }}
+                />
               </li>
               <li
                 value={"4"}
@@ -180,7 +198,13 @@ export default function BookBord() {
                   console.log(e.target.value);
                 }}
               >
-                <RiCalendarCheckLine className="book-icon" style={{ pointerEvents: "none", color: step4 ? "#462900" : "#C09E85" }} />
+                <RiCalendarCheckLine
+                  className="book-icon"
+                  style={{
+                    pointerEvents: "none",
+                    color: step4 ? "#462900" : "#C09E85",
+                  }}
+                />
               </li>
             </ul>
           </div>

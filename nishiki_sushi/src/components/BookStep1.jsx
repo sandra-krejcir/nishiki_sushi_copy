@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import AnimatedPage from "./AnimatedPage";
 
 export default function BookStep1() {
   const [guestAmount, setGuestAmout] = useState(2);
@@ -80,25 +81,35 @@ export default function BookStep1() {
   ];
 
   return (
-    <>
-      <h4>Hvor mange bliver I?</h4>
-      <label HTMLfor="guest-count" style={{ display: "flex", alignItems: "baseline", width: "max-content", marginTop: "1.5rem" }}>
-        <select
-          value={guestAmount}
-          onChange={(e) => {
-            setGuestAmout(e.target.value);
+    <AnimatedPage>
+      <>
+        <h4>Hvor mange bliver I?</h4>
+        <label
+          HTMLfor="guest-count"
+          style={{
+            display: "flex",
+            alignItems: "baseline",
+            width: "max-content",
+            marginTop: "1.5rem",
           }}
-          name="guest-count"
-          id="guest-count"
-          required
         >
-          {options.map((option) => (
-            <option value={option.value}>{option.label}</option>
-          ))}
-        </select>
-        Gæster
-      </label>
-      <br />
-    </>
+          <select
+            value={guestAmount}
+            onChange={(e) => {
+              setGuestAmout(e.target.value);
+            }}
+            name="guest-count"
+            id="guest-count"
+            required
+          >
+            {options.map((option) => (
+              <option value={option.value}>{option.label}</option>
+            ))}
+          </select>
+          Gæster
+        </label>
+        <br />
+      </>
+    </AnimatedPage>
   );
 }
