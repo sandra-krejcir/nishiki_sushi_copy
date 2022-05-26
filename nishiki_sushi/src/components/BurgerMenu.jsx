@@ -3,11 +3,13 @@ import { BiXCircle } from "react-icons/bi";
 import { CgMenu } from "react-icons/cg";
 import React, { useState } from "react";
 import useWindowDimensions from "./screenResize_hook";
+import { motion } from "framer-motion";
 
 export default function BurgerMenu(props) {
   const screenSize = useWindowDimensions();
   /*  console.log(props.page); */
   const [visible, setVisible] = useState(false);
+
   return (
     <>
       {!visible && (
@@ -38,7 +40,15 @@ export default function BurgerMenu(props) {
         </NavLink>
       )}
       {visible && (
-        <nav className="burgerNav">
+        <motion.nav
+          className="burgerNav"
+          initial={{ opacity: 0, x: 150 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            duration: 0.5,
+            type: "spring",
+          }}
+        >
           <BiXCircle
             onClick={() => setVisible(!visible)}
             className="exit_icon hw40_icon"
@@ -136,7 +146,7 @@ export default function BurgerMenu(props) {
             ></img>
             <a href="tel:45 42 31 47 99">+45 42 31 47 99</a>
           </div>
-        </nav>
+        </motion.nav>
       )}
     </>
   );
