@@ -511,7 +511,16 @@ function Takeaway() {
                 .map((val, key) => {
                   return (
                     <>
-                      <div className="item">
+                      <motion.div
+                        className="item"
+                        initial={false}
+                        variants={animation}
+                        animate={visible2 ? "hide" : "show"}
+                        transition={{
+                          duration: 0.5,
+                          type: "spring",
+                        }}
+                      >
                         <div className="in_basket_number_container">
                           <p className="in_basket_number">0</p>
                         </div>
@@ -584,7 +593,7 @@ function Takeaway() {
                             />
                           </div>
                         </div>
-                      </div>
+                      </motion.div>
                     </>
                   );
                 })}
