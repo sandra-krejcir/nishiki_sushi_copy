@@ -88,8 +88,15 @@ function Takeaway() {
                 }}
               ></input>
             </div>
-            <div
+            <motion.div
               className={`hidden ${visible ? "show" : ""} kategorier_container`}
+              initial={false}
+              variants={animation}
+              animate={visible ? "show" : "hide"}
+              transition={{
+                duration: 0.5,
+                type: "spring",
+              }}
             >
               <h2>Kategorier</h2>
               <div className="kategorier">
@@ -331,7 +338,7 @@ function Takeaway() {
                   <h3>Dip</h3>
                 </motion.div>
               </div>
-            </div>
+            </motion.div>
             <h2 className={`hidden ${visible ? "hidden" : "show"}`}>
               {} Resultater for "{searchTerm}"
             </h2>
