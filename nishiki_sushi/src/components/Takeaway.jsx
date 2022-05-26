@@ -8,6 +8,7 @@ import MobileNav from "./MobileNavBar";
 import cartSetup from "./Cart";
 import { NavLink } from "react-router-dom";
 import AnimatedPage from "./AnimatedPage";
+import { motion } from "framer-motion";
 
 let sushiData;
 await fetchSushiData();
@@ -33,6 +34,11 @@ function Takeaway() {
 
   const onChangeSearch = () => {
     setVisible(!visible);
+  };
+
+  const animation = {
+    show: { opacity: 1, y: 0 },
+    hide: { opacity: 0, y: 50 },
   };
 
   return (
@@ -87,11 +93,18 @@ function Takeaway() {
             >
               <h2>Kategorier</h2>
               <div className="kategorier">
-                <div
+                <motion.div
                   className="kategorie manedens_tilbud"
                   onClick={() => {
                     setFilterTerm("Månedsens tilbud");
                     setVisible2(!visible2);
+                  }}
+                  initial={false}
+                  variants={animation}
+                  animate={visible2 ? "show" : "hide"}
+                  transition={{
+                    duration: 0.5,
+                    type: "spring",
                   }}
                 >
                   <img
@@ -99,12 +112,19 @@ function Takeaway() {
                     alt="månedens_tilbud"
                   />
                   <h3>Månedens tilbud</h3>
-                </div>
-                <div
+                </motion.div>
+                <motion.div
                   className="kategorie sushi_menu"
                   onClick={() => {
                     setFilterTerm("Sushi menu");
                     setVisible2(!visible2);
+                  }}
+                  initial={false}
+                  variants={animation}
+                  animate={visible2 ? "show" : "hide"}
+                  transition={{
+                    duration: 0.5,
+                    type: "spring",
                   }}
                 >
                   <img
@@ -112,12 +132,19 @@ function Takeaway() {
                     alt="sushi_menu"
                   />
                   <h3>Sushi Menu</h3>
-                </div>
-                <div
+                </motion.div>
+                <motion.div
                   className="kategorie forret"
                   onClick={() => {
                     setFilterTerm("Forret");
                     setVisible2(!visible2);
+                  }}
+                  initial={false}
+                  variants={animation}
+                  animate={visible2 ? "show" : "hide"}
+                  transition={{
+                    duration: 0.5,
+                    type: "spring",
                   }}
                 >
                   <img
@@ -125,12 +152,19 @@ function Takeaway() {
                     alt="forret"
                   />
                   <h3>Forret</h3>
-                </div>
-                <div
+                </motion.div>
+                <motion.div
                   className="kategorie yakitori_sticks"
                   onClick={() => {
                     setFilterTerm("Yakitori Sticks");
                     setVisible2(!visible2);
+                  }}
+                  initial={false}
+                  variants={animation}
+                  animate={visible2 ? "show" : "hide"}
+                  transition={{
+                    duration: 0.5,
+                    type: "spring",
                   }}
                 >
                   <img
@@ -138,12 +172,19 @@ function Takeaway() {
                     alt="yakitori_sticks"
                   />
                   <h3>Yakitori Sticks</h3>
-                </div>
-                <div
+                </motion.div>
+                <motion.div
                   className="kategorie nigiri"
                   onClick={() => {
                     setFilterTerm("Nigiri");
                     setVisible2(!visible2);
+                  }}
+                  initial={false}
+                  variants={animation}
+                  animate={visible2 ? "show" : "hide"}
+                  transition={{
+                    duration: 0.5,
+                    type: "spring",
                   }}
                 >
                   <img
@@ -151,12 +192,19 @@ function Takeaway() {
                     alt="nigiri"
                   />
                   <h3>Nigiri 2stk</h3>
-                </div>
-                <div
+                </motion.div>
+                <motion.div
                   className="kategorie hosomaki"
                   onClick={() => {
                     setFilterTerm("Hosomaki");
                     setVisible2(!visible2);
+                  }}
+                  initial={false}
+                  variants={animation}
+                  animate={visible2 ? "show" : "hide"}
+                  transition={{
+                    duration: 0.5,
+                    type: "spring",
                   }}
                 >
                   <img
@@ -164,12 +212,19 @@ function Takeaway() {
                     alt="hosomaki"
                   />
                   <h3>Hosomaki 8stk</h3>
-                </div>
-                <div
+                </motion.div>
+                <motion.div
                   className="kategorie futomaki"
                   onClick={() => {
                     setFilterTerm("Futomaki");
                     setVisible2(!visible2);
+                  }}
+                  initial={false}
+                  variants={animation}
+                  animate={visible2 ? "show" : "hide"}
+                  transition={{
+                    duration: 0.5,
+                    type: "spring",
                   }}
                 >
                   <img
@@ -177,12 +232,19 @@ function Takeaway() {
                     alt="futomaki"
                   />
                   <h3>Futomaki 5stk</h3>
-                </div>
-                <div
+                </motion.div>
+                <motion.div
                   className="kategorie sashimi"
                   onClick={() => {
                     setFilterTerm("Sashimi");
                     setVisible2(!visible2);
+                  }}
+                  initial={false}
+                  variants={animation}
+                  animate={visible2 ? "show" : "hide"}
+                  transition={{
+                    duration: 0.5,
+                    type: "spring",
                   }}
                 >
                   <img
@@ -190,12 +252,19 @@ function Takeaway() {
                     alt="sashimi"
                   />
                   <h3>Sashimi</h3>
-                </div>
-                <div
+                </motion.div>
+                <motion.div
                   className="kategorie rispapir"
                   onClick={() => {
                     setFilterTerm("Rispapir");
                     setVisible2(!visible2);
+                  }}
+                  initial={false}
+                  variants={animation}
+                  animate={visible2 ? "show" : "hide"}
+                  transition={{
+                    duration: 0.5,
+                    type: "spring",
                   }}
                 >
                   <img
@@ -203,12 +272,19 @@ function Takeaway() {
                     alt="rispapir"
                   />
                   <h3>Rispapir 6stk</h3>
-                </div>
-                <div
+                </motion.div>
+                <motion.div
                   className="kategorie uramaki"
                   onClick={() => {
                     setFilterTerm("Uramaki");
                     setVisible2(!visible2);
+                  }}
+                  initial={false}
+                  variants={animation}
+                  animate={visible2 ? "show" : "hide"}
+                  transition={{
+                    duration: 0.5,
+                    type: "spring",
                   }}
                 >
                   <img
@@ -216,12 +292,19 @@ function Takeaway() {
                     alt="uramaki"
                   />
                   <h3>Uramaki 8stk</h3>
-                </div>
-                <div
+                </motion.div>
+                <motion.div
                   className="kategorie kaburimaki"
                   onClick={() => {
                     setFilterTerm("Kaburimaki");
                     setVisible2(!visible2);
+                  }}
+                  initial={false}
+                  variants={animation}
+                  animate={visible2 ? "show" : "hide"}
+                  transition={{
+                    duration: 0.5,
+                    type: "spring",
                   }}
                 >
                   <img
@@ -229,17 +312,24 @@ function Takeaway() {
                     alt="kaburimaki"
                   />
                   <h3>Kaburimaki 8stk</h3>
-                </div>
-                <div
+                </motion.div>
+                <motion.div
                   className="kategorie dip"
                   onClick={() => {
                     setFilterTerm("Dip");
                     setVisible2(!visible2);
                   }}
+                  initial={false}
+                  variants={animation}
+                  animate={visible2 ? "show" : "hide"}
+                  transition={{
+                    duration: 0.5,
+                    type: "spring",
+                  }}
                 >
                   <img src="../../img/kategorier_billeder/dip.png" alt="dip" />
                   <h3>Dip</h3>
-                </div>
+                </motion.div>
               </div>
             </div>
             <h2 className={`hidden ${visible ? "hidden" : "show"}`}>
