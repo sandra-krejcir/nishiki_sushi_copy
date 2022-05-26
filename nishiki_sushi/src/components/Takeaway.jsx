@@ -375,7 +375,15 @@ function Takeaway() {
                   );
                   return (
                     <>
-                      <div className="item">
+                      <motion.div
+                        className="item"
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                          duration: 0.5,
+                          type: "spring",
+                        }}
+                      >
                         <div className="in_basket_number_container">
                           <p className="in_basket_number">0</p>
                           {/* {CART.contents.find(
@@ -463,7 +471,7 @@ function Takeaway() {
                             />
                           </div>
                         </div>
-                      </div>
+                      </motion.div>
                     </>
                   );
                 })}
