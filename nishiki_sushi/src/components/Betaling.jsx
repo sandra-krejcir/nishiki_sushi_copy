@@ -182,7 +182,7 @@ const Betaling = ({ submitForm }) => {
                 </div>
                 <div className="button_container_center">
                   {isSubmitted && (
-                    <NavLink to="/Bekræftelse">
+                    <NavLink to="/Bekraeftelse">
                       <button className="primaryBtn">Betal</button>
                     </NavLink>
                   )}

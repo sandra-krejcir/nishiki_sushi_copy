@@ -88,257 +88,312 @@ function Takeaway() {
                 }}
               ></input>
             </div>
-            <motion.div
-              className={`hidden ${visible ? "show" : ""} kategorier_container`}
-              initial={false}
-              variants={animation}
-              animate={visible ? "show" : "hide"}
-              transition={{
-                duration: 0.5,
-                type: "spring",
-              }}
-            >
-              <h2>Kategorier</h2>
-              <div className="kategorier">
-                <motion.div
-                  className="kategorie manedens_tilbud"
-                  onClick={() => {
-                    setFilterTerm("Månedsens tilbud");
-                    setVisible2(!visible2);
-                  }}
-                  initial={false}
-                  variants={animation}
-                  animate={visible2 ? "show" : "hide"}
-                  transition={{
-                    duration: 0.5,
-                    type: "spring",
-                  }}
-                >
-                  <img
-                    src="../../img/kategorier_billeder/manedenstilbud.png"
-                    alt="månedens_tilbud"
-                  />
-                  <h3>Månedens tilbud</h3>
-                </motion.div>
-                <motion.div
-                  className="kategorie sushi_menu"
-                  onClick={() => {
-                    setFilterTerm("Sushi menu");
-                    setVisible2(!visible2);
-                  }}
-                  initial={false}
-                  variants={animation}
-                  animate={visible2 ? "show" : "hide"}
-                  transition={{
-                    duration: 0.5,
-                    type: "spring",
-                  }}
-                >
-                  <img
-                    src="../../img/kategorier_billeder/sushimenu.png"
-                    alt="sushi_menu"
-                  />
-                  <h3>Sushi Menu</h3>
-                </motion.div>
-                <motion.div
-                  className="kategorie forret"
-                  onClick={() => {
-                    setFilterTerm("Forret");
-                    setVisible2(!visible2);
-                  }}
-                  initial={false}
-                  variants={animation}
-                  animate={visible2 ? "show" : "hide"}
-                  transition={{
-                    duration: 0.5,
-                    type: "spring",
-                  }}
-                >
-                  <img
-                    src="../../img/kategorier_billeder/forret.png"
-                    alt="forret"
-                  />
-                  <h3>Forret</h3>
-                </motion.div>
-                <motion.div
-                  className="kategorie yakitori_sticks"
-                  onClick={() => {
-                    setFilterTerm("Yakitori Sticks");
-                    setVisible2(!visible2);
-                  }}
-                  initial={false}
-                  variants={animation}
-                  animate={visible2 ? "show" : "hide"}
-                  transition={{
-                    duration: 0.5,
-                    type: "spring",
-                  }}
-                >
-                  <img
-                    src="../../img/kategorier_billeder/yakitori_sticks.png"
-                    alt="yakitori_sticks"
-                  />
-                  <h3>Yakitori Sticks</h3>
-                </motion.div>
-                <motion.div
-                  className="kategorie nigiri"
-                  onClick={() => {
-                    setFilterTerm("Nigiri");
-                    setVisible2(!visible2);
-                  }}
-                  initial={false}
-                  variants={animation}
-                  animate={visible2 ? "show" : "hide"}
-                  transition={{
-                    duration: 0.5,
-                    type: "spring",
-                  }}
-                >
-                  <img
-                    src="../../img/kategorier_billeder/nigiri.png"
-                    alt="nigiri"
-                  />
-                  <h3>Nigiri 2stk</h3>
-                </motion.div>
-                <motion.div
-                  className="kategorie hosomaki"
-                  onClick={() => {
-                    setFilterTerm("Hosomaki");
-                    setVisible2(!visible2);
-                  }}
-                  initial={false}
-                  variants={animation}
-                  animate={visible2 ? "show" : "hide"}
-                  transition={{
-                    duration: 0.5,
-                    type: "spring",
-                  }}
-                >
-                  <img
-                    src="../../img/kategorier_billeder/hosomaki.png"
-                    alt="hosomaki"
-                  />
-                  <h3>Hosomaki 8stk</h3>
-                </motion.div>
-                <motion.div
-                  className="kategorie futomaki"
-                  onClick={() => {
-                    setFilterTerm("Futomaki");
-                    setVisible2(!visible2);
-                  }}
-                  initial={false}
-                  variants={animation}
-                  animate={visible2 ? "show" : "hide"}
-                  transition={{
-                    duration: 0.5,
-                    type: "spring",
-                  }}
-                >
-                  <img
-                    src="../../img/kategorier_billeder/futomaki.png"
-                    alt="futomaki"
-                  />
-                  <h3>Futomaki 5stk</h3>
-                </motion.div>
-                <motion.div
-                  className="kategorie sashimi"
-                  onClick={() => {
-                    setFilterTerm("Sashimi");
-                    setVisible2(!visible2);
-                  }}
-                  initial={false}
-                  variants={animation}
-                  animate={visible2 ? "show" : "hide"}
-                  transition={{
-                    duration: 0.5,
-                    type: "spring",
-                  }}
-                >
-                  <img
-                    src="../../img/kategorier_billeder/sashimi.png"
-                    alt="sashimi"
-                  />
-                  <h3>Sashimi</h3>
-                </motion.div>
-                <motion.div
-                  className="kategorie rispapir"
-                  onClick={() => {
-                    setFilterTerm("Rispapir");
-                    setVisible2(!visible2);
-                  }}
-                  initial={false}
-                  variants={animation}
-                  animate={visible2 ? "show" : "hide"}
-                  transition={{
-                    duration: 0.5,
-                    type: "spring",
-                  }}
-                >
-                  <img
-                    src="../../img/kategorier_billeder/rispapir.png"
-                    alt="rispapir"
-                  />
-                  <h3>Rispapir 6stk</h3>
-                </motion.div>
-                <motion.div
-                  className="kategorie uramaki"
-                  onClick={() => {
-                    setFilterTerm("Uramaki");
-                    setVisible2(!visible2);
-                  }}
-                  initial={false}
-                  variants={animation}
-                  animate={visible2 ? "show" : "hide"}
-                  transition={{
-                    duration: 0.5,
-                    type: "spring",
-                  }}
-                >
-                  <img
-                    src="../../img/kategorier_billeder/uramaki.png"
-                    alt="uramaki"
-                  />
-                  <h3>Uramaki 8stk</h3>
-                </motion.div>
-                <motion.div
-                  className="kategorie kaburimaki"
-                  onClick={() => {
-                    setFilterTerm("Kaburimaki");
-                    setVisible2(!visible2);
-                  }}
-                  initial={false}
-                  variants={animation}
-                  animate={visible2 ? "show" : "hide"}
-                  transition={{
-                    duration: 0.5,
-                    type: "spring",
-                  }}
-                >
-                  <img
-                    src="../../img/kategorier_billeder/kaburimaki.png"
-                    alt="kaburimaki"
-                  />
-                  <h3>Kaburimaki 8stk</h3>
-                </motion.div>
-                <motion.div
-                  className="kategorie dip"
-                  onClick={() => {
-                    setFilterTerm("Dip");
-                    setVisible2(!visible2);
-                  }}
-                  initial={false}
-                  variants={animation}
-                  animate={visible2 ? "show" : "hide"}
-                  transition={{
-                    duration: 0.5,
-                    type: "spring",
-                  }}
-                >
-                  <img src="../../img/kategorier_billeder/dip.png" alt="dip" />
-                  <h3>Dip</h3>
-                </motion.div>
-              </div>
-            </motion.div>
+            <AnimatedPage>
+              <motion.div
+                className={`hidden ${
+                  visible ? "show" : ""
+                } kategorier_container`}
+                initial={false}
+                variants={animation}
+                animate={visible ? "show" : "hide"}
+                transition={{
+                  duration: 0.5,
+                  type: "spring",
+                }}
+              >
+                <h2>Kategorier</h2>
+                <div className="kategorier">
+                  <motion.div
+                    className="kategorie manedens_tilbud"
+                    onClick={() => {
+                      setFilterTerm("Månedsens tilbud");
+                      setVisible2(!visible2);
+                    }}
+                    initial={false}
+                    variants={animation}
+                    animate={visible2 ? "show" : "hide"}
+                    transition={{
+                      duration: 0.5,
+                      type: "spring",
+                    }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{
+                      scale: 0.8,
+                    }}
+                  >
+                    <img
+                      src="../../img/kategorier_billeder/manedenstilbud.png"
+                      alt="månedens_tilbud"
+                    />
+                    <h3>Månedens tilbud</h3>
+                  </motion.div>
+                  <motion.div
+                    className="kategorie sushi_menu"
+                    onClick={() => {
+                      setFilterTerm("Sushi menu");
+                      setVisible2(!visible2);
+                    }}
+                    initial={false}
+                    variants={animation}
+                    animate={visible2 ? "show" : "hide"}
+                    transition={{
+                      duration: 0.5,
+                      type: "spring",
+                    }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{
+                      scale: 0.8,
+                    }}
+                  >
+                    <img
+                      src="../../img/kategorier_billeder/sushimenu.png"
+                      alt="sushi_menu"
+                    />
+                    <h3>Sushi Menu</h3>
+                  </motion.div>
+                  <motion.div
+                    className="kategorie forret"
+                    onClick={() => {
+                      setFilterTerm("Forret");
+                      setVisible2(!visible2);
+                    }}
+                    initial={false}
+                    variants={animation}
+                    animate={visible2 ? "show" : "hide"}
+                    transition={{
+                      duration: 0.5,
+                      type: "spring",
+                    }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{
+                      scale: 0.8,
+                    }}
+                  >
+                    <img
+                      src="../../img/kategorier_billeder/forret.png"
+                      alt="forret"
+                    />
+                    <h3>Forret</h3>
+                  </motion.div>
+                  <motion.div
+                    className="kategorie yakitori_sticks"
+                    onClick={() => {
+                      setFilterTerm("Yakitori Sticks");
+                      setVisible2(!visible2);
+                    }}
+                    initial={false}
+                    variants={animation}
+                    animate={visible2 ? "show" : "hide"}
+                    transition={{
+                      duration: 0.5,
+                      type: "spring",
+                    }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{
+                      scale: 0.8,
+                    }}
+                  >
+                    <img
+                      src="../../img/kategorier_billeder/yakitori_sticks.png"
+                      alt="yakitori_sticks"
+                    />
+                    <h3>Yakitori Sticks</h3>
+                  </motion.div>
+                  <motion.div
+                    className="kategorie nigiri"
+                    onClick={() => {
+                      setFilterTerm("Nigiri");
+                      setVisible2(!visible2);
+                    }}
+                    initial={false}
+                    variants={animation}
+                    animate={visible2 ? "show" : "hide"}
+                    transition={{
+                      duration: 0.5,
+                      type: "spring",
+                    }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{
+                      scale: 0.8,
+                    }}
+                  >
+                    <img
+                      src="../../img/kategorier_billeder/nigiri.png"
+                      alt="nigiri"
+                    />
+                    <h3>Nigiri 2stk</h3>
+                  </motion.div>
+                  <motion.div
+                    className="kategorie hosomaki"
+                    onClick={() => {
+                      setFilterTerm("Hosomaki");
+                      setVisible2(!visible2);
+                    }}
+                    initial={false}
+                    variants={animation}
+                    animate={visible2 ? "show" : "hide"}
+                    transition={{
+                      duration: 0.5,
+                      type: "spring",
+                    }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{
+                      scale: 0.8,
+                    }}
+                  >
+                    <img
+                      src="../../img/kategorier_billeder/hosomaki.png"
+                      alt="hosomaki"
+                    />
+                    <h3>Hosomaki 8stk</h3>
+                  </motion.div>
+                  <motion.div
+                    className="kategorie futomaki"
+                    onClick={() => {
+                      setFilterTerm("Futomaki");
+                      setVisible2(!visible2);
+                    }}
+                    initial={false}
+                    variants={animation}
+                    animate={visible2 ? "show" : "hide"}
+                    transition={{
+                      duration: 0.5,
+                      type: "spring",
+                    }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{
+                      scale: 0.8,
+                    }}
+                  >
+                    <img
+                      src="../../img/kategorier_billeder/futomaki.png"
+                      alt="futomaki"
+                    />
+                    <h3>Futomaki 5stk</h3>
+                  </motion.div>
+                  <motion.div
+                    className="kategorie sashimi"
+                    onClick={() => {
+                      setFilterTerm("Sashimi");
+                      setVisible2(!visible2);
+                    }}
+                    initial={false}
+                    variants={animation}
+                    animate={visible2 ? "show" : "hide"}
+                    transition={{
+                      duration: 0.5,
+                      type: "spring",
+                    }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{
+                      scale: 0.8,
+                    }}
+                  >
+                    <img
+                      src="../../img/kategorier_billeder/sashimi.png"
+                      alt="sashimi"
+                    />
+                    <h3>Sashimi</h3>
+                  </motion.div>
+                  <motion.div
+                    className="kategorie rispapir"
+                    onClick={() => {
+                      setFilterTerm("Rispapir");
+                      setVisible2(!visible2);
+                    }}
+                    initial={false}
+                    variants={animation}
+                    animate={visible2 ? "show" : "hide"}
+                    transition={{
+                      duration: 0.5,
+                      type: "spring",
+                    }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{
+                      scale: 0.8,
+                    }}
+                  >
+                    <img
+                      src="../../img/kategorier_billeder/rispapir.png"
+                      alt="rispapir"
+                    />
+                    <h3>Rispapir 6stk</h3>
+                  </motion.div>
+                  <motion.div
+                    className="kategorie uramaki"
+                    onClick={() => {
+                      setFilterTerm("Uramaki");
+                      setVisible2(!visible2);
+                    }}
+                    initial={false}
+                    variants={animation}
+                    animate={visible2 ? "show" : "hide"}
+                    transition={{
+                      duration: 0.5,
+                      type: "spring",
+                    }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{
+                      scale: 0.8,
+                    }}
+                  >
+                    <img
+                      src="../../img/kategorier_billeder/uramaki.png"
+                      alt="uramaki"
+                    />
+                    <h3>Uramaki 8stk</h3>
+                  </motion.div>
+                  <motion.div
+                    className="kategorie kaburimaki"
+                    onClick={() => {
+                      setFilterTerm("Kaburimaki");
+                      setVisible2(!visible2);
+                    }}
+                    initial={false}
+                    variants={animation}
+                    animate={visible2 ? "show" : "hide"}
+                    transition={{
+                      duration: 0.5,
+                      type: "spring",
+                    }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{
+                      scale: 0.8,
+                    }}
+                  >
+                    <img
+                      src="../../img/kategorier_billeder/kaburimaki.png"
+                      alt="kaburimaki"
+                    />
+                    <h3>Kaburimaki 8stk</h3>
+                  </motion.div>
+                  <motion.div
+                    className="kategorie dip"
+                    onClick={() => {
+                      setFilterTerm("Dip");
+                      setVisible2(!visible2);
+                    }}
+                    initial={false}
+                    variants={animation}
+                    animate={visible2 ? "show" : "hide"}
+                    transition={{
+                      duration: 0.5,
+                      type: "spring",
+                    }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{
+                      scale: 0.8,
+                    }}
+                  >
+                    <img
+                      src="../../img/kategorier_billeder/dip.png"
+                      alt="dip"
+                    />
+                    <h3>Dip</h3>
+                  </motion.div>
+                </div>
+              </motion.div>
+            </AnimatedPage>
             <h2 className={`hidden ${visible ? "hidden" : "show"}`}>
               {} Resultater for "{searchTerm}"
             </h2>
@@ -444,17 +499,21 @@ function Takeaway() {
                           </p>
                         </div>
                         <div className="basket_icons">
-                          <div
+                          <motion.div
                             className="remove_from_basket"
                             onClick={() => CART.minusOne(val)}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{
+                              scale: 0.8,
+                            }}
                           >
                             <img
                               className="hw40_icon"
                               src="../../icons/basket-minus.svg"
                               alt="basket_icon"
                             />
-                          </div>
-                          <div
+                          </motion.div>
+                          <motion.div
                             className="add_to_basket"
                             onClick={() =>
                               CART.add({
@@ -463,13 +522,17 @@ function Takeaway() {
                                 ingrediants: val.ingrediants,
                               })
                             }
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{
+                              scale: 0.8,
+                            }}
                           >
                             <img
                               className="hw40_icon"
                               src="../../icons/basket-plus.svg"
                               alt="basket_icon"
                             />
-                          </div>
+                          </motion.div>
                         </div>
                       </motion.div>
                     </>
@@ -578,20 +641,32 @@ function Takeaway() {
                           </p>
                         </div>
                         <div className="basket_icons">
-                          <div className="remove_from_basket">
+                          <motion.div
+                            className="remove_from_basket"
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{
+                              scale: 0.8,
+                            }}
+                          >
                             <img
                               className="hw40_icon"
                               src="../../icons/basket-minus.svg"
                               alt="basket_icon"
                             />
-                          </div>
-                          <div className="add_to_basket">
+                          </motion.div>
+                          <motion.div
+                            className="add_to_basket"
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{
+                              scale: 0.8,
+                            }}
+                          >
                             <img
                               className="hw40_icon"
                               src="../../icons/basket-plus.svg"
                               alt="basket_icon"
                             />
-                          </div>
+                          </motion.div>
                         </div>
                       </motion.div>
                     </>
