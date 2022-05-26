@@ -56,7 +56,12 @@ export default function BurgerMenu(props) {
               className="exit_icon hw40_icon"
             />
             <ul>
-              <li>
+              <motion.li
+                whileHover={{ scale: 1.1 }}
+                whileTap={{
+                  scale: 0.8,
+                }}
+              >
                 <NavLink
                   className={
                     props.page === "home"
@@ -76,8 +81,13 @@ export default function BurgerMenu(props) {
                   ></img>
                   Forside
                 </NavLink>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li
+                whileHover={{ scale: 1.1 }}
+                whileTap={{
+                  scale: 0.8,
+                }}
+              >
                 <NavLink
                   className={
                     props.page === "restaurant"
@@ -97,8 +107,13 @@ export default function BurgerMenu(props) {
                   ></img>
                   Restaurant
                 </NavLink>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li
+                whileHover={{ scale: 1.1 }}
+                whileTap={{
+                  scale: 0.8,
+                }}
+              >
                 <NavLink
                   className={
                     props.page === "takeaway"
@@ -118,8 +133,13 @@ export default function BurgerMenu(props) {
                   ></img>
                   TakeAway
                 </NavLink>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li
+                whileHover={{ scale: 1.1 }}
+                whileTap={{
+                  scale: 0.8,
+                }}
+              >
                 <NavLink
                   className={
                     props.page === "kurv"
@@ -139,7 +159,7 @@ export default function BurgerMenu(props) {
                   ></img>
                   Kurv
                 </NavLink>
-              </li>
+              </motion.li>
             </ul>
             <div className="phone_number">
               <img
