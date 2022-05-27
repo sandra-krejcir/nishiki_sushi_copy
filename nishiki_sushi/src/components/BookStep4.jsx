@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import AnimatedPage from "./AnimatedPage";
 
 export default function BookStep4() {
   const [name, setName] = useState("");
@@ -101,32 +102,53 @@ export default function BookStep4() {
   }
 
   return (
-    <>
-      <h4>Bekræft din booking</h4>
-      <p className="booking-summary">
-        Booking af bord til <span>{guestAmount}</span> gæster{" "}
-        <span>
-          {dayNumber} d. {date.getDate()} {month}
-        </span>{" "}
-        kl. <span>{time}</span>
-      </p>
-      <form>
-        <label>
-          Navn
+    <AnimatedPage>
+      <>
+        <h4>Bekræft din booking</h4>
+        <p className="booking-summary">
+          Booking af bord til <span>{guestAmount}</span> gæster{" "}
+          <span>
+            {dayNumber} d. {date.getDate()} {month}
+          </span>{" "}
+          kl. <span>{time}</span>
+        </p>
+        <form>
+          <label>
+            Navn
+            <br />
+            <input
+              required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              type="text"
+              placeholder="Jens Jensen"
+            />{" "}
+          </label>
           <br />
-          <input required value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Jens Jensen" />{" "}
-        </label>
-        <br />
-        <label>
-          Mobil nummer <br />
-          <input required max={11} min={8} value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" placeholder="12 34 56 78" />{" "}
-        </label>
-        <br />
-        <label>
-          Kommentarer <br />
-          <textarea value={comment} onChange={(e) => setComment(e.target.value)} cols="30" rows="4"></textarea>
-        </label>
-      </form>
-    </>
+          <label>
+            Mobil nummer <br />
+            <input
+              required
+              max={11}
+              min={8}
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              type="tel"
+              placeholder="12 34 56 78"
+            />{" "}
+          </label>
+          <br />
+          <label>
+            Kommentarer <br />
+            <textarea
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+              cols="30"
+              rows="4"
+            ></textarea>
+          </label>
+        </form>
+      </>
+    </AnimatedPage>
   );
 }
