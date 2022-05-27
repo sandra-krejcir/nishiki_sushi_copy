@@ -621,16 +621,7 @@ function Takeaway() {
                 })
                 .map((val, key) => {
                   return (
-                    <motion.div
-                      key={val.name + "id1111"}
-                      initial={false}
-                      variants={animation}
-                      animate={visible2 ? "hide" : "show"}
-                      transition={{
-                        duration: 0.5,
-                        type: "spring",
-                      }}
-                    >
+                    <>
                       <motion.div
                         key={val.name + "id11"}
                         className="item"
@@ -753,7 +744,7 @@ function Takeaway() {
                           </motion.div>
                         </div>
                       </motion.div>
-                    </motion.div>
+                    </>
                   );
                 })}
             </div>
