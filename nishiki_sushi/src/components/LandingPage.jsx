@@ -6,6 +6,7 @@ import MobileNav from "./MobileNavBar";
 import useWindowDimensions from "./screenResize_hook";
 import { NavLink } from "react-router-dom";
 import AnimatedPage from "./AnimatedPage";
+import { motion } from "framer-motion";
 
 export default function LandingPage() {
   const screenSize = useWindowDimensions();
@@ -23,16 +24,30 @@ export default function LandingPage() {
             className="header_logo header_logo_landing_page"
           />
           {/*  </NavLink> */}
-          <a href="" className="thumbnail_img restaurant_thumbnail">
+          <motion.a
+            href=""
+            className="thumbnail_img restaurant_thumbnail"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{
+              scale: 0.8,
+            }}
+          >
             <h4 className="restaurant_title">
               <b>BESØG RESTAURANTEN</b>
             </h4>
-          </a>
-          <a href="" className="thumbnail_img takeaway_thumbnail">
+          </motion.a>
+          <motion.a
+            href=""
+            className="thumbnail_img takeaway_thumbnail"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{
+              scale: 0.8,
+            }}
+          >
             <h4 className="takeaway_title">
               <b>TAKEAWAY</b>
             </h4>
-          </a>
+          </motion.a>
         </section>
         <NewOffersSection />
         <VisitUsSection />
