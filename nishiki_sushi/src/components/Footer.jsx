@@ -12,28 +12,35 @@ export default function Footer() {
               className="footer_logo"
             />
           </li>
-          <li>
-            <motion.img
-              whileHover={{ scale: 1.1 }}
-              whileTap={{
-                scale: 0.8,
-              }}
-              src="../icons/instagram.svg"
-              alt="Instagram SoMe icon."
-              className="footer_insta"
-            />
-          </li>
-          <li>
-            <motion.img
-              whileHover={{ scale: 1.1 }}
-              whileTap={{
-                scale: 0.8,
-              }}
-              src="../icons/facebook.svg"
-              alt="Facebook SoMe icon."
-              className="footer_facebook"
-            />
-          </li>
+          <a href="https://www.instagram.com/" target="_blank">
+            <li>
+              <motion.img
+                whileHover={{ scale: 1.1 }}
+                whileTap={{
+                  scale: 0.8,
+                }}
+                src="../icons/instagram.svg"
+                alt="Instagram SoMe icon."
+                className="footer_insta"
+              />
+            </li>
+          </a>
+          <a
+            href="https://www.facebook.com/changshengfrederikssund"
+            target="_blank"
+          >
+            <li>
+              <motion.img
+                whileHover={{ scale: 1.1 }}
+                whileTap={{
+                  scale: 0.8,
+                }}
+                src="../icons/facebook.svg"
+                alt="Facebook SoMe icon."
+                className="footer_facebook"
+              />
+            </li>
+          </a>
         </ul>
       </nav>
       <div className="map_container">

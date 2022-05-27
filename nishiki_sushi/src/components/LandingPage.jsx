@@ -29,7 +29,7 @@ export default function LandingPage() {
             className="thumbnail_img restaurant_thumbnail"
             whileHover={{ scale: 1.03 }}
             whileTap={{
-              scale: 0.8,
+              scale: 0.98,
             }}
           >
             <h4 className="restaurant_title">
@@ -42,7 +42,7 @@ export default function LandingPage() {
             className="thumbnail_img takeaway_thumbnail"
             whileHover={{ scale: 1.03 }}
             whileTap={{
-              scale: 0.8,
+              scale: 0.98,
             }}
           >
             <h4 className="takeaway_title">
