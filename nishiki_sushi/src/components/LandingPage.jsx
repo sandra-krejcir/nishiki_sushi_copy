@@ -17,13 +17,12 @@ export default function LandingPage() {
         {screenSize.width > 799 && <BurgerMenu page={"home"} />}
         {screenSize.width < 799 && <MobileNav page={"home"} />}
         <section className="thumbnail_images">
-          {/*  <NavLink to="/"> */}
           <img
             src="../icons/logo.svg"
             alt="The logo icon."
             className="header_logo header_logo_landing_page"
           />
-          {/*  </NavLink> */}
+
           <motion.a
             href=""
             className="thumbnail_img restaurant_thumbnail"
@@ -36,6 +35,7 @@ export default function LandingPage() {
               <b>BESØG RESTAURANTEN</b>
             </h4>
           </motion.a>
+
           <motion.a
             href=""
             className="thumbnail_img takeaway_thumbnail"

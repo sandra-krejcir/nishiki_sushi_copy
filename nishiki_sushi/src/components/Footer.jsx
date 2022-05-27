@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 export default function Footer() {
   return (
     <footer>
@@ -11,14 +13,22 @@ export default function Footer() {
             />
           </li>
           <li>
-            <img
+            <motion.img
+              whileHover={{ scale: 1.1 }}
+              whileTap={{
+                scale: 0.8,
+              }}
               src="../icons/instagram.svg"
               alt="Instagram SoMe icon."
               className="footer_insta"
             />
           </li>
           <li>
-            <img
+            <motion.img
+              whileHover={{ scale: 1.1 }}
+              whileTap={{
+                scale: 0.8,
+              }}
               src="../icons/facebook.svg"
               alt="Facebook SoMe icon."
               className="footer_facebook"
@@ -63,16 +73,24 @@ export default function Footer() {
           <nav className="mini_nav">
             <ul>
               <li>
-                <a href="">Events & Catering</a>
+                <NavLink to="/">
+                  <a>Events & Catering</a>
+                </NavLink>
               </li>
               <li>
-                <a href="">Smiley Raport</a>
+                <a href="https://www.findsmiley.dk/517952" target="_blank">
+                  Smiley Raport
+                </a>
               </li>
               <li>
-                <a href="">TakeAway</a>
+                <NavLink to="takeaway">
+                  <a>TakeAway</a>
+                </NavLink>
               </li>
               <li>
-                <a href="">Restaurant</a>
+                <NavLink to="restaurant">
+                  <a>Restaurant</a>
+                </NavLink>
               </li>
             </ul>
           </nav>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import BurgerMenu from "./BurgerMenu";
 import { FaTruck } from "react-icons/fa";
 import { MdOutlineKeyboardBackspace, MdRestaurant } from "react-icons/md";
@@ -11,6 +12,18 @@ import AnimatedPage from "./AnimatedPage";
 
 function Bekræftelse() {
   const screenSize = useWindowDimensions();
+
+  const [confirm, setConfirm] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (confirm === true) {
+        setConfirm(!confirm);
+      }
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <AnimatedPage>
       <>
@@ -54,15 +67,25 @@ function Bekræftelse() {
           </div>
           <div className="order_info_container">
             <div className="order_h2">
-              <h2>Ordre Sendt</h2>
-              <h2 className="hidden">Ordre Bekræftet</h2>
+              <h2 className={`show_lesser ${confirm ? "" : "hidden"}`}>
+                Ordre Sendt
+              </h2>
+              <h2 className={`hidden ${confirm ? "" : "show"}`}>
+                Ordre Bekræftet
+              </h2>
             </div>
-            <BsBagCheckFill className="big_basket_icon" />
+            <BsBagCheckFill
+              className={`big_basket_icon ${
+                confirm ? "" : "big_basket_icon_green"
+              }`}
+            />
             <div className="under_basket_icon_txt">
-              <p>Du vil modtage en SMS når ordren er blevet bekræftet</p>
-              <p className="hidden">
+              <p className={`show_lesser ${confirm ? "" : "hidden"}`}>
+                Du vil modtage en SMS når ordren er blevet bekræftet
+              </p>
+              <p className={`hidden ${confirm ? "" : "show"}`}>
                 Hvis du ikke har modtaget en SMS, ring venligst til os for
-                detalier 42 31 47 99
+                detalier <br></br> 42 31 47 99
               </p>
             </div>
           </div>
