@@ -455,7 +455,15 @@ function Takeaway() {
                     )
                   );
                   return (
-                    <div key={val.name + "id10"}>
+                    <motion.div
+                      key={val.name + "id10"}
+                      initial={{ opacity: 0, y: 50 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{
+                        duration: 0.5,
+                        type: "spring",
+                      }}
+                    >
                       <motion.div
                         key={val.name + "id1"}
                         className="item"
@@ -575,7 +583,7 @@ function Takeaway() {
                           </motion.div>
                         </div>
                       </motion.div>
-                    </div>
+                    </motion.div>
                   );
                 })}
             </div>
@@ -613,7 +621,16 @@ function Takeaway() {
                 })
                 .map((val, key) => {
                   return (
-                    <div key={val.name + "id1111"}>
+                    <motion.div
+                      key={val.name + "id1111"}
+                      initial={false}
+                      variants={animation}
+                      animate={visible2 ? "hide" : "show"}
+                      transition={{
+                        duration: 0.5,
+                        type: "spring",
+                      }}
+                    >
                       <motion.div
                         key={val.name + "id11"}
                         className="item"
@@ -628,7 +645,6 @@ function Takeaway() {
                         <div className="in_basket_number_container">
                           <p className="in_basket_number">0</p>
                         </div>
-
                         <img
                           key={val.img_filename + "2"}
                           src={
@@ -699,6 +715,7 @@ function Takeaway() {
                             {val.discount}kr
                           </p>
                         </div>
+
                         <div className="basket_icons">
                           <motion.div
                             className="remove_from_basket"
@@ -736,7 +753,7 @@ function Takeaway() {
                           </motion.div>
                         </div>
                       </motion.div>
-                    </div>
+                    </motion.div>
                   );
                 })}
             </div>
