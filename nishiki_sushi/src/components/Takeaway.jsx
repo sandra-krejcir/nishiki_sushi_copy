@@ -612,267 +612,132 @@ function Takeaway() {
                   }
                 })
                 .map((val, key) => {
-                  if (val.img_filename_for_bigger_images === "") {
-                    return (
-                      <div key={val.name + "id1111"}>
-                        <motion.div
-                          key={val.name + "id11"}
-                          className="item"
-                          initial={false}
-                          variants={animation}
-                          animate={visible2 ? "hide" : "show"}
-                          transition={{
-                            duration: 0.5,
-                            type: "spring",
+                  return (
+                    <div key={val.name + "id1111"}>
+                      <motion.div
+                        key={val.name + "id11"}
+                        className="item"
+                        initial={false}
+                        variants={animation}
+                        animate={visible2 ? "hide" : "show"}
+                        transition={{
+                          duration: 0.5,
+                          type: "spring",
+                        }}
+                      >
+                        <div className="in_basket_number_container">
+                          <p className="in_basket_number">0</p>
+                        </div>
+
+                        <img
+                          key={val.img_filename + "2"}
+                          src={
+                            "https://rikkeblom.com/nishiki_sushi-images/" +
+                            val.img_filename
+                          }
+                          alt="sushi_img"
+                        />
+                        <h4 key={val.name + "3"}>
+                          {val.name + " "}
+                          {val.pieces_count}
+                        </h4>
+                        <div
+                          style={{
+                            display: "flex",
+                            flexWrap: "wrap",
+                            flexDirection: "row",
+                            gap: "5px",
+                            width: "inherit",
                           }}
                         >
-                          <div className="in_basket_number_container">
-                            <p className="in_basket_number">0</p>
-                          </div>
-
-                          <img
-                            key={val.img_filename + "2"}
-                            src={
-                              "https://rikkeblom.com/nishiki_sushi-images/" +
-                              val.img_filename
-                            }
-                            alt="sushi_img"
-                          />
-                          <h4 key={val.name + "3"}>
-                            {val.name + " "}
-                            {val.pieces_count}
-                          </h4>
-                          <div
-                            style={{
-                              display: "flex",
-                              flexWrap: "wrap",
-                              flexDirection: "row",
-                              gap: "5px",
-                              width: "inherit",
-                            }}
-                          >
-                            {val.ingrediants.map((ingVal) => {
-                              if (ingVal.name === "menu") {
-                                return (
-                                  <div key={val.name + "id222"}>
-                                    <p key={val.ingrediant_list + "4"}>
-                                      {val.ingrediant_list}
-                                    </p>
-                                    <p key={val.ingrediant_list2 + "5"}>
-                                      {val.ingrediant_list2}
-                                    </p>
-                                    <p key={val.ingrediant_list3 + "6"}>
-                                      {val.ingrediant_list3}
-                                    </p>
-                                    <p key={val.ingrediant_list4 + "7"}>
-                                      {val.ingrediant_list4}
-                                    </p>
-                                    <p key={val.ingrediant_list5 + "8"}>
-                                      {val.ingrediant_list5}
-                                    </p>
-                                    <p key={val.ingrediant_list6 + "9"}>
-                                      {val.ingrediant_list6}
-                                    </p>
-                                  </div>
-                                );
-                              }
-
+                          {val.ingrediants.map((ingVal) => {
+                            if (ingVal.name === "menu") {
                               return (
-                                <p
-                                  style={{ width: "max-content", margin: "0" }}
-                                  key={ingVal.name + "10"}
-                                >
-                                  {ingVal.name},
-                                </p>
+                                <div key={val.name + "id222"}>
+                                  <p key={val.ingrediant_list + "4"}>
+                                    {val.ingrediant_list}
+                                  </p>
+                                  <p key={val.ingrediant_list2 + "5"}>
+                                    {val.ingrediant_list2}
+                                  </p>
+                                  <p key={val.ingrediant_list3 + "6"}>
+                                    {val.ingrediant_list3}
+                                  </p>
+                                  <p key={val.ingrediant_list4 + "7"}>
+                                    {val.ingrediant_list4}
+                                  </p>
+                                  <p key={val.ingrediant_list5 + "8"}>
+                                    {val.ingrediant_list5}
+                                  </p>
+                                  <p key={val.ingrediant_list6 + "9"}>
+                                    {val.ingrediant_list6}
+                                  </p>
+                                </div>
                               );
-                            })}
-                          </div>
-                          <br />
-                          <div style={{ display: "inline-flex" }}>
-                            <p className="remove_1rem">Pris:</p>
-                            <p
-                              className="discount remove_1rem"
-                              key={val.preice + "12"}
-                            >
-                              {val.price}kr
-                            </p>
-                            <p
-                              className="remove_1rem"
-                              key={val.discount + "11"}
-                            >
-                              {val.discount}kr
-                            </p>
-                          </div>
-                          <div className="basket_icons">
-                            <motion.div
-                              className="remove_from_basket"
-                              whileHover={{ scale: 1.1 }}
-                              whileTap={{
-                                scale: 0.8,
-                              }}
-                              onClick={() => CART.minusOne(val)}
-                            >
-                              <img
-                                className="hw40_icon"
-                                src="../../icons/basket-minus.svg"
-                                alt="basket_icon"
-                              />
-                            </motion.div>
-                            <motion.div
-                              className="add_to_basket"
-                              whileHover={{ scale: 1.1 }}
-                              whileTap={{
-                                scale: 0.8,
-                              }}
-                              onClick={() =>
-                                CART.add({
-                                  name: val.name,
-                                  price: val.discount,
-                                  ingrediants: val.ingrediants,
-                                })
-                              }
-                            >
-                              <img
-                                className="hw40_icon"
-                                src="../../icons/basket-plus.svg"
-                                alt="basket_icon"
-                              />
-                            </motion.div>
-                          </div>
-                        </motion.div>
-                      </div>
-                    );
-                  } else {
-                    return (
-                      <div key={val.name + "id1111"}>
-                        <motion.div
-                          key={val.name + "id11"}
-                          className="item"
-                          initial={false}
-                          variants={animation}
-                          animate={visible2 ? "hide" : "show"}
-                          transition={{
-                            duration: 0.5,
-                            type: "spring",
-                          }}
-                        >
-                          <div className="in_basket_number_container">
-                            <p className="in_basket_number">0</p>
-                          </div>
-
-                          <img
-                            key={val.img_filename + "2"}
-                            src={
-                              "https://rikkeblom.com/nishiki_sushi-images/" +
-                              val.img_filename_for_bigger_images
                             }
-                            alt="sushi_img"
-                          />
-                          <h4 key={val.name + "3"}>
-                            {val.name + " "}
-                            {val.pieces_count}
-                          </h4>
-                          <div
-                            style={{
-                              display: "flex",
-                              flexWrap: "wrap",
-                              flexDirection: "row",
-                              gap: "5px",
-                              width: "inherit",
-                            }}
-                          >
-                            {val.ingrediants.map((ingVal) => {
-                              if (ingVal.name === "menu") {
-                                return (
-                                  <div key={val.name + "id222"}>
-                                    <p key={val.ingrediant_list + "4"}>
-                                      {val.ingrediant_list}
-                                    </p>
-                                    <p key={val.ingrediant_list2 + "5"}>
-                                      {val.ingrediant_list2}
-                                    </p>
-                                    <p key={val.ingrediant_list3 + "6"}>
-                                      {val.ingrediant_list3}
-                                    </p>
-                                    <p key={val.ingrediant_list4 + "7"}>
-                                      {val.ingrediant_list4}
-                                    </p>
-                                    <p key={val.ingrediant_list5 + "8"}>
-                                      {val.ingrediant_list5}
-                                    </p>
-                                    <p key={val.ingrediant_list6 + "9"}>
-                                      {val.ingrediant_list6}
-                                    </p>
-                                  </div>
-                                );
-                              }
 
-                              return (
-                                <p
-                                  style={{ width: "max-content", margin: "0" }}
-                                  key={ingVal.name + "10"}
-                                >
-                                  {ingVal.name},
-                                </p>
-                              );
-                            })}
-                          </div>
-                          <br />
-                          <div style={{ display: "inline-flex" }}>
-                            <p className="remove_1rem">Pris:</p>
-                            <p
-                              className="discount remove_1rem"
-                              key={val.preice + "12"}
-                            >
-                              {val.price}kr
-                            </p>
-                            <p
-                              className="remove_1rem"
-                              key={val.discount + "11"}
-                            >
-                              {val.discount}kr
-                            </p>
-                          </div>
-                          <div className="basket_icons">
-                            <motion.div
-                              className="remove_from_basket"
-                              whileHover={{ scale: 1.1 }}
-                              whileTap={{
-                                scale: 0.8,
-                              }}
-                              onClick={() => CART.minusOne(val)}
-                            >
-                              <img
-                                className="hw40_icon"
-                                src="../../icons/basket-minus.svg"
-                                alt="basket_icon"
-                              />
-                            </motion.div>
-                            <motion.div
-                              className="add_to_basket"
-                              whileHover={{ scale: 1.1 }}
-                              whileTap={{
-                                scale: 0.8,
-                              }}
-                              onClick={() =>
-                                CART.add({
-                                  name: val.name,
-                                  price: val.discount,
-                                  ingrediants: val.ingrediants,
-                                })
-                              }
-                            >
-                              <img
-                                className="hw40_icon"
-                                src="../../icons/basket-plus.svg"
-                                alt="basket_icon"
-                              />
-                            </motion.div>
-                          </div>
-                        </motion.div>
-                      </div>
-                    );
-                  }
+                            return (
+                              <p
+                                style={{ width: "max-content", margin: "0" }}
+                                key={ingVal.name + "10"}
+                              >
+                                {ingVal.name},
+                              </p>
+                            );
+                          })}
+                        </div>
+                        <br />
+                        <div style={{ display: "inline-flex" }}>
+                          <p className="remove_1rem">Pris:</p>
+                          <p
+                            className="discount remove_1rem"
+                            key={val.preice + "12"}
+                          >
+                            {val.price}kr
+                          </p>
+                          <p className="remove_1rem" key={val.discount + "11"}>
+                            {val.discount}kr
+                          </p>
+                        </div>
+                        <div className="basket_icons">
+                          <motion.div
+                            className="remove_from_basket"
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{
+                              scale: 0.8,
+                            }}
+                            onClick={() => CART.minusOne(val)}
+                          >
+                            <img
+                              className="hw40_icon"
+                              src="../../icons/basket-minus.svg"
+                              alt="basket_icon"
+                            />
+                          </motion.div>
+                          <motion.div
+                            className="add_to_basket"
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{
+                              scale: 0.8,
+                            }}
+                            onClick={() =>
+                              CART.add({
+                                name: val.name,
+                                price: val.discount,
+                                ingrediants: val.ingrediants,
+                              })
+                            }
+                          >
+                            <img
+                              className="hw40_icon"
+                              src="../../icons/basket-plus.svg"
+                              alt="basket_icon"
+                            />
+                          </motion.div>
+                        </div>
+                      </motion.div>
+                    </div>
+                  );
                 })}
             </div>
           </div>
