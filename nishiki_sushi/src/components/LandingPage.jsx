@@ -18,6 +18,7 @@ export default function LandingPage() {
         {screenSize.width < 799 && <MobileNav page={"home"} />}
         <section className="thumbnail_images">
           <img
+            style={{ zIndex: "99" }}
             src="../icons/logo.svg"
             alt="The logo icon."
             className="header_logo header_logo_landing_page"
