@@ -8,7 +8,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: colors.$cream;
+  background: colors.$lightWood;
   align-items: center;
 }
 
@@ -29,6 +29,13 @@
   margin-top: 20px;
 }
 
+.selectedMobile {
+  color: colors.$darkBrown;
+}
+
+.non-selectedMobile {
+  color: colors.$lightBrown;
+}
 @media only screen and (min-width: margins.$layout-breakpoint-tablet-start) and (max-width: margins.$layout-breakpoint-tablet-end) {
   .mobile_nav {
     display: none;

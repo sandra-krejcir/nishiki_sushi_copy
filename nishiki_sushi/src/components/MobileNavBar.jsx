@@ -10,19 +10,19 @@ export default function MobileNavBar(props) {
             <NavLink
               className={
                 props.page === "home"
-                  ? "selected column_flex"
-                  : "non-selected column_flex"
+                  ? "selectedMobile column_flex"
+                  : "non-selectedMobile column_flex"
               }
               to="/"
             >
               <img
                 src={
                   props.page === "home"
-                    ? "../icons/homeColored.svg"
-                    : "../icons/homeUncolored.svg"
+                    ? "../icons/homeDarkbrown.svg"
+                    : "../icons/homeLightbrown.svg"
                 }
                 alt="Home icon."
-                className="hw40_icon"
+                className="hw30_icon"
               ></img>
               Forside
             </NavLink>
@@ -31,19 +31,19 @@ export default function MobileNavBar(props) {
             <NavLink
               className={
                 props.page === "restaurant"
-                  ? "selected column_flex"
-                  : "non-selected column_flex"
+                  ? "selectedMobile column_flex"
+                  : "non-selectedMobile column_flex"
               }
               to="/restaurant"
             >
               <img
                 src={
                   props.page === "restaurant"
-                    ? "../icons/restaurantColored.svg"
-                    : "../icons/restaurantUncolored.svg"
+                    ? "../icons/restaurantDarkbrown.svg"
+                    : "../icons/restaurantLightbrown.svg"
                 }
                 alt="Restaurant icon."
-                className="hw40_icon"
+                className="hw30_icon"
               ></img>
               Restaurant
             </NavLink>
@@ -52,19 +52,19 @@ export default function MobileNavBar(props) {
             <NavLink
               className={
                 props.page === "takeaway"
-                  ? "selected column_flex"
-                  : "non-selected column_flex"
+                  ? "selectedMobile column_flex"
+                  : "non-selectedMobile column_flex"
               }
               to="/takeaway"
             >
               <img
                 src={
                   props.page === "takeaway"
-                    ? "../icons/takeawayColored.svg"
-                    : "../icons/takeawayUncolored.svg"
+                    ? "../icons/takeawayDarkbrown.svg"
+                    : "../icons/takeawayLightbrown.svg"
                 }
                 alt="Takeaway icon."
-                className="hw40_icon"
+                className="hw30_icon"
               ></img>
               Takeaway
             </NavLink>
@@ -73,19 +73,19 @@ export default function MobileNavBar(props) {
             <NavLink
               className={
                 props.page === "kurv"
-                  ? "selected column_flex"
-                  : "non-selected column_flex"
+                  ? "selectedMobile column_flex"
+                  : "non-selectedMobile column_flex"
               }
               to="/kurv"
             >
               <img
                 src={
                   props.page === "kurv"
-                    ? "../icons/basketColored.svg"
-                    : "../icons/basketUncolored.svg"
+                    ? "../icons/basketDarkbrown.svg"
+                    : "../icons/basketLightbrown.svg"
                 }
                 alt="Basket icon."
-                className="hw40_icon"
+                className="hw30_icon"
               ></img>
               Kurv
             </NavLink>

@@ -53,7 +53,7 @@ export default function cartSetup() {
         CART.contents[index].qty += 1;
       }
 
-      console.log(CART.contents);
+      console.log(CART.contents.name);
       this.sync();
     },
 

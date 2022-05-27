@@ -41,8 +41,12 @@ export default function RestaurantPage() {
               </p>
             </div>
             <div className="restaurant-flex-buttons">
-              <button className="primaryBtn">Ad Libitum</button>
-              <button className="secondaryBtn">Book Bord</button>
+              <a href="#adlibitum-intro">
+                <button className="primaryBtn">Ad Libitum</button>
+              </a>
+              <a href="#table-booking-section">
+                <button className="secondaryBtn">Book Bord</button>
+              </a>
             </div>
           </section>
 
