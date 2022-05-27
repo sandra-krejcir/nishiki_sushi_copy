@@ -419,7 +419,7 @@ function Takeaway() {
               </motion.div>
             </AnimatedPage>
             <h2 className={`hidden ${visible ? "hidden" : "show"}`}>
-              {} Resultater for "{searchTerm}"
+              {/*   {} Resultater for "{searchTerm}" */}
             </h2>
             <div className="result_container">
               {sushiData
@@ -455,8 +455,9 @@ function Takeaway() {
                     )
                   );
                   return (
-                    <>
+                    <div key={val.name + "id10"}>
                       <motion.div
+                        key={val.name + "id1"}
                         className="item"
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -472,6 +473,7 @@ function Takeaway() {
                           ).qty >= 1 ? <p className="in_basket_number"></p> : null} */}
                         </div>
                         <img
+                          key={val.img_filename}
                           src={
                             "https://rikkeblom.com/nishiki_sushi-images/" +
                             val.img_filename
@@ -494,14 +496,26 @@ function Takeaway() {
                           {val.ingrediants.map((ingVal) => {
                             if (ingVal.name === "menu") {
                               return (
-                                <>
-                                  <p>{val.ingrediant_list}</p>
-                                  <p>{val.ingrediant_list2}</p>
-                                  <p>{val.ingrediant_list3}</p>
-                                  <p>{val.ingrediant_list4}</p>
-                                  <p>{val.ingrediant_list5}</p>
-                                  <p>{val.ingrediant_list6}</p>
-                                </>
+                                <div key={val.name + "id111"}>
+                                  <p key={val.ingrediant_list}>
+                                    {val.ingrediant_list}
+                                  </p>
+                                  <p key={val.ingrediant_list2}>
+                                    {val.ingrediant_list2}
+                                  </p>
+                                  <p key={val.ingrediant_list3}>
+                                    {val.ingrediant_list3}
+                                  </p>
+                                  <p key={val.ingrediant_list4}>
+                                    {val.ingrediant_list4}
+                                  </p>
+                                  <p key={val.ingrediant_list5}>
+                                    {val.ingrediant_list5}
+                                  </p>
+                                  <p key={val.ingrediant_list6}>
+                                    {val.ingrediant_list6}
+                                  </p>
+                                </div>
                               );
                             }
                             return (
@@ -561,7 +575,7 @@ function Takeaway() {
                           </motion.div>
                         </div>
                       </motion.div>
-                    </>
+                    </div>
                   );
                 })}
             </div>
@@ -599,8 +613,9 @@ function Takeaway() {
                 })
                 .map((val, key) => {
                   return (
-                    <>
+                    <div key={val.name + "id1111"}>
                       <motion.div
+                        key={val.name + "id11"}
                         className="item"
                         initial={false}
                         variants={animation}
@@ -614,13 +629,14 @@ function Takeaway() {
                           <p className="in_basket_number">0</p>
                         </div>
                         <img
+                          key={val.img_filename + "2"}
                           src={
                             "https://rikkeblom.com/nishiki_sushi-images/" +
                             val.img_filename
                           }
                           alt="sushi_img"
                         />
-                        <h4 key={val.name}>
+                        <h4 key={val.name + "3"}>
                           {val.name + " "}
                           {val.pieces_count}
                         </h4>
@@ -636,21 +652,33 @@ function Takeaway() {
                           {val.ingrediants.map((ingVal) => {
                             if (ingVal.name === "menu") {
                               return (
-                                <>
-                                  <p>{val.ingrediant_list}</p>
-                                  <p>{val.ingrediant_list2}</p>
-                                  <p>{val.ingrediant_list3}</p>
-                                  <p>{val.ingrediant_list4}</p>
-                                  <p>{val.ingrediant_list5}</p>
-                                  <p>{val.ingrediant_list6}</p>
-                                </>
+                                <div key={val.name + "id222"}>
+                                  <p key={val.ingrediant_list + "4"}>
+                                    {val.ingrediant_list}
+                                  </p>
+                                  <p key={val.ingrediant_list2 + "5"}>
+                                    {val.ingrediant_list2}
+                                  </p>
+                                  <p key={val.ingrediant_list3 + "6"}>
+                                    {val.ingrediant_list3}
+                                  </p>
+                                  <p key={val.ingrediant_list4 + "7"}>
+                                    {val.ingrediant_list4}
+                                  </p>
+                                  <p key={val.ingrediant_list5 + "8"}>
+                                    {val.ingrediant_list5}
+                                  </p>
+                                  <p key={val.ingrediant_list6 + "9"}>
+                                    {val.ingrediant_list6}
+                                  </p>
+                                </div>
                               );
                             }
 
                             return (
                               <p
                                 style={{ width: "max-content", margin: "0" }}
-                                key={ingVal.name}
+                                key={ingVal.name + "10"}
                               >
                                 {ingVal.name},
                               </p>
@@ -660,10 +688,13 @@ function Takeaway() {
                         <br />
                         <div style={{ display: "inline-flex" }}>
                           <p className="remove_1rem">Pris:</p>
-                          <p className="discount remove_1rem" key={val.preice}>
+                          <p
+                            className="discount remove_1rem"
+                            key={val.preice + "12"}
+                          >
                             {val.price}kr
                           </p>
-                          <p className="remove_1rem" key={val.discount}>
+                          <p className="remove_1rem" key={val.discount + "11"}>
                             {val.discount}kr
                           </p>
                         </div>
@@ -705,7 +736,7 @@ function Takeaway() {
                           </motion.div>
                         </div>
                       </motion.div>
-                    </>
+                    </div>
                   );
                 })}
             </div>
