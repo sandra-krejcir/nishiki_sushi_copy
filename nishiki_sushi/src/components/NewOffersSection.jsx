@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 export default function LandingPage() {
   return (
     <>
@@ -37,12 +39,12 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="newOffers_buttons">
-            <a href="">
+            <NavLink to="/takeaway">
               <button className="primaryBtn">Bestil nu</button>
-            </a>
-            <a href="">
+            </NavLink>
+            <NavLink to="/restaurant">
               <button className="secondaryBtn">Book bord</button>
-            </a>
+            </NavLink>
           </div>
         </div>
       </section>

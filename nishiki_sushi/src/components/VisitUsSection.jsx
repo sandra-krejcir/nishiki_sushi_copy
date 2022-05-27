@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 export default function VisitUsSection() {
   return (
     <section className="side_row">
@@ -42,9 +44,9 @@ export default function VisitUsSection() {
             </div>
           </section>
           <div className="openingTimes_button">
-            <a href="">
+            <NavLink to="/restaurant">
               <button className="secondaryBtn">Book bord</button>
-            </a>
+            </NavLink>
           </div>
         </div>
       </section>

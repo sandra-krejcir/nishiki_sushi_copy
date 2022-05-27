@@ -13,35 +13,18 @@ export default function BurgerMenu(props) {
       {!visible && (
         <CgMenu
           onClick={() => setVisible(!visible)}
-          className="exit_icon hw40_icon"
-        ></CgMenu>
-      )}
-      {screenSize.width > 799 && (
-        <NavLink
           className={
-            props.page === "kurv"
-              ? "selected column_flex"
-              : "non-selected column_flex"
+            screenSize > 1224 ? "exit_icon hw40_icon" : "exit_icon hw30_icon"
           }
-          to="/kurv"
-        >
-          <img
-            src={
-              props.page === "kurv"
-                ? "../icons/basketColored.svg"
-                : "../icons/basketUncolored.svg"
-            }
-            alt="Basket icon."
-            className="hw40_icon"
-          ></img>
-          Kurv
-        </NavLink>
+        ></CgMenu>
       )}
       {visible && (
         <nav className="burgerNav">
           <BiXCircle
             onClick={() => setVisible(!visible)}
-            className="exit_icon hw40_icon"
+            className={
+              screenSize > 1224 ? "exit_icon hw40_icon" : "exit_icon hw30_icon"
+            }
           />
           <ul>
             <li>
@@ -60,7 +43,7 @@ export default function BurgerMenu(props) {
                       : "../icons/homeUncolored.svg"
                   }
                   alt="Home icon."
-                  className="hw40_icon"
+                  className={screenSize > 1224 ? "hw40_icon" : "hw30_icon"}
                 ></img>
                 Forside
               </NavLink>
@@ -81,7 +64,7 @@ export default function BurgerMenu(props) {
                       : "../icons/restaurantUncolored.svg"
                   }
                   alt="Restaurant icon."
-                  className="hw40_icon"
+                  className={screenSize > 1224 ? "hw40_icon" : "hw30_icon"}
                 ></img>
                 Restaurant
               </NavLink>
@@ -102,7 +85,7 @@ export default function BurgerMenu(props) {
                       : "../icons/takeawayUncolored.svg"
                   }
                   alt="Takeaway icon."
-                  className="hw40_icon"
+                  className={screenSize > 1224 ? "hw40_icon" : "hw30_icon"}
                 ></img>
                 TakeAway
               </NavLink>
@@ -123,7 +106,7 @@ export default function BurgerMenu(props) {
                       : "../icons/basketUncolored.svg"
                   }
                   alt="Basket icon."
-                  className="hw40_icon"
+                  className={screenSize > 1224 ? "hw40_icon" : "hw30_icon"}
                 ></img>
                 Kurv
               </NavLink>
@@ -132,7 +115,7 @@ export default function BurgerMenu(props) {
           <div className="phone_number">
             <img
               src="../icons/monochromaticLogo.svg"
-              className="hw30_icon"
+              className={screenSize > 1224 ? "hw30_icon" : "hw20_icon"}
             ></img>
             <a href="tel:45 42 31 47 99">+45 42 31 47 99</a>
           </div>

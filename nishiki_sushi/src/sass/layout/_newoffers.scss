@@ -79,7 +79,8 @@
   flex-direction: column;
   align-items: center;
   column-gap: 5vw;
-  margin-right: 50px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .disappearing_offer {
@@ -111,7 +112,7 @@
   width: 57px;
   height: 1000px;
   position: relative;
-  top: -130px;
+  top: -175px;
   justify-self: center;
   margin-left: margins.$marginHorisontalMobile;
 }
@@ -132,6 +133,7 @@
 
 .offer > p {
   margin-top: 7px;
+  max-width: 230px;
 }
 
 .newOffers_buttons {
@@ -245,7 +247,7 @@
     width: 135px;
     height: 604px;
     position: relative;
-    top: -90px;
+    top: -110px;
     right: -40px;
     justify-self: center;
   }
@@ -322,6 +324,11 @@
     max-width: 388px;
     // margin-top: 70px;
     margin-bottom: 50px;
+  }
+
+  .offer > p {
+    max-width: 18vw;
+    margin-top: 15px;
   }
 
   .third_offer {
