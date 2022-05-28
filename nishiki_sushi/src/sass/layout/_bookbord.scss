@@ -1,9 +1,11 @@
 @use "../base/margins";
 @use "../base/colors";
+@use "../base/effects";
 
 #app-container {
   background: colors.$lightWood;
   padding: 2rem margins.$marginHorisontalMobile 2.5rem margins.$marginHorisontalMobile;
+  box-shadow: effects.$boxShadowImage;
   p,
   h4 {
     color: colors.$darkBrown;
@@ -15,7 +17,8 @@
 }
 
 #table-booking-section {
-  margin-top: 100px;
+  margin-top: margins.$marginVerticalSectionsMobile;
+  margin-bottom: calc(margins.$marginVerticalSectionsMobile * 1.5);
 }
 
 .book-icon {
@@ -164,6 +167,7 @@
 // ----------------- tablet styling
 @media (min-width: margins.$layout-breakpoint-tablet-start) and (max-width: margins.$layout-breakpoint-tablet-end) {
   #bookbord-img-container {
+    box-shadow: effects.$boxShadowImage;
     width: 100%;
     margin-top: 3.5rem;
     background: url(./img/book-bord-img.webp);
@@ -190,6 +194,8 @@
 
   #table-booking-section {
     width: calc(100% - margins.$marginHorisontalTablet);
+    margin-top: margins.$marginVerticalSectionsTablet;
+    margin-bottom: calc(margins.$marginVerticalSectionsTablet * 1.5);
     display: grid;
     gap: 20px;
     grid-template-columns: 5.5fr 3fr;
@@ -199,6 +205,7 @@
 // ----------------- desktop styling
 @media (min-width: margins.$layout-breakpoint-desktop-start) {
   #bookbord-img-container {
+    box-shadow: effects.$boxShadowImage;
     width: 100%;
     margin-top: 3.5rem;
     background: url(./img/book-bord-img.webp);
@@ -224,7 +231,9 @@
   }
 
   #table-booking-section {
+    margin-top: margins.$marginVerticalSectionsDesktop;
     width: calc(100% - margins.$marginHorisontalDesktop);
+    margin-bottom: calc(margins.$marginVerticalSectionsDesktop * 1.5);
     display: grid;
     gap: 20px;
     grid-template-columns: 9fr 4fr;
