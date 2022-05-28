@@ -11,10 +11,10 @@ export default function RestaurantPage() {
 
   return (
     <AnimatedPage>
-      <>
+      {screenSize.width > 799 && <BurgerMenu page={"restaurant"} />}
+      {screenSize.width < 799 && <MobileNav page={"restaurant"} />}
+      <main>
         <header>
-          {screenSize.width > 799 && <BurgerMenu page={"restaurant"} />}
-          {screenSize.width < 799 && <MobileNav page={"restaurant"} />}
           <NavLink to="/">
             <img
               src="../icons/logo.svg"
@@ -148,7 +148,7 @@ export default function RestaurantPage() {
             <BookBord />
           </section>
         </main>
-      </>
+      </main>
     </AnimatedPage>
   );
 }

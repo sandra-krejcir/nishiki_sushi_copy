@@ -43,7 +43,22 @@ function Takeaway() {
 
   return (
     <AnimatedPage>
-      <>
+      {screenSize.width > 799 && (
+        <>
+          <BurgerMenu page={"takeaway"} />
+          <div className="basketContainer">
+            <NavLink to="/kurv" className={"kurv_icon"}>
+              <img
+                src={"../icons/basketColored.svg"}
+                alt="Basket icon."
+                className={screenSize > 1224 ? "hw40_icon" : "hw30_icon"}
+              ></img>
+            </NavLink>
+          </div>
+        </>
+      )}
+      {screenSize.width < 799 && <MobileNav page={"takeaway"} />}
+      <main>
         <img
           className="hero_img hide_when_off_phone"
           src="../../img/hero_img/takeaway_hero_mobile.png"
@@ -51,23 +66,6 @@ function Takeaway() {
         />
 
         <div className="takeaway_container">
-          {screenSize.width > 799 && (
-            <>
-              <BurgerMenu page={"takeaway"} />
-              <NavLink to="/kurv">
-                <img
-                  src={"../icons/basketColored.svg"}
-                  alt="Basket icon."
-                  className={
-                    screenSize > 1224
-                      ? "kurv_icon hw40_icon"
-                      : "kurv_icon hw30_icon"
-                  }
-                ></img>
-              </NavLink>
-            </>
-          )}
-          {screenSize.width < 799 && <MobileNav page={"takeaway"} />}
           <NavLink to="/">
             <img
               src="../icons/logo.svg"
@@ -711,7 +709,7 @@ function Takeaway() {
             </div>
           </div>
         </div>
-      </>
+      </main>
     </AnimatedPage>
   );
 }

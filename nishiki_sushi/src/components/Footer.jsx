@@ -80,9 +80,7 @@ export default function Footer() {
           <nav className="mini_nav">
             <ul>
               <li>
-                <NavLink to="/">
-                  <a>Events & Catering</a>
-                </NavLink>
+                <a href="#cateringAndEvents">Events & Catering</a>
               </li>
               <li>
                 <a href="https://www.findsmiley.dk/517952" target="_blank">
@@ -90,12 +88,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <NavLink to="takeaway">
+                <NavLink to="/takeaway">
                   <a>TakeAway</a>
                 </NavLink>
               </li>
               <li>
-                <NavLink to="restaurant">
+                <NavLink to="/restaurant">
                   <a>Restaurant</a>
                 </NavLink>
               </li>

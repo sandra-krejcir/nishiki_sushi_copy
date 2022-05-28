@@ -14,29 +14,29 @@
   color: #c4c4c4;
 }
 
-.exit_icon {
-  position: fixed;
-  right: 0;
-  z-index: 11;
-  grid-area: 1 / 8 / 2 / 9;
-  margin: 20px;
-}
-
-.kurv_icon {
-  position: fixed;
-  right: 0;
-  grid-area: 1 / 8 / 2 / 9;
-  margin-top: 90px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
 .burgerNav {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
+  width: 100%;
   position: fixed;
-  right: 0;
-  z-index: 5;
+  /*  right: 0; */
+  z-index: 10;
+}
+
+.menuContainer {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+}
+
+.basketContainer {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  width: 100%;
+  position: fixed;
+  z-index: 0;
 }
 
 .burgerNav > ul {
@@ -45,10 +45,26 @@
   padding-left: margins.$marginHorisontalDesktop;
   padding-bottom: margins.$marginHorisontalDesktop;
   background-color: colors.$cream;
-  z-index: 10;
+  z-index: 11;
   grid-area: 1 / 8 / 2 / 9;
   list-style: none;
   text-align: center;
+}
+
+.exit_icon {
+  position: sticky;
+  z-index: 18;
+  grid-area: 1 / 8 / 2 / 9;
+  margin-left: 240px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.kurv_icon {
+  position: relative;
+  grid-area: 1 / 8 / 2 / 9;
+  margin-left: 240px;
+  margin-top: 100px;
 }
 
 .column_flex {
@@ -62,7 +78,7 @@
   position: absolute;
   right: 70px;
   bottom: 45px;
-  z-index: 11;
+  z-index: 12;
   grid-area: 1 / 8 / 2 / 9;
 }
 
@@ -77,7 +93,7 @@
     padding-left: margins.$marginHorisontalTablet;
     padding-bottom: calc(margins.$marginHorisontalTablet * 1.25);
     background-color: colors.$cream;
-    z-index: 10;
+    z-index: 11;
     grid-area: 1 / 8 / 2 / 9;
     list-style: none;
     text-align: center;
@@ -87,25 +103,24 @@
     position: absolute;
     right: 43px;
     bottom: 27px;
-    z-index: 11;
+    z-index: 12;
     grid-area: 1 / 8 / 2 / 9;
     font-size: 0.7rem;
   }
 
   .exit_icon {
-    position: fixed;
-    right: 0;
-    z-index: 11;
+    position: sticky;
+    z-index: 18;
     grid-area: 1 / 8 / 2 / 9;
-    margin: 11px;
+    margin-left: 143px;
+    margin-top: 15px;
+    margin-right: 11px;
   }
 
   .kurv_icon {
-    position: fixed;
-    right: 0;
+    position: relative;
     grid-area: 1 / 8 / 2 / 9;
-    margin-top: 50px;
-    margin-left: 11px;
-    margin-right: 11px;
+    margin-left: 62px;
+    margin-top: 60px;
   }
 }

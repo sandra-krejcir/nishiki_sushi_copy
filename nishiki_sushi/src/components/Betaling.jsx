@@ -26,9 +26,9 @@ const Betaling = ({ submitForm }) => {
 
   return (
     <AnimatedPage>
-      <>
-        {screenSize.width > 799 && <BurgerMenu page={"kurv"} />}
-        {screenSize.width < 799 && <MobileNav page={"kurv"} />}
+      {screenSize.width > 799 && <BurgerMenu page={"kurv"} />}
+      {screenSize.width < 799 && <MobileNav page={"kurv"} />}
+      <main>
         <NavLink to="/">
           <img
             src="../icons/logo.svg"
@@ -197,7 +197,7 @@ const Betaling = ({ submitForm }) => {
             </div>
           </div>
         </div>
-      </>
+      </main>
     </AnimatedPage>
   );
 };

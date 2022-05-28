@@ -3,7 +3,7 @@ import AnimatedPage from "./AnimatedPage";
 export default function CateringAndEventsSection() {
   return (
     <AnimatedPage>
-      <section className="events_catering">
+      <section className="events_catering" id="cateringAndEvents">
         <h2 className="catering_title">
           Catering & <b>Events</b>
         </h2>

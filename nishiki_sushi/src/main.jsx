@@ -26,19 +26,17 @@ function Main() {
 
   return (
     <>
-      <main>
-        <AnimatePresence exitBeforeEnter>
-          <Routes key={location.pathname} location={location}>
-            <Route path="/" element={<Home />} />
-            <Route path="/takeaway" element={<Takeaway />} />
-            <Route path="/restaurant" element={<RestaurantPage />} />
-            <Route path="/kurv" element={<Kurv />} />
-            <Route path="/oplysninger" element={<Oplysninger />} />
-            <Route path="/betaling" element={<Betaling />} />
-            <Route path="/bekraeftelse" element={<Bekraeftelse />} />
-          </Routes>
-        </AnimatePresence>
-      </main>
+      <AnimatePresence exitBeforeEnter>
+        <Routes key={location.pathname} location={location}>
+          <Route path="/" element={<Home />} />
+          <Route path="/takeaway" element={<Takeaway />} />
+          <Route path="/restaurant" element={<RestaurantPage />} />
+          <Route path="/kurv" element={<Kurv />} />
+          <Route path="/oplysninger" element={<Oplysninger />} />
+          <Route path="/betaling" element={<Betaling />} />
+          <Route path="/bekraeftelse" element={<Bekraeftelse />} />
+        </Routes>
+      </AnimatePresence>
       <Footer />
     </>
   );

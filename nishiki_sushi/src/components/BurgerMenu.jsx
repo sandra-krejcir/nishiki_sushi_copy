@@ -15,12 +15,16 @@ export default function BurgerMenu(props) {
     <AnimatedPage2>
       <>
         {!visible && (
-          <CgMenu
-            onClick={() => setVisible(!visible)}
-            className={
-              screenSize > 1224 ? "exit_icon hw40_icon" : "exit_icon hw30_icon"
-            }
-          ></CgMenu>
+          <div className="menuContainer">
+            <CgMenu
+              onClick={() => setVisible(!visible)}
+              className={
+                screenSize > 1224
+                  ? "exit_icon hw40_icon"
+                  : "exit_icon hw30_icon"
+              }
+            ></CgMenu>
+          </div>
         )}
 
         {visible && (

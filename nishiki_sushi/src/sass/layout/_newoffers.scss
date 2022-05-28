@@ -35,7 +35,7 @@
   box-shadow: effects.$boxShadowImage;
 }
 
-.thumbnail_images > a > h4 {
+.thumbnail_img > h4 {
   max-width: min-content;
   text-align: center;
   align-self: center;
@@ -152,12 +152,13 @@
     margin-left: margins.$marginHorisontalTablet;
     margin-right: margins.$marginHorisontalTablet;
     justify-content: space-between;
+    max-width: 100%;
   }
 
   .thumbnail_img {
     display: flex;
     flex-direction: column;
-    width: 44vw;
+    width: 42vw;
     height: 55vw;
     box-shadow: effects.$boxShadowImage;
   }
@@ -254,7 +255,7 @@
 }
 
 @media only screen and (min-width: margins.$layout-breakpoint-desktop-start) {
-  .thumbnail_images > a > h4 {
+  .thumbnail_img > h4 {
     max-width: max-content;
   }
 
@@ -278,12 +279,13 @@
     margin-left: margins.$marginHorisontalDesktop;
     margin-right: margins.$marginHorisontalDesktop;
     justify-content: space-between;
+    max-width: 100%;
   }
 
   .thumbnail_img {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 42vw;
     height: 35vw;
     box-shadow: effects.$boxShadowImage;
   }
