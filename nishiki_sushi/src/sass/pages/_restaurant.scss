@@ -301,3 +301,8 @@
     }
   }
 }
+@media (min-width: 2400px) {
+  #adlibitum-line-container {
+    margin-right: calc(margins.$marginHorisontalDesktop + ((100vw - 2400px) / 2)) !important;
+  }
+}
