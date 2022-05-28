@@ -6,20 +6,18 @@ import { MdOutlineKeyboardBackspace } from "react-icons/md";
 import useWindowDimensions from "./screenResize_hook";
 import MobileNav from "./MobileNavBar";
 import cartSetup from "./Cart";
+import TakeawayItem from "./TakeawayItem";
 
 let sushiData;
 await fetchSushiData();
 async function fetchSushiData() {
-  const restSushi = await fetch(
-    "https://kea21s-6eb0.restdb.io/rest/nishiki-sushi-products?fetchchildren=true",
-    { headers: { "x-apikey": "606d606af55350043100752e" } }
-  );
+  const restSushi = await fetch("https://kea21s-6eb0.restdb.io/rest/nishiki-sushi-products?fetchchildren=true", { headers: { "x-apikey": "606d606af55350043100752e" } });
   const dataSushi = await restSushi.json();
   sushiData = dataSushi;
   /* console.log(sushiData); */
 }
 
-console.log(sushiData);
+// console.log(sushiData);
 
 function Takeaway() {
   const [searchTerm, setsearchTerm] = useState("");
@@ -35,25 +33,13 @@ function Takeaway() {
 
   return (
     <>
-      <img
-        className="hero_img hide_when_off_phone"
-        src="../../img/hero_img/takeaway_hero_mobile.png"
-        alt="takeaway"
-      />
+      <img className="hero_img hide_when_off_phone" src="../../img/hero_img/takeaway_hero_mobile.png" alt="takeaway" />
 
       <div className="takeaway_container">
         {screenSize.width > 799 && <BurgerMenu page={"takeaway"} />}
         {screenSize.width < 799 && <MobileNav page={"takeaway"} />}
-        <img
-          src="../icons/logo.svg"
-          alt="The logo icon."
-          className="header_logo"
-        />
-        <img
-          className="hero_img hide_when_on_phone"
-          src="../../img/hero_img/takeaway_hero.png"
-          alt="takeaway"
-        />
+        <img src="../icons/logo.svg" alt="The logo icon." className="header_logo" />
+        <img className="hero_img hide_when_on_phone" src="../../img/hero_img/takeaway_hero.png" alt="takeaway" />
         <div className="takeaway_headline">
           <h1>
             <b>Take</b>Away
@@ -78,9 +64,7 @@ function Takeaway() {
               }}
             ></input>
           </div>
-          <div
-            className={`hidden ${visible ? "show" : ""} kategorier_container`}
-          >
+          <div className={`hidden ${visible ? "show" : ""} kategorier_container`}>
             <h2>Kategorier</h2>
             <div className="kategorier">
               <div
@@ -90,10 +74,7 @@ function Takeaway() {
                   setVisible2(!visible2);
                 }}
               >
-                <img
-                  src="../../img/kategorier_billeder/manedenstilbud.png"
-                  alt="månedens_tilbud"
-                />
+                <img src="../../img/kategorier_billeder/manedenstilbud.png" alt="månedens_tilbud" />
                 <h3>Månedens tilbud</h3>
               </div>
               <div
@@ -103,10 +84,7 @@ function Takeaway() {
                   setVisible2(!visible2);
                 }}
               >
-                <img
-                  src="../../img/kategorier_billeder/sushimenu.png"
-                  alt="sushi_menu"
-                />
+                <img src="../../img/kategorier_billeder/sushimenu.png" alt="sushi_menu" />
                 <h3>Sushi Menu</h3>
               </div>
               <div
@@ -116,10 +94,7 @@ function Takeaway() {
                   setVisible2(!visible2);
                 }}
               >
-                <img
-                  src="../../img/kategorier_billeder/forret.png"
-                  alt="forret"
-                />
+                <img src="../../img/kategorier_billeder/forret.png" alt="forret" />
                 <h3>Forret</h3>
               </div>
               <div
@@ -129,10 +104,7 @@ function Takeaway() {
                   setVisible2(!visible2);
                 }}
               >
-                <img
-                  src="../../img/kategorier_billeder/yakitori_sticks.png"
-                  alt="yakitori_sticks"
-                />
+                <img src="../../img/kategorier_billeder/yakitori_sticks.png" alt="yakitori_sticks" />
                 <h3>Yakitori Sticks</h3>
               </div>
               <div
@@ -142,10 +114,7 @@ function Takeaway() {
                   setVisible2(!visible2);
                 }}
               >
-                <img
-                  src="../../img/kategorier_billeder/nigiri.png"
-                  alt="nigiri"
-                />
+                <img src="../../img/kategorier_billeder/nigiri.png" alt="nigiri" />
                 <h3>Nigiri 2stk</h3>
               </div>
               <div
@@ -155,10 +124,7 @@ function Takeaway() {
                   setVisible2(!visible2);
                 }}
               >
-                <img
-                  src="../../img/kategorier_billeder/hosomaki.png"
-                  alt="hosomaki"
-                />
+                <img src="../../img/kategorier_billeder/hosomaki.png" alt="hosomaki" />
                 <h3>Hosomaki 8stk</h3>
               </div>
               <div
@@ -168,10 +134,7 @@ function Takeaway() {
                   setVisible2(!visible2);
                 }}
               >
-                <img
-                  src="../../img/kategorier_billeder/futomaki.png"
-                  alt="futomaki"
-                />
+                <img src="../../img/kategorier_billeder/futomaki.png" alt="futomaki" />
                 <h3>Futomaki 5stk</h3>
               </div>
               <div
@@ -181,10 +144,7 @@ function Takeaway() {
                   setVisible2(!visible2);
                 }}
               >
-                <img
-                  src="../../img/kategorier_billeder/sashimi.png"
-                  alt="sashimi"
-                />
+                <img src="../../img/kategorier_billeder/sashimi.png" alt="sashimi" />
                 <h3>Sashimi</h3>
               </div>
               <div
@@ -194,10 +154,7 @@ function Takeaway() {
                   setVisible2(!visible2);
                 }}
               >
-                <img
-                  src="../../img/kategorier_billeder/rispapir.png"
-                  alt="rispapir"
-                />
+                <img src="../../img/kategorier_billeder/rispapir.png" alt="rispapir" />
                 <h3>Rispapir 6stk</h3>
               </div>
               <div
@@ -207,10 +164,7 @@ function Takeaway() {
                   setVisible2(!visible2);
                 }}
               >
-                <img
-                  src="../../img/kategorier_billeder/uramaki.png"
-                  alt="uramaki"
-                />
+                <img src="../../img/kategorier_billeder/uramaki.png" alt="uramaki" />
                 <h3>Uramaki 8stk</h3>
               </div>
               <div
@@ -220,10 +174,7 @@ function Takeaway() {
                   setVisible2(!visible2);
                 }}
               >
-                <img
-                  src="../../img/kategorier_billeder/kaburimaki.png"
-                  alt="kaburimaki"
-                />
+                <img src="../../img/kategorier_billeder/kaburimaki.png" alt="kaburimaki" />
                 <h3>Kaburimaki 8stk</h3>
               </div>
               <div
@@ -249,15 +200,9 @@ function Takeaway() {
                     setVisible(!visible);
                   }
                   return null;
-                } else if (
-                  val.name.toLowerCase().includes(searchTerm.toLowerCase())
-                ) {
+                } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
                   return val;
-                } else if (
-                  val.ingrediant_list
-                    .toLowerCase()
-                    .includes(searchTerm.toLowerCase())
-                ) {
+                } else if (val.ingrediant_list.toLowerCase().includes(searchTerm.toLowerCase())) {
                   return val;
                 } else if (searchTerm === "alle") {
                   return val;
@@ -269,101 +214,76 @@ function Takeaway() {
                     (element) => element.name === val.name
                   )
                 ); */
-                console.log(
-                  JSON.stringify(JSON.parse(localStorage.getItem(CART.KEY)))
-                );
+                // console.log(JSON.stringify(JSON.parse(localStorage.getItem(CART.KEY))));
                 return (
-                  <>
-                    <div className="item">
-                      <div className="in_basket_number_container">
-                        <p className="in_basket_number">0</p>
-                        {/* {CART.contents.find(
-                          (element) => element.name === val.name
-                        ).qty >= 1 ? <p className="in_basket_number"></p> : null} */}
-                      </div>
-                      <img
-                        src={
-                          "https://rikkeblom.com/nishiki_sushi-images/" +
-                          val.img_filename
-                        }
-                        alt="sushi_img"
-                      />
+                  <TakeawayItem {...val} key={val._id} />
+                  // <>
+                  //   <div className="item">
+                  //     <div className="in_basket_number_container">
+                  //       <p className="in_basket_number">0</p>
+                  //       {/* {CART.contents.find(
+                  //         (element) => element.name === val.name
+                  //       ).qty >= 1 ? <p className="in_basket_number"></p> : null} */}
+                  //     </div>
+                  //     <img src={"https://rikkeblom.com/nishiki_sushi-images/" + val.img_filename} alt="sushi_img" />
 
-                      <h4 key={val.name}>
-                        {val.name + " "}
-                        {val.pieces_count}
-                      </h4>
+                  //     <h4 key={val.name}>
+                  //       {val.name + " "}
+                  //       {val.pieces_count}
+                  //     </h4>
 
-                      <div
-                        style={{
-                          display: "flex",
-                          flexWrap: "wrap",
-                          flexDirection: "row",
-                          gap: "5px",
-                          width: "inherit",
-                        }}
-                      >
-                        {val.ingrediants.map((ingVal) => {
-                          return (
-                            <p
-                              style={{ width: "max-content", margin: "0" }}
-                              key={ingVal.name}
-                            >
-                              {ingVal.name},
-                            </p>
-                          );
-                        })}
-                      </div>
-                      <br />
-                      <div style={{ display: "inline-flex" }}>
-                        <p className="remove_1rem">Pris:</p>
-                        <p className="discount remove_1rem" key={val.price}>
-                          {val.price}kr
-                        </p>
-                        <p className="remove_1rem" key={val.discount}>
-                          {val.discount}kr
-                        </p>
-                      </div>
+                  //     <div
+                  //       style={{
+                  //         display: "flex",
+                  //         flexWrap: "wrap",
+                  //         flexDirection: "row",
+                  //         gap: "5px",
+                  //         width: "inherit",
+                  //       }}
+                  //     >
+                  //       {val.ingrediants.map((ingVal) => {
+                  //         return (
+                  //           <p style={{ width: "max-content", margin: "0" }} key={ingVal.name}>
+                  //             {ingVal.name},
+                  //           </p>
+                  //         );
+                  //       })}
+                  //     </div>
+                  //     <br />
+                  //     <div style={{ display: "inline-flex" }}>
+                  //       <p className="remove_1rem">Pris:</p>
+                  //       <p className="discount remove_1rem" key={val.price}>
+                  //         {val.price}kr
+                  //       </p>
+                  //       <p className="remove_1rem" key={val.discount}>
+                  //         {val.discount}kr
+                  //       </p>
+                  //     </div>
 
-                      <div className="basket_icons">
-                        <div
-                          className="remove_from_basket"
-                          onClick={() => CART.minusOne(val)}
-                        >
-                          <img
-                            className="hw40_icon"
-                            src="../../icons/basket-minus.svg"
-                            alt="basket_icon"
-                          />
-                        </div>
-                        <div
-                          className="add_to_basket"
-                          onClick={() =>
-                            CART.add({
-                              name: val.name,
-                              price: val.discount,
-                              ingrediants: val.ingrediants,
-                            })
-                          }
-                        >
-                          <img
-                            className="hw40_icon"
-                            src="../../icons/basket-plus.svg"
-                            alt="basket_icon"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </>
+                  //     <div className="basket_icons">
+                  //       <div className="remove_from_basket" onClick={() => CART.minusOne(val)}>
+                  //         <img className="hw40_icon" src="../../icons/basket-minus.svg" alt="basket_icon" />
+                  //       </div>
+                  //       <div
+                  //         className="add_to_basket"
+                  //         onClick={() =>
+                  //           CART.add({
+                  //             name: val.name,
+                  //             price: val.discount,
+                  //             ingrediants: val.ingrediants,
+                  //           })
+                  //         }
+                  //       >
+                  //         <img className="hw40_icon" src="../../icons/basket-plus.svg" alt="basket_icon" />
+                  //       </div>
+                  //     </div>
+                  //   </div>
+                  // </>
                 );
               })}
           </div>
         </div>
-        <div
-          className={`hidden ${
-            visible2 ? "hidden" : "show"
-          } chosen_kategorie_container`}
-        >
+        <div className={`hidden ${visible2 ? "hidden" : "show"} chosen_kategorie_container`}>
           <button
             className="secondaryBtn"
             onClick={() => {
@@ -394,17 +314,11 @@ function Takeaway() {
               .map((val, key) => {
                 return (
                   <>
-                    <div className="item">
+                    <div key={val._id} className="item">
                       <div className="in_basket_number_container">
                         <p className="in_basket_number">0</p>
                       </div>
-                      <img
-                        src={
-                          "https://rikkeblom.com/nishiki_sushi-images/" +
-                          val.img_filename
-                        }
-                        alt="sushi_img"
-                      />
+                      <img src={"https://rikkeblom.com/nishiki_sushi-images/" + val.img_filename} alt="sushi_img" />
 
                       <h4 key={val.name}>
                         {val.name + " "}
@@ -422,10 +336,7 @@ function Takeaway() {
                       >
                         {val.ingrediants.map((ingVal) => {
                           return (
-                            <p
-                              style={{ width: "max-content", margin: "0" }}
-                              key={ingVal.name}
-                            >
+                            <p style={{ width: "max-content", margin: "0" }} key={ingVal.name}>
                               {ingVal.name},
                             </p>
                           );
@@ -444,18 +355,10 @@ function Takeaway() {
 
                       <div className="basket_icons">
                         <div className="remove_from_basket">
-                          <img
-                            className="hw40_icon"
-                            src="../../icons/basket-minus.svg"
-                            alt="basket_icon"
-                          />
+                          <img className="hw40_icon" src="../../icons/basket-minus.svg" alt="basket_icon" />
                         </div>
                         <div className="add_to_basket">
-                          <img
-                            className="hw40_icon"
-                            src="../../icons/basket-plus.svg"
-                            alt="basket_icon"
-                          />
+                          <img className="hw40_icon" src="../../icons/basket-plus.svg" alt="basket_icon" />
                         </div>
                       </div>
                     </div>
