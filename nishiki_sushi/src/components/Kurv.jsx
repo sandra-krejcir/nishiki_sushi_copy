@@ -9,7 +9,8 @@ import useWindowDimensions from "./screenResize_hook";
 import { NavLink } from "react-router-dom";
 import MobileNav from "./MobileNavBar";
 
-function Kurv() {
+function Kurv(props) {
+  const { cartContents } = props;
   const screenSize = useWindowDimensions();
   return (
     <>
@@ -45,6 +46,7 @@ function Kurv() {
           </p>
         </div>
         <div className="mid_kurv_container">
+          {cartContents.length === 0 && <div>Your cart is empty</div>}
           <div className="inner_kurv_container">
             <div>
               <div className="kurv_item_top">
