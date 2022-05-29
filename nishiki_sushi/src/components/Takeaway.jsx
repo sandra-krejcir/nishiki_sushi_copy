@@ -251,82 +251,14 @@ function Takeaway(props) {
                 }
               })
               .map((val, key) => {
-                /*  console.log(
-                  JSON.parse(localStorage.getItem(CART.KEY)).find(
-                    (element) => element.name === val.name
-                  )
-                ); */
-                // console.log(JSON.stringify(JSON.parse(localStorage.getItem(CART.KEY))));
                 return (
                   <TakeawayItem
                     {...val}
-                    key={val._id}
+                    key={val.name}
                     onAdd={onAdd}
                     cartContents={cartContents}
                     onRemove={onRemove}
                   />
-                  // <>
-                  //   <div className="item">
-                  //     <div className="in_basket_number_container">
-                  //       <p className="in_basket_number">0</p>
-                  //       {/* {CART.contents.find(
-                  //         (element) => element.name === val.name
-                  //       ).qty >= 1 ? <p className="in_basket_number"></p> : null} */}
-                  //     </div>
-                  //     <img src={"https://rikkeblom.com/nishiki_sushi-images/" + val.img_filename} alt="sushi_img" />
-
-                  //     <h4 key={val.name}>
-                  //       {val.name + " "}
-                  //       {val.pieces_count}
-                  //     </h4>
-
-                  //     <div
-                  //       style={{
-                  //         display: "flex",
-                  //         flexWrap: "wrap",
-                  //         flexDirection: "row",
-                  //         gap: "5px",
-                  //         width: "inherit",
-                  //       }}
-                  //     >
-                  //       {val.ingrediants.map((ingVal) => {
-                  //         return (
-                  //           <p style={{ width: "max-content", margin: "0" }} key={ingVal.name}>
-                  //             {ingVal.name},
-                  //           </p>
-                  //         );
-                  //       })}
-                  //     </div>
-                  //     <br />
-                  //     <div style={{ display: "inline-flex" }}>
-                  //       <p className="remove_1rem">Pris:</p>
-                  //       <p className="discount remove_1rem" key={val.price}>
-                  //         {val.price}kr
-                  //       </p>
-                  //       <p className="remove_1rem" key={val.discount}>
-                  //         {val.discount}kr
-                  //       </p>
-                  //     </div>
-
-                  //     <div className="basket_icons">
-                  //       <div className="remove_from_basket" onClick={() => CART.minusOne(val)}>
-                  //         <img className="hw40_icon" src="../../icons/basket-minus.svg" alt="basket_icon" />
-                  //       </div>
-                  //       <div
-                  //         className="add_to_basket"
-                  //         onClick={() =>
-                  //           CART.add({
-                  //             name: val.name,
-                  //             price: val.discount,
-                  //             ingrediants: val.ingrediants,
-                  //           })
-                  //         }
-                  //       >
-                  //         <img className="hw40_icon" src="../../icons/basket-plus.svg" alt="basket_icon" />
-                  //       </div>
-                  //     </div>
-                  //   </div>
-                  // </>
                 );
               })}
           </div>
@@ -347,13 +279,6 @@ function Takeaway(props) {
             <MdOutlineKeyboardBackspace className="hw20_icon" />
             Kategorier
           </button>
-          {/* <div className="search_container">
-            <IoIosSearch className="hw20_icon" />
-            <input
-              type="text"
-              placeholder="Søg efter sushi eller ingredienser"
-            ></input>
-          </div> */}
           <h2>{filterTerm}</h2>
           <div className="result_container">
             {sushiData
@@ -372,56 +297,6 @@ function Takeaway(props) {
                     cartContents={cartContents}
                     onRemove={onRemove}
                   />
-                  // <>
-                  //   <div key={val._id} className="item">
-                  //     <div className="in_basket_number_container">
-                  //       <p className="in_basket_number">0</p>
-                  //     </div>
-                  //     <img src={"https://rikkeblom.com/nishiki_sushi-images/" + val.img_filename} alt="sushi_img" />
-
-                  //     <h4 key={val.name}>
-                  //       {val.name + " "}
-                  //       {val.pieces_count}
-                  //     </h4>
-
-                  //     <div
-                  //       style={{
-                  //         display: "flex",
-                  //         flexWrap: "wrap",
-                  //         flexDirection: "row",
-                  //         gap: "5px",
-                  //         width: "inherit",
-                  //       }}
-                  //     >
-                  //       {val.ingrediants.map((ingVal) => {
-                  //         return (
-                  //           <p style={{ width: "max-content", margin: "0" }} key={ingVal.name}>
-                  //             {ingVal.name},
-                  //           </p>
-                  //         );
-                  //       })}
-                  //     </div>
-                  //     <br />
-                  //     <div style={{ display: "inline-flex" }}>
-                  //       <p className="remove_1rem">Pris:</p>
-                  //       <p className="discount remove_1rem" key={val.preice}>
-                  //         {val.price}kr
-                  //       </p>
-                  //       <p className="remove_1rem" key={val.discount}>
-                  //         {val.discount}kr
-                  //       </p>
-                  //     </div>
-
-                  //     <div className="basket_icons">
-                  //       <div className="remove_from_basket">
-                  //         <img className="hw40_icon" src="../../icons/basket-minus.svg" alt="basket_icon" />
-                  //       </div>
-                  //       <div className="add_to_basket">
-                  //         <img className="hw40_icon" src="../../icons/basket-plus.svg" alt="basket_icon" />
-                  //       </div>
-                  //     </div>
-                  //   </div>
-                  // </>
                 );
               })}
           </div>

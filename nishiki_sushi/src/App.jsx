@@ -27,11 +27,6 @@ console.log(sushiData);
 
 export default function App() {
   const [cartContents, setCartContents] = useState([]);
-  /*  useEffect(() => {
-    if (!cartContents.current) {
-      setCartContents([...cartContents]);
-    }
-  }, [cartContents]); */
   const onAdd = (product) => {
     const cartIndex = cartContents.findIndex((ele) => ele.id === product.id);
     if (cartIndex === -1) {
