@@ -109,43 +109,44 @@ function Kurv(props) {
                           <IoMdArrowDropup className="hw20_icon" />
                         </p>
                       )}
+                      {viewIngrediants && (
+                        <div
+                          className="order_information"
+                          style={{
+                            display: "flex",
+                            flexWrap: "wrap",
+                            flexDirection: "row",
+                            gap: "5px",
+                            width: "inherit",
+                          }}
+                        >
+                          {item.ingrediants.map((ingVal) => {
+                            if (item.ingrediants[0] === "menu") {
+                              return (
+                                <div>
+                                  <p>{item.ingrediant_list}</p>
+                                  <p>{item.ingrediant_list2}</p>
+                                  <p>{item.ingrediant_list3}</p>
+                                  <p>{item.ingrediant_list4}</p>
+                                  <p>{item.ingrediant_list5}</p>
+                                  <p>{item.ingrediant_list6}</p>
+                                </div>
+                              );
+                            } else {
+                              return (
+                                <p
+                                  style={{ width: "max-content", margin: "0" }}
+                                  key={ingVal}
+                                >
+                                  {ingVal},
+                                </p>
+                              );
+                            }
+                          })}
+                        </div>
+                      )}
                     </div>
                   </div>
-                  {viewIngrediants && (
-                    <div
-                      style={{
-                        display: "flex",
-                        flexWrap: "wrap",
-                        flexDirection: "row",
-                        gap: "5px",
-                        width: "inherit",
-                      }}
-                    >
-                      {item.ingrediants.map((ingVal) => {
-                        if (item.ingrediants[0] === "menu") {
-                          return (
-                            <>
-                              <p>{item.ingrediant_list}</p>
-                              <p>{item.ingrediant_list2}</p>
-                              <p>{item.ingrediant_list3}</p>
-                              <p>{item.ingrediant_list4}</p>
-                              <p>{item.ingrediant_list5}</p>
-                              <p>{item.ingrediant_list6}</p>
-                            </>
-                          );
-                        } else {
-                          return (
-                            <p
-                              style={{ width: "max-content", margin: "0" }}
-                              key={ingVal}
-                            >
-                              {ingVal},
-                            </p>
-                          );
-                        }
-                      })}
-                    </div>
-                  )}
                 </div>
               );
             })}

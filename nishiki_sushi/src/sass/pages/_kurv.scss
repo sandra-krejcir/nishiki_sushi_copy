@@ -111,7 +111,7 @@ h3 {
   grid-column: 2;
 }
 
-.show_hide_indhold p {
+.show_hide_indhold > p {
   color: colors.$darkGreen;
   font-weight: bold;
   text-decoration: underline;

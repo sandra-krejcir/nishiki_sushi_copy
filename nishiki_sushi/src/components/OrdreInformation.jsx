@@ -17,14 +17,17 @@ function OrdreInformation(props) {
         return (
           <>
             <div>
-              <div
-                className={
-                  item.ingrediants.length === 0
-                    ? "hide_ingrediants"
-                    : "order_information_item_container"
-                }
-              >
-                <div className="order_information_item_arrows">
+              <div className="order_information_item_container">
+                <div
+                  className={
+                    item.ingrediants.length === 0
+                      ? "hide_ingrediants"
+                      : "order_information_item_arrows"
+                  }
+                >
+                  {/*  {item.ingrediants.length === 0 && (
+                    <div className="order_information_item_arrows"></div>
+                  )} */}
                   {!viewIngrediants ? (
                     <IoMdArrowDropdown
                       className="hw20_icon"

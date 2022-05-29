@@ -13,8 +13,9 @@ import AnimatedPage from "./AnimatedPage";
 function Bekræftelse(props) {
   const screenSize = useWindowDimensions();
   const { cartContents } = props;
+  let _formInfo = localStorage.getItem("Oplysninger");
+  const formInfo = JSON.parse(_formInfo);
   const [confirm, setConfirm] = useState(true);
-
   useEffect(() => {
     const timer = setTimeout(() => {
       if (confirm === true) {
@@ -94,22 +95,26 @@ function Bekræftelse(props) {
               <div className="time_line_left">
                 <div className="time_line_name_container">
                   <p className="time_line_name_label">Navn</p>
-                  <p className="time_line_name">John Doe</p>
+                  <p className="time_line_name">{formInfo.oplysninger_navn}</p>
                 </div>
                 <div className="time_line_number_container">
                   <p className="time_line_number_label">Mobil Nummer</p>
-                  <p className="time_line_number">00 00 00 00</p>
+                  <p className="time_line_number">
+                    {formInfo.oplysninger_mobil}
+                  </p>
                 </div>
               </div>
               <div className="time_line"></div>
               <div className="time_line_right">
                 <div className="time_line_time_container">
                   <p className="time_line_time_label">Afhentnings tid</p>
-                  <p className="time_line_time">15:00</p>
+                  <p className="time_line_time">{formInfo.oplysninger_tid}</p>
                 </div>
                 <div className="time_line_comment_container">
                   <p className="time_line_comment_label">Kommentarer</p>
-                  <p className="time_line_comment">Ingen Citrus</p>
+                  <p className="time_line_comment">
+                    {formInfo.oplysninger_kommentarer}
+                  </p>
                 </div>
               </div>
             </div>

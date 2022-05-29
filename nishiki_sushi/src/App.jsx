@@ -11,6 +11,8 @@ import {
   RestaurantPage,
 } from "./components";
 
+localStorage.clear();
+
 let sushiData;
 await fetchSushiData();
 async function fetchSushiData() {
@@ -27,6 +29,13 @@ console.log(sushiData);
 
 export default function App() {
   const [cartContents, setCartContents] = useState([]);
+
+  useEffect(() => {
+    if (!cartContents.current) {
+      localStorage.setItem("Orders", JSON.stringify(cartContents));
+    }
+  }, [cartContents]);
+
   const onAdd = (product) => {
     const cartIndex = cartContents.findIndex((ele) => ele.id === product.id);
     if (cartIndex === -1) {
