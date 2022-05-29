@@ -13,6 +13,9 @@
 
   /*   display: grid;
   justify-content: center; */
+  .button_and_afhentling_container {
+    margin: 0;
+  }
 }
 
 .bekræftelse_container label {
@@ -141,7 +144,7 @@ h3 {
     display: grid;
     justify-content: space-between;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
+    grid-gap: 5vw;
   }
 
   .time_line_container {

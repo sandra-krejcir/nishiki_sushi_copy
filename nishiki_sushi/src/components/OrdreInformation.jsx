@@ -31,8 +31,12 @@ function OrdreInformation() {
         </div>
         <div className="line_kurv"></div>
         <div>
-          <p>Total:</p>
-          <span>000</span>
+          <p>
+            <strong>Total:</strong>
+          </p>
+          <span>
+            <strong>000</strong>
+          </span>
         </div>
       </div>
     </div>

@@ -38,7 +38,7 @@ function Kurv(props) {
         <div className="button_and_afhentling_container">
           <NavLink to="/takeaway">
             <button className="secondaryBtn">
-              <MdOutlineKeyboardBackspace className="hw20_icon" />
+              <MdOutlineKeyboardBackspace style={{ margin: "0 0.5rem 0 -0.5rem" }} className="hw20_icon" />
               Tilføj
             </button>
           </NavLink>
@@ -51,7 +51,7 @@ function Kurv(props) {
           {cartContents.length === 0 && <div>Your cart is empty</div>}
           <div className="inner_kurv_container">
             {cartContents.map((item) => (
-              <div key={item.id}>
+              <div style={{ marginBottom: "2rem" }} key={item.id}>
                 <div className="kurv_item_top">
                   <div className="kurv_remove_add">
                     <AiOutlineMinusSquare className="hw30_icon" onClick={() => onRemove(item)} />
@@ -77,7 +77,9 @@ function Kurv(props) {
                     flexWrap: "wrap",
                     flexDirection: "row",
                     gap: "5px",
-                    width: "inherit",
+                    width: "fit-content",
+                    marginLeft: "calc((100% / 5.4) * 1.4)",
+                    marginRight: "calc((100% / 5.4) * 1)",
                   }}
                 >
                   {item.ingrediants.map((ingVal) => {
@@ -115,8 +117,12 @@ function Kurv(props) {
                 </div>
                 <div className="line_kurv"></div>
                 <div>
-                  <p>Total:</p>
-                  <span>{totalAmount.toFixed(2)} DKK</span>
+                  <p>
+                    <strong>Total:</strong>
+                  </p>
+                  <span>
+                    <strong>{totalAmount.toFixed(2)} DKK</strong>
+                  </span>
                 </div>
               </div>
             )}
