@@ -7,6 +7,10 @@
   margin: margins.$marginHorisontalMobile;
   /* display: flex;
   justify-content: center; */
+
+  input {
+    padding-left: 1rem;
+  }
 }
 
 .oplysninger_container label {
@@ -68,10 +72,11 @@ h3 {
   }
 
   .oplysninger_form_container {
-    margin-right: -680px;
-    padding-right: 680px;
-    padding-left: margins.$marginHorisontalTablet;
+    // margin-right: -680px;
+    // padding-right: 680px;
+    padding: 1rem margins.$marginHorisontalTablet;
     box-shadow: effects.$boxShadowImage;
+    margin-left: calc(margins.$marginHorisontalTablet - 1rem);
   }
 
   .oplysninger_form_container h2 {
@@ -79,7 +84,7 @@ h3 {
     font-weight: bold;
     color: colors.$darkBrown;
     margin-top: margins.$marginUnderElementMobile;
-    margin-bottom: margins.$marginUnderElementDesktop;
+    // margin-bottom: margins.$marginUnderElementDesktop;
   }
 }
 
@@ -89,6 +94,20 @@ h3 {
     justify-content: center;
   }
   .oplysninger_form_container {
-    padding-left: margins.$marginHorisontalDesktop;
+    padding: 0 margins.$marginHorisontalDesktop 0 0;
+    margin-left: calc(margins.$marginHorisontalDesktop - 1rem);
+    width: 100%;
+
+    p,
+    h2,
+    form {
+      min-width: fit-content;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h2 {
+      text-align: center;
+    }
   }
 }

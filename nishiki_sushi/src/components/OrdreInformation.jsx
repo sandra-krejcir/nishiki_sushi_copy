@@ -17,13 +17,7 @@ function OrdreInformation(props) {
         return (
           <>
             <div>
-              <div
-                className={
-                  item.ingrediants.length === 0
-                    ? "hide_ingrediants"
-                    : "order_information_item_container"
-                }
-              >
+              <div className={item.ingrediants.length === 0 ? "hide_ingrediants" : "order_information_item_container"}>
                 <div className="order_information_item_arrows">
                   {!viewIngrediants ? (
                     <IoMdArrowDropdown
@@ -42,9 +36,7 @@ function OrdreInformation(props) {
                   )}
                 </div>
                 <p className="remove_1rem">{item.name}</p>
-                <span>
-                  {(Number(item.qty) * Number(item.price)).toFixed(2)}
-                </span>
+                <span>{(Number(item.qty) * Number(item.price)).toFixed(2)}</span>
               </div>
               {viewIngrediants && (
                 <div
@@ -55,6 +47,8 @@ function OrdreInformation(props) {
                     flexDirection: "row",
                     gap: "5px",
                     width: "inherit",
+                    marginLeft: "calc((100% / 4.5) * .5)",
+                    marginRight: "calc((100% / 4.5) * 1)",
                   }}
                 >
                   {item.ingrediants.map((ingVal) => {
@@ -71,10 +65,7 @@ function OrdreInformation(props) {
                       );
                     } else {
                       return (
-                        <p
-                          style={{ width: "max-content", margin: "0" }}
-                          key={ingVal}
-                        >
+                        <p style={{ width: "max-content", margin: "0" }} key={ingVal}>
                           {ingVal},
                         </p>
                       );
@@ -97,8 +88,12 @@ function OrdreInformation(props) {
         </div>
         <div className="line_kurv"></div>
         <div>
-          <p>Total:</p>
-          <span>{totalAmount.toFixed(2)} DKK</span>
+          <p>
+            <strong>Total:</strong>
+          </p>
+          <span>
+            <strong>{totalAmount.toFixed(2)} DKK</strong>
+          </span>
         </div>
       </div>
     </div>

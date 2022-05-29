@@ -4,8 +4,7 @@
 @use "../base/buttons";
 
 .kurv_container {
-  margin: margins.$marginHorisontalMobile;
-  margin-top: 0;
+  margin: 0 margins.$marginHorisontalMobile;
 }
 
 .kurv_headline {
@@ -42,8 +41,9 @@ h3 {
 
 .button_and_afhentling_container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  margin: 0 margins.$marginHorisontalMobile;
 }
 
 .button_and_afhentling_container button {
@@ -61,13 +61,14 @@ h3 {
   font-weight: bold;
   display: flex;
   align-items: center;
+  gap: 0.4rem;
 }
 
 .mid_kurv_container {
   display: flex;
   justify-content: center;
   background-color: colors.$cream;
-  margin: -18px;
+
   padding: 18px;
   margin-top: margins.$marginUnderElementMobile;
 }
@@ -128,40 +129,56 @@ h3 {
   display: none;
 }
 
-@media screen and (min-width: 610px) {
-  .inner_kurv_container {
-    margin-left: -180px;
-    padding-left: 180px;
-  }
-}
+// @media screen and (min-width: 610px) {
+//   .inner_kurv_container {
+//     margin-left: -180px;
+//     padding-left: 180px;
+//   }
+// }
 @media screen and (min-width: margins.$layout-breakpoint-mobile-end) {
   .kurv_container {
-    margin: margins.$marginHorisontalTablet;
-    margin-top: 0;
+    margin: 0 margins.$marginHorisontalTablet;
   }
 
+  // .kurv_oplysninger {
+  //   max-width: calc(100% - margins.$marginHorisontalTablet) !important;
+  //   overflow: hidden;
+  //   margin-left: auto;
+  // }
+
   .mid_kurv_container {
-    margin-left: -280px;
-    padding-left: 280px;
+    padding: 1rem 1rem 1rem 0;
+    display: block;
+    margin-right: margins.$marginHorisontalTablet;
+    // padding-left: 280px;
     box-shadow: effects.$boxShadowImage;
     margin-bottom: margins.$marginUnderElementMobile;
   }
 
   .inner_kurv_container {
+    min-width: fit-content;
     max-width: 700px;
     padding-top: margins.$marginUnderElementMobile;
     padding-bottom: margins.$marginUnderElementMobile;
+    margin-left: margins.$marginHorisontalTablet;
   }
 
   .exstra_hidden {
     display: none;
   }
+
+  .button_and_afhentling_container {
+    margin: 0 margins.$marginHorisontalTablet;
+  }
 }
 
 @media screen and (min-width: margins.$layout-breakpoint-desktop-start) {
+  .button_and_afhentling_container {
+    margin: 0 margins.$marginHorisontalDesktop;
+  }
+
   .kurv_container {
-    margin: margins.$marginHorisontalDesktop;
-    margin-top: 0;
+    margin: 0 margins.$marginHorisontalDesktop;
   }
 
   .kurv_top {
@@ -174,11 +191,28 @@ h3 {
 
   .mid_kurv_container {
     margin-top: -50px;
+    margin-right: margins.$marginHorisontalDesktop;
   }
 
   .inner_kurv_container {
     max-width: 800px;
     padding-top: margins.$marginUnderElementDesktop;
     padding-bottom: margins.$marginUnderElementDesktop;
+    // margin-left: calc(margins.$marginHorisontalDesktop - 1rem);
+    padding: 1rem 0 0 margins.$marginHorisontalDesktop;
+    margin-right: auto;
+    margin-left: auto;
   }
+
+  // .oplysninger_form_container {
+  //   width: calc(100% - margins.$marginHorisontalDesktop);
+  //   margin-left: auto;
+
+  //   .oplysninger_form_container {
+  //     width: 100%;
+  //   }
+  //   .oplysninger_form {
+  //     width: 100%;
+  //   }
+  // }
 }
