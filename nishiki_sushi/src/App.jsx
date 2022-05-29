@@ -87,9 +87,18 @@ export default function App() {
               />
             }
           />
-          <Route path="/oplysninger" element={<Oplysninger />} />
-          <Route path="/betaling" element={<Betaling />} />
-          <Route path="/bekraeftelse" element={<Bekraeftelse />} />
+          <Route
+            path="/oplysninger"
+            element={<Oplysninger cartContents={cartContents} />}
+          />
+          <Route
+            path="/betaling"
+            element={<Betaling cartContents={cartContents} />}
+          />
+          <Route
+            path="/bekraeftelse"
+            element={<Bekraeftelse cartContents={cartContents} />}
+          />
         </Routes>
         <Footer />
       </Router>

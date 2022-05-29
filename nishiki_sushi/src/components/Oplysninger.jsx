@@ -138,7 +138,7 @@ const Oplysninger = ({ submitForm }) => {
               )}
               <div className="button_container_center">
                 {isSubmitted && (
-                  <NavLink to="/Betaling">
+                  <NavLink to="/betaling">
                     <button className="primaryBtn">Til Betaling</button>
                   </NavLink>
                 )}

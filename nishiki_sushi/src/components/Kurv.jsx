@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import BurgerMenu from "./BurgerMenu";
 import { FaTruck } from "react-icons/fa";
 import { MdOutlineKeyboardBackspace, MdRestaurant } from "react-icons/md";
@@ -13,9 +13,10 @@ import AnimatedPage from "./AnimatedPage";
 function Kurv(props) {
   const { cartContents, onAdd, onRemove } = props;
   const subtotalAmount = cartContents.reduce((a, c) => a + c.price * c.qty, 0);
-  const rabatPrice = Number(subtotalAmount * 0.1);
+  const rabatPrice = Math.round(subtotalAmount * 0.1);
   const totalAmount = subtotalAmount - rabatPrice;
   const screenSize = useWindowDimensions();
+
   return (
     <AnimatedPage>
       <>
@@ -61,70 +62,93 @@ function Kurv(props) {
         <div className="mid_kurv_container">
           {cartContents.length === 0 && <div>Your cart is empty</div>}
           <div className="inner_kurv_container">
-            {cartContents.map((item) => (
-              <div key={item.id}>
-                <div className="kurv_item_top">
-                  <div className="kurv_remove_add">
-                    <AiOutlineMinusSquare
-                      className="hw30_icon"
-                      onClick={() => onRemove(item)}
-                    />
-                    <span>{item.qty}</span>
-                    <AiOutlinePlusSquare
-                      className="hw30_icon"
-                      onClick={() => onAdd(item)}
-                    />
+            {cartContents.map((item) => {
+              const [viewIngrediants, setViewIngrediants] = useState(false);
+              return (
+                <div key={item.id}>
+                  <div className="kurv_item_top">
+                    <div className="kurv_remove_add">
+                      <AiOutlineMinusSquare
+                        className="hw30_icon"
+                        onClick={() => onRemove(item)}
+                      />
+                      <span>{item.qty}</span>
+                      <AiOutlinePlusSquare
+                        className="hw30_icon"
+                        onClick={() => onAdd(item)}
+                      />
+                    </div>
+                    <p>{item.name}</p>
+                    <span>
+                      {(Number(item.qty) * Number(item.price)).toFixed(2)}
+                    </span>
                   </div>
-                  <p>{item.name}</p>
-                  <span>
-                    {(Number(item.qty) * Number(item.price)).toFixed(2)}
-                  </span>
-                </div>
-                <div className="show_hide_indhold_container">
-                  <div className="show_hide_indhold">
-                    <p>
-                      Se Indhold <IoMdArrowDropdown className="hw20_icon" />
-                    </p>
-                    <p>
-                      Gem Indhold <IoMdArrowDropup className="hw20_icon" />
-                    </p>
-                  </div>
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    flexWrap: "wrap",
-                    flexDirection: "row",
-                    gap: "5px",
-                    width: "inherit",
-                  }}
-                >
-                  {item.ingrediants.map((ingVal) => {
-                    if (item.ingrediants[0] === "menu") {
-                      return (
-                        <>
-                          <p>{item.ingrediant_list}</p>
-                          <p>{item.ingrediant_list2}</p>
-                          <p>{item.ingrediant_list3}</p>
-                          <p>{item.ingrediant_list4}</p>
-                          <p>{item.ingrediant_list5}</p>
-                          <p>{item.ingrediant_list6}</p>
-                        </>
-                      );
-                    } else {
-                      return (
+                  <div className="show_hide_indhold_container">
+                    <div
+                      className={
+                        item.ingrediants.length === 0
+                          ? "hide_ingrediants"
+                          : "show_hide_indhold"
+                      }
+                    >
+                      {!viewIngrediants ? (
                         <p
-                          style={{ width: "max-content", margin: "0" }}
-                          key={ingVal}
+                          onClick={() => {
+                            setViewIngrediants(!viewIngrediants);
+                          }}
                         >
-                          {ingVal},
+                          Se Indhold <IoMdArrowDropdown className="hw20_icon" />
                         </p>
-                      );
-                    }
-                  })}
+                      ) : (
+                        <p
+                          onClick={() => {
+                            setViewIngrediants(!viewIngrediants);
+                          }}
+                        >
+                          Gem Indhold
+                          <IoMdArrowDropup className="hw20_icon" />
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                  {viewIngrediants && (
+                    <div
+                      style={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        flexDirection: "row",
+                        gap: "5px",
+                        width: "inherit",
+                      }}
+                    >
+                      {item.ingrediants.map((ingVal) => {
+                        if (item.ingrediants[0] === "menu") {
+                          return (
+                            <>
+                              <p>{item.ingrediant_list}</p>
+                              <p>{item.ingrediant_list2}</p>
+                              <p>{item.ingrediant_list3}</p>
+                              <p>{item.ingrediant_list4}</p>
+                              <p>{item.ingrediant_list5}</p>
+                              <p>{item.ingrediant_list6}</p>
+                            </>
+                          );
+                        } else {
+                          return (
+                            <p
+                              style={{ width: "max-content", margin: "0" }}
+                              key={ingVal}
+                            >
+                              {ingVal},
+                            </p>
+                          );
+                        }
+                      })}
+                    </div>
+                  )}
                 </div>
-              </div>
-            ))}
+              );
+            })}
             {cartContents.length !== 0 && (
               <div className="kvitering_container">
                 <div>

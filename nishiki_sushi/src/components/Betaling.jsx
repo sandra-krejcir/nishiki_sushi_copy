@@ -10,7 +10,8 @@ import useFormBetaling from "./handleBetaling";
 import validateInfoBetaling from "./ValidateBetalingForm";
 import AnimatedPage from "./AnimatedPage";
 
-const Betaling = ({ submitForm }) => {
+const Betaling = ({ submitForm, cartContents }) => {
+  console.log(cartContents);
   const { handleChange, values, handleSubmit, errors } = useFormBetaling(
     submitForm,
     validateInfoBetaling
@@ -193,7 +194,7 @@ const Betaling = ({ submitForm }) => {
               </form>
             </div>
             <div className="ordre_inof_container_container">
-              <OrdreInformation />
+              <OrdreInformation cartContents={cartContents} />
             </div>
           </div>
         </div>

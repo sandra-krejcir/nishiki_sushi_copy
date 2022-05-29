@@ -124,6 +124,10 @@ h3 {
   margin-bottom: margins.$marginUnderElementMobile;
 }
 
+.hide_ingrediants {
+  display: none;
+}
+
 @media screen and (min-width: 610px) {
   .inner_kurv_container {
     margin-left: -180px;

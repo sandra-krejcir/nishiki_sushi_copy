@@ -10,9 +10,9 @@ import useWindowDimensions from "./screenResize_hook";
 import MobileNav from "./MobileNavBar";
 import AnimatedPage from "./AnimatedPage";
 
-function Bekræftelse() {
+function Bekræftelse(props) {
   const screenSize = useWindowDimensions();
-
+  const { cartContents } = props;
   const [confirm, setConfirm] = useState(true);
 
   useEffect(() => {
@@ -114,7 +114,7 @@ function Bekræftelse() {
               </div>
             </div>
             <div className="ordre_inof_container_container">
-              <OrdreInformation />
+              <OrdreInformation cartContents={cartContents} />
             </div>
           </div>
         </div>
