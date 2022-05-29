@@ -10,7 +10,8 @@ import { NavLink } from "react-router-dom";
 import MobileNav from "./MobileNavBar";
 import AnimatedPage from "./AnimatedPage";
 
-function Kurv() {
+function Kurv(props) {
+  const { cartContents, onAdd, onRemove } = props;
   const screenSize = useWindowDimensions();
   return (
     <AnimatedPage>
@@ -42,28 +43,37 @@ function Kurv() {
               <FaTruck className="hw20_icon" />
             </div>
           </div>
-          <div className="button_and_afhentling_container">
-            <NavLink to="/takeaway">
-              <button className="secondaryBtn">
-                <MdOutlineKeyboardBackspace className="hw20_icon" />
-                Tilføj
-              </button>
-            </NavLink>
-            <p className="remove_1rem">
-              Afhenting <MdRestaurant className="hw20_icon" />
-            </p>
-          </div>
-          <div className="mid_kurv_container">
-            <div className="inner_kurv_container">
-              <div>
+        </div>
+        <div className="button_and_afhentling_container">
+          <NavLink to="/takeaway">
+            <button className="secondaryBtn">
+              <MdOutlineKeyboardBackspace className="hw20_icon" />
+              Tilføj
+            </button>
+          </NavLink>
+          <p className="remove_1rem">
+            Afhenting <MdRestaurant className="hw20_icon" />
+          </p>
+        </div>
+        <div className="mid_kurv_container">
+          {cartContents.length === 0 && <div>Your cart is empty</div>}
+          <div className="inner_kurv_container">
+            {cartContents.map((item) => (
+              <div key={item.id}>
                 <div className="kurv_item_top">
                   <div className="kurv_remove_add">
-                    <AiOutlineMinusSquare className="hw30_icon" />
-                    <span>0</span>
-                    <AiOutlinePlusSquare className="hw30_icon" />
+                    <AiOutlineMinusSquare
+                      className="hw30_icon"
+                      onClick={() => onRemove(item)}
+                    />
+                    <span>{item.qty}</span>
+                    <AiOutlinePlusSquare
+                      className="hw30_icon"
+                      onClick={() => onAdd(item)}
+                    />
                   </div>
-                  <p className="remove_1rem">Name of Item</p>
-                  <span>000</span>
+                  <p>{item.name}</p>
+                  <span>{item.qty * item.price}DKK</span>
                 </div>
                 <div className="show_hide_indhold_container">
                   <div className="show_hide_indhold">
@@ -76,9 +86,11 @@ function Kurv() {
                   </div>
                 </div>
                 <div className="kurv_item_info">
-                  <p>Food Info relgjnerog oerh oehr opehropuehrt prp oeu</p>
+                  <p>{item.ingrediants}</p>
                 </div>
               </div>
+            ))}
+            {cartContents.length !== 0 && (
               <div className="kvitering_container">
                 <div>
                   <p>Subtotal</p>
@@ -94,12 +106,12 @@ function Kurv() {
                   <span>000</span>
                 </div>
               </div>
-              {screenSize.width < 799 && (
-                <NavLink to="/Oplysninger" className="button_container_center">
-                  <button className="primaryBtn">Angiv Oplysninger</button>
-                </NavLink>
-              )}
-            </div>
+            )}
+            {screenSize.width < 799 && cartContents.length !== 0 && (
+              <NavLink to="/Oplysninger" className="button_container_center">
+                <button className="primaryBtn">Angiv Oplysninger</button>
+              </NavLink>
+            )}
           </div>
           {screenSize.width > 799 && (
             <div>
