@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 import MobileNav from "./MobileNavBar";
 
 function Kurv(props) {
-  const { cartContents } = props;
+  const { cartContents, onAdd, onRemove } = props;
   const screenSize = useWindowDimensions();
   return (
     <>
@@ -48,46 +48,56 @@ function Kurv(props) {
         <div className="mid_kurv_container">
           {cartContents.length === 0 && <div>Your cart is empty</div>}
           <div className="inner_kurv_container">
-            <div>
-              <div className="kurv_item_top">
-                <div className="kurv_remove_add">
-                  <AiOutlineMinusSquare className="hw30_icon" />
-                  <span>0</span>
-                  <AiOutlinePlusSquare className="hw30_icon" />
+            {cartContents.map((item) => (
+              <div key={item.id}>
+                <div className="kurv_item_top">
+                  <div className="kurv_remove_add">
+                    <AiOutlineMinusSquare
+                      className="hw30_icon"
+                      onClick={() => onRemove(item)}
+                    />
+                    <span>{item.qty}</span>
+                    <AiOutlinePlusSquare
+                      className="hw30_icon"
+                      onClick={() => onAdd(item)}
+                    />
+                  </div>
+                  <p>{item.name}</p>
+                  <span>{item.qty * item.price}DKK</span>
                 </div>
-                <p>Name of Item</p>
-                <span>000</span>
-              </div>
-              <div className="show_hide_indhold_container">
-                <div className="show_hide_indhold">
-                  <p>
-                    Se Indhold <IoMdArrowDropdown className="hw20_icon" />
-                  </p>
-                  <p>
-                    Gem Indhold <IoMdArrowDropup className="hw20_icon" />
-                  </p>
+                <div className="show_hide_indhold_container">
+                  <div className="show_hide_indhold">
+                    <p>
+                      Se Indhold <IoMdArrowDropdown className="hw20_icon" />
+                    </p>
+                    <p>
+                      Gem Indhold <IoMdArrowDropup className="hw20_icon" />
+                    </p>
+                  </div>
+                </div>
+                <div className="kurv_item_info">
+                  <p>{item.ingrediants}</p>
                 </div>
               </div>
-              <div className="kurv_item_info">
-                <p>Food Info relgjnerog oerh oehr opehropuehrt prp oeu</p>
+            ))}
+            {cartContents.length !== 0 && (
+              <div className="kvitering_container">
+                <div>
+                  <p>Subtotal</p>
+                  <span>000</span>
+                </div>
+                <div>
+                  <p>10% Rabat</p>
+                  <span>-000</span>
+                </div>
+                <div className="line_kurv"></div>
+                <div>
+                  <p>Total:</p>
+                  <span>000</span>
+                </div>
               </div>
-            </div>
-            <div className="kvitering_container">
-              <div>
-                <p>Subtotal</p>
-                <span>000</span>
-              </div>
-              <div>
-                <p>10% Rabat</p>
-                <span>-000</span>
-              </div>
-              <div className="line_kurv"></div>
-              <div>
-                <p>Total:</p>
-                <span>000</span>
-              </div>
-            </div>
-            {screenSize.width < 799 && (
+            )}
+            {screenSize.width < 799 && cartContents.length !== 0 && (
               <NavLink to="/Oplysninger" className="button_container_center">
                 <button className="primaryBtn">Angiv Oplysninger</button>
               </NavLink>

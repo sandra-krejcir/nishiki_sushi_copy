@@ -8,7 +8,7 @@ import MobileNav from "./MobileNavBar";
 import TakeawayItem from "./TakeawayItem";
 
 function Takeaway(props) {
-  const { sushiData } = props;
+  const { sushiData, onAdd, cartContents, onRemove } = props;
   const [searchTerm, setsearchTerm] = useState("");
   const [filterTerm, setFilterTerm] = useState("");
   const [visible, setVisible] = useState(true);
@@ -258,7 +258,13 @@ function Takeaway(props) {
                 ); */
                 // console.log(JSON.stringify(JSON.parse(localStorage.getItem(CART.KEY))));
                 return (
-                  <TakeawayItem {...val} key={val._id} />
+                  <TakeawayItem
+                    {...val}
+                    key={val._id}
+                    onAdd={onAdd}
+                    cartContents={cartContents}
+                    onRemove={onRemove}
+                  />
                   // <>
                   //   <div className="item">
                   //     <div className="in_basket_number_container">
@@ -359,7 +365,13 @@ function Takeaway(props) {
 
               .map((val, key) => {
                 return (
-                  <TakeawayItem {...val} key={val._id} />
+                  <TakeawayItem
+                    {...val}
+                    key={val._id}
+                    onAdd={onAdd}
+                    cartContents={cartContents}
+                    onRemove={onRemove}
+                  />
                   // <>
                   //   <div key={val._id} className="item">
                   //     <div className="in_basket_number_container">
