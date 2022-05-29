@@ -15,7 +15,7 @@
 }
 
 .hero-shadow {
-  width: calc(100% - margins.$marginHorisontalMobile - margins.$marginHorisontalMobile);
+  width: calc(100%);
   height: inherit;
   box-shadow: effects.$boxShadowImage;
   background: url(../img/restaurant_header-image.webp);

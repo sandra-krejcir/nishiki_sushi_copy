@@ -10,10 +10,7 @@ import validateInfoOplysninger from "./validateOplysningerForm";
 import AnimatedPage from "./AnimatedPage";
 
 const Oplysninger = ({ submitForm }) => {
-  const { handleChange, values, handleSubmit, errors } = useFormOplysninger(
-    submitForm,
-    validateInfoOplysninger
-  );
+  const { handleChange, values, handleSubmit, errors } = useFormOplysninger(submitForm, validateInfoOplysninger);
   const screenSize = useWindowDimensions();
 
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -25,20 +22,12 @@ const Oplysninger = ({ submitForm }) => {
 
   return (
     <AnimatedPage>
-      <>
+      <div className="kurv_oplysninger">
         {screenSize.width < 799 && <MobileNav page={"kurv"} />}
         <NavLink to="/">
-          <img
-            src="../icons/logo.svg"
-            alt="The logo icon."
-            className="header_logo"
-          />
+          <img src="../icons/logo.svg" alt="The logo icon." className="header_logo" />
         </NavLink>
-        <img
-          className="hero_img hide_when_off_phone"
-          src="../../img/hero_img/kurv_hero_mobile.png"
-          alt="takeaway"
-        />
+        <img className="hero_img hide_when_off_phone" src="../../img/hero_img/kurv_hero_mobile.png" alt="takeaway" />
         <div className="oplysninger_container">
           <div className="hide_when_off_phone">
             <div className="oplysninger_top">
@@ -62,11 +51,7 @@ const Oplysninger = ({ submitForm }) => {
           </div>
           <div className="oplysninger_form_container">
             <h2 className="hide_when_on_phone">Oplysninger</h2>
-            <p>
-              For vi bedst kan servere dig mad, får vi brug for nogen
-              oplysninger om dig. Efter bestillingen er bekræftet vil du modtage
-              en SMS
-            </p>
+            <p>For vi bedst kan servere dig mad, får vi brug for nogen oplysninger om dig. Efter bestillingen er bekræftet vil du modtage en SMS</p>
             <form onSubmit={handleSubmit} id="oplysninger_form">
               <div className="from_name_time_number">
                 <div>
@@ -83,9 +68,7 @@ const Oplysninger = ({ submitForm }) => {
                     minLength="2"
                     placeholder="John Doe"
                   />
-                  {errors.oplysninger_navn && (
-                    <p className="errorMessage">{errors.oplysninger_navn}</p>
-                  )}
+                  {errors.oplysninger_navn && <p className="errorMessage">{errors.oplysninger_navn}</p>}
                 </div>
                 <div>
                   <label htmlFor="oplysninger_tid">Afhentnings tidspunkt</label>
@@ -101,9 +84,7 @@ const Oplysninger = ({ submitForm }) => {
                     min="15:00"
                     max="21:00"
                   />
-                  {errors.oplysninger_tid && (
-                    <p className="errorMessage">{errors.oplysninger_tid}</p>
-                  )}
+                  {errors.oplysninger_tid && <p className="errorMessage">{errors.oplysninger_tid}</p>}
                 </div>
                 <div>
                   <label htmlFor="oplysninger_mobil">Mobil Nummer</label>
@@ -119,37 +100,24 @@ const Oplysninger = ({ submitForm }) => {
                     // pattern="[0-9]{8}"
                     placeholder="00 00 00 00"
                   />
-                  {errors.oplysninger_mobil && (
-                    <p className="errorMessage">{errors.oplysninger_mobil}</p>
-                  )}
+                  {errors.oplysninger_mobil && <p className="errorMessage">{errors.oplysninger_mobil}</p>}
                 </div>
               </div>
               <label htmlFor="oplysninger_kommentarer">Kommentarer</label>
-              <input
-                onChange={handleChange}
-                value={values.oplysninger_kommentarer}
-                type="text"
-                name="oplysninger_kommentarer"
-                id="oplysninger_kommentarer"
-                placeholder="Jeg vil gerne tilføje..."
-              />
-              {errors.oplysninger_kommentarer && (
-                <p className="errorMessage">{errors.oplysninger_kommentarer}</p>
-              )}
+              <input onChange={handleChange} value={values.oplysninger_kommentarer} type="text" name="oplysninger_kommentarer" id="oplysninger_kommentarer" placeholder="Jeg vil gerne tilføje..." />
+              {errors.oplysninger_kommentarer && <p className="errorMessage">{errors.oplysninger_kommentarer}</p>}
               <div className="button_container_center">
                 {isSubmitted && (
                   <NavLink to="/Betaling">
                     <button className="primaryBtn">Til Betaling</button>
                   </NavLink>
                 )}
-                {!isSubmitted && (
-                  <button className="primaryBtn">Til Betaling</button>
-                )}
+                {!isSubmitted && <button className="primaryBtn">Til Betaling</button>}
               </div>
             </form>
           </div>
         </div>
-      </>
+      </div>
     </AnimatedPage>
   );
 };
