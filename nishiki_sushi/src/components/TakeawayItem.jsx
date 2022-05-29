@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export default function TakeawayItem(props) {
-  const { /* cartContents */ onAdd, onRemove } = props;
+  const { cartContents, onAdd, onRemove } = props;
   return (
     <>
       <motion.div
@@ -12,12 +12,12 @@ export default function TakeawayItem(props) {
         transition={{ duration: 0.5, type: "spring" }}
       >
         <div className="in_basket_number_container">
-          {/* {cartContents.find(
+          {cartContents.map(
             (ele) =>
-              ele.id === props.id && (
-                <p className="in_basket_number"> {ele.qty} </p>
+              ele.name === props.name && (
+                <p className="in_basket_number">{ele.qty}</p>
               )
-          )} */}
+          )}
         </div>
         <img
           src={
@@ -89,6 +89,12 @@ export default function TakeawayItem(props) {
                 ingrediants: props.ingrediants.map(
                   (ingrediant) => ingrediant.name
                 ),
+                ingrediant_list: props.ingrediant_list,
+                ingrediant_list2: props.ingrediant_list2,
+                ingrediant_list3: props.ingrediant_list3,
+                ingrediant_list4: props.ingrediant_list4,
+                ingrediant_list5: props.ingrediant_list5,
+                ingrediant_list6: props.ingrediant_list6,
               })
             }
           >
@@ -112,6 +118,12 @@ export default function TakeawayItem(props) {
                 ingrediants: props.ingrediants.map(
                   (ingrediant) => ingrediant.name
                 ),
+                ingrediant_list: props.ingrediant_list,
+                ingrediant_list2: props.ingrediant_list2,
+                ingrediant_list3: props.ingrediant_list3,
+                ingrediant_list4: props.ingrediant_list4,
+                ingrediant_list5: props.ingrediant_list5,
+                ingrediant_list6: props.ingrediant_list6,
               })
             }
           >

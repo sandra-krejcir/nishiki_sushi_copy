@@ -10,8 +10,6 @@ import AnimatedPage from "./AnimatedPage";
 import { motion } from "framer-motion";
 import TakeawayItem from "./TakeawayItem";
 
-
-
 function Takeaway(props) {
   const { cartContents, sushiData, onAdd, onRemove } = props;
   const [searchTerm, setsearchTerm] = useState("");
@@ -19,6 +17,7 @@ function Takeaway(props) {
   const [visible, setVisible] = useState(true);
   const [visible2, setVisible2] = useState(true);
   const screenSize = useWindowDimensions();
+  const itemCartCount = cartContents.reduce((a, c) => a + c.qty, 0);
 
   const onChangeSearch = () => {
     setVisible(!visible);
@@ -43,15 +42,18 @@ function Takeaway(props) {
             <>
               <BurgerMenu page={"takeaway"} />
               <NavLink to="/kurv">
-                <img
-                  src={"../icons/basketColored.svg"}
-                  alt="Basket icon."
-                  className={
-                    screenSize > 1224
-                      ? "kurv_icon hw40_icon"
-                      : "kurv_icon hw30_icon"
-                  }
-                ></img>
+                <div className="in_basket_number_container">
+                  <p className="in_basket_number">{itemCartCount}</p>
+                  <img
+                    src={"../icons/basketColored.svg"}
+                    alt="Basket icon."
+                    className={
+                      screenSize > 1224
+                        ? "kurv_icon hw40_icon"
+                        : "kurv_icon hw30_icon"
+                    }
+                  ></img>
+                </div>
               </NavLink>
             </>
           )}
@@ -432,125 +434,14 @@ function Takeaway(props) {
                   }
                 })
                 .map((val, key) => {
-                  /*  console.log(
-                  JSON.parse(localStorage.getItem(CART.KEY)).find(
-                    (element) => element.name === val.name
-                  )
-                ); */
-                  console.log(
-                    /* JSON.stringify( */ JSON.parse(
-                      localStorage.getItem(CART.KEY)
-                    )
-                  );
                   return (
-                    <TakeawayItem {...val} key={...val.name} onAdd={onAdd} onRemove={onRemove} />
-                    // <>
-                    //   <motion.div
-                    //     className="item"
-                    //     initial={{ opacity: 0, y: 50 }}
-                    //     animate={{ opacity: 1, y: 0 }}
-                    //     transition={{
-                    //       duration: 0.5,
-                    //       type: "spring",
-                    //     }}
-                    //   >
-                    //     <div className="in_basket_number_container">
-                    //       <p className="in_basket_number">0</p>
-                    //       {/* {CART.contents.find(
-                    //         (element) => element.name === val.name
-                    //       ).qty >= 1 ? <p className="in_basket_number"></p> : null} */}
-                    //     </div>
-                    //     <img
-                    //       src={
-                    //         "https://rikkeblom.com/nishiki_sushi-images/" +
-                    //         val.img_filename
-                    //       }
-                    //       alt="sushi_img"
-                    //     />
-                    //     <h4 key={val.name}>
-                    //       {val.name + " "}
-                    //       {val.pieces_count}
-                    //     </h4>
-                    //     <div
-                    //       style={{
-                    //         display: "flex",
-                    //         flexWrap: "wrap",
-                    //         flexDirection: "row",
-                    //         gap: "5px",
-                    //         width: "inherit",
-                    //       }}
-                    //     >
-                    //       {val.ingrediants.map((ingVal) => {
-                    //         if (ingVal.name === "menu") {
-                    //           return (
-                    //             <>
-                    //               <p>{val.ingrediant_list}</p>
-                    //               <p>{val.ingrediant_list2}</p>
-                    //               <p>{val.ingrediant_list3}</p>
-                    //               <p>{val.ingrediant_list4}</p>
-                    //               <p>{val.ingrediant_list5}</p>
-                    //               <p>{val.ingrediant_list6}</p>
-                    //             </>
-                    //           );
-                    //         }
-                    //         return (
-                    //           <p
-                    //             style={{ width: "max-content", margin: "0" }}
-                    //             key={ingVal.name}
-                    //           >
-                    //             {ingVal.name},
-                    //           </p>
-                    //         );
-                    //       })}
-                    //     </div>
-                    //     <br />
-                    //     <div style={{ display: "inline-flex" }}>
-                    //       <p className="remove_1rem">Pris:</p>
-                    //       <p className="discount remove_1rem" key={val.price}>
-                    //         {val.price}kr
-                    //       </p>
-                    //       <p className="remove_1rem" key={val.discount}>
-                    //         {val.discount}kr
-                    //       </p>
-                    //     </div>
-                    //     <div className="basket_icons">
-                    //       <motion.div
-                    //         className="remove_from_basket"
-                    //         onClick={() => CART.minusOne(val)}
-                    //         whileHover={{ scale: 1.1 }}
-                    //         whileTap={{
-                    //           scale: 0.8,
-                    //         }}
-                    //       >
-                    //         <img
-                    //           className="hw40_icon"
-                    //           src="../../icons/basket-minus.svg"
-                    //           alt="basket_icon"
-                    //         />
-                    //       </motion.div>
-                    //       <motion.div
-                    //         className="add_to_basket"
-                    //         onClick={() =>
-                    //           CART.add({
-                    //             name: val.name,
-                    //             price: val.discount,
-                    //             ingrediants: val.ingrediants,
-                    //           })
-                    //         }
-                    //         whileHover={{ scale: 1.1 }}
-                    //         whileTap={{
-                    //           scale: 0.8,
-                    //         }}
-                    //       >
-                    //         <img
-                    //           className="hw40_icon"
-                    //           src="../../icons/basket-plus.svg"
-                    //           alt="basket_icon"
-                    //         />
-                    //       </motion.div>
-                    //     </div>
-                    //   </motion.div>
-                    // </>
+                    <TakeawayItem
+                      {...val}
+                      key={val.name}
+                      onAdd={onAdd}
+                      onRemove={onRemove}
+                      cartContents={cartContents}
+                    />
                   );
                 })}
             </div>
@@ -588,114 +479,13 @@ function Takeaway(props) {
                 })
                 .map((val, key) => {
                   return (
-                    <TakeawayItem {...val} key={...val._id} onAdd={onAdd} onRemove={onRemove} />
-                    // <>
-                    //   <motion.div
-                    //     className="item"
-                    //     initial={false}
-                    //     variants={animation}
-                    //     animate={visible2 ? "hide" : "show"}
-                    //     transition={{
-                    //       duration: 0.5,
-                    //       type: "spring",
-                    //     }}
-                    //   >
-                    //     <div className="in_basket_number_container">
-                    //       <p className="in_basket_number">0</p>
-                    //     </div>
-                    //     <img
-                    //       src={
-                    //         "https://rikkeblom.com/nishiki_sushi-images/" +
-                    //         val.img_filename
-                    //       }
-                    //       alt="sushi_img"
-                    //     />
-                    //     <h4 key={val.name}>
-                    //       {val.name + " "}
-                    //       {val.pieces_count}
-                    //     </h4>
-                    //     <div
-                    //       style={{
-                    //         display: "flex",
-                    //         flexWrap: "wrap",
-                    //         flexDirection: "row",
-                    //         gap: "5px",
-                    //         width: "inherit",
-                    //       }}
-                    //     >
-                    //       {val.ingrediants.map((ingVal) => {
-                    //         if (ingVal.name === "menu") {
-                    //           return (
-                    //             <>
-                    //               <p>{val.ingrediant_list}</p>
-                    //               <p>{val.ingrediant_list2}</p>
-                    //               <p>{val.ingrediant_list3}</p>
-                    //               <p>{val.ingrediant_list4}</p>
-                    //               <p>{val.ingrediant_list5}</p>
-                    //               <p>{val.ingrediant_list6}</p>
-                    //             </>
-                    //           );
-                    //         }
-
-                    //         return (
-                    //           <p
-                    //             style={{ width: "max-content", margin: "0" }}
-                    //             key={ingVal.name}
-                    //           >
-                    //             {ingVal.name},
-                    //           </p>
-                    //         );
-                    //       })}
-                    //     </div>
-                    //     <br />
-                    //     <div style={{ display: "inline-flex" }}>
-                    //       <p className="remove_1rem">Pris:</p>
-                    //       <p className="discount remove_1rem" key={val.preice}>
-                    //         {val.price}kr
-                    //       </p>
-                    //       <p className="remove_1rem" key={val.discount}>
-                    //         {val.discount}kr
-                    //       </p>
-                    //     </div>
-
-                    //     <div className="basket_icons">
-                    //       <motion.div
-                    //         className="remove_from_basket"
-                    //         whileHover={{ scale: 1.1 }}
-                    //         whileTap={{
-                    //           scale: 0.8,
-                    //         }}
-                    //         onClick={() => CART.minusOne(val)}
-                    //       >
-                    //         <img
-                    //           className="hw40_icon"
-                    //           src="../../icons/basket-minus.svg"
-                    //           alt="basket_icon"
-                    //         />
-                    //       </motion.div>
-                    //       <motion.div
-                    //         className="add_to_basket"
-                    //         whileHover={{ scale: 1.1 }}
-                    //         whileTap={{
-                    //           scale: 0.8,
-                    //         }}
-                    //         onClick={() =>
-                    //           CART.add({
-                    //             name: val.name,
-                    //             price: val.discount,
-                    //             ingrediants: val.ingrediants,
-                    //           })
-                    //         }
-                    //       >
-                    //         <img
-                    //           className="hw40_icon"
-                    //           src="../../icons/basket-plus.svg"
-                    //           alt="basket_icon"
-                    //         />
-                    //       </motion.div>
-                    //     </div>
-                    //   </motion.div>
-                    // </>
+                    <TakeawayItem
+                      {...val}
+                      key={val._id}
+                      onAdd={onAdd}
+                      onRemove={onRemove}
+                      cartContents={cartContents}
+                    />
                   );
                 })}
             </div>

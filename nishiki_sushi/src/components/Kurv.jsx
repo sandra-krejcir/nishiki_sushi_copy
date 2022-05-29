@@ -12,6 +12,9 @@ import AnimatedPage from "./AnimatedPage";
 
 function Kurv(props) {
   const { cartContents, onAdd, onRemove } = props;
+  const subtotalAmount = cartContents.reduce((a, c) => a + c.price * c.qty, 0);
+  const rabatPrice = Number(subtotalAmount * 0.1);
+  const totalAmount = subtotalAmount - rabatPrice;
   const screenSize = useWindowDimensions();
   return (
     <AnimatedPage>
@@ -73,7 +76,9 @@ function Kurv(props) {
                     />
                   </div>
                   <p>{item.name}</p>
-                  <span>{item.qty * item.price}DKK</span>
+                  <span>
+                    {(Number(item.qty) * Number(item.price)).toFixed(2)}
+                  </span>
                 </div>
                 <div className="show_hide_indhold_container">
                   <div className="show_hide_indhold">
@@ -85,8 +90,38 @@ function Kurv(props) {
                     </p>
                   </div>
                 </div>
-                <div className="kurv_item_info">
-                  <p>{item.ingrediants}</p>
+                <div
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    flexDirection: "row",
+                    gap: "5px",
+                    width: "inherit",
+                  }}
+                >
+                  {item.ingrediants.map((ingVal) => {
+                    if (item.ingrediants[0] === "menu") {
+                      return (
+                        <>
+                          <p>{item.ingrediant_list}</p>
+                          <p>{item.ingrediant_list2}</p>
+                          <p>{item.ingrediant_list3}</p>
+                          <p>{item.ingrediant_list4}</p>
+                          <p>{item.ingrediant_list5}</p>
+                          <p>{item.ingrediant_list6}</p>
+                        </>
+                      );
+                    } else {
+                      return (
+                        <p
+                          style={{ width: "max-content", margin: "0" }}
+                          key={ingVal}
+                        >
+                          {ingVal},
+                        </p>
+                      );
+                    }
+                  })}
                 </div>
               </div>
             ))}
@@ -94,16 +129,16 @@ function Kurv(props) {
               <div className="kvitering_container">
                 <div>
                   <p>Subtotal</p>
-                  <span>000</span>
+                  <span>{subtotalAmount.toFixed(2)}</span>
                 </div>
                 <div>
                   <p>10% Rabat</p>
-                  <span>-000</span>
+                  <span>-{rabatPrice.toFixed(2)}</span>
                 </div>
                 <div className="line_kurv"></div>
                 <div>
                   <p>Total:</p>
-                  <span>000</span>
+                  <span>{totalAmount.toFixed(2)} DKK</span>
                 </div>
               </div>
             )}
