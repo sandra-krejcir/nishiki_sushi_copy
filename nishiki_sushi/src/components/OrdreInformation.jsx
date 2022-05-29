@@ -17,8 +17,17 @@ function OrdreInformation(props) {
         return (
           <>
             <div>
-              <div className={item.ingrediants.length === 0 ? "hide_ingrediants" : "order_information_item_container"}>
-                <div className="order_information_item_arrows">
+              <div className="order_information_item_container">
+                <div
+                  className={
+                    item.ingrediants.length === 0
+                      ? "hide_ingrediants"
+                      : "order_information_item_arrows"
+                  }
+                >
+                  {/*  {item.ingrediants.length === 0 && (
+                    <div className="order_information_item_arrows"></div>
+                  )} */}
                   {!viewIngrediants ? (
                     <IoMdArrowDropdown
                       className="hw20_icon"
@@ -36,7 +45,9 @@ function OrdreInformation(props) {
                   )}
                 </div>
                 <p className="remove_1rem">{item.name}</p>
-                <span>{(Number(item.qty) * Number(item.price)).toFixed(2)}</span>
+                <span>
+                  {(Number(item.qty) * Number(item.price)).toFixed(2)}
+                </span>
               </div>
               {viewIngrediants && (
                 <div
@@ -65,7 +76,10 @@ function OrdreInformation(props) {
                       );
                     } else {
                       return (
-                        <p style={{ width: "max-content", margin: "0" }} key={ingVal}>
+                        <p
+                          style={{ width: "max-content", margin: "0" }}
+                          key={ingVal}
+                        >
                           {ingVal},
                         </p>
                       );
