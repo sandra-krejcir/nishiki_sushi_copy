@@ -145,6 +145,7 @@ iframe {
     margin-left: calc(27vw + (margins.$marginHorisontalTablet / 2));
     transform: translateY(100px);
     width: 100%;
+    height: fit-content;
     div {
       display: flex;
       flex-direction: row;
