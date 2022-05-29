@@ -5,26 +5,11 @@ export default function TakeawayItem(props) {
   const { cartContents, onAdd, onRemove } = props;
   return (
     <>
-      <motion.div
-        className="item"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, type: "spring" }}
-      >
+      <motion.div className="item" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, type: "spring" }}>
         <div className="in_basket_number_container">
-          {cartContents.map(
-            (ele) =>
-              ele.name === props.name && (
-                <p className="in_basket_number">{ele.qty}</p>
-              )
-          )}
+          {cartContents.map((ele) => ele.name === props.name && <p className="in_basket_number">{ele.qty}</p>)} {cartContents.map((ele) => ele.name !== props.name && <div style={{ width: "0px", height: "20px" }}></div>)}
         </div>
-        <img
-          src={
-            "https://rikkeblom.com/nishiki_sushi-images/" + props.img_filename
-          }
-          alt="sushi_img"
-        />
+        <img src={"https://rikkeblom.com/nishiki_sushi-images/" + props.img_filename} alt="sushi_img" />
 
         <h4 key={props.name}>
           {props.name + " "}
@@ -54,10 +39,7 @@ export default function TakeawayItem(props) {
               );
             }
             return (
-              <p
-                style={{ width: "max-content", margin: "0" }}
-                key={ingVal.name}
-              >
+              <p style={{ width: "max-content", margin: "0" }} key={ingVal.name}>
                 {ingVal.name},
               </p>
             );
@@ -86,9 +68,7 @@ export default function TakeawayItem(props) {
                 id: props._id,
                 name: props.name,
                 price: props.discount,
-                ingrediants: props.ingrediants.map(
-                  (ingrediant) => ingrediant.name
-                ),
+                ingrediants: props.ingrediants.map((ingrediant) => ingrediant.name),
                 ingrediant_list: props.ingrediant_list,
                 ingrediant_list2: props.ingrediant_list2,
                 ingrediant_list3: props.ingrediant_list3,
@@ -98,11 +78,7 @@ export default function TakeawayItem(props) {
               })
             }
           >
-            <img
-              className="hw40_icon"
-              src="../../icons/basket-minus.svg"
-              alt="basket_icon"
-            />
+            <img className="hw40_icon" src="../../icons/basket-minus.svg" alt="basket_icon" />
           </motion.div>
           <motion.div
             className="add_to_basket"
@@ -115,9 +91,7 @@ export default function TakeawayItem(props) {
                 id: props._id,
                 name: props.name,
                 price: props.discount,
-                ingrediants: props.ingrediants.map(
-                  (ingrediant) => ingrediant.name
-                ),
+                ingrediants: props.ingrediants.map((ingrediant) => ingrediant.name),
                 ingrediant_list: props.ingrediant_list,
                 ingrediant_list2: props.ingrediant_list2,
                 ingrediant_list3: props.ingrediant_list3,
@@ -127,11 +101,7 @@ export default function TakeawayItem(props) {
               })
             }
           >
-            <img
-              className="hw40_icon"
-              src="../../icons/basket-plus.svg"
-              alt="basket_icon"
-            />
+            <img className="hw40_icon" src="../../icons/basket-plus.svg" alt="basket_icon" />
           </motion.div>
         </div>
       </motion.div>
