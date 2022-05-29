@@ -20,8 +20,8 @@ function Kurv(props) {
   return (
     <AnimatedPage>
       <>
-        {screenSize.width > 799 && <BurgerMenu page={"kurv"} />}
-        {screenSize.width < 799 && <MobileNav page={"kurv"} />}
+        {screenSize.width > 799 && <BurgerMenu cartContents={props.cartContents} page={"kurv"} />}
+        {screenSize.width < 799 && <MobileNav cartContents={props.cartContents} page={"kurv"} />}
         <NavLink to="/">
           <img src="../icons/logo.svg" alt="The logo icon." className="header_logo" />
         </NavLink>
@@ -147,7 +147,7 @@ function Kurv(props) {
               </div>
             )}
             {screenSize.width < 799 && cartContents.length !== 0 && (
-              <NavLink to="/Oplysninger" className="button_container_center">
+              <NavLink cartContents={props.cartContents} to="/Oplysninger" className="button_container_center">
                 <button className="primaryBtn">Angiv Oplysninger</button>
               </NavLink>
             )}

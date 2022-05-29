@@ -175,6 +175,22 @@ h3 {
   box-shadow: effects.$boxShadowPress;
 }
 
+.in_basket_number_mobilenav {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: colors.$darkGreen;
+  color: colors.$off-white;
+  width: 18px !important;
+  height: 18px;
+  border-radius: 50px;
+  font-size: 12px;
+  transform: translate(-8px, 16px);
+  z-index: 3;
+  box-shadow: effects.$boxShadowPress;
+}
+
 .item {
   margin-bottom: margins.$marginUnderElementMobile;
 }

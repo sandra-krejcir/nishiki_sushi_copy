@@ -1,25 +1,13 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
-import {
-  Footer,
-  Home,
-  Takeaway,
-  Kurv,
-  Oplysninger,
-  Betaling,
-  Bekraeftelse,
-  RestaurantPage,
-} from "./components";
+import { Footer, Home, Takeaway, Kurv, Oplysninger, Betaling, Bekraeftelse, RestaurantPage } from "./components";
 
 localStorage.clear();
 
 let sushiData;
 await fetchSushiData();
 async function fetchSushiData() {
-  const restSushi = await fetch(
-    "https://kea21s-6eb0.restdb.io/rest/nishiki-sushi-products?fetchchildren=true",
-    { headers: { "x-apikey": "606d606af55350043100752e" } }
-  );
+  const restSushi = await fetch("https://kea21s-6eb0.restdb.io/rest/nishiki-sushi-products?fetchchildren=true", { headers: { "x-apikey": "606d606af55350043100752e" } });
   const dataSushi = await restSushi.json();
   sushiData = dataSushi;
   /* console.log(sushiData); */
@@ -73,41 +61,13 @@ export default function App() {
     return (
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/takeaway"
-            element={
-              <Takeaway
-                sushiData={sushiData}
-                onAdd={onAdd}
-                cartContents={cartContents}
-                onRemove={onRemove}
-              />
-            }
-          />
-          <Route path="/restaurant" element={<RestaurantPage />} />
-          <Route
-            path="/kurv"
-            element={
-              <Kurv
-                cartContents={cartContents}
-                onAdd={onAdd}
-                onRemove={onRemove}
-              />
-            }
-          />
-          <Route
-            path="/oplysninger"
-            element={<Oplysninger cartContents={cartContents} />}
-          />
-          <Route
-            path="/betaling"
-            element={<Betaling cartContents={cartContents} />}
-          />
-          <Route
-            path="/bekraeftelse"
-            element={<Bekraeftelse cartContents={cartContents} />}
-          />
+          <Route path="/" element={<Home cartContents={cartContents} />} />
+          <Route path="/takeaway" element={<Takeaway sushiData={sushiData} onAdd={onAdd} cartContents={cartContents} onRemove={onRemove} />} />
+          <Route path="/restaurant" element={<RestaurantPage cartContents={cartContents} />} />
+          <Route path="/kurv" element={<Kurv cartContents={cartContents} onAdd={onAdd} onRemove={onRemove} />} />
+          <Route path="/oplysninger" element={<Oplysninger cartContents={cartContents} />} />
+          <Route path="/betaling" element={<Betaling cartContents={cartContents} />} />
+          <Route path="/bekraeftelse" element={<Bekraeftelse cartContents={cartContents} />} />
         </Routes>
         <Footer />
       </Router>

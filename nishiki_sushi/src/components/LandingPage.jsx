@@ -8,14 +8,14 @@ import { NavLink } from "react-router-dom";
 import AnimatedPage from "./AnimatedPage";
 import { motion } from "framer-motion";
 
-export default function LandingPage() {
+export default function LandingPage(props) {
   const screenSize = useWindowDimensions();
 
   return (
     <>
       <AnimatedPage>
-        {screenSize.width > 799 && <BurgerMenu page={"home"} />}
-        {screenSize.width < 799 && <MobileNav page={"home"} />}
+        {screenSize.width > 799 && <BurgerMenu cartContents={props.cartContents} page={"home"} />}
+        {screenSize.width < 799 && <MobileNav cartContents={props.cartContents} page={"home"} />}
         <section className="thumbnail_images">
           <img style={{ zIndex: "99" }} src="../icons/logo.svg" alt="The logo icon." className="header_logo header_logo_landing_page" />
 

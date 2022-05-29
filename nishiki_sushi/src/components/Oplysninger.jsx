@@ -9,7 +9,7 @@ import useFormOplysninger from "./HandleOplysninger";
 import validateInfoOplysninger from "./validateOplysningerForm";
 import AnimatedPage from "./AnimatedPage";
 
-const Oplysninger = ({ submitForm }) => {
+const Oplysninger = ({ submitForm }, props) => {
   const { handleChange, values, handleSubmit, errors } = useFormOplysninger(submitForm, validateInfoOplysninger);
   const screenSize = useWindowDimensions();
 
@@ -23,7 +23,7 @@ const Oplysninger = ({ submitForm }) => {
   return (
     <AnimatedPage>
       <div className="kurv_oplysninger">
-        {screenSize.width < 799 && <MobileNav page={"kurv"} />}
+        {screenSize.width < 799 && <MobileNav cartContents={props.cartContents} page={"kurv"} />}
         <NavLink to="/">
           <img src="../icons/logo.svg" alt="The logo icon." className="header_logo" />
         </NavLink>

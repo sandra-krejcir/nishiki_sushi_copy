@@ -6,15 +6,15 @@ import MobileNav from "./MobileNavBar";
 import { NavLink } from "react-router-dom";
 import AnimatedPage from "./AnimatedPage";
 
-export default function RestaurantPage() {
+export default function RestaurantPage(props) {
   const screenSize = useWindowDimensions();
 
   return (
     <AnimatedPage>
       <>
         <header>
-          {screenSize.width > 799 && <BurgerMenu page={"restaurant"} />}
-          {screenSize.width < 799 && <MobileNav page={"restaurant"} />}
+          {screenSize.width > 799 && <BurgerMenu cartContents={props.cartContents} page={"restaurant"} />}
+          {screenSize.width < 799 && <MobileNav cartContents={props.cartContents} page={"restaurant"} />}
           <NavLink to="/">
             <img src="../icons/logo.svg" alt="The logo icon." className="header_logo" />
           </NavLink>

@@ -36,20 +36,20 @@ function Takeaway(props) {
         <div className="takeaway_container">
           {screenSize.width > 799 && (
             <>
-              <BurgerMenu page={"takeaway"} />
-              <NavLink to="/kurv">
+              <BurgerMenu cartContents={props.cartContents} page={"takeaway"} />
+              <NavLink cartContents={props.cartContents} to="/kurv">
                 <div className="in_basket_number_container">
-                  <p className="in_basket_number_head">{itemCartCount}</p>
+                  {itemCartCount > 0 && <p className="in_basket_number_head">{itemCartCount}</p>}
                   <img src={"../icons/basketColored.svg"} alt="Basket icon." className={screenSize > 1224 ? "kurv_icon hw40_icon" : "kurv_icon hw30_icon"}></img>
                 </div>
               </NavLink>
             </>
           )}
-          {screenSize.width < 799 && <MobileNav page={"takeaway"} />}
+          {screenSize.width < 799 && <MobileNav cartContents={props.cartContents} page={"takeaway"} />}
           <NavLink to="/">
             <img src="../icons/logo.svg" alt="The logo icon." className="header_logo" />
           </NavLink>
-          {screenSize.width < 799 && <MobileNav page={"takeaway"} />}
+          {screenSize.width < 799 && <MobileNav cartContents={props.cartContents} page={"takeaway"} />}
           <NavLink to="/">
             <img src="../icons/logo.svg" alt="The logo icon." className="header_logo" />
           </NavLink>
