@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 2rem;
+  // gap: 2rem;
 }
 
 .thumbnail_images > a {
@@ -18,28 +18,45 @@
 .restaurant_thumbnail {
   background-image: url("../img/landingimg1.webp");
   background-position: center left;
-  background-size: 70vw 120vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  h4 {
+    transform: translateY(6px);
+  }
 }
 
 .takeaway_thumbnail {
   background-image: url("../img/landingimg2.webp");
   background-position: center;
-  background-size: 60vw 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .thumbnail_img {
   display: flex;
   flex-direction: column;
   width: 48vw;
-  height: 100vw;
+  height: 75vh;
   box-shadow: effects.$boxShadowImage;
 }
 
-.thumbnail_images > a > h4 {
+.thumbnail_images h4 {
   max-width: min-content;
   text-align: center;
   align-self: center;
   color: colors.$off-white;
+}
+
+@media only screen and (max-width: "450px") {
+  .thumbnail_images h4 {
+    font-size: 1.2rem;
+  }
+  .restaurant_thumbnail {
+    h4 {
+      transform: translateY(11px);
+    }
+  }
 }
 
 .restaurant_title {
@@ -158,7 +175,7 @@
     display: flex;
     flex-direction: column;
     width: 44vw;
-    height: 55vw;
+    height: 80vh;
     box-shadow: effects.$boxShadowImage;
   }
 
@@ -166,6 +183,10 @@
     background-image: url("../img/landingimg1.webp");
     background-position: center left;
     background-size: 50vw 91vw;
+
+    h4 {
+      transform: translateY(8px);
+    }
   }
 
   .takeaway_thumbnail {
@@ -277,27 +298,33 @@
     flex-direction: row;
     margin-left: margins.$marginHorisontalDesktop;
     margin-right: margins.$marginHorisontalDesktop;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 3rem;
   }
 
   .thumbnail_img {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 35vw;
+    width: 40vw;
+    max-width: 700px;
+    height: 90vh;
     box-shadow: effects.$boxShadowImage;
   }
 
   .restaurant_thumbnail {
     background-image: url("../img/landingimg1.webp");
     background-position: center left;
-    background-size: 50vw 91vw;
+    background-size: cover;
+
+    h4 {
+      transform: translateY(-2rem);
+    }
   }
 
   .takeaway_thumbnail {
     background-image: url("../img/landingimg2.webp");
     background-position: center;
-    background-size: 45vw 68vw;
+    background-size: cover;
   }
 
   .offers_container {

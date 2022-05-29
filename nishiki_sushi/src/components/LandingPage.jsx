@@ -17,12 +17,7 @@ export default function LandingPage() {
         {screenSize.width > 799 && <BurgerMenu page={"home"} />}
         {screenSize.width < 799 && <MobileNav page={"home"} />}
         <section className="thumbnail_images">
-          <img
-            style={{ zIndex: "99" }}
-            src="../icons/logo.svg"
-            alt="The logo icon."
-            className="header_logo header_logo_landing_page"
-          />
+          <img style={{ zIndex: "99" }} src="../icons/logo.svg" alt="The logo icon." className="header_logo header_logo_landing_page" />
 
           <motion.a
             href=""
@@ -32,9 +27,11 @@ export default function LandingPage() {
               scale: 0.98,
             }}
           >
-            <h4 className="restaurant_title">
-              <b>BESØG RESTAURANTEN</b>
-            </h4>
+            <NavLink to="/restaurant" className="thumbnail_img restaurant_thumbnail">
+              <h4 className="restaurant_title">
+                <b>BESØG RESTAURANTEN</b>
+              </h4>
+            </NavLink>
           </motion.a>
 
           <motion.a
@@ -45,9 +42,11 @@ export default function LandingPage() {
               scale: 0.98,
             }}
           >
-            <h4 className="takeaway_title">
-              <b>TAKEAWAY</b>
-            </h4>
+            <NavLink to="/takeaway" className="thumbnail_img takeaway_thumbnail">
+              <h4 className="takeaway_title">
+                <b>TAKEAWAY</b>
+              </h4>
+            </NavLink>
           </motion.a>
         </section>
         <NewOffersSection />

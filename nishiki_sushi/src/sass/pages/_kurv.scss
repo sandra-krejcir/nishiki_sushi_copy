@@ -126,7 +126,10 @@ h3 {
 }
 
 .hide_ingrediants {
-  display: none;
+  // display: none;
+  svg {
+    display: none;
+  }
 }
 
 // @media screen and (min-width: 610px) {

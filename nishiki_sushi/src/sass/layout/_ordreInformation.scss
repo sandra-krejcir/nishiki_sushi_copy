@@ -3,6 +3,13 @@
 @use "../base/effects";
 @use "../base/buttons";
 
+.order_information_item_no_arrows {
+  width: 20px;
+  height: 20px;
+  display: block;
+  background: red;
+}
+
 .errorMessage {
   margin-top: 0.2rem !important;
   color: red !important;
