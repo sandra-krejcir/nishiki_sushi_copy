@@ -7,9 +7,15 @@ import { motion } from "framer-motion";
 import AnimatedPage2 from "./AnimatedPage2";
 
 export default function BurgerMenu(props) {
+  const { page, resetPage, setCartContents } = props;
   const screenSize = useWindowDimensions();
   /*  console.log(props.page); */
   const [visible, setVisible] = useState(false);
+
+  function resetBasket() {
+    localStorage.clear();
+    setCartContents([]);
+  }
 
   return (
     <AnimatedPage2>
@@ -50,15 +56,20 @@ export default function BurgerMenu(props) {
               >
                 <NavLink
                   className={
-                    props.page === "home"
+                    page === "home"
                       ? "selected column_flex"
                       : "non-selected column_flex"
                   }
                   to="/"
+                  onClick={() => {
+                    if (resetPage === "bekræftelse") {
+                      resetBasket();
+                    }
+                  }}
                 >
                   <img
                     src={
-                      props.page === "home"
+                      page === "home"
                         ? "../icons/homeColored.svg"
                         : "../icons/homeUncolored.svg"
                     }
@@ -76,15 +87,20 @@ export default function BurgerMenu(props) {
               >
                 <NavLink
                   className={
-                    props.page === "restaurant"
+                    page === "restaurant"
                       ? "selected column_flex"
                       : "non-selected column_flex"
                   }
                   to="/restaurant"
+                  onClick={() => {
+                    if (resetPage === "bekræftelse") {
+                      resetBasket();
+                    }
+                  }}
                 >
                   <img
                     src={
-                      props.page === "restaurant"
+                      page === "restaurant"
                         ? "../icons/restaurantColored.svg"
                         : "../icons/restaurantUncolored.svg"
                     }
@@ -102,15 +118,20 @@ export default function BurgerMenu(props) {
               >
                 <NavLink
                   className={
-                    props.page === "takeaway"
+                    page === "takeaway"
                       ? "selected column_flex"
                       : "non-selected column_flex"
                   }
                   to="/takeaway"
+                  onClick={() => {
+                    if (resetPage === "bekræftelse") {
+                      resetBasket();
+                    }
+                  }}
                 >
                   <img
                     src={
-                      props.page === "takeaway"
+                      page === "takeaway"
                         ? "../icons/takeawayColored.svg"
                         : "../icons/takeawayUncolored.svg"
                     }
@@ -128,7 +149,7 @@ export default function BurgerMenu(props) {
               >
                 <NavLink
                   className={
-                    props.page === "kurv"
+                    page === "kurv"
                       ? "selected column_flex"
                       : "non-selected column_flex"
                   }
@@ -136,7 +157,7 @@ export default function BurgerMenu(props) {
                 >
                   <img
                     src={
-                      props.page === "kurv"
+                      page === "kurv"
                         ? "../icons/basketColored.svg"
                         : "../icons/basketUncolored.svg"
                     }

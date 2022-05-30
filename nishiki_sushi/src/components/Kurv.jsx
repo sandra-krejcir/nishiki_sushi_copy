@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import BurgerMenu from "./BurgerMenu";
 import { FaTruck } from "react-icons/fa";
 import { MdOutlineKeyboardBackspace, MdRestaurant } from "react-icons/md";
-import { AiOutlineMinusSquare, AiOutlinePlusSquare } from "react-icons/ai";
-import { IoMdArrowDropup, IoMdArrowDropdown } from "react-icons/io";
 import Oplysninger from "./Oplysninger";
 import useWindowDimensions from "./screenResize_hook";
 import { NavLink } from "react-router-dom";
 import MobileNav from "./MobileNavBar";
 import AnimatedPage from "./AnimatedPage";
+import KurvItem from "./KurvItem";
 
 function Kurv(props) {
   const { cartContents, onAdd, onRemove } = props;
@@ -20,14 +19,30 @@ function Kurv(props) {
   return (
     <AnimatedPage>
       <>
-        {screenSize.width > 799 && <BurgerMenu cartContents={props.cartContents} page={"kurv"} />}
-        {screenSize.width < 799 && <MobileNav cartContents={props.cartContents} page={"kurv"} />}
+        {screenSize.width > 799 && (
+          <BurgerMenu cartContents={props.cartContents} page={"kurv"} />
+        )}
+        {screenSize.width < 799 && (
+          <MobileNav cartContents={props.cartContents} page={"kurv"} />
+        )}
         <NavLink to="/">
-          <img src="../icons/logo.svg" alt="The logo icon." className="header_logo" />
+          <img
+            src="../icons/logo.svg"
+            alt="The logo icon."
+            className="header_logo"
+          />
         </NavLink>
-        <img className="hero_img hide_when_off_phone" src="../../img/hero_img/kurv_hero_mobile.png" alt="takeaway" />
+        <img
+          className="hero_img hide_when_off_phone"
+          src="../../img/hero_img/kurv_hero_mobile.png"
+          alt="takeaway"
+        />
         <div className="kurv_container">
-          <img className="hero_img hide_when_on_phone" src="../../img/hero_img/kurv_hero.png" alt="takeaway" />
+          <img
+            className="hero_img hide_when_on_phone"
+            src="../../img/hero_img/kurv_hero.png"
+            alt="takeaway"
+          />
           <div className="kurv_top">
             <h1>Kurv</h1>
             <div className="ingen_lavering_container">
@@ -39,7 +54,10 @@ function Kurv(props) {
         <div className="button_and_afhentling_container">
           <NavLink to="/takeaway">
             <button className="secondaryBtn">
-              <MdOutlineKeyboardBackspace style={{ margin: "0 0.5rem 0 -0.5rem" }} className="hw20_icon" />
+              <MdOutlineKeyboardBackspace
+                style={{ margin: "0 0.5rem 0 -0.5rem" }}
+                className="hw20_icon"
+              />
               Tilføj
             </button>
           </NavLink>
@@ -49,81 +67,10 @@ function Kurv(props) {
         </div>
 
         <div className="mid_kurv_container">
-          {cartContents.length === 0 && <div>Your cart is empty</div>}
           <div className="inner_kurv_container">
+            {cartContents.length === 0 && <div>Your cart is empty.</div>}
             {cartContents.map((item) => {
-              const [viewIngrediants, setViewIngrediants] = useState(false);
-              return (
-                <div style={{ marginBottom: "2rem" }} key={item.id}>
-                  <div className="kurv_item_top">
-                    <div className="kurv_remove_add">
-                      <AiOutlineMinusSquare className="hw30_icon" onClick={() => onRemove(item)} />
-                      <span>{item.qty}</span>
-                      <AiOutlinePlusSquare className="hw30_icon" onClick={() => onAdd(item)} />
-                    </div>
-                    <p>{item.name}</p>
-                    <span>{(Number(item.qty) * Number(item.price)).toFixed(2)}</span>
-                  </div>
-                  <div className="show_hide_indhold_container">
-                    <div className={item.ingrediants.length === 0 ? "hide_ingrediants" : "show_hide_indhold"}>
-                      {!viewIngrediants ? (
-                        <p
-                          style={{ margin: "-.5rem 0 0rem 0" }}
-                          onClick={() => {
-                            setViewIngrediants(!viewIngrediants);
-                          }}
-                        >
-                          Se Indhold <IoMdArrowDropdown className="hw20_icon" />
-                        </p>
-                      ) : (
-                        <p
-                          style={{ marginTop: "-.5rem" }}
-                          onClick={() => {
-                            setViewIngrediants(!viewIngrediants);
-                          }}
-                        >
-                          Gem Indhold
-                          <IoMdArrowDropup className="hw20_icon" />
-                        </p>
-                      )}
-                      {viewIngrediants && (
-                        <div
-                          className="order_information"
-                          style={{
-                            display: "flex",
-                            flexWrap: "wrap",
-                            flexDirection: "row",
-                            gap: "5px",
-                            width: "inherit",
-                            marginBottom: "2rem",
-                          }}
-                        >
-                          {item.ingrediants.map((ingVal) => {
-                            if (item.ingrediants[0] === "menu") {
-                              return (
-                                <div>
-                                  <p>{item.ingrediant_list}</p>
-                                  <p>{item.ingrediant_list2}</p>
-                                  <p>{item.ingrediant_list3}</p>
-                                  <p>{item.ingrediant_list4}</p>
-                                  <p>{item.ingrediant_list5}</p>
-                                  <p>{item.ingrediant_list6}</p>
-                                </div>
-                              );
-                            } else {
-                              return (
-                                <p style={{ width: "max-content", margin: "0" }} key={ingVal}>
-                                  {ingVal},
-                                </p>
-                              );
-                            }
-                          })}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              );
+              return <KurvItem onAdd={onAdd} onRemove={onRemove} item={item} />;
             })}
             {cartContents.length !== 0 && (
               <div className="kvitering_container">
@@ -147,7 +94,11 @@ function Kurv(props) {
               </div>
             )}
             {screenSize.width < 799 && cartContents.length !== 0 && (
-              <NavLink cartContents={props.cartContents} to="/Oplysninger" className="button_container_center">
+              <NavLink
+                cartContents={props.cartContents}
+                to="/Oplysninger"
+                className="button_container_center"
+              >
                 <button className="primaryBtn">Angiv Oplysninger</button>
               </NavLink>
             )}
