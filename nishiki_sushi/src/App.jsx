@@ -28,44 +28,44 @@ async function fetchSushiData() {
 console.log(sushiData);
 
 export default function App() {
-  const [cartContents, setCartContents] = useState([]);
+  const [cartcontents, setCartcontents] = useState([]);
 
   useEffect(() => {
-    if (!cartContents.current) {
-      localStorage.setItem("Orders", JSON.stringify(cartContents));
+    if (!cartcontents.current) {
+      localStorage.setItem("Orders", JSON.stringify(cartcontents));
     }
-  }, [cartContents]);
+  }, [cartcontents]);
 
   const onAdd = (product) => {
-    const cartIndex = cartContents.findIndex((ele) => ele.id === product.id);
+    const cartIndex = cartcontents.findIndex((ele) => ele.id === product.id);
     if (cartIndex === -1) {
       product.qty = 1;
-      const newArr = [...cartContents];
+      const newArr = [...cartcontents];
       newArr.push(product);
       console.log(cartIndex);
-      setCartContents([...newArr]);
-      console.log(cartContents);
+      setCartcontents([...newArr]);
+      console.log(cartcontents);
     } else {
-      const newArr = [...cartContents];
+      const newArr = [...cartcontents];
       newArr[cartIndex].qty += 1;
-      setCartContents([...newArr]);
+      setCartcontents([...newArr]);
     }
   };
 
   const onRemove = (product) => {
-    const cartItem = [...cartContents].find((ele) => ele.id === product.id);
+    const cartItem = [...cartcontents].find((ele) => ele.id === product.id);
     if (cartItem.qty === 1) {
-      const cartIndex = cartContents.findIndex((ele) => ele.id === product.id);
-      const newArr = [...cartContents];
+      const cartIndex = cartcontents.findIndex((ele) => ele.id === product.id);
+      const newArr = [...cartcontents];
       newArr[cartIndex].qty = 0;
       newArr.splice(cartIndex, 1);
-      setCartContents([...newArr]);
-      console.log(cartContents);
+      setCartcontents([...newArr]);
+      console.log(cartcontents);
     } else {
-      const cartIndex = cartContents.findIndex((ele) => ele.id === product.id);
-      const newArr = [...cartContents];
+      const cartIndex = cartcontents.findIndex((ele) => ele.id === product.id);
+      const newArr = [...cartcontents];
       newArr[cartIndex].qty--;
-      setCartContents([...newArr]);
+      setCartcontents([...newArr]);
     }
   };
 
@@ -73,27 +73,27 @@ export default function App() {
     return (
       <Router>
         <Routes>
-          <Route path="/" element={<Home cartContents={cartContents} />} />
+          <Route path="/" element={<Home cartcontents={cartcontents} />} />
           <Route
             path="/takeaway"
             element={
               <Takeaway
                 sushiData={sushiData}
                 onAdd={onAdd}
-                cartContents={cartContents}
+                cartcontents={cartcontents}
                 onRemove={onRemove}
               />
             }
           />
           <Route
             path="/restaurant"
-            element={<RestaurantPage cartContents={cartContents} />}
+            element={<RestaurantPage cartcontents={cartcontents} />}
           />
           <Route
             path="/kurv"
             element={
               <Kurv
-                cartContents={cartContents}
+                cartcontents={cartcontents}
                 onAdd={onAdd}
                 onRemove={onRemove}
               />
@@ -101,18 +101,18 @@ export default function App() {
           />
           <Route
             path="/oplysninger"
-            element={<Oplysninger cartContents={cartContents} />}
+            element={<Oplysninger cartcontents={cartcontents} />}
           />
           <Route
             path="/betaling"
-            element={<Betaling cartContents={cartContents} />}
+            element={<Betaling cartcontents={cartcontents} />}
           />
           <Route
             path="/bekraeftelse"
             element={
               <Bekraeftelse
-                cartContents={cartContents}
-                setCartContents={setCartContents}
+                cartcontents={cartcontents}
+                setCartcontents={setCartcontents}
               />
             }
           />

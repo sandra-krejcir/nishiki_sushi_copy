@@ -7,7 +7,11 @@ export default function Footer() {
         <nav className="logo_nav">
           <ul>
             <li>
-              <img src="../icons/logo.svg" alt="The logo icon." className="footer_logo" />
+              <img
+                src="../icons/logo.svg"
+                alt="The logo icon."
+                className="footer_logo"
+              />
             </li>
             <a href="https://www.instagram.com/" target="_blank">
               <li>
@@ -22,7 +26,10 @@ export default function Footer() {
                 />
               </li>
             </a>
-            <a href="https://www.facebook.com/changshengfrederikssund" target="_blank">
+            <a
+              href="https://www.facebook.com/changshengfrederikssund"
+              target="_blank"
+            >
               <li>
                 <motion.img
                   whileHover={{ scale: 1.1 }}
@@ -38,7 +45,14 @@ export default function Footer() {
           </ul>
         </nav>
         <div className="map_container">
-          <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=Jernbanegade%209D,%20&t=&z=13&ie=UTF8&iwloc=&output=embed" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0"></iframe>
+          <iframe
+            id="gmap_canvas"
+            src="https://maps.google.com/maps?q=Jernbanegade%209D,%20&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            frameBorder="0"
+            scrolling="no"
+            marginHeight="0"
+            marginWidth="0"
+          ></iframe>
           <div className="contact_info">
             <div>
               <div>
@@ -70,22 +84,22 @@ export default function Footer() {
           <ul>
             <li>
               <NavLink to="/">
-                <a>Events & Catering</a>
+                <p>Events & Catering</p>
               </NavLink>
             </li>
             <li>
-              <a href="https://www.findsmiley.dk/517952" target="_blank">
+              <p href="https://www.findsmiley.dk/517952" target="_blank">
                 Smiley Raport
-              </a>
+              </p>
             </li>
             <li>
               <NavLink to="takeaway">
-                <a>TakeAway</a>
+                <p>TakeAway</p>
               </NavLink>
             </li>
             <li>
               <NavLink to="restaurant">
-                <a>Restaurant</a>
+                <p>Restaurant</p>
               </NavLink>
             </li>
           </ul>
