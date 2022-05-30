@@ -49,7 +49,7 @@ function Kurv(props) {
         </div>
 
         <div className="mid_kurv_container">
-          {cartContents.length === 0 && <div>Your cart is empty</div>}
+          {cartContents.length === 0 && <div style={{textAlign: "center"}} >Din kurv er tom</div>}
           <div className="inner_kurv_container">
             {cartContents.map((item) => {
               const [viewIngrediants, setViewIngrediants] = useState(false);
