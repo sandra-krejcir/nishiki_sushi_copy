@@ -102,11 +102,21 @@ export default function App() {
           />
           <Route
             path="/betaling"
-            element={<Betaling cartContents={cartContents} />}
+            element={
+              <Betaling
+                cartContents={cartContents}
+                setCartContents={setCartContents}
+              />
+            }
           />
           <Route
             path="/bekraeftelse"
-            element={<Bekraeftelse cartContents={cartContents} />}
+            element={
+              <Bekraeftelse
+                cartContents={cartContents}
+                setCartContents={setCartContents}
+              />
+            }
           />
         </Routes>
         <Footer />
