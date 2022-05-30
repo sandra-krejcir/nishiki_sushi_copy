@@ -3,6 +3,10 @@
 @use "../base/effects";
 @use "../base/buttons";
 
+.hide_basket {
+  display: none;
+}
+
 .takeaway_container {
   margin: margins.$marginHorisontalMobile;
   margin-top: 0;
@@ -214,7 +218,9 @@ h3 {
   color: colors.$darkBlue;
   margin-right: 20px;
   cursor: pointer;
+  display: block;
 }
+
 .add_to_basket .hw40_icon {
   color: colors.$lightGreen;
   cursor: pointer;
