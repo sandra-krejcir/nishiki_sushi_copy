@@ -38,6 +38,10 @@ p:empty {
   display: none;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 @media screen and (min-width: margins.$layout-breakpoint-mobile-end) {
   .hide_when_off_phone {
     display: none !important;
