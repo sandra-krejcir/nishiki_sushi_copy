@@ -53,7 +53,7 @@ const Betaling = ({ submitForm, cartContents }) => {
     <AnimatedPage>
       <>
         {screenSize.width > 799 && <BurgerMenu page={"kurv"} />}
-        {screenSize.width < 799 && <MobileNav page={"kurv"} />}
+        {screenSize.width < 799 && <MobileNav cartContents={cartContents} page={"kurv"} />}
         <NavLink to="/">
           <img src="../icons/logo.svg" alt="The logo icon." className="header_logo" />
         </NavLink>

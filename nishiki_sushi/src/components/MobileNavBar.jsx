@@ -4,23 +4,7 @@ import AnimatedPage2 from "./AnimatedPage2";
 import { useState, useEffect } from "react";
 
 export default function MobileNavBar(props) {
-  // const itemCartCount = props.cartContents.reduce((a, c) => a + c.qty, 0);
-
-  // const [showCartCount, setShowCartCount] = useState(false);
-
-  // async function changeShowCartCount() {
-  //   if (location.pathname === "/") {
-  //     setShowCartCount(true);
-  //   } else if (location.pathname === "/restaurant") {
-  //     setShowCartCount(true);
-  //   } else if (location.pathname === "/takeaway") {
-  //     setShowCartCount(true);
-  //   } else if (location.pathname === "/kurv") {
-  //     setShowCartCount(true);
-  //   } else {
-  //     setShowCartCount(false);
-  //   }
-  // }
+  const itemCartCount = props.cartContents.reduce((a, c) => a + c.qty, 0);
 
   return (
     <AnimatedPage2>
@@ -46,7 +30,7 @@ export default function MobileNavBar(props) {
               </NavLink>
             </li>
             <li>
-              {/* {props !== "[object Object]" && <>{itemCartCount > 0 && <p className="in_basket_number_mobilenav">{itemCartCount}</p>}</>} */}
+              {props !== "[object Object]" && <>{itemCartCount > 0 && <p className="in_basket_number_mobilenav">{itemCartCount}</p>}</>}
               <NavLink className={props.page === "kurv" ? "selectedMobile column_flex" : "non-selectedMobile column_flex"} to="/kurv">
                 <img src={props.page === "kurv" ? "../icons/basketDarkbrown.svg" : "../icons/basketLightbrown.svg"} alt="Basket icon." className="hw30_icon"></img>
                 Kurv

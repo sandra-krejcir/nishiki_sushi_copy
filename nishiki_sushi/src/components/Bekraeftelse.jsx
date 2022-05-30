@@ -29,7 +29,7 @@ function Bekræftelse(props) {
     <AnimatedPage>
       <>
         {screenSize.width > 799 && <BurgerMenu page={"kurv"} />}
-        {screenSize.width < 799 && <MobileNav page={"kurv"} />}
+        {screenSize.width < 799 && <MobileNav cartContents={cartContents} page={"kurv"} />}
         <NavLink to="/">
           <img src="../icons/logo.svg" alt="The logo icon." className="header_logo" />
         </NavLink>
@@ -76,9 +76,7 @@ function Bekræftelse(props) {
                 </div>
                 <div className="time_line_number_container">
                   <p className="time_line_number_label">Mobil Nummer</p>
-                  <p className="time_line_number">
-                    {formInfo.oplysninger_mobil}
-                  </p>
+                  <p className="time_line_number">{formInfo.oplysninger_mobil}</p>
                 </div>
               </div>
               <div className="time_line"></div>
@@ -89,9 +87,7 @@ function Bekræftelse(props) {
                 </div>
                 <div className="time_line_comment_container">
                   <p className="time_line_comment_label">Kommentarer</p>
-                  <p className="time_line_comment">
-                    {formInfo.oplysninger_kommentarer}
-                  </p>
+                  <p className="time_line_comment">{formInfo.oplysninger_kommentarer}</p>
                 </div>
               </div>
             </div>
