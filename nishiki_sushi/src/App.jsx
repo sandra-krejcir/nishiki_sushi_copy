@@ -22,10 +22,7 @@ async function fetchSushiData() {
   );
   const dataSushi = await restSushi.json();
   sushiData = dataSushi;
-  /* console.log(sushiData); */
 }
-
-console.log(sushiData);
 
 export default function App() {
   const [cartContents, setCartContents] = useState([]);
