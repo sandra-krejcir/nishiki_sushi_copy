@@ -7,7 +7,6 @@ export default function CateringForm() {
 
   function submitForm() {
     setIsSubmitted(true);
-    console.log("submitForm");
   }
 
   return (

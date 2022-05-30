@@ -3,7 +3,6 @@ import { IoMdArrowDropup, IoMdArrowDropdown } from "react-icons/io";
 
 function OrdreInformation(props) {
   const { cartContents } = props;
-  console.log(cartContents);
   const subtotalAmount = cartContents.reduce((a, c) => a + c.price * c.qty, 0);
   const rabatPrice = Math.round(subtotalAmount * 0.1);
   const totalAmount = subtotalAmount - rabatPrice;

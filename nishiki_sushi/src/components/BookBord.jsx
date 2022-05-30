@@ -42,7 +42,6 @@ export default function BookBord() {
 
   function changeStep() {
     if (stepChoice == "1") {
-      console.log("step 1");
       setBookingStep(<BookStep1 />);
       setStep1State(true);
       setStep2State(false);
@@ -54,7 +53,6 @@ export default function BookBord() {
       seticon3Style(NoClickIcon);
       seticon4Style(NoClickIcon);
     } else if (stepChoice == "2") {
-      console.log("step 2");
       setBookingStep(<BookStep2 />);
       setStep1State(false);
       setStep2State(true);
@@ -66,7 +64,6 @@ export default function BookBord() {
       seticon3Style(NoClickIcon);
       seticon4Style(NoClickIcon);
     } else if (stepChoice == "3") {
-      console.log("step 3");
       setBookingStep(<BookStep3 />);
       setStep1State(false);
       setStep2State(false);
@@ -78,7 +75,6 @@ export default function BookBord() {
       seticon3Style(NoClickIcon);
       seticon4Style(NoClickIcon);
     } else if (stepChoice == "4") {
-      console.log("step 4");
       setBookingStep(<BookStep4 />);
       setStep1State(false);
       setStep2State(false);
@@ -90,7 +86,6 @@ export default function BookBord() {
       seticon3Style(ClickIcon);
       seticon4Style(NoClickIcon);
     } else if (stepChoice == "5") {
-      console.log("step 5");
       setBookingStep(<BookStep5 />);
       setStep1State(false);
       setStep2State(false);
@@ -114,7 +109,6 @@ export default function BookBord() {
       comment: localStorage.getItem("NishikiTableComment"),
     };
 
-    console.log("Submit");
     fetch("https://kea21s-6eb0.restdb.io/rest/nishiki-booking", {
       method: "POST",
       headers: {
@@ -125,9 +119,7 @@ export default function BookBord() {
       body: JSON.stringify(payload),
     })
       .then((res) => res.json())
-      .then((response) => {
-        console.log(response);
-      })
+      .then((response) => {})
       .catch((err) => {
         console.error(err);
       });
@@ -147,7 +139,6 @@ export default function BookBord() {
                 style={icon1Style}
                 onClick={(e) => {
                   setStepChoice(e.target.value);
-                  console.log(e.target.value);
                 }}
               >
                 <MdPerson
@@ -163,7 +154,6 @@ export default function BookBord() {
                 style={icon2Style}
                 onClick={(e) => {
                   setStepChoice(e.target.value);
-                  console.log(e.target.value);
                 }}
               >
                 <RiCalendarLine
@@ -179,7 +169,6 @@ export default function BookBord() {
                 style={icon3Style}
                 onClick={(e) => {
                   setStepChoice(e.target.value);
-                  console.log(e.target.value);
                 }}
               >
                 <AiOutlineClockCircle
@@ -195,7 +184,6 @@ export default function BookBord() {
                 style={icon4Style}
                 onClick={(e) => {
                   setStepChoice(e.target.value);
-                  console.log(e.target.value);
                 }}
               >
                 <RiCalendarCheckLine
@@ -225,7 +213,6 @@ export default function BookBord() {
             value={"2"}
             onClick={(e) => {
               setStepChoice(e.target.value);
-              console.log(e.target.value);
             }}
           >
             Fortsæt
@@ -236,7 +223,6 @@ export default function BookBord() {
             value={"3"}
             onClick={(e) => {
               setStepChoice(e.target.value);
-              console.log(e.target.value);
             }}
           >
             Fortsæt
@@ -247,7 +233,6 @@ export default function BookBord() {
             value={"4"}
             onClick={(e) => {
               setStepChoice(e.target.value);
-              console.log(e.target.value);
             }}
           >
             Fortsæt
@@ -259,7 +244,6 @@ export default function BookBord() {
             onClick={(e) => {
               setStepChoice(e.target.value);
               submitBooking();
-              console.log(e.target.value);
             }}
           >
             Fortsæt
@@ -270,7 +254,6 @@ export default function BookBord() {
             value={"1"}
             onClick={(e) => {
               setStepChoice(e.target.value);
-              console.log(e.target.value);
             }}
           >
             Foretag endnu en booking

@@ -11,14 +11,12 @@ const useForm = (callback, validateInfo) => {
       ...values,
       [name]: value,
     });
-    console.log(values);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(validateInfo(values));
     setIsSubmitting(true);
-    console.log("handleSubmit");
   };
 
   useEffect(() => {

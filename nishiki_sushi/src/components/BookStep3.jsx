@@ -11,7 +11,6 @@ export default function BookStep3() {
   }, [state]);
 
   function changeTime() {
-    console.log(state);
     localStorage.setItem("NishikiTableTime", state);
   }
 

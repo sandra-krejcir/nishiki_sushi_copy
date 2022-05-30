@@ -17,7 +17,6 @@ const Oplysninger = ({ submitForm, cartContents }) => {
 
   function submitForm() {
     setIsSubmitted(true);
-    console.log("submitForm");
   }
 
   return (
@@ -32,7 +31,7 @@ const Oplysninger = ({ submitForm, cartContents }) => {
           <div className="hide_when_off_phone">
             <div className="oplysninger_top">
               <h1>Oplysninger</h1>
-              <div className="ingen_lavering_container" style={{textAlign: "right"}}>
+              <div className="ingen_lavering_container" style={{ textAlign: "right" }}>
                 <p className="remove_1rem">Ingen Levering</p>
                 <FaTruck className="hw20_icon" />
               </div>

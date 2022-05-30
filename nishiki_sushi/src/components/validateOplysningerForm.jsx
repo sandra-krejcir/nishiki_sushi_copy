@@ -1,5 +1,4 @@
 export default function validateInfoOplysninger(values) {
-  console.log("Validating Oplysninger");
   let errors = {};
   if (!values.oplysninger_navn.trim()) {
     errors.oplysninger_navn = "Navn påkrævet";
