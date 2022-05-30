@@ -112,6 +112,9 @@ option {
     grid-template-columns: 1fr 1fr;
     grid-gap: 5vw;
     /* align-items: center; */
+    max-width: 2000px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .betaling_form_container {
