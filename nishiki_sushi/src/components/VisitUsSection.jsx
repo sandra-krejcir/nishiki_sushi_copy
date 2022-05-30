@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 export default function VisitUsSection() {
   const today = new Date().getDay();
-  console.log("weekday" + today);
+  console.log(today);
+
+  const [day, setDay] = useState(today);
 
   return (
     <section className="side_row">
@@ -16,32 +19,32 @@ export default function VisitUsSection() {
             <div className="times">
               <h3>Åbningtider</h3>
               <div className="line"></div>
-              <div className="time_row weekday1">
-                <p>Mondag</p>
+              <div className={`1 ${day ? "bold" : ""} time_row`}>
+                <p>Mandag</p>
                 <p>15:00 - 22:00</p>
               </div>
-              <div className="time_row weekday2">
+              <div className={`2 ${day ? "bold" : ""} time_row`}>
                 <p>Tirsdag</p>
                 <p>15:00 - 22:00</p>
               </div>
-              <div className="time_row weekday3">
+              <div className="time_row 3">
                 <p>Onsdag</p>
                 <p>15:00 - 22:00</p>
               </div>
-              <div className="time_row weekday4">
+              <div className="time_row 4">
                 <p>Torsdag</p>
                 <p>15:00 - 22:00</p>
               </div>
-              <div className="time_row weekday5">
+              <div className="time_row 5">
                 <p>Fridag</p>
                 <p>13:00 - 22:00</p>
               </div>
-              <div className="time_row weekday6">
+              <div className="time_row 6">
                 <p>Lørdag</p>
                 <p>13:00 - 22:00</p>
               </div>
-              <div className="time_row weekday7">
-                <p>Sondag</p>
+              <div className="time_row 7">
+                <p>Søndag</p>
                 <p>13:00 - 22:00</p>
               </div>
             </div>
