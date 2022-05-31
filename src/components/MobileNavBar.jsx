@@ -34,8 +34,8 @@ export default function MobileNavBar(props) {
                 <img
                   src={
                     page === "home"
-                      ? "../icons/homeDarkbrown.svg"
-                      : "../icons/homeLightbrown.svg"
+                      ? "/icons/homeDarkbrown.svg"
+                      : "/icons/homeLightbrown.svg"
                   }
                   alt="Home icon."
                   className="hw30_icon"
@@ -60,8 +60,8 @@ export default function MobileNavBar(props) {
                 <img
                   src={
                     page === "restaurant"
-                      ? "../icons/restaurantDarkbrown.svg"
-                      : "../icons/restaurantLightbrown.svg"
+                      ? "/icons/restaurantDarkbrown.svg"
+                      : "/icons/restaurantLightbrown.svg"
                   }
                   alt="Restaurant icon."
                   className="hw30_icon"
@@ -86,8 +86,8 @@ export default function MobileNavBar(props) {
                 <img
                   src={
                     page === "takeaway"
-                      ? "../icons/takeawayDarkbrown.svg"
-                      : "../icons/takeawayLightbrown.svg"
+                      ? "/icons/takeawayDarkbrown.svg"
+                      : "/icons/takeawayLightbrown.svg"
                   }
                   alt="Takeaway icon."
                   className="hw30_icon"
@@ -123,8 +123,8 @@ export default function MobileNavBar(props) {
                 <img
                   src={
                     page === "kurv"
-                      ? "../icons/basketDarkbrown.svg"
-                      : "../icons/basketLightbrown.svg"
+                      ? "/icons/basketDarkbrown.svg"
+                      : "/icons/basketLightbrown.svg"
                   }
                   alt="Basket icon."
                   className="hw30_icon"

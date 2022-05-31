@@ -10,7 +10,7 @@ export default function CateringAndEventsSection() {
         <section className="catering_event_section">
           <div className="event_container">
             <img
-              src="../img/visit1.webp"
+              src="/img/visit1.webp"
               alt="Image for events in the restaurant."
             ></img>
             <div>

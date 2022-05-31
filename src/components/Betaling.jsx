@@ -11,7 +11,10 @@ import validateInfoBetaling from "./ValidateBetalingForm";
 import AnimatedPage from "./AnimatedPage";
 
 const Betaling = ({ submitForm, cartContents }) => {
-  const { handleChange, values, handleSubmit, errors } = useFormBetaling(submitForm, validateInfoBetaling);
+  const { handleChange, values, handleSubmit, errors } = useFormBetaling(
+    submitForm,
+    validateInfoBetaling
+  );
   const screenSize = useWindowDimensions();
 
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -50,13 +53,27 @@ const Betaling = ({ submitForm, cartContents }) => {
     <AnimatedPage>
       <>
         {screenSize.width > 799 && <BurgerMenu page={"kurv"} />}
-        {screenSize.width < 799 && <MobileNav cartContents={cartContents} page={"kurv"} />}
+        {screenSize.width < 799 && (
+          <MobileNav cartContents={cartContents} page={"kurv"} />
+        )}
         <NavLink to="/">
-          <img src="../icons/logo.svg" alt="The logo icon." className="header_logo" />
+          <img
+            src="../icons/logo.svg"
+            alt="The logo icon."
+            className="header_logo"
+          />
         </NavLink>
-        <img className="hero_img hide_when_off_phone" src="../../img/hero_img/kurv_hero_mobile.png" alt="takeaway" />
+        <img
+          className="hero_img hide_when_off_phone"
+          src="/img/hero_img/kurv_hero_mobile.png"
+          alt="takeaway"
+        />
         <div className="betaling_container">
-          <img className="hero_img hide_when_on_phone" src="../../img/hero_img/kurv_hero.png" alt="takeaway" />
+          <img
+            className="hero_img hide_when_on_phone"
+            src="/img/hero_img/kurv_hero.png"
+            alt="takeaway"
+          />
           <div>
             <div className="betaling_top">
               <h1>Betaling</h1>
@@ -69,7 +86,10 @@ const Betaling = ({ submitForm, cartContents }) => {
               {screenSize.width < 799 && (
                 <NavLink to="/Oplysninger">
                   <button className="secondaryBtn hide_when_off_phone">
-                    <MdOutlineKeyboardBackspace style={{ margin: "0 .5rem 0 -.5rem" }} className="hw20_icon" />
+                    <MdOutlineKeyboardBackspace
+                      style={{ margin: "0 .5rem 0 -.5rem" }}
+                      className="hw20_icon"
+                    />
                     Oplys
                   </button>
                 </NavLink>
@@ -77,7 +97,10 @@ const Betaling = ({ submitForm, cartContents }) => {
               {screenSize.width > 799 && (
                 <NavLink to="/kurv">
                   <button className="secondaryBtn hide_when_on_phone">
-                    <MdOutlineKeyboardBackspace style={{ margin: "0 .5rem 0 -.5rem" }} className="hw20_icon" />
+                    <MdOutlineKeyboardBackspace
+                      style={{ margin: "0 .5rem 0 -.5rem" }}
+                      className="hw20_icon"
+                    />
                     Kurv
                   </button>
                 </NavLink>
@@ -104,7 +127,9 @@ const Betaling = ({ submitForm, cartContents }) => {
                   placeholder="0000 0000 0000 0000"
                   required
                 />
-                {errors.betaling_kortnummer && <p className="errorMessage">{errors.betaling_kortnummer}</p>}
+                {errors.betaling_kortnummer && (
+                  <p className="errorMessage">{errors.betaling_kortnummer}</p>
+                )}
                 <label htmlFor="betaling_navn">Navn på Kort</label>
                 <input
                   style={{
@@ -118,12 +143,17 @@ const Betaling = ({ submitForm, cartContents }) => {
                   placeholder="John Doe"
                   required
                 />
-                {errors.betaling_navn && <p className="errorMessage">{errors.betaling_navn}</p>}
+                {errors.betaling_navn && (
+                  <p className="errorMessage">{errors.betaling_navn}</p>
+                )}
                 <div className="betaling_form_third_row">
                   <div>
                     <label htmlFor="betaling_dato">Udløbsdato</label>
                     <div className="betaling_form_selections">
-                      <select name="betaling_dato_month" id="betaling_dato_month">
+                      <select
+                        name="betaling_dato_month"
+                        id="betaling_dato_month"
+                      >
                         <option value="01">01</option>
                         <option value="02">02 </option>
                         <option value="03">03</option>
@@ -137,7 +167,10 @@ const Betaling = ({ submitForm, cartContents }) => {
                         <option value="11">11</option>
                         <option value="12">12</option>
                       </select>
-                      <select name="betaling_dato_month" id="betaling_dato_month">
+                      <select
+                        name="betaling_dato_month"
+                        id="betaling_dato_month"
+                      >
                         <option value="22"> 2022</option>
                         <option value="23"> 2023</option>
                         <option value="24"> 2024</option>
@@ -163,12 +196,21 @@ const Betaling = ({ submitForm, cartContents }) => {
                       placeholder="CVC"
                       required
                     />
-                    {errors.betaling_cvc && <p className="errorMessage">{errors.betaling_cvc}</p>}
+                    {errors.betaling_cvc && (
+                      <p className="errorMessage">{errors.betaling_cvc}</p>
+                    )}
                   </div>
                 </div>
                 <div className="handelsbetingelserne">
-                  <input type="checkbox" id="betaling_handelsbetingelserne" name="betaling_handelsbetingelserne" required />
-                  <label htmlFor="betaling_handelsbetingelserne">Jeg har læst og accepteret handelsbetingelserne</label>
+                  <input
+                    type="checkbox"
+                    id="betaling_handelsbetingelserne"
+                    name="betaling_handelsbetingelserne"
+                    required
+                  />
+                  <label htmlFor="betaling_handelsbetingelserne">
+                    Jeg har læst og accepteret handelsbetingelserne
+                  </label>
                 </div>
                 <div className="button_container_center">
                   {isSubmitted && (
@@ -176,7 +218,9 @@ const Betaling = ({ submitForm, cartContents }) => {
                       <button className="primaryBtn">Betal</button>
                     </NavLink>
                   )}
-                  {!isSubmitted && <button className="primaryBtn">Betal</button>}
+                  {!isSubmitted && (
+                    <button className="primaryBtn">Betal</button>
+                  )}
                 </div>
               </form>
             </div>

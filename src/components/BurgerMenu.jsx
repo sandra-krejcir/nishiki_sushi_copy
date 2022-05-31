@@ -131,8 +131,8 @@ export default function BurgerMenu(props) {
                   <img
                     src={
                       page === "takeaway"
-                        ? "../icons/takeawayColored.svg"
-                        : "../icons/takeawayUncolored.svg"
+                        ? "/icons/takeawayColored.svg"
+                        : "/icons/takeawayUncolored.svg"
                     }
                     alt="Takeaway icon."
                     className={screenSize > 1224 ? "hw40_icon" : "hw30_icon"}
@@ -157,8 +157,8 @@ export default function BurgerMenu(props) {
                   <img
                     src={
                       page === "kurv"
-                        ? "../icons/basketColored.svg"
-                        : "../icons/basketUncolored.svg"
+                        ? "/icons/basketColored.svg"
+                        : "/icons/basketUncolored.svg"
                     }
                     alt="Basket icon."
                     className={screenSize > 1224 ? "hw40_icon" : "hw30_icon"}
@@ -169,7 +169,7 @@ export default function BurgerMenu(props) {
             </ul>
             <div className="phone_number">
               <img
-                src="../icons/monochromaticLogo.svg"
+                src="/icons/monochromaticLogo.svg"
                 className={screenSize > 1224 ? "hw30_icon" : "hw20_icon"}
               ></img>
               <a href="tel:45 42 31 47 99">+45 42 31 47 99</a>
