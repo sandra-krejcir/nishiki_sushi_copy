@@ -34,6 +34,10 @@ $boxShadowImage: 0 4px 4px #c4c4c477;
   margin-bottom: unset !important;
 }
 
+p:empty {
+  display: none;
+}
+
 @media screen and (min-width: margins.$layout-breakpoint-mobile-end) {
   .hide_when_off_phone {
     display: none !important;

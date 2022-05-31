@@ -6,11 +6,20 @@
 .betaling_og_info_container {
   display: grid;
   justify-content: center;
+
+  input,
+  select {
+    padding-left: 0.5rem;
+  }
 }
 
 .betaling_container {
   margin: margins.$marginHorisontalMobile;
   margin-top: 0;
+
+  .button_and_afhentling_container {
+    margin: 0;
+  }
 }
 
 .betaling_container label {
@@ -101,8 +110,11 @@ option {
     display: grid;
     justify-content: space-between;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
+    grid-gap: 5vw;
     /* align-items: center; */
+    max-width: 2000px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .betaling_form_container {
@@ -115,7 +127,7 @@ option {
 
   .ordre_inof_container_container {
     justify-self: end;
-    width: 100%;
+    width: 47.5vw;
     margin-right: -50px;
     padding-right: 50px;
     background-color: colors.$cream;

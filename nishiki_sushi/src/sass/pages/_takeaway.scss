@@ -3,6 +3,10 @@
 @use "../base/effects";
 @use "../base/buttons";
 
+.hide_basket {
+  display: none;
+}
+
 .takeaway_container {
   margin: margins.$marginHorisontalMobile;
   margin-top: 0;
@@ -129,6 +133,7 @@ h3 {
   color: colors.$off-white;
   align-self: center;
   text-align: center;
+  cursor: pointer;
 }
 
 /* RESULTS */
@@ -159,6 +164,38 @@ h3 {
   margin-right: -10px;
 }
 
+.in_basket_number_head {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: colors.$darkGreen;
+  color: colors.$off-white;
+  width: 18px !important;
+  height: 18px;
+  border-radius: 50px;
+  font-size: 12px;
+  transform: translate(15px, 48px);
+  z-index: 3;
+  box-shadow: effects.$boxShadowPress;
+}
+
+.in_basket_number_mobilenav {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: colors.$darkGreen;
+  color: colors.$off-white;
+  width: 18px !important;
+  height: 18px;
+  border-radius: 50px;
+  font-size: 12px;
+  transform: translate(-8px, 16px);
+  z-index: 3;
+  box-shadow: effects.$boxShadowPress;
+}
+
 .item {
   margin-bottom: margins.$marginUnderElementMobile;
 }
@@ -180,9 +217,13 @@ h3 {
 .remove_from_basket .hw40_icon {
   color: colors.$darkBlue;
   margin-right: 20px;
+  cursor: pointer;
+  display: block;
 }
+
 .add_to_basket .hw40_icon {
   color: colors.$lightGreen;
+  cursor: pointer;
 }
 
 .discount {
@@ -232,6 +273,10 @@ h3 {
 }
 
 @media screen and (min-width: margins.$layout-breakpoint-desktop-start) {
+  .in_basket_number_head {
+    transform: translate(55px, 88px);
+  }
+
   .takeaway_container {
     margin: margins.$marginHorisontalDesktop;
     margin-top: 0;

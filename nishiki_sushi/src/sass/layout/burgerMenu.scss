@@ -15,27 +15,68 @@
 }
 
 .exit_icon {
-  position: absolute;
+  position: fixed;
   right: 0;
   z-index: 11;
   grid-area: 1 / 8 / 2 / 9;
   margin: 20px;
+  cursor: pointer;
 }
 
-@media only screen and (min-width: 1225px) {
-  .burgerNav {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    position: absolute;
-    right: 0;
-    z-index: 5;
-  }
+.kurv_icon {
+  position: fixed;
+  right: 0;
+  grid-area: 1 / 8 / 2 / 9;
+  margin-top: 90px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
 
+.burgerNav {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  position: fixed;
+  right: 0;
+  z-index: 5;
+}
+
+.burgerNav > ul {
+  padding-top: calc(margins.$marginHorisontalDesktop/2);
+  padding-right: margins.$marginHorisontalDesktop;
+  padding-left: margins.$marginHorisontalDesktop;
+  padding-bottom: margins.$marginHorisontalDesktop;
+  background-color: colors.$cream;
+  z-index: 10;
+  grid-area: 1 / 8 / 2 / 9;
+  list-style: none;
+  text-align: center;
+}
+
+.column_flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.phone_number {
+  position: absolute;
+  right: 70px;
+  bottom: 45px;
+  z-index: 11;
+  grid-area: 1 / 8 / 2 / 9;
+}
+
+.phone_number > a {
+  color: colors.$darkBlue;
+}
+
+@media only screen and (min-width: margins.$layout-breakpoint-tablet-start) and (max-width: margins.$layout-breakpoint-tablet-end) {
   .burgerNav > ul {
-    padding-top: calc(margins.$marginHorisontalDesktop/2);
-    padding-right: margins.$marginHorisontalDesktop;
-    padding-left: margins.$marginHorisontalDesktop;
-    padding-bottom: margins.$marginHorisontalDesktop;
+    padding-top: calc(margins.$marginHorisontalTablet/2);
+    padding-right: margins.$marginHorisontalTablet;
+    padding-left: margins.$marginHorisontalTablet;
+    padding-bottom: calc(margins.$marginHorisontalTablet * 1.25);
     background-color: colors.$cream;
     z-index: 10;
     grid-area: 1 / 8 / 2 / 9;
@@ -43,30 +84,29 @@
     text-align: center;
   }
 
-  .column_flex {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 25px;
+  .phone_number {
+    position: absolute;
+    right: 43px;
+    bottom: 27px;
+    z-index: 11;
+    grid-area: 1 / 8 / 2 / 9;
+    font-size: 0.7rem;
   }
 
   .exit_icon {
-    position: absolute;
+    position: fixed;
     right: 0;
     z-index: 11;
     grid-area: 1 / 8 / 2 / 9;
-    margin: 20px;
+    margin: 11px;
   }
 
-  .phone_number {
-    position: absolute;
-    right: 70px;
-    bottom: 45px;
-    z-index: 11;
+  .kurv_icon {
+    position: fixed;
+    right: 0;
     grid-area: 1 / 8 / 2 / 9;
-  }
-
-  .phone_number > a {
-    color: colors.$darkBlue;
+    margin-top: 50px;
+    margin-left: 11px;
+    margin-right: 11px;
   }
 }

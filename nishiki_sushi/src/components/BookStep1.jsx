@@ -10,11 +10,8 @@ export default function BookStep1() {
   }, [guestAmount]);
 
   async function changeGuestAmount() {
-    console.log(guestAmount);
     localStorage.setItem("NishikiTableGuestAmount", guestAmount);
   }
-
-  // console.log(guestAmount);
 
   const options = [
     {
@@ -82,7 +79,15 @@ export default function BookStep1() {
   return (
     <>
       <h4>Hvor mange bliver I?</h4>
-      <label HTMLfor="guest-count" style={{ display: "flex", alignItems: "baseline", width: "max-content", marginTop: "1.5rem" }}>
+      <label
+        HTMLfor="guest-count"
+        style={{
+          display: "flex",
+          alignItems: "baseline",
+          width: "max-content",
+          marginTop: "1.5rem",
+        }}
+      >
         <select
           value={guestAmount}
           onChange={(e) => {

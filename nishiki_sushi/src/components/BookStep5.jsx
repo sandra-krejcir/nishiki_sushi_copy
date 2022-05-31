@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import AnimatedPage from "./AnimatedPage";
 
 export default function BookStep5() {
   const [date, setDate] = [new Date(localStorage.getItem("NishikiTableDate"))];
@@ -34,8 +35,6 @@ export default function BookStep5() {
     } else if (date.getDay() == "0") {
       setNumber("søndag");
     }
-    // console.log("day: " + dayNumber);
-    // console.log("month number: " + date.getMonth());
   }
 
   function findMonth() {
@@ -64,30 +63,31 @@ export default function BookStep5() {
     } else if (date.getDay() == "11") {
       setMonth("december");
     }
-    // console.log(month);
   }
 
   return (
-    <>
-      <h4>Tak for din booking</h4>
-      <div className="bookagainflex">
-        <div className="book5flex">
-          <p>
-            Vi har sendt en sms-kvittering til tlf.nr.: <span>{phone}</span>
-          </p>
-          <p className="booking-summary">
-            Booking af bord til <span>{guestAmount}</span> gæster{" "}
-            <span>
-              {dayNumber} d. {date.getDate()} {month}
-            </span>{" "}
-            kl. <span>{time}</span> under navnet <span>{name}</span>.
-          </p>
-          <div>
-            <p className="underline">Kommentarer:</p>
-            <p>{comment}</p>
+    <AnimatedPage>
+      <>
+        <h4>Tak for din booking</h4>
+        <div className="bookagainflex">
+          <div className="book5flex">
+            <p>
+              Vi har sendt en sms-kvittering til tlf.nr.: <span>{phone}</span>
+            </p>
+            <p className="booking-summary">
+              Booking af bord til <span>{guestAmount}</span> gæster{" "}
+              <span>
+                {dayNumber} d. {date.getDate()} {month}
+              </span>{" "}
+              kl. <span>{time}</span> under navnet <span>{name}</span>.
+            </p>
+            <div>
+              <p className="underline">Kommentarer:</p>
+              <p>{comment}</p>
+            </div>
           </div>
         </div>
-      </div>
-    </>
+      </>
+    </AnimatedPage>
   );
 }

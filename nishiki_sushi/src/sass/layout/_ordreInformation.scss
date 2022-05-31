@@ -3,6 +3,19 @@
 @use "../base/effects";
 @use "../base/buttons";
 
+.order_information_item_no_arrows {
+  width: 20px;
+  height: 20px;
+  display: block;
+  background: red;
+}
+
+.errorMessage {
+  margin-top: 0.2rem !important;
+  color: red !important;
+  text-transform: initial;
+}
+
 .ordreInformation_container {
   /* max-width: 600px; */
   background-color: colors.$cream;
@@ -33,7 +46,7 @@
 
 .order_information p {
   grid-column: 2;
-  margin-bottom: margins.$marginUnderElementMobile;
+  margin-bottom: 0;
 }
 
 .kvitering_container {

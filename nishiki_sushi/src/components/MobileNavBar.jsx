@@ -1,97 +1,140 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import React from "react";
+import AnimatedPage2 from "./AnimatedPage2";
+import { useState, useEffect } from "react";
 
 export default function MobileNavBar(props) {
+  const { page, resetPage, setCartContents, cartContents } = props;
+  const itemCartCount = cartContents.reduce((a, c) => a + c.qty, 0);
+
+  function resetBasket() {
+    localStorage.clear();
+    setCartContents([]);
+  }
+
   return (
-    <>
-      <nav className="mobile_nav">
-        <ul>
-          <li>
-            <NavLink
-              className={
-                props.page === "home"
-                  ? "selected column_flex"
-                  : "non-selected column_flex"
-              }
-              to="/"
-            >
-              <img
-                src={
-                  props.page === "home"
-                    ? "../icons/homeColored.svg"
-                    : "../icons/homeUncolored.svg"
+    <AnimatedPage2>
+      <>
+        <nav className="mobile_nav">
+          <ul>
+            <li>
+              <NavLink
+                className={
+                  page === "home"
+                    ? "selectedMobile column_flex"
+                    : "non-selectedMobile column_flex"
                 }
-                alt="Home icon."
-                className="hw40_icon"
-              ></img>
-              Forside
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className={
-                props.page === "restaurant"
-                  ? "selected column_flex"
-                  : "non-selected column_flex"
-              }
-              to="/restaurant"
-            >
-              <img
-                src={
-                  props.page === "restaurant"
-                    ? "../icons/restaurantColored.svg"
-                    : "../icons/restaurantUncolored.svg"
+                to="/"
+                onClick={() => {
+                  if (resetPage === "bekræftelse") {
+                    resetBasket();
+                  }
+                }}
+              >
+                <img
+                  src={
+                    page === "home"
+                      ? "../icons/homeDarkbrown.svg"
+                      : "../icons/homeLightbrown.svg"
+                  }
+                  alt="Home icon."
+                  className="hw30_icon"
+                ></img>
+                Forside
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={
+                  page === "restaurant"
+                    ? "selectedMobile column_flex"
+                    : "non-selectedMobile column_flex"
                 }
-                alt="Restaurant icon."
-                className="hw40_icon"
-              ></img>
-              Restaurant
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className={
-                props.page === "takeaway"
-                  ? "selected column_flex"
-                  : "non-selected column_flex"
-              }
-              to="/takeaway"
-            >
-              <img
-                src={
-                  props.page === "takeaway"
-                    ? "../icons/takeawayColored.svg"
-                    : "../icons/takeawayUncolored.svg"
+                to="/restaurant"
+                onClick={() => {
+                  if (resetPage === "bekræftelse") {
+                    resetBasket();
+                  }
+                }}
+              >
+                <img
+                  src={
+                    page === "restaurant"
+                      ? "../icons/restaurantDarkbrown.svg"
+                      : "../icons/restaurantLightbrown.svg"
+                  }
+                  alt="Restaurant icon."
+                  className="hw30_icon"
+                ></img>
+                Restaurant
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={
+                  page === "takeaway"
+                    ? "selectedMobile column_flex"
+                    : "non-selectedMobile column_flex"
                 }
-                alt="Takeaway icon."
-                className="hw40_icon"
-              ></img>
-              Takeaway
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className={
-                props.page === "kurv"
-                  ? "selected column_flex"
-                  : "non-selected column_flex"
-              }
-              to="/kurv"
-            >
-              <img
-                src={
-                  props.page === "kurv"
-                    ? "../icons/basketColored.svg"
-                    : "../icons/basketUncolored.svg"
+                to="/takeaway"
+                onClick={() => {
+                  if (resetPage === "bekræftelse") {
+                    resetBasket();
+                  }
+                }}
+              >
+                <img
+                  src={
+                    page === "takeaway"
+                      ? "../icons/takeawayDarkbrown.svg"
+                      : "../icons/takeawayLightbrown.svg"
+                  }
+                  alt="Takeaway icon."
+                  className="hw30_icon"
+                ></img>
+                Takeaway
+              </NavLink>
+            </li>
+
+            <li>
+              {cartContents !== "[object Object]" && (
+                <>
+                  {itemCartCount > 0 && (
+                    <p
+                      className={
+                        resetPage === "bekræftelse"
+                          ? "hidden"
+                          : "in_basket_number_mobilenav"
+                      }
+                    >
+                      {itemCartCount}
+                    </p>
+                  )}
+                </>
+              )}
+              <NavLink
+                className={
+                  page === "kurv"
+                    ? "selectedMobile column_flex"
+                    : "non-selectedMobile column_flex"
                 }
-                alt="Basket icon."
-                className="hw40_icon"
-              ></img>
-              Kurv
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
-    </>
+                to="/kurv"
+              >
+                <img
+                  src={
+                    page === "kurv"
+                      ? "../icons/basketDarkbrown.svg"
+                      : "../icons/basketLightbrown.svg"
+                  }
+                  alt="Basket icon."
+                  className="hw30_icon"
+                ></img>
+                Kurv
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+      </>
+    </AnimatedPage2>
   );
 }

@@ -2,48 +2,62 @@ import React from "react";
 import BurgerMenu from "./BurgerMenu";
 import { FaTruck } from "react-icons/fa";
 import { MdOutlineKeyboardBackspace, MdRestaurant } from "react-icons/md";
-import { AiOutlineMinusSquare, AiOutlinePlusSquare } from "react-icons/ai";
-import { IoMdArrowDropup, IoMdArrowDropdown } from "react-icons/io";
 import Oplysninger from "./Oplysninger";
 import useWindowDimensions from "./screenResize_hook";
 import { NavLink } from "react-router-dom";
 import MobileNav from "./MobileNavBar";
+import AnimatedPage from "./AnimatedPage";
+import KurvItem from "./KurvItem";
 
-function Kurv() {
+function Kurv(props) {
+  const { cartContents, onAdd, onRemove } = props;
+  const subtotalAmount = cartContents.reduce((a, c) => a + c.price * c.qty, 0);
+  const rabatPrice = Math.round(subtotalAmount * 0.1);
+  const totalAmount = subtotalAmount - rabatPrice;
   const screenSize = useWindowDimensions();
+
   return (
-    <>
-      {screenSize.width > 799 && <BurgerMenu page={"kurv"} />}
-      {screenSize.width < 799 && <MobileNav page={"kurv"} />}
-      <NavLink to="/">
+    <AnimatedPage>
+      <>
+        {screenSize.width > 799 && (
+          <BurgerMenu cartContents={props.cartContents} page={"kurv"} />
+        )}
+        {screenSize.width < 799 && (
+          <MobileNav cartContents={props.cartContents} page={"kurv"} />
+        )}
+        <NavLink to="/">
+          <img
+            src="../icons/logo.svg"
+            alt="The logo icon."
+            className="header_logo"
+          />
+        </NavLink>
         <img
-          src="../icons/logo.svg"
-          alt="The logo icon."
-          className="header_logo"
-        />
-      </NavLink>
-      <img
-        className="hero_img hide_when_off_phone"
-        src="../../img/hero_img/kurv_hero_mobile.png"
-        alt="takeaway"
-      />
-      <div className="kurv_container">
-        <img
-          className="hero_img hide_when_on_phone"
-          src="../../img/hero_img/kurv_hero.png"
+          className="hero_img hide_when_off_phone"
+          src="../../img/hero_img/kurv_hero_mobile.png"
           alt="takeaway"
         />
-        <div className="kurv_top">
-          <h1>Kurv</h1>
-          <div className="ingen_lavering_container">
-            <p className="remove_1rem">Ingen Levering</p>
-            <FaTruck className="hw20_icon" />
+        <div className="kurv_container">
+          <img
+            className="hero_img hide_when_on_phone"
+            src="../../img/hero_img/kurv_hero.png"
+            alt="takeaway"
+          />
+          <div className="kurv_top">
+            <h1>Kurv</h1>
+            <div className="ingen_lavering_container">
+              <p className="remove_1rem">Ingen Levering</p>
+              <FaTruck className="hw20_icon" />
+            </div>
           </div>
         </div>
         <div className="button_and_afhentling_container">
           <NavLink to="/takeaway">
             <button className="secondaryBtn">
-              <MdOutlineKeyboardBackspace className="hw20_icon" />
+              <MdOutlineKeyboardBackspace
+                style={{ margin: "0 0.5rem 0 -0.5rem" }}
+                className="hw20_icon"
+              />
               Tilføj
             </button>
           </NavLink>
@@ -51,49 +65,40 @@ function Kurv() {
             Afhenting <MdRestaurant className="hw20_icon" />
           </p>
         </div>
+
         <div className="mid_kurv_container">
           <div className="inner_kurv_container">
-            <div>
-              <div className="kurv_item_top">
-                <div className="kurv_remove_add">
-                  <AiOutlineMinusSquare className="hw30_icon" />
-                  <span>0</span>
-                  <AiOutlinePlusSquare className="hw30_icon" />
+            {cartContents.length === 0 && <div>Din kurv er tom.</div>}
+            {cartContents.map((item) => {
+              return <KurvItem onAdd={onAdd} onRemove={onRemove} item={item} />;
+            })}
+            {cartContents.length !== 0 && (
+              <div className="kvitering_container">
+                <div>
+                  <p>Subtotal</p>
+                  <span>{subtotalAmount.toFixed(2)}</span>
                 </div>
-                <p className="remove_1rem">Name of Item</p>
-                <span>000</span>
-              </div>
-              <div className="show_hide_indhold_container">
-                <div className="show_hide_indhold">
+                <div>
+                  <p>10% Rabat</p>
+                  <span>-{rabatPrice.toFixed(2)}</span>
+                </div>
+                <div className="line_kurv"></div>
+                <div>
                   <p>
-                    Se Indhold <IoMdArrowDropdown className="hw20_icon" />
+                    <strong>Total:</strong>
                   </p>
-                  <p>
-                    Gem Indhold <IoMdArrowDropup className="hw20_icon" />
-                  </p>
+                  <span>
+                    <strong>{totalAmount.toFixed(2)} DKK</strong>
+                  </span>
                 </div>
               </div>
-              <div className="kurv_item_info">
-                <p>Food Info relgjnerog oerh oehr opehropuehrt prp oeu</p>
-              </div>
-            </div>
-            <div className="kvitering_container">
-              <div>
-                <p>Subtotal</p>
-                <span>000</span>
-              </div>
-              <div>
-                <p>10% Rabat</p>
-                <span>-000</span>
-              </div>
-              <div className="line_kurv"></div>
-              <div>
-                <p>Total:</p>
-                <span>000</span>
-              </div>
-            </div>
-            {screenSize.width < 799 && (
-              <NavLink to="/Oplysninger" className="button_container_center">
+            )}
+            {screenSize.width < 799 && cartContents.length !== 0 && (
+              <NavLink
+                cartContents={props.cartContents}
+                to="/Oplysninger"
+                className="button_container_center"
+              >
                 <button className="primaryBtn">Angiv Oplysninger</button>
               </NavLink>
             )}
@@ -104,8 +109,8 @@ function Kurv() {
             <Oplysninger />
           </div>
         )}
-      </div>
-    </>
+      </>
+    </AnimatedPage>
   );
 }
 
