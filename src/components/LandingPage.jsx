@@ -36,14 +36,14 @@ export default function LandingPage(props) {
               scale: 0.98,
             }}
           >
-            <NavLink
-              to="/restaurant"
+            <a
+              /*  to="/restaurant" */
               className="thumbnail_img restaurant_thumbnail"
             >
               <h4 className="restaurant_title">
                 <b>BESØG RESTAURANTEN</b>
               </h4>
-            </NavLink>
+            </a>
           </motion.div>
 
           <motion.div
