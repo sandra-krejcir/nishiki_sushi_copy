@@ -7,7 +7,6 @@ import useWindowDimensions from "./screenResize_hook";
 import { NavLink } from "react-router-dom";
 import AnimatedPage from "./AnimatedPage";
 import { motion } from "framer-motion";
-import takeawayImage from "../../img/landingimg2.webp";
 
 export default function LandingPage(props) {
   const screenSize = useWindowDimensions();
