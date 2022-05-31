@@ -17,7 +17,7 @@ export default function TakeawayItem(props) {
               ele.name === props.name && (
                 <p className="in_basket_number">{ele.qty}</p>
               )
-          )}{" "}
+          )}
           {cartContents.map(
             (ele) =>
               ele.name !== props.name && (
