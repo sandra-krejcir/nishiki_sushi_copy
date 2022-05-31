@@ -31,7 +31,11 @@ function Takeaway(props) {
   return (
     <AnimatedPage>
       <>
-        <img className="hero_img hide_when_off_phone" src="../../img/hero_img/takeaway_hero_mobile.png" alt="takeaway" />
+        <img
+          className="hero_img hide_when_off_phone"
+          src="../../img/hero_img/takeaway_hero_mobile.png"
+          alt="takeaway"
+        />
 
         <div className="takeaway_container">
           {screenSize.width > 799 && (
@@ -39,21 +43,47 @@ function Takeaway(props) {
               <BurgerMenu cartContents={props.cartContents} page={"takeaway"} />
               <NavLink cartContents={props.cartContents} to="/kurv">
                 <div className="in_basket_number_container">
-                  {itemCartCount > 0 && <p className="in_basket_number_head">{itemCartCount}</p>}
-                  <img src={"../icons/basketColored.svg"} alt="Basket icon." className={screenSize > 1224 ? "kurv_icon hw40_icon" : "kurv_icon hw30_icon"}></img>
+                  {itemCartCount > 0 && (
+                    <p className="in_basket_number_head">{itemCartCount}</p>
+                  )}
+                  <img
+                    src={"../icons/basketColored.svg"}
+                    alt="Basket icon."
+                    className={
+                      screenSize > 1224
+                        ? "kurv_icon hw40_icon"
+                        : "kurv_icon hw30_icon"
+                    }
+                  ></img>
                 </div>
               </NavLink>
             </>
           )}
-          {screenSize.width < 799 && <MobileNav cartContents={props.cartContents} page={"takeaway"} />}
+          {screenSize.width < 799 && (
+            <MobileNav cartContents={props.cartContents} page={"takeaway"} />
+          )}
           <NavLink to="/">
-            <img src="../icons/logo.svg" alt="The logo icon." className="header_logo" />
+            <img
+              src="../icons/logo.svg"
+              alt="The logo icon."
+              className="header_logo"
+            />
           </NavLink>
-          {screenSize.width < 799 && <MobileNav cartContents={props.cartContents} page={"takeaway"} />}
+          {screenSize.width < 799 && (
+            <MobileNav cartContents={props.cartContents} page={"takeaway"} />
+          )}
           <NavLink to="/">
-            <img src="../icons/logo.svg" alt="The logo icon." className="header_logo" />
+            <img
+              src="../icons/logo.svg"
+              alt="The logo icon."
+              className="header_logo"
+            />
           </NavLink>
-          <img className="hero_img hide_when_on_phone" src="../../img/hero_img/takeaway_hero.png" alt="takeaway" />
+          <img
+            className="hero_img hide_when_on_phone"
+            src="../../img/hero_img/takeaway_hero.png"
+            alt="takeaway"
+          />
           <div className="takeaway_headline">
             <h1>
               <b>Take</b>Away
@@ -80,7 +110,9 @@ function Takeaway(props) {
             </div>
             <AnimatedPage>
               <motion.div
-                className={`hidden ${visible ? "show" : ""} kategorier_container`}
+                className={`hidden ${
+                  visible ? "show" : ""
+                } kategorier_container`}
                 initial={false}
                 variants={animation}
                 animate={visible ? "show" : "hide"}
@@ -109,7 +141,10 @@ function Takeaway(props) {
                       scale: 0.8,
                     }}
                   >
-                    <img src="../../img/kategorier_billeder/manedenstilbud.png" alt="månedens_tilbud" />
+                    <img
+                      src="../../img/kategorier_billeder/manedenstilbud.png"
+                      alt="månedens_tilbud"
+                    />
                     <h3>Månedens tilbud</h3>
                   </motion.div>
                   <motion.div
@@ -130,7 +165,10 @@ function Takeaway(props) {
                       scale: 0.8,
                     }}
                   >
-                    <img src="../../img/kategorier_billeder/sushimenu.png" alt="sushi_menu" />
+                    <img
+                      src="../../img/kategorier_billeder/sushimenu.png"
+                      alt="sushi_menu"
+                    />
                     <h3>Sushi Menu</h3>
                   </motion.div>
                   <motion.div
@@ -151,7 +189,10 @@ function Takeaway(props) {
                       scale: 0.8,
                     }}
                   >
-                    <img src="../../img/kategorier_billeder/forret.png" alt="forret" />
+                    <img
+                      src="../../img/kategorier_billeder/forret.png"
+                      alt="forret"
+                    />
                     <h3>Forret</h3>
                   </motion.div>
                   <motion.div
@@ -172,7 +213,10 @@ function Takeaway(props) {
                       scale: 0.8,
                     }}
                   >
-                    <img src="../../img/kategorier_billeder/yakitori_sticks.png" alt="yakitori_sticks" />
+                    <img
+                      src="../../img/kategorier_billeder/yakitori_sticks.png"
+                      alt="yakitori_sticks"
+                    />
                     <h3>Yakitori Sticks</h3>
                   </motion.div>
                   <motion.div
@@ -193,7 +237,10 @@ function Takeaway(props) {
                       scale: 0.8,
                     }}
                   >
-                    <img src="../../img/kategorier_billeder/nigiri.png" alt="nigiri" />
+                    <img
+                      src="../../img/kategorier_billeder/nigiri.png"
+                      alt="nigiri"
+                    />
                     <h3>Nigiri 2stk</h3>
                   </motion.div>
                   <motion.div
@@ -214,7 +261,10 @@ function Takeaway(props) {
                       scale: 0.8,
                     }}
                   >
-                    <img src="../../img/kategorier_billeder/hosomaki.png" alt="hosomaki" />
+                    <img
+                      src="../../img/kategorier_billeder/hosomaki.png"
+                      alt="hosomaki"
+                    />
                     <h3>Hosomaki 8stk</h3>
                   </motion.div>
                   <motion.div
@@ -235,7 +285,10 @@ function Takeaway(props) {
                       scale: 0.8,
                     }}
                   >
-                    <img src="../../img/kategorier_billeder/futomaki.png" alt="futomaki" />
+                    <img
+                      src="../../img/kategorier_billeder/futomaki.png"
+                      alt="futomaki"
+                    />
                     <h3>Futomaki 5stk</h3>
                   </motion.div>
                   <motion.div
@@ -256,7 +309,10 @@ function Takeaway(props) {
                       scale: 0.8,
                     }}
                   >
-                    <img src="../../img/kategorier_billeder/sashimi.png" alt="sashimi" />
+                    <img
+                      src="../../img/kategorier_billeder/sashimi.png"
+                      alt="sashimi"
+                    />
                     <h3>Sashimi</h3>
                   </motion.div>
                   <motion.div
@@ -277,7 +333,10 @@ function Takeaway(props) {
                       scale: 0.8,
                     }}
                   >
-                    <img src="../../img/kategorier_billeder/rispapir.png" alt="rispapir" />
+                    <img
+                      src="../../img/kategorier_billeder/rispapir.png"
+                      alt="rispapir"
+                    />
                     <h3>Rispapir 6stk</h3>
                   </motion.div>
                   <motion.div
@@ -298,7 +357,10 @@ function Takeaway(props) {
                       scale: 0.8,
                     }}
                   >
-                    <img src="../../img/kategorier_billeder/uramaki.png" alt="uramaki" />
+                    <img
+                      src="../../img/kategorier_billeder/uramaki.png"
+                      alt="uramaki"
+                    />
                     <h3>Uramaki 8stk</h3>
                   </motion.div>
                   <motion.div
@@ -319,7 +381,10 @@ function Takeaway(props) {
                       scale: 0.8,
                     }}
                   >
-                    <img src="../../img/kategorier_billeder/kaburimaki.png" alt="kaburimaki" />
+                    <img
+                      src="../../img/kategorier_billeder/kaburimaki.png"
+                      alt="kaburimaki"
+                    />
                     <h3>Kaburimaki 8stk</h3>
                   </motion.div>
                   <motion.div
@@ -340,7 +405,10 @@ function Takeaway(props) {
                       scale: 0.8,
                     }}
                   >
-                    <img src="../../img/kategorier_billeder/dip.png" alt="dip" />
+                    <img
+                      src="../../img/kategorier_billeder/dip.png"
+                      alt="dip"
+                    />
                     <h3>Dip</h3>
                   </motion.div>
                 </div>
@@ -357,20 +425,38 @@ function Takeaway(props) {
                       setVisible(!visible);
                     }
                     return null;
-                  } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                  } else if (
+                    val.name.toLowerCase().includes(searchTerm.toLowerCase())
+                  ) {
                     return val;
-                  } else if (val.ingrediant_list.toLowerCase().includes(searchTerm.toLowerCase())) {
+                  } else if (
+                    val.ingrediant_list
+                      .toLowerCase()
+                      .includes(searchTerm.toLowerCase())
+                  ) {
                     return val;
                   } else if (searchTerm === "alle") {
                     return val;
                   }
                 })
                 .map((val, key) => {
-                  return <TakeawayItem {...val} key={val.name} onAdd={onAdd} onRemove={onRemove} cartContents={cartContents} />;
+                  return (
+                    <TakeawayItem
+                      {...val}
+                      key={val.name}
+                      onAdd={onAdd}
+                      onRemove={onRemove}
+                      cartContents={cartContents}
+                    />
+                  );
                 })}
             </div>
           </div>
-          <div className={`hidden ${visible2 ? "hidden" : "show"} chosen_kategorie_container`}>
+          <div
+            className={`hidden ${
+              visible2 ? "hidden" : "show"
+            } chosen_kategorie_container`}
+          >
             <button
               className="secondaryBtn"
               onClick={() => {
@@ -379,7 +465,10 @@ function Takeaway(props) {
                 }
               }}
             >
-              <MdOutlineKeyboardBackspace style={{ margin: "0 .5rem 0 -.5rem" }} className="hw20_icon" />
+              <MdOutlineKeyboardBackspace
+                style={{ margin: "0 .5rem 0 -.5rem" }}
+                className="hw20_icon"
+              />
               Kategorier
             </button>
             {/* <div className="search_container">
@@ -398,7 +487,15 @@ function Takeaway(props) {
                   }
                 })
                 .map((val, key) => {
-                  return <TakeawayItem {...val} key={val._id} onAdd={onAdd} onRemove={onRemove} cartContents={cartContents} />;
+                  return (
+                    <TakeawayItem
+                      {...val}
+                      key={val._id}
+                      onAdd={onAdd}
+                      onRemove={onRemove}
+                      cartContents={cartContents}
+                    />
+                  );
                 })}
             </div>
           </div>
