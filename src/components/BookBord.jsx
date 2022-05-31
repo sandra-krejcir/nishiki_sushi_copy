@@ -246,7 +246,7 @@ export default function BookBord() {
               submitBooking();
             }}
           >
-            Fortsæt
+            Bekræft Booking
           </button>
           <button
             id="a-style-btn"
