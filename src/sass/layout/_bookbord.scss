@@ -4,7 +4,8 @@
 
 #app-container {
   background: colors.$lightWood;
-  padding: 2rem margins.$marginHorisontalMobile 2.5rem margins.$marginHorisontalMobile;
+  padding: 2rem margins.$marginHorisontalMobile 2.5rem
+    margins.$marginHorisontalMobile;
   box-shadow: effects.$boxShadowImage;
   p,
   h4 {
@@ -170,7 +171,7 @@
     box-shadow: effects.$boxShadowImage;
     width: 100%;
     margin-top: 3.5rem;
-    background: url(./img/book-bord-img.webp);
+    background: url(/img/book-bord-img.webp);
     background-position: center;
     background-size: cover;
     max-height: 25rem;
@@ -208,7 +209,7 @@
     box-shadow: effects.$boxShadowImage;
     width: 100%;
     margin-top: 3.5rem;
-    background: url(./img/book-bord-img.webp);
+    background: url(/img/book-bord-img.webp);
     background-position: center;
     background-size: cover;
     max-height: 25rem;
