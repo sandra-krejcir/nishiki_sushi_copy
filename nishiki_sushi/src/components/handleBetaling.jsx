@@ -11,14 +11,12 @@ const useFormBetaling = (callback, validateInfoBetaling) => {
       ...values,
       [name]: value,
     });
-    console.log(values);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(validateInfoBetaling(values));
     setIsSubmitting(true);
-    console.log("handleSubmit");
   };
 
   useEffect(() => {

@@ -18,10 +18,10 @@ const Betaling = ({ submitForm, cartContents }) => {
 
   function submitForm() {
     setIsSubmitted(true);
-    console.log("submitForm");
+
     const customerInfo = JSON.parse(localStorage.getItem("Oplysninger"));
     const orderInfo = localStorage.getItem("Orders");
-    console.log(customerInfo);
+
     let payload = {
       name: customerInfo.oplysninger_navn,
       pickup_time: customerInfo.oplysninger_tid,
@@ -30,7 +30,6 @@ const Betaling = ({ submitForm, cartContents }) => {
       order_details: orderInfo,
     };
 
-    console.log("Submit");
     fetch("https://kea21s-6eb0.restdb.io/rest/nishiki-takeaway-form", {
       method: "POST",
       headers: {
@@ -41,9 +40,7 @@ const Betaling = ({ submitForm, cartContents }) => {
       body: JSON.stringify(payload),
     })
       .then((res) => res.json())
-      .then((response) => {
-        console.log(response);
-      })
+      .then((response) => {})
       .catch((err) => {
         console.error(err);
       });
@@ -103,7 +100,6 @@ const Betaling = ({ submitForm, cartContents }) => {
                   type="text"
                   name="betaling_kortnummer"
                   id="betaling_kortnummer"
-                  // pattern="[0-9]*"
                   inputMode="numeric"
                   placeholder="0000 0000 0000 0000"
                   required

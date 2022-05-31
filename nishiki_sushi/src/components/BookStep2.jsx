@@ -6,9 +6,6 @@ export default function BookStep2() {
   const [value, setValue] = useState(new Date());
 
   function onChange() {
-    console.log(
-      value.getDate() + "/" + (value.getMonth() + 1) + "/" + value.getFullYear()
-    );
     localStorage.setItem("NishikiTableDate", value);
   }
 
@@ -25,7 +22,6 @@ export default function BookStep2() {
         <div>
           <Calendar
             onChange={(e) => {
-              console.log(e);
               setValue(e);
             }}
             value={value}

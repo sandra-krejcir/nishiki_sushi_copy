@@ -53,8 +53,6 @@ export default function BookStep4() {
     } else if (date.getDay() == "0") {
       setNumber("søndag");
     }
-    console.log("day: " + dayNumber);
-    // console.log("month number: " + date.getMonth());
   }
 
   function findMonth() {
@@ -83,21 +81,17 @@ export default function BookStep4() {
     } else if (date.getDay() == "11") {
       setMonth("december");
     }
-    console.log(month);
   }
 
   function changeName() {
-    console.log("registrered name: " + name);
     localStorage.setItem("NishikiTableName", name);
   }
 
   function changePhone() {
-    console.log("registrered phonenr: " + phone);
     localStorage.setItem("NishikiTablePhone", phone);
   }
 
   function changeComment() {
-    console.log("registrered comment: " + comment);
     localStorage.setItem("NishikiTableComment", comment);
   }
 
@@ -116,36 +110,17 @@ export default function BookStep4() {
           <label>
             Navn
             <br />
-            <input
-              required
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              type="text"
-              placeholder="Jens Jensen"
-            />{" "}
+            <input required value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Jens Jensen" />{" "}
           </label>
           <br />
           <label>
             Mobil nummer <br />
-            <input
-              required
-              max={11}
-              min={8}
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              type="tel"
-              placeholder="12 34 56 78"
-            />{" "}
+            <input required max={11} min={8} value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" placeholder="12 34 56 78" />{" "}
           </label>
           <br />
           <label>
             Kommentarer <br />
-            <textarea
-              value={comment}
-              onChange={(e) => setComment(e.target.value)}
-              cols="30"
-              rows="4"
-            ></textarea>
+            <textarea value={comment} onChange={(e) => setComment(e.target.value)} cols="30" rows="4"></textarea>
           </label>
         </form>
       </>

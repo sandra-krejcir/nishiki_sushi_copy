@@ -10,11 +10,8 @@ export default function BookStep1() {
   }, [guestAmount]);
 
   async function changeGuestAmount() {
-    console.log(guestAmount);
     localStorage.setItem("NishikiTableGuestAmount", guestAmount);
   }
-
-  // console.log(guestAmount);
 
   const options = [
     {

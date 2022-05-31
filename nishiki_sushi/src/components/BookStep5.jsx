@@ -35,8 +35,6 @@ export default function BookStep5() {
     } else if (date.getDay() == "0") {
       setNumber("søndag");
     }
-    // console.log("day: " + dayNumber);
-    // console.log("month number: " + date.getMonth());
   }
 
   function findMonth() {
@@ -65,7 +63,6 @@ export default function BookStep5() {
     } else if (date.getDay() == "11") {
       setMonth("december");
     }
-    // console.log(month);
   }
 
   return (
