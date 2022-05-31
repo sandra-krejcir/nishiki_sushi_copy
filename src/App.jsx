@@ -11,21 +11,20 @@ import {
   RestaurantPage,
 } from "./components";
 
-localStorage.clear();
-
-let sushiData;
-await fetchSushiData();
-async function fetchSushiData() {
-  const restSushi = await fetch(
-    "https://kea21s-6eb0.restdb.io/rest/nishiki-sushi-products?fetchchildren=true",
-    { headers: { "x-apikey": "606d606af55350043100752e" } }
-  );
-  const dataSushi = await restSushi.json();
-  sushiData = dataSushi;
-}
-
 export default function App() {
   const [cartContents, setCartContents] = useState([]);
+  const [sushiData, setSushiData] = useState([]);
+  localStorage.clear();
+  useEffect(() => {
+    fetch(
+      "https://kea21s-6eb0.restdb.io/rest/nishiki-sushi-products?fetchchildren=true",
+
+      { headers: { "x-apikey": "606d606af55350043100752e" } }
+    )
+      .then((response) => response.json())
+
+      .then((data) => setSushiData(data));
+  }, []);
 
   useEffect(() => {
     if (!cartContents.current) {
