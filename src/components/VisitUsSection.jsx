@@ -16,32 +16,130 @@ export default function VisitUsSection() {
               <h3>Åbningtider</h3>
               <div className="line"></div>
               <div className="time_row">
-                <p style={{ fontWeight: day == 1 ? 800 : 400 }}>Mandag</p>
-                <p style={{ fontWeight: day == 1 ? 800 : 400 }}>15:00 - 22:00</p>
+                <p
+                  style={{
+                    fontWeight: day == 1 ? 800 : 400,
+                    fontSize: day == 1 ? "20px" : "16px",
+                  }}
+                >
+                  Mandag
+                </p>
+                <p
+                  style={{
+                    fontWeight: day == 1 ? 800 : 400,
+                    fontSize: day == 1 ? "20px" : "16px",
+                  }}
+                >
+                  15:00 - 22:00
+                </p>
               </div>
               <div className="time_row">
-                <p style={{ fontWeight: day == 2 ? 800 : 400 }}>Tirsdag</p>
-                <p style={{ fontWeight: day == 2 ? 800 : 400 }}>15:00 - 22:00</p>
+                <p
+                  style={{
+                    fontWeight: day == 2 ? 800 : 400,
+                    fontSize: day == 2 ? "20px" : "16px",
+                  }}
+                >
+                  Tirsdag
+                </p>
+                <p
+                  style={{
+                    fontWeight: day == 2 ? 800 : 400,
+                    fontSize: day == 2 ? "20px" : "16px",
+                  }}
+                >
+                  15:00 - 22:00
+                </p>
               </div>
               <div className="time_row">
-                <p style={{ fontWeight: day == 3 ? 800 : 400 }}>Onsdag</p>
-                <p style={{ fontWeight: day == 3 ? 800 : 400 }}>15:00 - 22:00</p>
+                <p
+                  style={{
+                    fontWeight: day == 3 ? 800 : 400,
+                    fontSize: day == 3 ? "20px" : "16px",
+                  }}
+                >
+                  Onsdag
+                </p>
+                <p
+                  style={{
+                    fontWeight: day == 3 ? 800 : 400,
+                    fontSize: day == 3 ? "20px" : "16px",
+                  }}
+                >
+                  15:00 - 22:00
+                </p>
               </div>
               <div className="time_row">
-                <p style={{ fontWeight: day == 4 ? 800 : 400 }}>Torsdag</p>
-                <p style={{ fontWeight: day == 4 ? 800 : 400 }}>15:00 - 22:00</p>
+                <p
+                  style={{
+                    fontWeight: day == 4 ? 800 : 400,
+                    fontSize: day == 4 ? "20px" : "16px",
+                  }}
+                >
+                  Torsdag
+                </p>
+                <p
+                  style={{
+                    fontWeight: day == 4 ? 800 : 400,
+                    fontSize: day == 4 ? "20px" : "16px",
+                  }}
+                >
+                  15:00 - 22:00
+                </p>
               </div>
               <div className="time_row">
-                <p style={{ fontWeight: day == 5 ? 800 : 400 }}>Fridag</p>
-                <p style={{ fontWeight: day == 5 ? 800 : 400 }}>13:00 - 22:00</p>
+                <p
+                  style={{
+                    fontWeight: day == 5 ? 800 : 400,
+                    fontSize: day == 5 ? "20px" : "16px",
+                  }}
+                >
+                  Fridag
+                </p>
+                <p
+                  style={{
+                    fontWeight: day == 5 ? 800 : 400,
+                    fontSize: day == 5 ? "20px" : "16px",
+                  }}
+                >
+                  13:00 - 22:00
+                </p>
               </div>
               <div className="time_row">
-                <p style={{ fontWeight: day == 6 ? 800 : 400 }}>Lørdag</p>
-                <p style={{ fontWeight: day == 6 ? 800 : 400 }}>13:00 - 22:00</p>
+                <p
+                  style={{
+                    fontWeight: day == 6 ? 800 : 400,
+                    fontSize: day == 6 ? "20px" : "16px",
+                  }}
+                >
+                  Lørdag
+                </p>
+                <p
+                  style={{
+                    fontWeight: day == 6 ? 800 : 400,
+                    fontSize: day == 6 ? "20px" : "16px",
+                  }}
+                >
+                  13:00 - 22:00
+                </p>
               </div>
               <div className="time_row">
-                <p style={{ fontWeight: day == 0 ? 800 : 400 }}>Søndag</p>
-                <p style={{ fontWeight: day == 0 ? 800 : 400 }}>13:00 - 22:00</p>
+                <p
+                  style={{
+                    fontWeight: day == 0 ? 800 : 400,
+                    fontSize: day == 0 ? "20px" : "16px",
+                  }}
+                >
+                  Søndag
+                </p>
+                <p
+                  style={{
+                    fontWeight: day == 0 ? 800 : 400,
+                    fontSize: day == 0 ? "20px" : "16px",
+                  }}
+                >
+                  13:00 - 22:00
+                </p>
               </div>
             </div>
           </section>
