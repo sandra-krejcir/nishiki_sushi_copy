@@ -93,18 +93,8 @@ h3 {
   grid-gap: 9px;
 }
 
-.kategorie {
-  background-color: colors.$darkBlue;
-
-  height: 109px;
-  width: 158px;
-
-  display: grid;
-  justify-content: center;
-}
-
 .kategorier img {
-  position: absolute;
+  /*  position: absolute; */
 
   /* height: 120px;
   width: 180px; */
@@ -116,7 +106,7 @@ h3 {
   cursor: pointer;
 }
 
-@media screen and (min-width: 400px) {
+/* @media screen and (min-width: 400px) {
   .kategorier {
     grid-template-columns: repeat(auto-fill, 180px);
   }
@@ -127,13 +117,16 @@ h3 {
     width: 180px;
   }
 }
-
-.kategorier h3 {
-  position: relative;
-  color: colors.$off-white;
-  align-self: center;
-  text-align: center;
+ */
+.kategorier h3 span {
+  /*  position: relative; */
+  color: colors.$darkBrown;
+  background: colors.$lightWood;
   cursor: pointer;
+  display: block;
+  padding: 8px;
+  top: 8px;
+  left: -8px;
 }
 
 /* RESULTS */
@@ -269,6 +262,19 @@ h3 {
   .kategorier img {
     height: 157px;
     width: 227px;
+  }
+
+  .kategorie {
+    /*  height: 109px; */
+    width: 158px;
+    display: grid;
+    justify-content: left;
+  }
+  .kategorier img {
+    position: absolute;
+  }
+  .kategorier h3 span {
+    position: relative;
   }
 }
 
