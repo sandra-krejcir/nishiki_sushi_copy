@@ -1,6 +1,10 @@
 @use "../base/colors";
 @use "../base/margins";
 
+html {
+  zoom: 80%;
+}
+
 body {
   background-color: colors.$off-white;
   /*  margin: margins.$marginHorisontalMobile; */
