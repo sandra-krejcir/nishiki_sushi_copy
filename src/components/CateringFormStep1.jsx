@@ -38,11 +38,9 @@ const CateringFormStep1 = ({ submitForm }) => {
         </label>
 
         <div className="enquirySubmit_button">
-          <a href="">
-            <button type="submit" className="primaryBtn">
-              Send forespørgsel
-            </button>
-          </a>
+          <button type="submit" className="primaryBtn">
+            Send forespørgsel
+          </button>
         </div>
       </form>
     </div>

@@ -19,7 +19,7 @@ export default function RestaurantPage(props) {
             <img src="../icons/logo.svg" alt="The logo icon." className="header_logo" />
           </NavLink>
           <div className="hero-container">
-            <div className="hero-shadow">{/* <img className="hero-image" src="../img/restaurant_header-image.webp" alt="image of Nishiki Sushis interior in Frederikssund" /> */}</div>
+            <div className="hero-shadow"></div>
           </div>
           <div>
             <img src="" alt="" />
