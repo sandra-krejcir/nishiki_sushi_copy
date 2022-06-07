@@ -98,11 +98,15 @@ iframe {
 .footer_insta {
   margin-top: 25px;
   margin-left: 30.5px;
+  height: 41px;
+  width: 41px;
 }
 
 .footer_facebook {
   margin-top: 20px;
   margin-left: 28.5px;
+  height: 41px;
+  width: 41px;
 }
 
 .footer_times > div {
@@ -112,7 +116,8 @@ iframe {
 
 .footer_logo {
   width: 60px;
-  margin-left: 25px
+  height: 125px;
+  margin-left: 25px;
 }
 
 @media only screen and (min-width: margins.$layout-breakpoint-tablet-start) and (max-width: margins.$layout-breakpoint-tablet-end) {
@@ -206,8 +211,10 @@ iframe {
   }
 
   .footer_logo {
-  all: unset;
-}
+    all: unset;
+    width: 102px;
+    height: 213px;
+  }
 }
 
 @media only screen and (min-width: 1110px) and (max-width: margins.$layout-breakpoint-tablet-end) {
@@ -215,9 +222,11 @@ iframe {
     margin-left: calc(300px + (margins.$marginHorisontalTablet / 2));
   }
 
-  .footer_logo {
-    all: unset;
-  }
+  // .footer_logo {
+  //   all: unset;
+  //   // height: 102px;
+  //   // width: 213px;
+  // }
 }
 
 @media only screen and (min-width: 1225px) {
