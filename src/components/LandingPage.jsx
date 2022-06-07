@@ -7,12 +7,27 @@ import useWindowDimensions from "./screenResize_hook";
 import { NavLink } from "react-router-dom";
 import AnimatedPage from "./AnimatedPage";
 import { motion } from "framer-motion";
+import DocumentMeta from "react-document-meta";
 
 export default function LandingPage(props) {
   const screenSize = useWindowDimensions();
 
+  const meta = {
+    title: "Nishiki Sushi landing page.",
+    description:
+      "This is Nishiki Sushi's index page and main router to all the subpages.",
+    meta: {
+      charset: "utf-8",
+      name: {
+        keywords:
+          "react,meta,document,html,tags,sushi, frederikssund, takeaway, fish",
+      },
+    },
+  };
+
   return (
     <>
+      <DocumentMeta {...meta} />
       <AnimatedPage>
         {screenSize.width > 799 && (
           <BurgerMenu cartContents={props.cartContents} page={"home"} />
