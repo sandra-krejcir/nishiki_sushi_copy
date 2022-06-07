@@ -1,7 +1,6 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import React from "react";
 import AnimatedPage2 from "./AnimatedPage2";
-import { useState, useEffect } from "react";
 
 export default function MobileNavBar(props) {
   const { page, resetPage, setCartContents, cartContents } = props;

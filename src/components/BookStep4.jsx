@@ -5,7 +5,7 @@ export default function BookStep4() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [comment, setComment] = useState("");
-  const [date, setDate] = [new Date(localStorage.getItem("NishikiTableDate"))];
+  const [date] = [new Date(localStorage.getItem("NishikiTableDate"))];
   const [dayNumber, setNumber] = useState(date.getDate());
   const [month, setMonth] = useState(date.getMonth());
 
@@ -110,17 +110,36 @@ export default function BookStep4() {
           <label>
             Navn
             <br />
-            <input required value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Jens Jensen" />{" "}
+            <input
+              required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              type="text"
+              placeholder="Jens Jensen"
+            />{" "}
           </label>
           <br />
           <label>
             Mobil nummer <br />
-            <input required max={11} min={8} value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" placeholder="12 34 56 78" />{" "}
+            <input
+              required
+              max={11}
+              min={8}
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              type="tel"
+              placeholder="12 34 56 78"
+            />{" "}
           </label>
           <br />
           <label>
             Kommentarer <br />
-            <textarea value={comment} onChange={(e) => setComment(e.target.value)} cols="30" rows="4"></textarea>
+            <textarea
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+              cols="30"
+              rows="4"
+            ></textarea>
           </label>
         </form>
       </>

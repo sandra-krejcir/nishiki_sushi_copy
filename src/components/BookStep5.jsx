@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import AnimatedPage from "./AnimatedPage";
 
 export default function BookStep5() {
-  const [date, setDate] = [new Date(localStorage.getItem("NishikiTableDate"))];
+  const [date] = [new Date(localStorage.getItem("NishikiTableDate"))];
   const [dayNumber, setNumber] = useState(date.getDate());
   const [month, setMonth] = useState(date.getMonth());
 

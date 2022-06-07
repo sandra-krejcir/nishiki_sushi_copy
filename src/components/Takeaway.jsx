@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import BurgerMenu from "./BurgerMenu";
 import { IoIosSearch } from "react-icons/io";
-import { TiArrowUnsorted } from "react-icons/ti";
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
 import useWindowDimensions from "./screenResize_hook";
 import MobileNav from "./MobileNavBar";
@@ -88,11 +87,6 @@ function Takeaway(props) {
             <h1>
               <b>Take</b>Away
             </h1>
-            {/* <div className={`hidden ${visible ? "hidden" : "show"} sorter_pris`}>
-              <p>
-                Sorter Pris <TiArrowUnsorted className="hw20_icon" />
-              </p>
-            </div> */}
           </div>
           <div className={`show_lesser ${visible2 ? "" : "hidden"}`}>
             <div className="search_container">
@@ -495,13 +489,7 @@ function Takeaway(props) {
               />
               Kategorier
             </button>
-            {/* <div className="search_container">
-              <IoIosSearch className="hw20_icon" />
-          TakeawayItem    <input
-                type="text"
-                placeholder="Søg efter sushi eller ingredienser"
-              ></input>
-            </div> */}
+
             <h2>{filterTerm}</h2>
             <div className="result_container">
               {sushiData
@@ -510,7 +498,7 @@ function Takeaway(props) {
                     return val;
                   }
                 })
-                .map((val, key) => {
+                .map((val) => {
                   return (
                     <TakeawayItem
                       {...val}

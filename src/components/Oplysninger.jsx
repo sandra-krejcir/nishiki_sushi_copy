@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
-/* import BurgerMenu from "./BurgerMenu"; */
+import React, { useState } from "react";
 import { FaTruck } from "react-icons/fa";
 import { MdOutlineKeyboardBackspace, MdRestaurant } from "react-icons/md";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import useWindowDimensions from "./screenResize_hook";
 import MobileNav from "./MobileNavBar";
 import useFormOplysninger from "./HandleOplysninger";
