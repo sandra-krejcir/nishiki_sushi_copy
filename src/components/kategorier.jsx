@@ -1,4 +1,4 @@
-import React from "react";
+/* import React from "react";
 
 function Kategorier() {
   return (
@@ -21,7 +21,7 @@ function Kategorier() {
             <h3>Sushi Menu</h3>
           </div>
           <div className="kategorie forret">
-            <img src="/img/kategorier_billeder/forret.png" alt="forret" />
+            <img src="/img/kategorier_billeder/forret.webp" alt="forret" />
             <h3>Forret</h3>
           </div>
           <div className="kategorie yakitori_sticks">
@@ -73,3 +73,4 @@ function Kategorier() {
 }
 
 export default Kategorier;
+ */

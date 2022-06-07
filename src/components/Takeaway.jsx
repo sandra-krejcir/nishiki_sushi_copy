@@ -33,7 +33,7 @@ function Takeaway(props) {
       <>
         <img
           className="hero_img hide_when_off_phone"
-          src="../../img/hero_img/takeaway_hero_mobile.png"
+          src="../../img/hero_img/takeaway_hero_mobile.webp"
           alt="takeaway"
         />
 
@@ -81,7 +81,7 @@ function Takeaway(props) {
           </NavLink>
           <img
             className="hero_img hide_when_on_phone"
-            src="../../img/hero_img/takeaway_hero.png"
+            src="../../img/hero_img/takeaway_hero.webp"
             alt="takeaway"
           />
           <div className="takeaway_headline">
@@ -142,7 +142,7 @@ function Takeaway(props) {
                     }}
                   >
                     <img
-                      src="../../img/kategorier_billeder/manedenstilbud.png"
+                      src="../../img/kategorier_billeder/manedenstilbud.webp"
                       alt="månedens_tilbud"
                     />
                     <h3>
@@ -168,7 +168,7 @@ function Takeaway(props) {
                     }}
                   >
                     <img
-                      src="../../img/kategorier_billeder/sushimenu.png"
+                      src="../../img/kategorier_billeder/sushimenu.webp"
                       alt="sushi_menu"
                     />
                     <h3>
@@ -194,7 +194,7 @@ function Takeaway(props) {
                     }}
                   >
                     <img
-                      src="../../img/kategorier_billeder/forret.png"
+                      src="../../img/kategorier_billeder/forret.webp"
                       alt="forret"
                     />
                     <h3>
@@ -220,7 +220,7 @@ function Takeaway(props) {
                     }}
                   >
                     <img
-                      src="../../img/kategorier_billeder/yakitori_sticks.png"
+                      src="../../img/kategorier_billeder/yakitori_sticks.webp"
                       alt="yakitori_sticks"
                     />
                     <h3>
@@ -246,7 +246,7 @@ function Takeaway(props) {
                     }}
                   >
                     <img
-                      src="../../img/kategorier_billeder/nigiri.png"
+                      src="../../img/kategorier_billeder/nigiri.webp"
                       alt="nigiri"
                     />
                     <h3>
@@ -272,7 +272,7 @@ function Takeaway(props) {
                     }}
                   >
                     <img
-                      src="../../img/kategorier_billeder/hosomaki.png"
+                      src="../../img/kategorier_billeder/hosomaki.webp"
                       alt="hosomaki"
                     />
                     <h3>
@@ -298,7 +298,7 @@ function Takeaway(props) {
                     }}
                   >
                     <img
-                      src="../../img/kategorier_billeder/futomaki.png"
+                      src="../../img/kategorier_billeder/futomaki.webp"
                       alt="futomaki"
                     />
                     <h3>
@@ -324,7 +324,7 @@ function Takeaway(props) {
                     }}
                   >
                     <img
-                      src="../../img/kategorier_billeder/sashimi.png"
+                      src="../../img/kategorier_billeder/sashimi.webp"
                       alt="sashimi"
                     />
                     <h3>
@@ -350,7 +350,7 @@ function Takeaway(props) {
                     }}
                   >
                     <img
-                      src="../../img/kategorier_billeder/rispapir.png"
+                      src="../../img/kategorier_billeder/rispapir.webp"
                       alt="rispapir"
                     />
                     <h3>
@@ -376,7 +376,7 @@ function Takeaway(props) {
                     }}
                   >
                     <img
-                      src="../../img/kategorier_billeder/uramaki.png"
+                      src="../../img/kategorier_billeder/uramaki.webp"
                       alt="uramaki"
                     />
                     <h3>
@@ -402,7 +402,7 @@ function Takeaway(props) {
                     }}
                   >
                     <img
-                      src="../../img/kategorier_billeder/kaburimaki.png"
+                      src="../../img/kategorier_billeder/kaburimaki.webp"
                       alt="kaburimaki"
                     />
                     <h3>
@@ -428,7 +428,7 @@ function Takeaway(props) {
                     }}
                   >
                     <img
-                      src="../../img/kategorier_billeder/dip.png"
+                      src="../../img/kategorier_billeder/dip.webp"
                       alt="dip"
                     />
                     <h3>

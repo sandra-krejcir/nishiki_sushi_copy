@@ -57,13 +57,13 @@ function Bekræftelse(props) {
         </NavLink>
         <img
           className="hero_img hide_when_off_phone"
-          src="/img/hero_img/takeaway_hero_mobile.png"
+          src="/img/hero_img/takeaway_hero_mobile.webp"
           alt="takeaway"
         />
         <div className="bekræftelse_container">
           <img
             className="hero_img hide_when_on_phone"
-            src="/img/hero_img/takeaway_hero.png"
+            src="/img/hero_img/takeaway_hero.webp"
             alt="takeaway"
           />
           <div>

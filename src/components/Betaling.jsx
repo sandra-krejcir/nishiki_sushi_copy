@@ -65,13 +65,13 @@ const Betaling = ({ submitForm, cartContents }) => {
         </NavLink>
         <img
           className="hero_img hide_when_off_phone"
-          src="/img/hero_img/kurv_hero_mobile.png"
+          src="/img/hero_img/kurv_hero_mobile.webp"
           alt="takeaway"
         />
         <div className="betaling_container">
           <img
             className="hero_img hide_when_on_phone"
-            src="/img/hero_img/kurv_hero.png"
+            src="/img/hero_img/kurv_hero.webp"
             alt="takeaway"
           />
           <div>
