@@ -1,15 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
-import {
-  Footer,
-  Home,
-  Takeaway,
-  Kurv,
-  Oplysninger,
-  Betaling,
-  Bekraeftelse,
-  RestaurantPage,
-} from "./components";
+import { Footer, Home, Takeaway, Kurv, Oplysninger, Betaling, Bekraeftelse, RestaurantPage } from "./components";
+
+//Hello Sandra and Emily
 
 export default function App() {
   const [cartContents, setCartContents] = useState([]);
@@ -70,48 +63,12 @@ export default function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home cartContents={cartContents} />} />
-          <Route
-            path="/takeaway"
-            element={
-              <Takeaway
-                sushiData={sushiData}
-                onAdd={onAdd}
-                cartContents={cartContents}
-                onRemove={onRemove}
-              />
-            }
-          />
-          <Route
-            path="/restaurant"
-            element={<RestaurantPage cartContents={cartContents} />}
-          />
-          <Route
-            path="/kurv"
-            element={
-              <Kurv
-                cartContents={cartContents}
-                onAdd={onAdd}
-                onRemove={onRemove}
-              />
-            }
-          />
-          <Route
-            path="/oplysninger"
-            element={<Oplysninger cartContents={cartContents} />}
-          />
-          <Route
-            path="/betaling"
-            element={<Betaling cartContents={cartContents} />}
-          />
-          <Route
-            path="/bekraeftelse"
-            element={
-              <Bekraeftelse
-                cartContents={cartContents}
-                setCartContents={setCartContents}
-              />
-            }
-          />
+          <Route path="/takeaway" element={<Takeaway sushiData={sushiData} onAdd={onAdd} cartContents={cartContents} onRemove={onRemove} />} />
+          <Route path="/restaurant" element={<RestaurantPage cartContents={cartContents} />} />
+          <Route path="/kurv" element={<Kurv cartContents={cartContents} onAdd={onAdd} onRemove={onRemove} />} />
+          <Route path="/oplysninger" element={<Oplysninger cartContents={cartContents} />} />
+          <Route path="/betaling" element={<Betaling cartContents={cartContents} />} />
+          <Route path="/bekraeftelse" element={<Bekraeftelse cartContents={cartContents} setCartContents={setCartContents} />} />
         </Routes>
         <Footer />
       </Router>
