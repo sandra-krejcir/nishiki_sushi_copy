@@ -13,7 +13,7 @@ export default function LandingPage(props) {
   const screenSize = useWindowDimensions();
 
   const meta = {
-    title: "Nishiki Sushi landing page.",
+    title: "Nishiki Sushi",
     description:
       "This is Nishiki Sushi's index page and main router to all the subpages.",
     meta: {
