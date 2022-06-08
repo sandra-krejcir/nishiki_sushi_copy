@@ -8,6 +8,7 @@ import { NavLink } from "react-router-dom";
 import MobileNav from "./MobileNavBar";
 import AnimatedPage from "./AnimatedPage";
 import KurvItem from "./KurvItem";
+import DocumentMeta from "react-document-meta";
 
 function Kurv(props) {
   const { cartContents, onAdd, onRemove } = props;
@@ -16,9 +17,24 @@ function Kurv(props) {
   const totalAmount = subtotalAmount - rabatPrice;
   const screenSize = useWindowDimensions();
 
+  const meta = {
+    title: "Nishiki Sushi - basket",
+    description:
+      "This is Nishiki Sushi's basket subpage for viewing contents of one's order and proceeding to checkout.",
+    meta: {
+      charset: "utf-8",
+      name: {
+        keywords:
+          "react,meta,document,html,tags,sushi,frederikssund,takeaway,fish,table booking,reservation,ad libitum",
+        "theme-color": "#f3f0ee",
+      },
+    },
+  };
+
   return (
-    <AnimatedPage>
-      <>
+    <>
+      <DocumentMeta {...meta} />
+      <AnimatedPage>
         {screenSize.width > 799 && (
           <BurgerMenu cartContents={props.cartContents} page={"kurv"} />
         )}
@@ -109,8 +125,8 @@ function Kurv(props) {
             <Oplysninger />
           </div>
         )}
-      </>
-    </AnimatedPage>
+      </AnimatedPage>
+    </>
   );
 }
 

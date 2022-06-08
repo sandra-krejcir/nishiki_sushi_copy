@@ -8,6 +8,7 @@ import { NavLink } from "react-router-dom";
 import AnimatedPage from "./AnimatedPage";
 import { motion } from "framer-motion";
 import TakeawayItem from "./TakeawayItem";
+import DocumentMeta from "react-document-meta";
 
 function Takeaway(props) {
   const { cartContents, sushiData, onAdd, onRemove } = props;
@@ -17,6 +18,20 @@ function Takeaway(props) {
   const [visible2, setVisible2] = useState(true);
   const screenSize = useWindowDimensions();
   const itemCartCount = cartContents.reduce((a, c) => a + c.qty, 0);
+
+  const meta = {
+    title: "Nishiki Sushi - takeaway page",
+    description:
+      "This is Nishiki Sushi's takeaway page for ordering and purchasing sushi online.",
+    meta: {
+      charset: "utf-8",
+      name: {
+        keywords:
+          "react,meta,document,html,tags,sushi,frederikssund,takeaway,fish,table booking,reservation,ad libitum",
+        "theme-color": "#f3f0ee",
+      },
+    },
+  };
 
   const onChangeSearch = () => {
     setVisible(!visible);
@@ -28,8 +43,9 @@ function Takeaway(props) {
   };
 
   return (
-    <AnimatedPage>
-      <>
+    <>
+      <DocumentMeta {...meta} />
+      <AnimatedPage>
         <img
           className="hero_img hide_when_off_phone"
           src="../../img/hero_img/takeaway_hero_mobile.webp"
@@ -512,8 +528,8 @@ function Takeaway(props) {
             </div>
           </div>
         </div>
-      </>
-    </AnimatedPage>
+      </AnimatedPage>
+    </>
   );
 }
 

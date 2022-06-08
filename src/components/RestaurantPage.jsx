@@ -4,13 +4,29 @@ import BurgerMenu from "./BurgerMenu";
 import MobileNav from "./MobileNavBar";
 import { NavLink } from "react-router-dom";
 import AnimatedPage from "./AnimatedPage";
+import DocumentMeta from "react-document-meta";
 
 export default function RestaurantPage(props) {
   const screenSize = useWindowDimensions();
 
+  const meta = {
+    title: "Nishiki Sushi - restaurant page",
+    description:
+      "This is Nishiki Sushi's restaurant page together with the booking form for table reservation",
+    meta: {
+      charset: "utf-8",
+      name: {
+        keywords:
+          "react,meta,document,html,tags,sushi,frederikssund,takeaway,fish,table booking,reservation,ad libitum",
+        "theme-color": "#f3f0ee",
+      },
+    },
+  };
+
   return (
-    <AnimatedPage>
-      <>
+    <>
+      <DocumentMeta {...meta} />
+      <AnimatedPage>
         <header>
           {screenSize.width > 799 && (
             <BurgerMenu cartContents={props.cartContents} page={"restaurant"} />
@@ -147,7 +163,7 @@ export default function RestaurantPage(props) {
             <BookBord />
           </section>
         </main>
-      </>
-    </AnimatedPage>
+      </AnimatedPage>
+    </>
   );
 }
