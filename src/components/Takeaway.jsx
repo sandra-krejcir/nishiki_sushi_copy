@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import BurgerMenu from "./BurgerMenu";
 import { IoIosSearch } from "react-icons/io";
-import { TiArrowUnsorted } from "react-icons/ti";
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
 import useWindowDimensions from "./screenResize_hook";
 import MobileNav from "./MobileNavBar";
@@ -9,6 +8,7 @@ import { NavLink } from "react-router-dom";
 import AnimatedPage from "./AnimatedPage";
 import { motion } from "framer-motion";
 import TakeawayItem from "./TakeawayItem";
+import DocumentMeta from "react-document-meta";
 
 function Takeaway(props) {
   const { cartContents, sushiData, onAdd, onRemove } = props;
@@ -18,6 +18,20 @@ function Takeaway(props) {
   const [visible2, setVisible2] = useState(true);
   const screenSize = useWindowDimensions();
   const itemCartCount = cartContents.reduce((a, c) => a + c.qty, 0);
+
+  const meta = {
+    title: "Nishiki Sushi - takeaway page",
+    description:
+      "This is Nishiki Sushi's takeaway page for ordering and purchasing sushi online.",
+    meta: {
+      charset: "utf-8",
+      name: {
+        keywords:
+          "react,meta,document,html,tags,sushi,frederikssund,takeaway,fish,table booking,reservation,ad libitum",
+        "theme-color": "#f3f0ee",
+      },
+    },
+  };
 
   const onChangeSearch = () => {
     setVisible(!visible);
@@ -29,8 +43,9 @@ function Takeaway(props) {
   };
 
   return (
-    <AnimatedPage>
-      <>
+    <>
+      <DocumentMeta {...meta} />
+      <AnimatedPage>
         <img
           className="hero_img hide_when_off_phone"
           src="../../img/hero_img/takeaway_hero_mobile.webp"
@@ -88,11 +103,6 @@ function Takeaway(props) {
             <h1>
               <b>Take</b>Away
             </h1>
-            {/* <div className={`hidden ${visible ? "hidden" : "show"} sorter_pris`}>
-              <p>
-                Sorter Pris <TiArrowUnsorted className="hw20_icon" />
-              </p>
-            </div> */}
           </div>
           <div className={`show_lesser ${visible2 ? "" : "hidden"}`}>
             <div className="search_container">
@@ -495,13 +505,7 @@ function Takeaway(props) {
               />
               Kategorier
             </button>
-            {/* <div className="search_container">
-              <IoIosSearch className="hw20_icon" />
-          TakeawayItem    <input
-                type="text"
-                placeholder="Søg efter sushi eller ingredienser"
-              ></input>
-            </div> */}
+
             <h2>{filterTerm}</h2>
             <div className="result_container">
               {sushiData
@@ -510,7 +514,7 @@ function Takeaway(props) {
                     return val;
                   }
                 })
-                .map((val, key) => {
+                .map((val) => {
                   return (
                     <TakeawayItem
                       {...val}
@@ -524,8 +528,8 @@ function Takeaway(props) {
             </div>
           </div>
         </div>
-      </>
-    </AnimatedPage>
+      </AnimatedPage>
+    </>
   );
 }
 

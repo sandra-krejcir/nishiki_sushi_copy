@@ -1,11 +1,11 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 import BookStep1 from "./BookStep1";
 import BookStep2 from "./BookStep2";
 import BookStep3 from "./BookStep3";
 import BookStep4 from "./BookStep4";
 import BookStep5 from "./BookStep5";
-import { FiMapPin, FiUnderline } from "react-icons/fi";
+import { FiMapPin } from "react-icons/fi";
 import { MdPerson } from "react-icons/md";
 import { RiCalendarLine, RiCalendarCheckLine } from "react-icons/ri";
 import { AiOutlineClockCircle } from "react-icons/ai";
