@@ -9,6 +9,7 @@ import { NavLink } from "react-router-dom";
 import useWindowDimensions from "./screenResize_hook";
 import MobileNav from "./MobileNavBar";
 import AnimatedPage from "./AnimatedPage";
+import DocumentMeta from "react-document-meta";
 
 function Bekræftelse(props) {
   const screenSize = useWindowDimensions();
@@ -30,9 +31,24 @@ function Bekræftelse(props) {
     setCartContents([]);
   }
 
+  const meta = {
+    title: "Nishiki Sushi - betaling",
+    description:
+      "This is Nishiki Sushi's purchase connfirmation page with order details.",
+    meta: {
+      charset: "utf-8",
+      name: {
+        keywords:
+          "react,meta,document,html,tags,sushi,frederikssund,takeaway,fish,table booking,reservation,ad libitum,payment,order",
+        "theme-color": "#f3f0ee",
+      },
+    },
+  };
+
   return (
     <AnimatedPage>
       <>
+        <DocumentMeta {...meta} />
         {screenSize.width > 799 && (
           <BurgerMenu
             page={"kurv"}

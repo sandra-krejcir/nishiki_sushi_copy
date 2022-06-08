@@ -9,6 +9,7 @@ import MobileNav from "./MobileNavBar";
 import useFormBetaling from "./handleBetaling";
 import validateInfoBetaling from "./ValidateBetalingForm";
 import AnimatedPage from "./AnimatedPage";
+import DocumentMeta from "react-document-meta";
 
 const Betaling = ({ submitForm, cartContents }) => {
   const { handleChange, values, handleSubmit, errors } = useFormBetaling(
@@ -49,9 +50,24 @@ const Betaling = ({ submitForm, cartContents }) => {
       });
   }
 
+  const meta = {
+    title: "Nishiki Sushi - betaling",
+    description:
+      "This is Nishiki Sushi's payment page with final steps to fill out the form.",
+    meta: {
+      charset: "utf-8",
+      name: {
+        keywords:
+          "react,meta,document,html,tags,sushi,frederikssund,takeaway,fish,table booking,reservation,ad libitum,payment,order",
+        "theme-color": "#f3f0ee",
+      },
+    },
+  };
+
   return (
     <AnimatedPage>
       <>
+        <DocumentMeta {...meta} />
         {screenSize.width > 799 && <BurgerMenu page={"kurv"} />}
         {screenSize.width < 799 && (
           <MobileNav cartContents={cartContents} page={"kurv"} />

@@ -1,25 +1,50 @@
 import BookBord from "./BookBord";
-import Footer from "./Footer";
 import useWindowDimensions from "./screenResize_hook";
 import BurgerMenu from "./BurgerMenu";
 import MobileNav from "./MobileNavBar";
 import { NavLink } from "react-router-dom";
 import AnimatedPage from "./AnimatedPage";
+import DocumentMeta from "react-document-meta";
 
 export default function RestaurantPage(props) {
   const screenSize = useWindowDimensions();
 
+  const meta = {
+    title: "Nishiki Sushi - restaurant page",
+    description:
+      "This is Nishiki Sushi's restaurant page together with the booking form for table reservation",
+    meta: {
+      charset: "utf-8",
+      name: {
+        keywords:
+          "react,meta,document,html,tags,sushi,frederikssund,takeaway,fish,table booking,reservation,ad libitum",
+        "theme-color": "#f3f0ee",
+      },
+    },
+  };
+
   return (
-    <AnimatedPage>
-      <>
+    <>
+      <DocumentMeta {...meta} />
+      <AnimatedPage>
         <header>
-          {screenSize.width > 799 && <BurgerMenu cartContents={props.cartContents} page={"restaurant"} />}
-          {screenSize.width < 799 && <MobileNav cartContents={props.cartContents} page={"restaurant"} />}
+          {screenSize.width > 799 && (
+            <BurgerMenu cartContents={props.cartContents} page={"restaurant"} />
+          )}
+          {screenSize.width < 799 && (
+            <MobileNav cartContents={props.cartContents} page={"restaurant"} />
+          )}
           <NavLink to="/">
-            <img src="../icons/logo.svg" alt="The logo icon." className="header_logo" />
+            <img
+              src="../icons/logo.svg"
+              alt="The logo icon."
+              className="header_logo"
+            />
           </NavLink>
           <div className="hero-container">
-            <div className="hero-shadow">{/* <img className="hero-image" src="../img/restaurant_header-image.webp" alt="image of Nishiki Sushis interior in Frederikssund" /> */}</div>
+            <div className="hero-shadow">
+              {/* <img className="hero-image" src="../img/restaurant_header-image.webp" alt="image of Nishiki Sushis interior in Frederikssund" /> */}
+            </div>
           </div>
           <div>
             <img src="" alt="" />
@@ -32,8 +57,16 @@ export default function RestaurantPage(props) {
               <section id="restaurant-intro-section">
                 <h1>Hos Nishiki Sushi</h1>
                 <div>
-                  <p>Besøg os i hjertet af Frederikssund. Vi sætter en ære i altid at tilbyde friske råvarer og lækre specialiteter i top kvalitet til gode priser.</p>
-                  <p>Prøv vores populære ad libitum menu fra kun 199kr eller bestil ala carte fra vores mange sushi varianter, lækre forreter eller sticks.</p>
+                  <p>
+                    Besøg os i hjertet af Frederikssund. Vi sætter en ære i
+                    altid at tilbyde friske råvarer og lækre specialiteter i top
+                    kvalitet til gode priser.
+                  </p>
+                  <p>
+                    Prøv vores populære ad libitum menu fra kun 199kr eller
+                    bestil ala carte fra vores mange sushi varianter, lækre
+                    forreter eller sticks.
+                  </p>
                 </div>
                 <div className="restaurant-flex-buttons">
                   <a href="#adlibitum-intro">
@@ -71,9 +104,18 @@ export default function RestaurantPage(props) {
                   <b>Ad libitum</b>
                 </h2>
                 <div>
-                  <p>Betal et engangsbeløb og smag sushi og sticks fra hele vores ala carte menu.</p>
-                  <p>Du kan bestille så meget du ønsker, og maden serveres altid frisklavet.</p>
-                  <p>Da vi prøver at bekæmpe madspild, skal der betales 10 kr. pr stk. hvis der efterlades mere end 4 stk.</p>
+                  <p>
+                    Betal et engangsbeløb og smag sushi og sticks fra hele vores
+                    ala carte menu.
+                  </p>
+                  <p>
+                    Du kan bestille så meget du ønsker, og maden serveres altid
+                    frisklavet.
+                  </p>
+                  <p>
+                    Da vi prøver at bekæmpe madspild, skal der betales 10 kr. pr
+                    stk. hvis der efterlades mere end 4 stk.
+                  </p>
                 </div>
               </div>
               <div id="adlibitum-prices">
@@ -123,7 +165,7 @@ export default function RestaurantPage(props) {
             <BookBord />
           </section>
         </main>
-      </>
-    </AnimatedPage>
+      </AnimatedPage>
+    </>
   );
 }

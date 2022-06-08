@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 /* import BurgerMenu from "./BurgerMenu"; */
 import { FaTruck } from "react-icons/fa";
 import { MdOutlineKeyboardBackspace, MdRestaurant } from "react-icons/md";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import useWindowDimensions from "./screenResize_hook";
 import MobileNav from "./MobileNavBar";
 import useFormOplysninger from "./HandleOplysninger";
 import validateInfoOplysninger from "./validateOplysningerForm";
 import AnimatedPage from "./AnimatedPage";
+
+import DocumentMeta from "react-document-meta";
 
 const Oplysninger = ({ submitForm, cartContents }) => {
   const { handleChange, values, handleSubmit, errors } = useFormOplysninger(
@@ -22,8 +24,23 @@ const Oplysninger = ({ submitForm, cartContents }) => {
     setIsSubmitted(true);
   }
 
+  const meta = {
+    title: "Nishiki Sushi - oplysninger",
+    description:
+      "This is Nishiki Sushi's order and purchase information form page.",
+    meta: {
+      charset: "utf-8",
+      name: {
+        keywords:
+          "react,meta,document,html,tags,sushi,frederikssund,takeaway,fish,table booking,reservation,ad libitum,payment,order",
+        "theme-color": "#f3f0ee",
+      },
+    },
+  };
+
   return (
     <AnimatedPage>
+      <DocumentMeta {...meta} />
       <div className="kurv_oplysninger">
         {screenSize.width < 799 && (
           <MobileNav cartContents={cartContents} page={"kurv"} />

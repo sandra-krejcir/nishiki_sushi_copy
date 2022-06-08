@@ -20,7 +20,8 @@ export default function LandingPage(props) {
       charset: "utf-8",
       name: {
         keywords:
-          "react,meta,document,html,tags,sushi, frederikssund, takeaway, fish",
+          "react,meta,document,html,tags,sushi,frederikssund,takeaway,fish,table booking,reservation,ad libitum",
+        "theme-color": "#f3f0ee",
       },
     },
   };
