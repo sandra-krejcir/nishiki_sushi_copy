@@ -208,7 +208,7 @@ export default function BookBord() {
           <div className="seperating-line-book"></div>
           {bookingStep}
           <button
-            class="secondaryBtn"
+            className="secondaryBtn"
             style={{ display: step1 ? "block" : "none" }}
             value={"2"}
             onClick={(e) => {

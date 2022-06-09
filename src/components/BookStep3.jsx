@@ -28,7 +28,7 @@ export default function BookStep3() {
             name="time"
             value="15:00"
           />{" "}
-          <label for="1500">15:00</label>
+          <label htmlFor="1500">15:00</label>
           <br />
           <input
             onChange={(e) => {
@@ -40,7 +40,7 @@ export default function BookStep3() {
             name="time"
             value="15:30"
           />{" "}
-          <label for="1530">15:30</label>
+          <label htmlFor="1530">15:30</label>
           <br />
           <input
             onChange={(e) => {
@@ -51,7 +51,7 @@ export default function BookStep3() {
             name="time"
             value="16:00"
           />{" "}
-          <label for="1600">16:00</label>
+          <label htmlFor="1600">16:00</label>
           <br />
           <input
             onChange={(e) => {
@@ -62,7 +62,7 @@ export default function BookStep3() {
             name="time"
             value="16:30"
           />{" "}
-          <label for="1630">16:30</label>
+          <label htmlFor="1630">16:30</label>
           <br />
           <input
             onChange={(e) => {
@@ -73,7 +73,7 @@ export default function BookStep3() {
             name="time"
             value="17:00"
           />{" "}
-          <label for="1700">17:00</label>
+          <label htmlFor="1700">17:00</label>
           <br />
           <input
             onChange={(e) => {
@@ -84,7 +84,7 @@ export default function BookStep3() {
             name="time"
             value="17:30"
           />{" "}
-          <label for="1730">17:30</label>
+          <label htmlFor="1730">17:30</label>
           <br />
           <input
             onChange={(e) => {
@@ -95,7 +95,7 @@ export default function BookStep3() {
             name="time"
             value="18:00"
           />{" "}
-          <label for="1800">18:00</label>
+          <label htmlFor="1800">18:00</label>
           <br />
           <input
             onChange={(e) => {
@@ -106,7 +106,7 @@ export default function BookStep3() {
             name="time"
             value="18:30"
           />{" "}
-          <label for="1830">18:30</label>
+          <label htmlFor="1830">18:30</label>
           <br />
           <input
             onChange={(e) => {
@@ -117,7 +117,7 @@ export default function BookStep3() {
             name="time"
             value="19:00"
           />{" "}
-          <label for="1900">19:00</label>
+          <label htmlFor="1900">19:00</label>
           <br />
           <input
             onChange={(e) => {
@@ -128,7 +128,7 @@ export default function BookStep3() {
             name="time"
             value="19:30"
           />{" "}
-          <label for="1930">19:30</label>
+          <label htmlFor="1930">19:30</label>
           <br />
           <input
             onChange={(e) => {
@@ -150,7 +150,7 @@ export default function BookStep3() {
             name="time"
             value="20:30"
           />{" "}
-          <label for="2030">20:30</label>
+          <label htmlFor="2030">20:30</label>
           <br />
           <input
             onChange={(e) => {
@@ -161,7 +161,7 @@ export default function BookStep3() {
             name="time"
             value="21:00"
           />{" "}
-          <label for="2100">21:00</label>
+          <label htmlFor="2100">21:00</label>
           <br />
         </form>
       </>

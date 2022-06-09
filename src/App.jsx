@@ -1,9 +1,6 @@
-//OLO
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Footer, Home, Takeaway, Kurv, Oplysninger, Betaling, Bekraeftelse, RestaurantPage } from "./components";
-
-//Hello Sandra and Emily
 
 export default function App() {
   const [cartContents, setCartContents] = useState([]);
