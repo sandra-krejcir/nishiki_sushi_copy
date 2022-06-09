@@ -89,7 +89,7 @@
     margin-top: 25px;
     margin-right: 25px;
     margin-left: margins.$marginHorisontalTablet;
-    margin-bottom: 250px;
+    margin-bottom: 0;
     position: unset;
     top: 0;
     box-shadow: effects.$boxShadowImage;
@@ -140,6 +140,7 @@
   .side_flex {
     display: flex;
     flex-direction: row-reverse;
+    margin-bottom: -250px;
   }
 
   .catering_img {
