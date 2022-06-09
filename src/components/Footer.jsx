@@ -96,13 +96,14 @@ export default function Footer() {
               </NavLink>
             </li>
             <li>
-              <p
+              <a
+                style={{ fontSize: "1.1rem" }}
                 className="remove_1rem"
                 href="https://www.findsmiley.dk/517952"
                 target="_blank"
               >
                 Smiley Raport
-              </p>
+              </a>
             </li>
             <li>
               <NavLink to="takeaway">
