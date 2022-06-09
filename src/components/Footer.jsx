@@ -70,6 +70,8 @@ export default function Footer() {
                   3600 Frederikssund
                   <br></br>
                   tlf: 42 31 47 99
+                  <br></br>
+                  mail: info@nishikisushi.dk
                 </p>
               </div>
             </div>
