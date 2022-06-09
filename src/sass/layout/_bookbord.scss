@@ -4,9 +4,9 @@
 
 #app-container {
   background: colors.$lightWood;
-  padding: 2rem margins.$marginHorisontalMobile 2.5rem
-    margins.$marginHorisontalMobile;
+  padding: 2rem margins.$marginHorisontalMobile 2.5rem margins.$marginHorisontalMobile;
   box-shadow: effects.$boxShadowImage;
+  background-size: cover;
   p,
   h4 {
     color: colors.$darkBrown;
