@@ -7,7 +7,8 @@
 }
 
 p {
-  font-size: 16px;
+  /*  font-size: 16px; */
+  font-size: 1.1rem;
 }
 
 a:hover {
@@ -15,7 +16,7 @@ a:hover {
 }
 
 button {
-  font-size: 16px;
+  font-size: 1.1rem;
 }
 
 h1,
@@ -48,7 +49,7 @@ label {
   color: colors.$lightBrown;
 }
 .Large-caps-tag {
-  font-size: 20px;
+  font-size: 1.3rem;
   font-weight: 700;
   text-transform: uppercase;
 }
