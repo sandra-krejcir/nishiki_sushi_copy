@@ -130,6 +130,7 @@ function Bekræftelse(props) {
                 detaljer på <br></br> <strong>42 31 47 99</strong>
               </p>
             </div>
+            <p>Jernbanegade 9D, 3600 Frederikssund</p>
           </div>
           <div className="time_and_info">
             <div className="time_line_container">
