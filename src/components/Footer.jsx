@@ -7,7 +7,13 @@ export default function Footer() {
         <nav className="logo_nav">
           <ul>
             <li>
-              <img src="../icons/logo.svg" alt="The logo icon." className="footer_logo" />
+              <NavLink to="/">
+                <img
+                  src="../icons/logo.svg"
+                  alt="The logo icon."
+                  className="footer_logo"
+                />
+              </NavLink>
             </li>
 
             <li>
@@ -25,7 +31,10 @@ export default function Footer() {
             </li>
 
             <li>
-              <a href="https://www.facebook.com/changshengfrederikssund" target="_blank">
+              <a
+                href="https://www.facebook.com/changshengfrederikssund"
+                target="_blank"
+              >
                 <motion.img
                   whileHover={{ scale: 1.1 }}
                   whileTap={{
@@ -40,7 +49,16 @@ export default function Footer() {
           </ul>
         </nav>
         <div className="map_container">
-          <iframe id="gmap_canvas" alt="GoogleMaps" title="GoogleMaps" src="https://maps.google.com/maps?q=Jernbanegade%209D,%20&t=&z=13&ie=UTF8&iwloc=&output=embed" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0"></iframe>
+          <iframe
+            id="gmap_canvas"
+            alt="GoogleMaps"
+            title="GoogleMaps"
+            src="https://maps.google.com/maps?q=Jernbanegade%209D,%20&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            frameBorder="0"
+            scrolling="no"
+            marginHeight="0"
+            marginWidth="0"
+          ></iframe>
           <div className="contact_info">
             <div>
               <div>
@@ -76,7 +94,11 @@ export default function Footer() {
               </NavLink>
             </li>
             <li>
-              <p className="remove_1rem" href="https://www.findsmiley.dk/517952" target="_blank">
+              <p
+                className="remove_1rem"
+                href="https://www.findsmiley.dk/517952"
+                target="_blank"
+              >
                 Smiley Raport
               </p>
             </li>
