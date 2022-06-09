@@ -249,8 +249,8 @@ export default function BookBord() {
             Bekræft Booking
           </button>
           <button
-            id="a-style-btn"
-            style={{ display: step5 ? "block" : "none" }}
+            className="secondaryBtn"
+            style={{ display: step5 ? "block" : "none", marginTop: "75px" }}
             value={"1"}
             onClick={(e) => {
               setStepChoice(e.target.value);
