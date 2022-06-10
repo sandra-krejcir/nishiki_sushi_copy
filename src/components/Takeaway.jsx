@@ -260,7 +260,7 @@ function Takeaway(props) {
                       alt="nigiri"
                     />
                     <h3>
-                      <span>Nigiri 2stk</span>
+                      <span>Nigiri</span>
                     </h3>
                   </motion.div>
                   <motion.div
@@ -286,7 +286,7 @@ function Takeaway(props) {
                       alt="hosomaki"
                     />
                     <h3>
-                      <span>Hosomaki 8stk</span>
+                      <span>Hosomaki</span>
                     </h3>
                   </motion.div>
                   <motion.div
@@ -312,7 +312,7 @@ function Takeaway(props) {
                       alt="futomaki"
                     />
                     <h3>
-                      <span>Futomaki 5stk</span>
+                      <span>Futomaki</span>
                     </h3>
                   </motion.div>
                   <motion.div
@@ -364,7 +364,7 @@ function Takeaway(props) {
                       alt="rispapir"
                     />
                     <h3>
-                      <span>Rispapir 6stk</span>
+                      <span>Rispapir</span>
                     </h3>
                   </motion.div>
                   <motion.div
@@ -390,7 +390,7 @@ function Takeaway(props) {
                       alt="uramaki"
                     />
                     <h3>
-                      <span>Uramaki 8stk</span>
+                      <span>Uramaki</span>
                     </h3>
                   </motion.div>
                   <motion.div
@@ -416,7 +416,7 @@ function Takeaway(props) {
                       alt="kaburimaki"
                     />
                     <h3>
-                      <span>Kaburimaki 8stk</span>
+                      <span>Kaburimaki</span>
                     </h3>
                   </motion.div>
                   <motion.div
