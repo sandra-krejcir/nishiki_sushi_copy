@@ -94,7 +94,7 @@ export default function VisitUsSection() {
                     fontSize: day == 5 ? "20px" : "16px",
                   }}
                 >
-                  Fridag
+                  Fredag
                 </p>
                 <p
                   style={{
