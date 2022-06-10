@@ -16,26 +16,26 @@ export default function LandingPage() {
                 <div className="offer disappearing_offer">
                   <div className="third_offer"></div>
                   <p>
-                    Den nye sprøde dobbelte tempura maki-rulle med avocado- og
-                    agurkeskiver og sojaglaseret spicy tun tekka maki er en
-                    perfekt kombination af friskhed med et lidt pikant twist.
+                    Avocado laks futomaki har et nyt forårslook! Tilføjelse af
+                    flødeost indeni og mere avokado på toppen med kroket med
+                    vild frugt, fortsætter vi vores 'Make it fresh' forårslinje.
                   </p>
                 </div>
                 <div className="offer">
                   <div className="first_offer"></div>
                   <p>
-                    Den nye sprøde dobbelte tempura maki-rulle med avocado- og
-                    agurkeskiver og sojaglaseret spicy tun tekka maki er en
-                    perfekt kombination af friskhed med et lidt pikant twist.
+                    Prøv vores friske, forårsinspirerede maki-rulle - blanding
+                    af laks og torskefisk med agurker og forårsløg, pakket ind i
+                    stegt Nori, gør denne rulle til en perfekt let, men knasende
+                    snack.
                   </p>
                 </div>
                 <div className="offer">
                   <div className="second_offer"></div>
                   <p>
-                    Prøv vores friske, forårsinspirerede maki-rulle - blanding
-                    af laks og torskefisk med agurker og forårsløg, pakket ind i
-                    stegt Nori, gør denne rulle til en perfekt let, men knasende
-                    snack.
+                    Den nye sprøde dobbelte tempura maki-rulle med avocado- og
+                    agurkeskiver og sojaglaseret spicy tun tekka maki er en
+                    perfekt kombination af friskhed med et lidt pikant twist.
                   </p>
                 </div>
               </div>
