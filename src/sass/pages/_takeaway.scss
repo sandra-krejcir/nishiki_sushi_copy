@@ -191,7 +191,7 @@ h3 {
 }
 
 .item {
-  margin-bottom: margins.$marginUnderElementMobile;
+  margin-bottom: margins.$marginUnderElementMobile + margins.$marginUnderElementMobile + margins.$marginUnderElementMobile;
 }
 
 .item img {
