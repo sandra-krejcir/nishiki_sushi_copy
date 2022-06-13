@@ -33,13 +33,11 @@ function Bekræftelse(props) {
 
   const meta = {
     title: "Nishiki Sushi - betaling",
-    description:
-      "This is Nishiki Sushi's purchase connfirmation page with order details.",
+    description: "This is Nishiki Sushi's purchase connfirmation page with order details.",
     meta: {
       charset: "utf-8",
       name: {
-        keywords:
-          "react,meta,document,html,tags,sushi,frederikssund,takeaway,fish,table booking,reservation,ad libitum,payment,order",
+        keywords: "react,meta,document,html,tags,sushi,frederikssund,takeaway,fish,table booking,reservation,ad libitum,payment,order",
         "theme-color": "#f3f0ee",
       },
     },
@@ -49,39 +47,14 @@ function Bekræftelse(props) {
     <AnimatedPage>
       <>
         <DocumentMeta {...meta} />
-        {screenSize.width > 799 && (
-          <BurgerMenu
-            page={"kurv"}
-            resetPage={"bekræftelse"}
-            setCartContents={setCartContents}
-          />
-        )}
-        {screenSize.width < 799 && (
-          <MobileNav
-            cartContents={cartContents}
-            page={"kurv"}
-            resetPage={"bekræftelse"}
-            setCartContents={setCartContents}
-          />
-        )}
+        {screenSize.width > 799 && <BurgerMenu page={"kurv"} resetPage={"bekræftelse"} setCartContents={setCartContents} />}
+        {screenSize.width < 799 && <MobileNav cartContents={cartContents} page={"kurv"} resetPage={"bekræftelse"} setCartContents={setCartContents} />}
         <NavLink to="/" onClick={() => resetBasket()}>
-          <img
-            src="../icons/logo.svg"
-            alt="The logo icon."
-            className="header_logo"
-          />
+          <img src="../icons/logo.svg" alt="The logo icon." className="header_logo" />
         </NavLink>
-        <img
-          className="hero_img hide_when_off_phone"
-          src="/img/hero_img/takeaway_hero_mobile.webp"
-          alt="takeaway"
-        />
+        <img className="hero_img hide_when_off_phone" src="/img/hero_img/takeaway_hero_mobile.webp" alt="takeaway" />
         <div className="bekræftelse_container">
-          <img
-            className="hero_img hide_when_on_phone"
-            src="/img/hero_img/takeaway_hero.webp"
-            alt="takeaway"
-          />
+          <img className="hero_img hide_when_on_phone" src="/img/hero_img/takeaway_hero.webp" alt="takeaway" />
           <div>
             <div className="bekræftelse_top">
               <h1>Bekræftelse</h1>
@@ -91,15 +64,8 @@ function Bekræftelse(props) {
               </div>
             </div>
             <div className="button_and_afhentling_container">
-              <NavLink
-                to="/takeaway"
-                className="primaryBtn"
-                onClick={() => resetBasket()}
-              >
-                <MdOutlineKeyboardBackspace
-                  style={{ margin: "0 .5rem 0 -.5rem" }}
-                  className="hw20_icon"
-                />
+              <NavLink to="/takeaway" className="primaryBtn" onClick={() => resetBasket()}>
+                <MdOutlineKeyboardBackspace style={{ margin: "0 .5rem 0 -.5rem" }} className="hw20_icon" />
                 Kategorier
               </NavLink>
               <p className="remove_1rem">
@@ -109,28 +75,16 @@ function Bekræftelse(props) {
           </div>
           <div className="order_info_container">
             <div className="order_h2">
-              <h2 className={`show_lesser ${confirm ? "" : "hidden"}`}>
-                Ordre Sendt
-              </h2>
-              <h2 className={`hidden ${confirm ? "" : "show"}`}>
-                Ordre Bekræftet
-              </h2>
+              <h2 className={`show_lesser ${confirm ? "" : "hidden"}`}>Ordre Sendt</h2>
+              <h2 className={`hidden ${confirm ? "" : "show"}`}>Ordre Bekræftet</h2>
             </div>
-            <BsBagCheckFill
-              className={`big_basket_icon ${
-                confirm ? "" : "big_basket_icon_green"
-              }`}
-            />
+            <BsBagCheckFill className={`big_basket_icon ${confirm ? "" : "big_basket_icon_green"}`} />
             <div className="under_basket_icon_txt">
-              <p className={`show_lesser ${confirm ? "" : "hidden"}`}>
-                Du vil modtage en SMS når ordren er blevet bekræftet
-              </p>
+              <p className={`show_lesser ${confirm ? "" : "hidden"}`}>Du vil modtage en SMS når ordren er blevet bekræftet</p>
               <p className={`hidden ${confirm ? "" : "show"}`}>
-                Hvis du ikke har modtaget en SMS, ring venligst til os for
-                detaljer på <br></br> <strong>42 31 47 99</strong>
+                Hvis du ikke har modtaget en SMS, ring venligst til os for detaljer på <br></br> <strong>42 31 47 99</strong>
               </p>
             </div>
-            <p>Jernbanegade 9D, 3600 Frederikssund</p>
           </div>
           <div className="time_and_info">
             <div className="time_line_container">
@@ -141,22 +95,22 @@ function Bekræftelse(props) {
                 </div>
                 <div className="time_line_number_container">
                   <p className="time_line_number_label">Mobil Nummer</p>
-                  <p className="time_line_number">
-                    {formInfo.oplysninger_mobil}
-                  </p>
+                  <p className="time_line_number">{formInfo.oplysninger_mobil}</p>
                 </div>
               </div>
               <div className="time_line"></div>
               <div className="time_line_right">
                 <div className="time_line_time_container">
-                  <p className="time_line_time_label">Afhentnings tid</p>
-                  <p className="time_line_time">{formInfo.oplysninger_tid}</p>
+                  <p className="time_line_time_label">Afhentning</p>
+                  <p className="time_line_time">kl {formInfo.oplysninger_tid}</p>
+                  <p>
+                    Jernbanegade 9D, <br />
+                    3600 Frederikssund
+                  </p>
                 </div>
                 <div className="time_line_comment_container">
                   <p className="time_line_comment_label">Kommentarer</p>
-                  <p className="time_line_comment">
-                    {formInfo.oplysninger_kommentarer}
-                  </p>
+                  <p className="time_line_comment">{formInfo.oplysninger_kommentarer}</p>
                 </div>
               </div>
             </div>
