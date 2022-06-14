@@ -33,7 +33,6 @@ h3 {
 
 .item h4 {
   margin-top: 1rem;
-  min-width: 115vw;
 }
 .item img {
   /* max-height: 149px; */
@@ -237,6 +236,12 @@ h3 {
 }
 .takeaway_container button p {
   margin-left: 5px;
+}
+
+@media screen and (max-width: margins.$layout-breakpoint-mobile-end) {
+  .item h4 {
+    min-width: 115vw;
+  }
 }
 
 @media screen and (min-width: margins.$layout-breakpoint-mobile-end) {
