@@ -13,7 +13,7 @@
 }
 
 .catering_title {
-  margin-left: margins.$marginHorisontalMobile + 77px;
+  margin-left: margins.$marginHorisontalMobile + 80px;
   max-width: 45vw;
   align-self: center;
 }
@@ -31,10 +31,9 @@
 }
 
 .event_container > img {
-  width: 130px;
-  height: 250px;
+  width: 32%;
   position: relative;
-  top: -55px;
+  top: -53px;
   box-shadow: effects.$boxShadowImage;
 }
 
@@ -44,6 +43,7 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
+  margin-top: 10px;
 }
 
 .disappear_para {
