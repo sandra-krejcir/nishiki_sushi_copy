@@ -16,9 +16,9 @@
 }
 
 .restaurant_thumbnail {
-  background-image: url("/img/landingimg1.webp");
-  background-position: center left;
-  background-size: cover;
+  background: linear-gradient(0deg, rgba(37, 50, 62, 1) 0%, rgba(37, 50, 62, 0) 35%), url("/img/landingimg1.webp");
+  background-position: center bottom, center left;
+  background-size: contain, cover;
   background-repeat: no-repeat;
 
   h4 {
@@ -27,9 +27,9 @@
 }
 
 .takeaway_thumbnail {
-  background-image: url("../img/landingimg2.webp");
-  background-position: center;
-  background-size: cover;
+  background: linear-gradient(0deg, rgba(37, 50, 62, 1) 0%, rgba(37, 50, 62, 0) 35%), url("/img/landingimg2.webp");
+  background-position: center bottom, center;
+  background-size: contain, cover;
   background-repeat: no-repeat;
 }
 
@@ -180,19 +180,9 @@
   }
 
   .restaurant_thumbnail {
-    background-image: url("../img/landingimg1.webp");
-    background-position: center left;
-    background-size: cover;
-
     h4 {
       transform: translateY(8px);
     }
-  }
-
-  .takeaway_thumbnail {
-    background-image: url("../img/landingimg2.webp");
-    background-position: center;
-    background-size: cover;
   }
 
   .offers_title {
@@ -312,19 +302,9 @@
   }
 
   .restaurant_thumbnail {
-    background-image: url("../img/landingimg1.webp");
-    background-position: center left;
-    background-size: cover;
-
     h4 {
       transform: translateY(-2rem);
     }
-  }
-
-  .takeaway_thumbnail {
-    background-image: url("../img/landingimg2.webp");
-    background-position: center;
-    background-size: cover;
   }
 
   .offers_container {
